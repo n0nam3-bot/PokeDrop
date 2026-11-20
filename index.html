@@ -1,30 +1,113 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>PokeDrop</title>
-<meta name="description" content="Pokémon card restocks, releases and promos.">
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173d2b">
+  <meta name="description" content="A free Pokémon TCG drop radar for restocks, exclusive deals, rare drops, releases and promos.">
+  <title>PokeDrop - Pokémon TCG Drop Radar</title>
+  <link rel="preload" href="fonts/PKMN-RBYGSC.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="box hero">
-  <div class="ball" aria-hidden="true"></div>
-  <div>
-    <h1>POKéDROP</h1>
-    <p>Live Pokémon TCG restocks, releases and promos.</p>
+  <div class="page-shell">
+    <header class="panel masthead">
+      <div class="topline">
+        <span class="eyebrow"><span class="status-pixel" aria-hidden="true"></span> TRAINER ALERT NETWORK</span>
+        <span class="free-stamp">100 PERCENT FREE FEED</span>
+      </div>
+
+      <div class="hero-content">
+        <svg class="pixel-ball" viewBox="0 0 64 64" role="img" aria-label="Pixel art Poké Ball" shape-rendering="crispEdges">
+          <path fill="#171b18" d="M20 2h24v4h8v4h4v8h4v28h-4v8h-4v4h-8v4H20v-4h-8v-4H8v-8H4V18h4v-8h4V6h8z"/>
+          <path fill="#e7473f" d="M20 6h24v4h8v4h4v8h4v8H8v-8h4v-8h4v-4h4z"/>
+          <path fill="#f7f2d8" d="M8 34h48v8h-4v8h-4v4h-8v4H20v-4h-8v-4H8v-8H4v-8z"/>
+          <path fill="#171b18" d="M8 30h48v8H8z"/>
+          <path fill="#171b18" d="M24 22h16v4h4v12h-4v4H24v-4h-4V26h4z"/>
+          <path fill="#f7f2d8" d="M28 26h8v12h-8z"/>
+          <path fill="#171b18" d="M30 28h4v8h-4z"/>
+        </svg>
+
+        <div class="brand-copy">
+          <p class="kicker">THE FREE POKÉMON TCG DROP RADAR</p>
+          <h1>POKéDROP<span class="title-star" aria-hidden="true">*</span></h1>
+          <p class="tagline">RESTOCKS. EXCLUSIVE DEALS. RARE DROPS.</p>
+          <p class="intro">Your next chase starts here. Keep an eye on the latest Pokémon TCG news, retailer deals and special releases.</p>
+        </div>
+
+        <div class="hero-badge" aria-label="Community feed, updated automatically">
+          <span class="badge-top">TRAINER</span>
+          <span class="badge-main">RADAR</span>
+          <span class="badge-bottom">ONLINE</span>
+        </div>
+      </div>
+
+      <div class="hero-footer">
+        <span><i class="mini-square" aria-hidden="true"></i> COMMUNITY DROP WATCH</span>
+        <span>NEW HEADLINES CHECKED EVERY 30 MIN</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="panel filter-panel" aria-labelledby="filter-title">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">01 / SELECT YOUR MISSION</p>
+            <h2 id="filter-title">DROP FINDER</h2>
+          </div>
+          <span class="pixel-label">FILTER MENU</span>
+        </div>
+
+        <nav class="category-nav" aria-label="Filter alerts by category"></nav>
+
+        <div class="search-controls">
+          <label class="search-wrap">
+            <span class="control-label">SEARCH THE FEED</span>
+            <input type="search" id="search" placeholder="SEARCH SETS, PRODUCTS, RETAILERS..." aria-label="Search alerts">
+          </label>
+          <label class="retailer-wrap">
+            <span class="control-label">RETAILER</span>
+            <select id="retailer-filter" aria-label="Filter by retailer">
+              <option value="all">ALL RETAILERS</option>
+            </select>
+          </label>
+        </div>
+        <p class="filter-note">TIP: Search a set name, product, store or promo to narrow the radar.</p>
+      </section>
+
+      <section class="feed-section" aria-labelledby="feed-title">
+        <div class="feed-heading">
+          <div>
+            <p class="section-kicker">02 / LATEST SIGNALS</p>
+            <h2 id="feed-title">TRAINER ALERTS</h2>
+          </div>
+          <div class="feed-total"><span id="result-count">0</span><span>ALERTS</span></div>
+        </div>
+
+        <div class="feed-status" id="feed-status" role="status" aria-live="polite">
+          <span class="status-pixel" aria-hidden="true"></span>
+          <span>CONNECTING TO THE DROP RADAR...</span>
+        </div>
+        <section id="feed" class="feed-grid" aria-label="Latest Pokémon TCG alerts" aria-live="polite"></section>
+      </section>
+
+      <aside class="panel signal-note">
+        <span class="note-icon" aria-hidden="true">!</span>
+        <div>
+          <h2>CHECK BEFORE YOU CHECK OUT</h2>
+          <p>PokeDrop collects news and deal coverage from public sources. A link is not a live stock guarantee; prices, queues and availability can change. Open the source to confirm details before purchasing.</p>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="panel site-footer">
+      <div class="footer-brand">POKéDROP <span>///</span> TRAINER NETWORK</div>
+      <p>Fan-made community project. Not affiliated with Nintendo, Game Freak or The Pokémon Company. Product names and trademarks belong to their respective owners.</p>
+      <p class="affiliate-note">Some links may be affiliate links and could earn a commission at no extra cost to you.</p>
+      <p class="footer-small">BUILT FOR TRAINERS. FREE TO USE.</p>
+    </footer>
   </div>
-</header>
-<main>
-  <div class="box">
-    <nav aria-label="Categories"></nav>
-    <input type="search" placeholder="Search posts" aria-label="Search posts">
-  </div>
-  <section id="feed" aria-live="polite"></section>
-</main>
-<footer class="box">
-  <p>Some links are affiliate links and may earn a commission. Fan site. Not affiliated with Nintendo, Game Freak or The Pokémon Company.</p>
-</footer>
-<script src="app.js"></script>
+
+  <script src="app.js" defer></script>
 </body>
 </html>

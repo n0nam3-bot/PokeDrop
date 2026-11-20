@@ -1,25 +1,33 @@
 # PokeDrop
 
-An 8-bit Pokémon TCG news feed. Free static site on GitHub Pages, filled automatically with real headlines.
+PokeDrop is a free, Pokémon-inspired 8-bit community feed for Pokémon TCG restocks, exclusive deals, rare drops, new releases and promos. It is designed to run as a static site on GitHub Pages with no paid API or hosted database.
 
-## How it works
+## How the free feed works
 
-A GitHub Action (`.github/workflows/update.yml`) runs every 30 minutes. It runs `scripts/update.mjs`, which collects recent Pokémon TCG headlines from Google News RSS, sorts them into Restock, Release, Promo and Collab, and saves them to `posts.json`. The site reads that file. Each post shows the headline, the source and a link to the original article.
+- `.github/workflows/update.yml` runs every 30 minutes and can also be started manually from the GitHub Actions tab.
+- `scripts/update.mjs` collects public headlines from Google News RSS searches, classifies them into the feed categories, removes duplicates and keeps the most recent 45 days of coverage.
+- The workflow updates `posts.json` in the repository.
+- `index.html`, `style.css` and `app.js` display the feed. Search, category filters and retailer filters run in the browser.
 
-## Setup
+**Important:** the current free collector is a news and deal-coverage radar, not a live stock checker. It does not query retailer inventory or guarantee that an item is available. Links open the original publisher/source so trainers can confirm product details, price and availability before buying. A true live-stock feature would need supported retailer product feeds or inventory integrations.
 
-1. Upload these files to the repo root, keeping the `scripts` and `.github` folders.
-2. If you can't upload the `.github` folder, use Add file, then Create new file, type `.github/workflows/update.yml` as the name, and paste the contents.
-3. Open the Actions tab and run Update feed once with Run workflow. It also runs by itself when the files are first committed.
-4. If the commit step fails with a 403, go to Settings, Actions, General, Workflow permissions, and choose Read and write.
+## Publish on GitHub Pages
 
-## Change what it collects
+1. Keep the files and folders in this repository structure, including `fonts/`, `scripts/` and `.github/workflows/`.
+2. In GitHub, open **Settings → Pages** and make sure Pages is configured to deploy from the branch containing these files (usually the root of `main`).
+3. Open **Settings → Actions → General → Workflow permissions** and select **Read and write permissions** so the updater can commit `posts.json`.
+4. Open **Actions → Update feed → Run workflow** to test the collector. Scheduled runs follow every 30 minutes.
 
-Edit the `FEEDS` list at the top of `scripts/update.mjs`. Each entry is a category and a Google News search query.
+If the workflow cannot push its updated feed, check the repository's workflow permissions and the Actions run log.
 
-## Notes
+## Customize the sources/searches
 
-- Font: PKMN RBYGSC from dafont.com. Check its license before using it commercially.
-- The script converts `%`, `+` and `#` and strips other characters the font lacks.
-- Edit the footer in `index.html` for your affiliate disclosure.
-- Scheduled runs can lag by several minutes, and GitHub pauses them after 60 days with no repo activity.
+Edit the `FEEDS` array near the top of `scripts/update.mjs`. Each entry contains a visible category and a Google News RSS search query. The site uses no paid key or paid external API.
+
+## Design and attribution
+
+- The bundled `fonts/PKMN-RBYGSC.ttf` font is used throughout the interface.
+- The Poké Ball mark is drawn as crisp pixel art directly in `index.html`.
+- The layout is responsive for mobile, tablet and desktop.
+- Pokémon and related product names are trademarks of their respective owners. PokeDrop is a fan-made project and is not affiliated with Nintendo, Game Freak or The Pokémon Company.
+- Review the font's license before using it commercially. Update the affiliate disclosure in `index.html` to match the links and monetization actually used by the site.
