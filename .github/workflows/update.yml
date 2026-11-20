@@ -1,1 +1,37 @@
+name: Update feed
 
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+  push:
+    paths:
+      - scripts/update.mjs
+      - .github/workflows/update.yml
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: update-feed
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch latest headlines
+        run: node scripts/update.mjs
+      - name: Commit and deploy
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add posts.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Update feed"
+            git push
+            gh api -X POST "repos/${{ github.repository }}/pages/builds" || true
+          fi
