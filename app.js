@@ -16,21 +16,30 @@
     ["Target", /\btarget\b/i],
     ["Walmart", /\bwalmart\b/i],
     ["Costco", /\bcostco\b/i],
-    ["GameStop", /\bgame\s*stop\b/i],
-    ["Best Buy", /\bbest\s*buy\b/i],
+    ["GameStop", /game\s*stop/i],
+    ["Best Buy", /best\s*buy/i],
     ["Amazon", /\bamazon\b/i],
     ["Sam's Club", /sam'?s\s*club/i],
     ["TCGplayer", /tcgplayer/i],
-    ["eBay", /\bebay\b/i]
+    ["Local Card Shop", /card\s*shop|game\s*store|\bLGS\b/i]
   ];
 
-  const state = { posts: [], category: "All", query: "", retailer: "all" };
+  const state = {
+    posts: [], category: "All", query: "", retailer: "all",
+    raffles: [], raffleStatus: "All", raffleQuery: "", raffleStore: "all"
+  };
   const nav = $(".category-nav");
   const search = $("#search");
   const retailerFilter = $("#retailer-filter");
   const feed = $("#feed");
   const status = $("#feed-status");
   const resultCount = $("#result-count");
+  const raffleNav = $(".raffle-status-nav");
+  const raffleSearch = $("#raffle-search");
+  const raffleStoreFilter = $("#raffle-store-filter");
+  const raffleFeed = $("#raffles");
+  const raffleStatus = $("#raffle-feed-status");
+  const raffleResultCount = $("#raffle-result-count");
 
   function makeElement(tag, className, text) {
     const node = document.createElement(tag);
@@ -81,6 +90,12 @@
     if (days === 1) return "1 DAY AGO";
     if (days < 7) return `${days} DAYS AGO`;
     return date.toLocaleDateString("en-US", { month: "short", day: "numeric" }).toUpperCase();
+  }
+
+  function formatCalendarDate(value) {
+    const date = new Date(value);
+    if (Number.isNaN(date.getTime())) return "DATE NOT LISTED";
+    return date.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" }).toUpperCase();
   }
 
   function validHttpUrl(value) {
@@ -186,6 +201,85 @@
     for (const post of filtered) feed.append(buildCard(post));
   }
 
+  function renderRaffleStatusButtons() {
+    raffleNav.querySelectorAll("button[data-status]").forEach((button) => {
+      button.setAttribute("aria-pressed", String(button.dataset.status === state.raffleStatus));
+    });
+  }
+
+  function renderRaffleStoreOptions() {
+    const selected = state.raffleStore;
+    const values = [...new Set(state.raffles.map((raffle) => raffle.store || "Other"))].sort((a, b) => a.localeCompare(b));
+    raffleStoreFilter.replaceChildren(new Option("ALL STORES", "all"));
+    for (const value of values) raffleStoreFilter.append(new Option(value.toUpperCase(), value));
+    if (selected !== "all" && values.includes(selected)) raffleStoreFilter.value = selected;
+    else {
+      state.raffleStore = "all";
+      raffleStoreFilter.value = "all";
+    }
+  }
+
+  function buildRaffleCard(raffle) {
+    const normalizedStatus = ["Upcoming", "Open", "Closed"].includes(raffle.status) ? raffle.status : "Verify";
+    const store = raffle.store || "Other";
+    const card = makeElement("article", "post-card raffle-card");
+    card.dataset.status = normalizedStatus.toLowerCase();
+
+    const meta = makeElement("div", "post-topline");
+    const stateTag = makeElement("span", "raffle-status-tag", normalizedStatus.toUpperCase());
+    stateTag.dataset.status = normalizedStatus.toLowerCase();
+    meta.append(stateTag);
+    meta.append(makeElement("span", "retailer-tag", store === "Other" ? "STORE UNKNOWN" : store.toUpperCase()));
+    meta.append(makeElement("time", "post-date", formatAge(raffle.date)));
+
+    const title = makeElement("h3", "", String(raffle.title || "POKÉMON TCG GIVEAWAY").toUpperCase().replace(/É/g, "é"));
+    const summary = makeElement("p", "post-summary", raffle.summary || "Open the source for the giveaway description and entry instructions.");
+    const note = makeElement("p", "raffle-status-note", raffle.statusNote || "Check the source for current entry status and rules.");
+    if (raffle.statusDate) note.append(makeElement("span", "raffle-date", ` DATE: ${formatCalendarDate(raffle.statusDate)}`));
+
+    const source = makeElement("div", "post-source");
+    source.append(document.createTextNode("SOURCE:"), makeElement("strong", "", raffle.source || "Original publisher"));
+
+    card.append(meta, title, summary, note, source);
+    if (validHttpUrl(raffle.url)) {
+      const link = makeElement("a", "post-action raffle-action", "VIEW ENTRY DETAILS");
+      link.href = raffle.url;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      card.append(link);
+    }
+    return card;
+  }
+
+  function renderRaffles() {
+    raffleFeed.replaceChildren();
+    const filtered = state.raffles.filter((raffle) => {
+      const raffleStatus = ["Upcoming", "Open", "Closed"].includes(raffle.status) ? raffle.status : "Verify";
+      const statusMatch = state.raffleStatus === "All" || raffleStatus === state.raffleStatus;
+      const storeMatch = state.raffleStore === "all" || (raffle.store || "Other") === state.raffleStore;
+      const searchable = `${raffle.title || ""} ${raffle.summary || ""} ${raffle.source || ""} ${raffle.store || ""} ${raffle.statusNote || ""}`.toLowerCase();
+      return statusMatch && storeMatch && searchable.includes(state.raffleQuery);
+    });
+
+    raffleResultCount.textContent = String(filtered.length);
+    if (!filtered.length) {
+      const empty = makeElement("div", "empty-state");
+      empty.append(
+        makeElement("strong", "", "NO GIVEAWAYS FOUND"),
+        makeElement("p", "", state.raffles.length ? "Try another status, store or search term." : "No matching raffle headlines have been collected yet. The radar checks public coverage during its scheduled updates.")
+      );
+      raffleFeed.append(empty);
+      return;
+    }
+
+    for (const raffle of filtered) raffleFeed.append(buildRaffleCard(raffle));
+  }
+
+  function setRaffleStatus(message, isError = false) {
+    raffleStatus.classList.toggle("error", isError);
+    raffleStatus.replaceChildren(makeElement("span", "status-pixel"), makeElement("span", "", message));
+  }
+
   function sortNewestFirst(posts) {
     return posts.slice().sort((a, b) => {
       const dateA = Date.parse(a.date || "") || 0;
@@ -202,6 +296,24 @@
   retailerFilter.addEventListener("change", () => {
     state.retailer = retailerFilter.value;
     renderFeed();
+  });
+
+  raffleNav.addEventListener("click", (event) => {
+    const button = event.target.closest("button[data-status]");
+    if (!button) return;
+    state.raffleStatus = button.dataset.status;
+    renderRaffleStatusButtons();
+    renderRaffles();
+  });
+
+  raffleSearch.addEventListener("input", () => {
+    state.raffleQuery = raffleSearch.value.trim().toLowerCase();
+    renderRaffles();
+  });
+
+  raffleStoreFilter.addEventListener("change", () => {
+    state.raffleStore = raffleStoreFilter.value;
+    renderRaffles();
   });
 
   async function loadFeed() {
@@ -228,6 +340,35 @@
     }
   }
 
+  async function loadRaffles() {
+    try {
+      const response = await fetch("raffles.json", { cache: "no-store" });
+      if (!response.ok) throw new Error(`Raffle feed request failed (${response.status})`);
+      const raffles = await response.json();
+      if (!Array.isArray(raffles)) throw new Error("Raffle data is not a list");
+      const statusRank = { Open: 0, Upcoming: 1, Verify: 2, Closed: 3 };
+      state.raffles = raffles
+        .filter((raffle) => raffle && raffle.title && raffle.date && validHttpUrl(raffle.url))
+        .sort((a, b) => (statusRank[a.status] ?? 4) - (statusRank[b.status] ?? 4) || (Date.parse(b.date) || 0) - (Date.parse(a.date) || 0));
+      renderRaffleStoreOptions();
+      renderRaffleStatusButtons();
+      renderRaffles();
+      setRaffleStatus(`GIVEAWAY RADAR UPDATED // ${state.raffles.length} RESULTS COLLECTED`);
+    } catch (error) {
+      console.error("PokeDrop raffle feed error:", error);
+      setRaffleStatus("COULD NOT LOAD GIVEAWAYS // CHECK raffles.json OR THE GITHUB PAGES DEPLOYMENT", true);
+      const empty = makeElement("div", "empty-state");
+      empty.append(
+        makeElement("strong", "", "GIVEAWAY RADAR CONNECTION LOST"),
+        makeElement("p", "", "The raffle file could not be loaded. Confirm raffles.json is deployed beside index.html, then refresh this page.")
+      );
+      raffleFeed.replaceChildren(empty);
+      raffleResultCount.textContent = "0";
+    }
+  }
+
   renderCategories();
+  renderRaffleStatusButtons();
   loadFeed();
+  loadRaffles();
 })();

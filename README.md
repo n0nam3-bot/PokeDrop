@@ -1,15 +1,17 @@
 # PokeDrop
 
-PokeDrop is a free, Pokémon-inspired 8-bit community feed for Pokémon TCG restocks, exclusive deals, rare drops, new releases and promos. It is designed to run as a static site on GitHub Pages with no paid API or hosted database.
+PokeDrop is a free, Pokémon-inspired 8-bit community radar for Pokémon TCG restocks, exclusive deals, rare drops, new releases, promos, raffles and giveaways. It is designed to run as a static site on GitHub Pages with no paid API or hosted database.
 
 ## How the free feed works
 
 - `.github/workflows/update.yml` runs every 30 minutes and can also be started manually from the GitHub Actions tab.
-- `scripts/update.mjs` collects public headlines from Google News RSS searches, classifies them into the feed categories, removes duplicates and keeps the most recent 45 days of coverage.
-- The workflow updates `posts.json` in the repository.
-- `index.html`, `style.css` and `app.js` display the feed. Search, category filters and retailer filters run in the browser.
+- `scripts/update.mjs` collects public headlines from Google News RSS searches, classifies feed categories, removes duplicates and keeps the most recent 45 days of coverage.
+- The same collector searches for TCG raffles and giveaways across general coverage, Pokémon Center, major retailers and local card shops.
+- `posts.json` stores the regular alerts. `raffles.json` stores raffle/giveaway headlines with a best-effort status of **Upcoming**, **Open**, **Closed** or **Verify**.
+- The raffle board has status, store and text filters. Status is inferred from the headline/snippet; unclear entries are marked **Verify** instead of being guessed as open.
+- `index.html`, `style.css` and `app.js` display the feeds. Search and filters run in the browser.
 
-**Important:** the current free collector is a news and deal-coverage radar, not a live stock checker. It does not query retailer inventory or guarantee that an item is available. Links open the original publisher/source so trainers can confirm product details, price and availability before buying. A true live-stock feature would need supported retailer product feeds or inventory integrations.
+**Important:** this is a free public-news radar, not a live retailer inventory or official raffle-registration integration. Google News may miss store-run giveaways or surface coverage that is no longer active. The status is not confirmed by the retailer. Open the source and check the official entry page for dates, rules, eligibility and availability.
 
 ## Upload a ZIP to update the repository automatically
 
@@ -30,7 +32,7 @@ If the workflow cannot push its updated feed, check the repository's workflow pe
 
 ## Customize the sources/searches
 
-Edit the `FEEDS` array near the top of `scripts/update.mjs`. Each entry contains a visible category and a Google News RSS search query. The site uses no paid key or paid external API.
+Edit the `FEEDS` and `RAFFLE_FEEDS` arrays near the top of `scripts/update.mjs` to adjust headline and giveaway searches. Each entry uses a Google News RSS search query. The site uses no paid key or paid external API.
 
 ## Design and attribution
 
