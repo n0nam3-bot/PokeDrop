@@ -180,6 +180,8 @@
       });
       nav.append(button);
     }
+    // Keep the conditional status controls immediately beside the category button row.
+    nav.append(raffleStatusNav);
     raffleStatusNav.hidden = state.category !== "Raffle";
     raffleStatusNav.setAttribute("aria-hidden", String(state.category !== "Raffle"));
     renderRaffleStatusButtons();
