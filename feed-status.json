@@ -1,132 +1,20 @@
 {
  "schemaVersion": 1,
- "state": "ok",
+ "state": "not-run",
  "news": {
-  "sourceCount": 5,
-  "sourcesResponded": 5,
-  "searchResults": 249,
-  "sources": [
-   {
-    "name": "Restock",
-    "ok": true,
-    "results": 49
-   },
-   {
-    "name": "Deals",
-    "ok": true,
-    "results": 42
-   },
-   {
-    "name": "Rare Drop",
-    "ok": true,
-    "results": 36
-   },
-   {
-    "name": "Release",
-    "ok": true,
-    "results": 62
-   },
-   {
-    "name": "Promo",
-    "ok": true,
-    "results": 60
-   }
-  ]
+  "sourceCount": 0,
+  "sourcesResponded": 0,
+  "searchResults": 0,
+  "sources": []
  },
  "raffles": {
-  "sourceCount": 17,
-  "sourcesResponded": 17,
-  "searchResults": 158,
-  "uniqueLeads": 107,
-  "savedLeads": 107,
+  "sourceCount": 0,
+  "sourcesResponded": 0,
+  "searchResults": 0,
+  "uniqueLeads": 0,
+  "savedLeads": 0,
   "historyDays": 365,
-  "sources": [
-   {
-    "name": "TCG giveaways",
-    "ok": true,
-    "results": 14
-   },
-   {
-    "name": "TCG raffles",
-    "ok": true,
-    "results": 10
-   },
-   {
-    "name": "Pokémon card giveaways",
-    "ok": true,
-    "results": 24
-   },
-   {
-    "name": "Pokémon card raffles",
-    "ok": true,
-    "results": 10
-   },
-   {
-    "name": "Booster box prizes",
-    "ok": true,
-    "results": 0
-   },
-   {
-    "name": "Elite Trainer Box prizes",
-    "ok": true,
-    "results": 0
-   },
-   {
-    "name": "TCG sweepstakes",
-    "ok": true,
-    "results": 8
-   },
-   {
-    "name": "Card shop giveaways",
-    "ok": true,
-    "results": 2
-   },
-   {
-    "name": "Card shop raffles",
-    "ok": true,
-    "results": 0
-   },
-   {
-    "name": "Target giveaways",
-    "ok": true,
-    "results": 9
-   },
-   {
-    "name": "Walmart giveaways",
-    "ok": true,
-    "results": 8
-   },
-   {
-    "name": "GameStop giveaways",
-    "ok": true,
-    "results": 10
-   },
-   {
-    "name": "Best Buy giveaways",
-    "ok": true,
-    "results": 9
-   },
-   {
-    "name": "Costco giveaways",
-    "ok": true,
-    "results": 4
-   },
-   {
-    "name": "Pokémon Center lotteries",
-    "ok": true,
-    "results": 9
-   },
-   {
-    "name": "Local card shop contests",
-    "ok": true,
-    "results": 9
-   },
-   {
-    "name": "Community card giveaways",
-    "ok": true,
-    "results": 32
-   }
-  ]
+  "sources": []
  },
  "failures": []
 }
