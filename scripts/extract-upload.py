@@ -11,9 +11,11 @@ ROOT = Path(__file__).resolve().parents[1]
 UPLOAD_DIR = ROOT / "uploads"
 MAX_FILES = 10_000
 MAX_UNPACKED_BYTES = 200 * 1024 * 1024
-PROTECTED = {
-    ".github/workflows/upload-zip.yml",
+PROTECTED_FILES = {
     "scripts/extract-upload.py",
+}
+PROTECTED_DIRECTORY_PREFIXES = {
+    (".github", "workflows"),
 }
 
 
@@ -27,6 +29,19 @@ def normalized_name(raw_name: str) -> PurePosixPath | None:
     return path
 
 
+def is_reserved_path(path: PurePosixPath) -> bool:
+    """Keep importer files, workflow definitions, and upload inbox protected."""
+    parts = path.parts
+    relative = path.as_posix()
+    return (
+        not parts
+        or ".git" in parts
+        or parts[0] == "uploads"
+        or relative in PROTECTED_FILES
+        or any(parts[: len(prefix)] == prefix for prefix in PROTECTED_DIRECTORY_PREFIXES)
+    )
+
+
 def read_archive(archive_path: Path):
     with zipfile.ZipFile(archive_path) as archive:
         records = []
@@ -37,10 +52,6 @@ def read_archive(archive_path: Path):
                 continue
             if "__MACOSX" in path.parts or path.name in (".DS_Store", "Thumbs.db"):
                 continue
-            # Do not import files into the upload inbox or replace this importer.
-            if path.parts[0] == "uploads" or path.as_posix() in PROTECTED:
-                print(f"Skipped reserved path: {path.as_posix()}")
-                continue
             mode = info.external_attr >> 16
             if stat.S_ISLNK(mode):
                 print(f"Skipped symbolic link: {path.as_posix()}")
@@ -49,7 +60,9 @@ def read_archive(archive_path: Path):
                 raise ValueError(f"File is too large to unpack: {path.as_posix()}")
             total_size += info.file_size
             if total_size > MAX_UNPACKED_BYTES:
-                raise ValueError(f"Archive expands beyond {MAX_UNPACKED_BYTES // (1024 * 1024)} MB")
+                raise ValueError(
+                    f"Archive expands beyond {MAX_UNPACKED_BYTES // (1024 * 1024)} MB"
+                )
             records.append((path, info))
             if len(records) > MAX_FILES:
                 raise ValueError(f"Archive contains more than {MAX_FILES} files")
@@ -65,7 +78,9 @@ def read_archive(archive_path: Path):
             "README.md", "README", "index.html", "package.json", "pyproject.toml",
             "Cargo.toml", ".github", "src", "public", "scripts", "assets",
         }
-        looks_like_project_root = any(parts[1] in wrapper_markers for parts in first_parts if len(parts) > 1)
+        looks_like_project_root = any(
+            len(parts) > 1 and parts[1] in wrapper_markers for parts in first_parts
+        )
         is_github_archive_folder = first_component.lower().endswith(
             ("-main", "-master", "-develop", "-development", "-dev", "-gh-pages")
         )
@@ -73,13 +88,15 @@ def read_archive(archive_path: Path):
             all(parts[0] == first_component and len(parts) > 1 for parts in first_parts)
             and (looks_like_project_root or is_github_archive_folder)
         ):
-            records = [(PurePosixPath(*path.parts[1:]), info) for path, info in records]
+            records = [
+                (PurePosixPath(*path.parts[1:]), info)
+                for path, info in records
+            ]
 
         output = []
         for path, info in records:
-            relative = path.as_posix()
-            if ".git" in path.parts or path.parts[0] == "uploads" or relative in PROTECTED:
-                print(f"Skipped reserved path: {relative}")
+            if is_reserved_path(path):
+                print(f"Skipped protected path: {path.as_posix()}")
                 continue
             output.append((path, archive.read(info)))
         return output
@@ -98,7 +115,9 @@ def main() -> int:
         prepared.extend(read_archive(archive_path))
 
     if not prepared:
-        raise ValueError("No files remained after applying reserved-path protections")
+        raise ValueError(
+            "No importable files found. Workflow files and the upload importer are protected."
+        )
 
     written = []
     for relative, content in prepared:
