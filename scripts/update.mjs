@@ -11,11 +11,13 @@ const FEEDS = [
 ];
 
 const RAFFLE_FEEDS = [
-  ["All stores", '("pokemon tcg" OR "pokemon cards" OR "pokemon trading cards") (raffle OR giveaway OR sweepstakes OR "enter to win" OR "win a booster box" OR drawing) when:30d'],
-  ["Pokémon Center", '("pokemon tcg" OR "pokemon cards") (raffle OR giveaway OR sweepstakes OR "enter to win") ("pokemon center" OR pokemon.com) when:30d'],
-  ["Big-box retailers", '("pokemon tcg" OR "pokemon cards") (raffle OR giveaway OR sweepstakes OR "enter to win") (Target OR Walmart OR "Best Buy") when:30d'],
-  ["Game and club stores", '("pokemon tcg" OR "pokemon cards") (raffle OR giveaway OR sweepstakes OR "enter to win") (GameStop OR Costco OR "Sam\'s Club" OR Amazon) when:30d'],
-  ["Local card shops", '("pokemon tcg" OR "pokemon cards") (raffle OR giveaway OR sweepstakes OR "enter to win") ("card shop" OR "game store" OR LGS) when:30d']
+  ["TCG raffles", '"Pokemon TCG" (raffle OR giveaways OR sweepstakes OR contest OR drawing OR lottery OR "enter to win") when:90d'],
+  ["Card giveaways", '"Pokemon cards" (giveaway OR giveaways OR "give away" OR "giving away" OR "enter to win" OR contest) when:90d'],
+  ["Booster box prizes", '(Pokemon OR Pokémon) ("booster box" OR "elite trainer box" OR ETB) (giveaway OR raffle OR "enter to win" OR contest) when:90d'],
+  ["Retailer giveaways", '(Pokemon OR Pokémon) (TCG OR cards) (giveaway OR raffle OR sweepstakes OR lottery) (Target OR Walmart OR GameStop OR "Best Buy" OR Costco OR Amazon OR "Pokemon Center") when:90d'],
+  ["Local card shops", '"Pokemon card" (giveaway OR raffle OR "giving away") (shop OR store OR LGS) when:90d'],
+  ["Pokémon Center lotteries", '"Pokemon Center" (lottery OR raffle OR "Pokemon TCG" OR cards) when:90d'],
+  ["Community contests", '("Pokemon TCG" OR "Pokemon cards") (giveaway OR "enter to win" OR drawing OR contest) (Instagram OR Facebook OR X OR Twitter) when:90d']
 ];
 
 const KEEP_DAYS = 45;
@@ -87,6 +89,7 @@ function readTag(xml, tag) {
 
 function categoryFor(title, fallback) {
   const text = String(title || "").toLowerCase();
+  if (/\b(raffle|giveaway|giveaways|give away|giving away|sweepstakes|enter to win|contest|lottery|prize draw)\b/.test(text)) return "Raffle";
   if (/\b(deal|deals|sale|sales|discount|discounts|price drop|price cut|clearance|coupon|record[- ]low|save \$|\d+% off)\b/.test(text)) return "Deals";
   if (/\b(restock|back in stock|in stock|stock alert|replenish(?:ed|ment)?|available now|queue)\b/.test(text)) return "Restock";
   if (/\b(exclusive|limited edition|special collection|ultra[- ]premium|rare promo|pok[eé]mon center|collector(?:'s|s)?)\b/.test(text)) return "Rare Drop";
@@ -94,6 +97,7 @@ function categoryFor(title, fallback) {
   if (/\b(release date|new set|expansion|card list|reveal(?:ed|s)?|announced)\b/.test(text)) return "Release";
 
   const legacy = String(fallback || "").toLowerCase();
+  if (["raffle", "raffles", "giveaway", "giveaways"].includes(legacy)) return "Raffle";
   if (legacy === "collab" || legacy === "promo") return "Promo";
   if (legacy === "deal" || legacy === "deals") return "Deals";
   if (legacy === "rare drop") return "Rare Drop";
@@ -214,6 +218,15 @@ function loadPrevious(file) {
   }
 }
 
+function isRaffleCandidate(post) {
+  const text = `${post?.title || ""} ${post?.summary || ""} ${post?.text || ""}`;
+  return /\b(raffle|giveaway|giveaways|give away|giving away|sweepstakes|enter to win|contest|drawing|lottery|prize draw|win (?:a|an|one|the))\b/i.test(text);
+}
+
+function raffleIdentity(post) {
+  return String(post?.url || "").trim().toLowerCase().split("?")[0].replace(/\/$/, "");
+}
+
 const previousPostsRaw = (() => {
   try { return readFileSync("posts.json", "utf8"); } catch { return ""; }
 })();
@@ -239,9 +252,8 @@ for (const feedSpec of FEEDS) {
 for (const feedSpec of RAFFLE_FEEDS) {
   try {
     const posts = await loadFeed(feedSpec);
-    const rafflePosts = posts.filter((post) => /\b(raffle|giveaway|sweepstakes|enter to win|win a .*?(?:box|pack|card)|drawing)\b/i.test(`${post.title} ${post.summary}`));
-    raffleCollected.push(...rafflePosts);
-    console.log(`Raffles / ${feedSpec[0]}: ${rafflePosts.length} results`);
+    raffleCollected.push(...posts);
+    console.log(`Raffles / ${feedSpec[0]}: ${posts.length} search results`);
   } catch (error) {
     failures.push(`Raffles / ${feedSpec[0]}: ${error.message}`);
     console.error(`Raffles / ${feedSpec[0]} feed failed:`, error.message);
@@ -280,14 +292,15 @@ for (const post of postCandidates) {
 }
 const posts = [...uniquePosts.values()].sort((a, b) => b.date.localeCompare(a.date)).slice(0, MAX_POSTS);
 
-// Raffle entries are separate from general news. Ambiguous dates are marked Verify rather than guessed Open.
-const raffleCandidates = [...raffleCollected, ...previousRaffles].filter(validRecent);
+// Raffle leads are collected into their own data file but shown inside the same Drop Finder feed. Ambiguous dates are marked Verify.
+const targetedRaffleUrls = new Set(raffleCollected.map(raffleIdentity).filter(Boolean));
+const raffleCandidates = [...raffleCollected, ...collected.filter(isRaffleCandidate), ...previousRaffles].filter(validRecent);
 const uniqueRaffles = new Map();
 for (const post of raffleCandidates) {
   const title = clean(post.title);
   const summary = compactSummary(post.summary || post.text || "");
-  if (!/\b(raffle|giveaway|sweepstakes|enter to win|win a .*?(?:box|pack|card)|drawing)\b/i.test(`${title} ${summary}`)) continue;
   const url = String(post.url || "").trim();
+  if (!targetedRaffleUrls.has(raffleIdentity(post)) && !isRaffleCandidate({ title, summary })) continue;
   if (!/^https?:\/\//i.test(url)) continue;
   const key = url.toLowerCase().split("?")[0] || title.toLowerCase().replace(/[^a-z0-9]/g, "");
   const status = raffleStatus(title, summary);
