@@ -1,21 +1,25 @@
-# Pokémon TCG Alerts
+# PokeDrop
 
-An 8-bit Pokémon news and restock feed. Static site, free on GitHub Pages.
+An 8-bit Pokémon TCG news feed. Free static site on GitHub Pages, filled automatically with real headlines.
 
-## Put it online
+## How it works
 
-1. Create a new public repo on github.com.
-2. Click Add file, then Upload files. Drag in everything from this folder, including the `fonts` folder, then commit.
-3. Go to Settings, then Pages. Under Build and deployment, choose Deploy from a branch, pick `main` and `/ (root)`, then Save.
-4. After about a minute the site is live at `https://YOUR-USERNAME.github.io/YOUR-REPO/`.
+A GitHub Action (`.github/workflows/update.yml`) runs every 30 minutes. It runs `scripts/update.mjs`, which collects recent Pokémon TCG headlines from Google News RSS, sorts them into Restock, Release, Promo and Collab, and saves them to `posts.json`. The site reads that file. Each post shows the headline, the source and a link to the original article.
 
-## Add a post
+## Setup
 
-Open `posts.json` on GitHub, click the pencil icon, add an entry, and commit. The site updates in about a minute.
+1. Upload these files to the repo root, keeping the `scripts` and `.github` folders.
+2. If you can't upload the `.github` folder, use Add file, then Create new file, type `.github/workflows/update.yml` as the name, and paste the contents.
+3. Open the Actions tab and run Update feed once with Run workflow. It also runs by itself when the files are first committed.
+4. If the commit step fails with a 403, go to Settings, Actions, General, Workflow permissions, and choose Read and write.
+
+## Change what it collects
+
+Edit the `FEEDS` list at the top of `scripts/update.mjs`. Each entry is a category and a Google News search query.
 
 ## Notes
 
-- Font: PKMN RBYGSC from dafont.com. Check its license on the dafont page before using it commercially.
-- The font has no `%`, `+`, `#` or arrow glyphs, so avoid them in post text.
-- Edit the footer in `index.html` to set your own affiliate disclosure.
-- To test locally, run `python3 -m http.server` in this folder and open http://localhost:8000.
+- Font: PKMN RBYGSC from dafont.com. Check its license before using it commercially.
+- The script converts `%`, `+` and `#` and strips other characters the font lacks.
+- Edit the footer in `index.html` for your affiliate disclosure.
+- Scheduled runs can lag by several minutes, and GitHub pauses them after 60 days with no repo activity.

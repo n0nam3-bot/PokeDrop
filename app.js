@@ -23,6 +23,13 @@ for (const c of cats) {
 }
 $("input").oninput = e => { q = e.target.value.toLowerCase(); draw(); };
 
+const ago = t => {
+  const m = (Date.now() - new Date(t)) / 6e4;
+  if (m < 60) return Math.max(1, Math.floor(m)) + "M AGO";
+  if (m < 1440) return Math.floor(m / 60) + "H AGO";
+  return new Date(t).toLocaleDateString("en-US", { month: "short", day: "numeric" }).toUpperCase();
+};
+
 function draw() {
   const feed = $("#feed");
   feed.replaceChildren();
@@ -35,11 +42,10 @@ function draw() {
   for (const p of list) {
     const a = el("article", "box");
     a.dataset.c = p.cat;
-    const d = new Date(p.date + "T12:00:00");
     a.append(
       el("span", "tag", p.cat),
-      el("time", "", d.toLocaleDateString("en-US", { month: "short", day: "numeric" })),
-      el("h2", "", p.title),
+      el("time", "", ago(p.date)),
+      el("h2", "", p.title.toUpperCase().replace(/\u00c9/g, "\u00e9")),
       el("p", "", p.text)
     );
     if (/^https?:\/\//.test(p.url || "")) {
