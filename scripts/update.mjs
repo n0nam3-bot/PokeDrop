@@ -11,18 +11,29 @@ const FEEDS = [
 ];
 
 const RAFFLE_FEEDS = [
-  ["TCG raffles", '"Pokemon TCG" (raffle OR giveaways OR sweepstakes OR contest OR drawing OR lottery OR "enter to win") when:90d'],
-  ["Card giveaways", '"Pokemon cards" (giveaway OR giveaways OR "give away" OR "giving away" OR "enter to win" OR contest) when:90d'],
-  ["Booster box prizes", '(Pokemon OR Pokémon) ("booster box" OR "elite trainer box" OR ETB) (giveaway OR raffle OR "enter to win" OR contest) when:90d'],
-  ["Retailer giveaways", '(Pokemon OR Pokémon) (TCG OR cards) (giveaway OR raffle OR sweepstakes OR lottery) (Target OR Walmart OR GameStop OR "Best Buy" OR Costco OR Amazon OR "Pokemon Center") when:90d'],
-  ["Local card shops", '"Pokemon card" (giveaway OR raffle OR "giving away") (shop OR store OR LGS) when:90d'],
-  ["Pokémon Center lotteries", '"Pokemon Center" (lottery OR raffle OR "Pokemon TCG" OR cards) when:90d'],
-  ["Community contests", '("Pokemon TCG" OR "Pokemon cards") (giveaway OR "enter to win" OR drawing OR contest) (Instagram OR Facebook OR X OR Twitter) when:90d']
+  ["TCG giveaways", '"Pokemon TCG" giveaway when:365d'],
+  ["TCG raffles", '"Pokemon TCG" raffle when:365d'],
+  ["Pokémon card giveaways", '"Pokemon cards" giveaway when:365d'],
+  ["Pokémon card raffles", '"Pokemon cards" raffle when:365d'],
+  ["Booster box prizes", '"Pokemon booster box" giveaway when:365d'],
+  ["Elite Trainer Box prizes", '"Pokemon Elite Trainer Box" giveaway when:365d'],
+  ["TCG sweepstakes", '"Pokemon TCG" sweepstakes when:365d'],
+  ["Card shop giveaways", '"Pokemon card shop" giveaway when:365d'],
+  ["Card shop raffles", '"Pokemon card shop" raffle when:365d'],
+  ["Target giveaways", 'Target "Pokemon TCG" (giveaway OR raffle) when:365d'],
+  ["Walmart giveaways", 'Walmart "Pokemon TCG" (giveaway OR raffle) when:365d'],
+  ["GameStop giveaways", 'GameStop "Pokemon TCG" (giveaway OR raffle) when:365d'],
+  ["Best Buy giveaways", '"Best Buy" "Pokemon TCG" (giveaway OR raffle) when:365d'],
+  ["Costco giveaways", 'Costco "Pokemon TCG" (giveaway OR raffle) when:365d'],
+  ["Pokémon Center lotteries", '"Pokemon Center" (TCG OR cards) (lottery OR raffle OR giveaway) when:365d'],
+  ["Local card shop contests", '"Pokemon TCG" (contest OR "enter to win" OR drawing) shop when:365d'],
+  ["Community card giveaways", '"Pokemon cards" (giveaway OR "give away" OR contest) (Instagram OR Facebook OR X OR Twitter) when:365d']
 ];
 
 const KEEP_DAYS = 45;
+const RAFFLE_KEEP_DAYS = 365;
 const MAX_POSTS = 120;
-const MAX_RAFFLES = 100;
+const MAX_RAFFLES = 250;
 const MAX_SUMMARY_LENGTH = 280;
 const STORE_PATTERNS = [
   ["Pokémon Center", /pok[eé]mon\s*center|pokemon\.com/i],
@@ -176,8 +187,10 @@ function extractEventDate(text, keywordPattern) {
   return date.toISOString();
 }
 
-function raffleStatus(title, summary) {
+function raffleStatus(title, summary, publishedDate) {
   const text = `${title || ""} ${summary || ""}`.toLowerCase();
+  const publishedAt = Date.parse(publishedDate || "");
+  const ageDays = Number.isFinite(publishedAt) ? (Date.now() - publishedAt) / 864e5 : 0;
   const closingDate = extractEventDate(text, "(?:closes?|ends?|ending|deadline|entries close|entry closes?|through|until|by)");
   const openingDate = extractEventDate(text, "(?:opens?|opening|starts?|begins?|registration opens?|entries open)");
   const now = Date.now();
@@ -194,10 +207,18 @@ function raffleStatus(title, summary) {
   if (/\b(coming soon|upcoming raffle|upcoming giveaway|will launch|will open|registration opens soon|entries open soon|starts soon|pre[- ]?registration)\b/.test(text)) {
     return { status: "Upcoming", statusDate: openingDate, statusNote: "The source describes a future entry window; confirm the opening date." };
   }
-  if (/\b(enter now|entries? (?:are )?open|raffle is open|giveaway is open|sweepstakes is open|now open|open now|enter here|enter to win now|giveaway is live|raffle is live)\b/.test(text)) {
+  const saysOpen = /\b(enter now|entries? (?:are )?open|raffle is open|giveaway is open|sweepstakes is open|now open|open now|enter here|enter to win now|giveaway is live|raffle is live|register now|registration is open)\b/.test(text);
+  const hasFutureClosingDate = closingDate && Date.parse(closingDate) > now;
+  if (saysOpen && ageDays > 45 && !hasFutureClosingDate) {
+    return { status: "Closed", statusDate: null, statusNote: "ARCHIVED LEAD: this announcement is more than 45 days old. Treat the entry window as likely closed unless the official page confirms otherwise." };
+  }
+  if (saysOpen) {
     return { status: "Open", statusDate: closingDate, statusNote: "The source indicates entries are currently open; confirm the deadline on the official page." };
   }
-  if (/\b(enter to win|raffle|giveaway|sweepstakes|drawing)\b/.test(text)) {
+  if (ageDays > 45 && !hasFutureClosingDate) {
+    return { status: "Closed", statusDate: null, statusNote: "ARCHIVED LEAD: this announcement is more than 45 days old. Its entry window has likely ended; verify the original source." };
+  }
+  if (/\b(enter to win|raffle|giveaway|sweepstakes|drawing|contest)\b/.test(text)) {
     return { status: "Verify", statusDate: closingDate || openingDate, statusNote: "Entry status was not clear in the headline or available snippet. Check the source before entering." };
   }
   return { status: "Verify", statusDate: null, statusNote: "Check the source for current entry status and rules." };
@@ -223,6 +244,13 @@ function isRaffleCandidate(post) {
   return /\b(raffle|giveaway|giveaways|give away|giving away|sweepstakes|enter to win|contest|drawing|lottery|prize draw|win (?:a|an|one|the))\b/i.test(text);
 }
 
+function isTcgRaffleCandidate(post) {
+  const text = `${post?.title || ""} ${post?.summary || ""} ${post?.text || ""} ${post?.source || ""}`;
+  return /\b(pokemon|pokémon)\b/i.test(text)
+    && /\b(tcg|trading cards?|pokemon cards?|booster boxes?|elite trainer boxes?|\betb\b|card shops?|promo cards?)\b/i.test(text)
+    && isRaffleCandidate(post);
+}
+
 function raffleIdentity(post) {
   return String(post?.url || "").trim().toLowerCase().split("?")[0].replace(/\/$/, "");
 }
@@ -239,13 +267,17 @@ const previousRaffles = loadPrevious("raffles.json");
 const collected = [];
 const raffleCollected = [];
 const failures = [];
+const newsDiagnostics = [];
+const raffleDiagnostics = [];
 for (const feedSpec of FEEDS) {
   try {
     const posts = await loadFeed(feedSpec);
     collected.push(...posts);
+    newsDiagnostics.push({ name: feedSpec[0], ok: true, results: posts.length });
     console.log(`${feedSpec[0]}: ${posts.length} headlines`);
   } catch (error) {
     failures.push(`${feedSpec[0]}: ${error.message}`);
+    newsDiagnostics.push({ name: feedSpec[0], ok: false, results: 0, error: error.message });
     console.error(`${feedSpec[0]} feed failed:`, error.message);
   }
 }
@@ -253,16 +285,17 @@ for (const feedSpec of RAFFLE_FEEDS) {
   try {
     const posts = await loadFeed(feedSpec);
     raffleCollected.push(...posts);
+    raffleDiagnostics.push({ name: feedSpec[0], ok: true, results: posts.length });
     console.log(`Raffles / ${feedSpec[0]}: ${posts.length} search results`);
   } catch (error) {
     failures.push(`Raffles / ${feedSpec[0]}: ${error.message}`);
+    raffleDiagnostics.push({ name: feedSpec[0], ok: false, results: 0, error: error.message });
     console.error(`Raffles / ${feedSpec[0]} feed failed:`, error.message);
   }
 }
 
 if (!collected.length && !raffleCollected.length) {
-  console.error("No headlines or raffle results fetched. Existing JSON feed files were left unchanged.");
-  process.exit(1);
+  console.error("No new headlines or raffle results were returned. Existing feed entries will be retained where they remain within their history windows.");
 }
 
 const cutoff = Date.now() - KEEP_DAYS * 864e5;
@@ -294,16 +327,25 @@ const posts = [...uniquePosts.values()].sort((a, b) => b.date.localeCompare(a.da
 
 // Raffle leads are collected into their own data file but shown inside the same Drop Finder feed. Ambiguous dates are marked Verify.
 const targetedRaffleUrls = new Set(raffleCollected.map(raffleIdentity).filter(Boolean));
-const raffleCandidates = [...raffleCollected, ...collected.filter(isRaffleCandidate), ...previousRaffles].filter(validRecent);
+const previousRaffleUrls = new Set(previousRaffles.map(raffleIdentity).filter(Boolean));
+const raffleCutoff = Date.now() - RAFFLE_KEEP_DAYS * 864e5;
+const validRaffleHistory = (post) => {
+  const timestamp = Date.parse(post?.date || "");
+  return post && post.title && Number.isFinite(timestamp) && timestamp >= raffleCutoff && timestamp <= Date.now() + 864e5;
+};
+const raffleCandidates = [...raffleCollected, ...collected.filter(isRaffleCandidate), ...previousRaffles].filter(validRaffleHistory);
 const uniqueRaffles = new Map();
 for (const post of raffleCandidates) {
   const title = clean(post.title);
   const summary = compactSummary(post.summary || post.text || "");
   const url = String(post.url || "").trim();
-  if (!targetedRaffleUrls.has(raffleIdentity(post)) && !isRaffleCandidate({ title, summary })) continue;
+  const identity = raffleIdentity(post);
+  const isTargetedResult = identity && targetedRaffleUrls.has(identity);
+  const isRetainedLead = identity && previousRaffleUrls.has(identity);
+  if (!isTargetedResult && !isRetainedLead && !isTcgRaffleCandidate({ ...post, title, summary })) continue;
   if (!/^https?:\/\//i.test(url)) continue;
   const key = url.toLowerCase().split("?")[0] || title.toLowerCase().replace(/[^a-z0-9]/g, "");
-  const status = raffleStatus(title, summary);
+  const status = raffleStatus(title, summary, post.date);
   const normalized = {
     date: new Date(post.date).toISOString(),
     title,
@@ -325,6 +367,34 @@ const raffles = [...uniqueRaffles.values()].sort((a, b) => {
 
 const postsOutput = `${JSON.stringify(posts, null, 1)}\n`;
 const rafflesOutput = `${JSON.stringify(raffles, null, 1)}\n`;
-if (postsOutput !== previousPostsRaw) writeFileSync("posts.json", postsOutput);
-if (rafflesOutput !== previousRafflesRaw) writeFileSync("raffles.json", rafflesOutput);
-console.log(`Saved ${posts.length} headlines and ${raffles.length} raffles/giveaways${failures.length ? `; ${failures.length} source group(s) failed` : ""}.`);
+const newsSucceeded = newsDiagnostics.filter((source) => source.ok).length;
+const raffleSucceeded = raffleDiagnostics.filter((source) => source.ok).length;
+const feedStatus = {
+  schemaVersion: 1,
+  state: failures.length === 0 ? "ok" : (newsSucceeded + raffleSucceeded > 0 ? "partial" : "error"),
+  news: {
+    sourceCount: newsDiagnostics.length,
+    sourcesResponded: newsSucceeded,
+    searchResults: collected.length,
+    sources: newsDiagnostics
+  },
+  raffles: {
+    sourceCount: raffleDiagnostics.length,
+    sourcesResponded: raffleSucceeded,
+    searchResults: raffleCollected.length,
+    uniqueLeads: uniqueRaffles.size,
+    savedLeads: raffles.length,
+    historyDays: RAFFLE_KEEP_DAYS,
+    sources: raffleDiagnostics
+  },
+  failures
+};
+const feedStatusOutput = `${JSON.stringify(feedStatus, null, 1)}\n`;
+if (postsOutput !== previousPostsRaw && (collected.length || !previousPosts.length)) writeFileSync("posts.json", postsOutput);
+if (rafflesOutput !== previousRafflesRaw && (raffleSucceeded > 0 || newsSucceeded > 0 || !previousRaffles.length)) writeFileSync("raffles.json", rafflesOutput);
+let oldFeedStatus = "";
+try { oldFeedStatus = readFileSync("feed-status.json", "utf8"); } catch {}
+if (feedStatusOutput !== oldFeedStatus) writeFileSync("feed-status.json", feedStatusOutput);
+console.log(`Saved ${posts.length} headlines and ${raffles.length} raffles/giveaways.`);
+console.log(`Raffle search health: ${raffleSucceeded}/${raffleDiagnostics.length} sources responded; ${raffleCollected.length} raw results; ${raffles.length} saved leads.`);
+if (failures.length) console.log(`${failures.length} source request(s) failed; see feed-status.json for details.`);

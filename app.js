@@ -31,7 +31,8 @@
     category: "All",
     query: "",
     retailer: "all",
-    raffleStatus: "All"
+    raffleStatus: "All",
+    diagnostics: null
   };
 
   const nav = $(".category-nav");
@@ -41,6 +42,9 @@
   const status = $("#feed-status");
   const resultCount = $("#result-count");
   const raffleStatusNav = $("#raffle-status-filter");
+  const filterMenuToggle = $("#filter-menu-toggle");
+  const filterControls = $("#filter-controls");
+  const diagnosticsContent = $("#feed-diagnostics-content");
 
   function makeElement(tag, className, text) {
     const node = document.createElement(tag);
@@ -288,9 +292,9 @@
       if (state.category === "Raffle") {
         empty.append(
           makeElement("strong", "", "NO RAFFLE / GIVEAWAY SIGNALS FOUND"),
-          makeElement("p", "", state.raffles.length || state.posts.some((post) => normalizedCategory(post) === "Raffle")
+          makeElement("p", "", raffleEntries().length
             ? "Try another status, store or search term. Some entries may be missed by public news coverage; check participating stores directly."
-            : "No raffle or giveaway headlines have been collected yet. The free radar checks several targeted public searches during scheduled updates; this does not mean stores have no active entries.")
+            : "No raffle leads are saved yet. Open VIEW FEED SOURCE STATUS to see whether searches returned zero results or a source request failed. A zero count does not prove that stores have no active entries.")
         );
       } else {
         empty.append(
@@ -308,6 +312,59 @@
   function setStatus(message, isError = false) {
     status.classList.toggle("error", isError);
     status.replaceChildren(makeElement("span", "status-pixel"), makeElement("span", "", message));
+  }
+
+  function renderDiagnostics() {
+    diagnosticsContent.replaceChildren();
+    const diagnostics = state.diagnostics;
+    if (!diagnostics) {
+      diagnosticsContent.textContent = "Feed diagnostics have not been published yet. Run Actions → Update feed to generate them.";
+      return;
+    }
+    if (diagnostics.state === "not-run") {
+      diagnosticsContent.textContent = "WAITING FOR FIRST SEARCH. Open GitHub → Actions → Update feed → Run workflow. The next successful run will report each search source here.";
+      return;
+    }
+
+    const raffle = diagnostics.raffles || {};
+    const news = diagnostics.news || {};
+    const summary = makeElement("p", "diagnostics-summary",
+      `RAFFLE SEARCHES: ${raffle.sourcesResponded || 0}/${raffle.sourceCount || 0} SOURCES REACHED · ${raffle.searchResults || 0} RAW RESULTS · ${raffle.savedLeads || 0} SAVED LEADS · ${raffle.historyDays || 365} DAYS OF HISTORY`);
+    diagnosticsContent.append(summary);
+
+    const newsSummary = makeElement("p", "diagnostics-summary",
+      `NEWS SEARCHES: ${news.sourcesResponded || 0}/${news.sourceCount || 0} SOURCES REACHED · ${news.searchResults || 0} RAW RESULTS`);
+    diagnosticsContent.append(newsSummary);
+
+    const sourceList = makeElement("ul", "diagnostics-list");
+    for (const source of (raffle.sources || [])) {
+      const line = makeElement("li", source.ok ? "source-ok" : "source-failed",
+        `${source.ok ? "OK" : "FAILED"} // ${source.name}: ${source.results || 0} RESULTS${source.error ? ` // ${source.error}` : ""}`);
+      sourceList.append(line);
+    }
+    diagnosticsContent.append(sourceList);
+
+    if (Array.isArray(diagnostics.failures) && diagnostics.failures.length) {
+      diagnosticsContent.append(makeElement("p", "diagnostics-errors", `SOURCE ERRORS: ${diagnostics.failures.join(" | ")}`));
+    }
+  }
+
+  function updateRadarStatus() {
+    const raffleCount = raffleEntries().length;
+    const diagnostics = state.diagnostics;
+    if (!diagnostics) {
+      setStatus(`RADAR // ${state.posts.length} NEWS ALERTS + ${raffleCount} RAFFLE LEADS // SOURCE CHECK DETAILS NOT YET AVAILABLE`);
+      return;
+    }
+    if (diagnostics.state === "not-run") {
+      setStatus(`RADAR // ${state.posts.length} NEWS ALERTS + ${raffleCount} RAFFLE LEADS // WAITING FOR FIRST SOURCE SEARCH`);
+      return;
+    }
+    const raffle = diagnostics.raffles || {};
+    const sourceHealth = `${raffle.sourcesResponded || 0}/${raffle.sourceCount || 0} RAFFLE SEARCHES REACHED`;
+    const hitText = `${raffle.searchResults || 0} SEARCH HITS`;
+    setStatus(`RADAR // ${state.posts.length} NEWS ALERTS + ${raffleCount} RAFFLE LEADS // ${sourceHealth} · ${hitText}`,
+      diagnostics.state === "error");
   }
 
   function sortNewestFirst(posts) {
@@ -345,7 +402,7 @@
       state.posts = sortNewestFirst(posts.filter((post) => post && post.title && post.date));
       renderRetailerOptions();
       renderFeed();
-      setStatus(`RADAR UPDATED // ${state.posts.length} NEWS ALERTS + ${state.raffles.length} RAFFLE LEADS`);
+      updateRadarStatus();
     } catch (error) {
       console.error("PokeDrop feed error:", error);
       setStatus("COULD NOT LOAD ALERTS // REFRESH OR CHECK THE GITHUB PAGES DEPLOYMENT", true);
@@ -370,7 +427,7 @@
         .sort((a, b) => statusRank(a.status) - statusRank(b.status) || (Date.parse(b.date) || 0) - (Date.parse(a.date) || 0));
       renderRetailerOptions();
       renderFeed();
-      setStatus(`RADAR UPDATED // ${state.posts.length} NEWS ALERTS + ${state.raffles.length} RAFFLE LEADS`);
+      updateRadarStatus();
     } catch (error) {
       console.error("PokeDrop raffle feed error:", error);
       setStatus("RAFFLE DATA UNAVAILABLE // CHECK raffles.json DEPLOYMENT", true);
@@ -378,7 +435,33 @@
     }
   }
 
+  async function loadDiagnostics() {
+    try {
+      const response = await fetch("feed-status.json", { cache: "no-store" });
+      if (!response.ok) throw new Error(`Diagnostics request failed (${response.status})`);
+      const diagnostics = await response.json();
+      if (!diagnostics || typeof diagnostics !== "object") throw new Error("Diagnostics data is invalid");
+      state.diagnostics = diagnostics;
+      renderDiagnostics();
+      updateRadarStatus();
+    } catch (error) {
+      console.warn("PokeDrop feed diagnostics unavailable:", error);
+      state.diagnostics = null;
+      renderDiagnostics();
+      updateRadarStatus();
+    }
+  }
+
+  filterMenuToggle.addEventListener("click", () => {
+    const willExpand = filterControls.hidden;
+    filterControls.hidden = !willExpand;
+    filterMenuToggle.setAttribute("aria-expanded", String(willExpand));
+    filterMenuToggle.textContent = willExpand ? "FILTER MENU" : "SHOW FILTERS";
+  });
+
   renderCategories();
+  renderDiagnostics();
   loadFeed();
   loadRaffles();
+  loadDiagnostics();
 })();

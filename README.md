@@ -13,9 +13,11 @@ PokeDrop is a free, Pokémon-inspired 8-bit community radar for Pokémon TCG res
 ## Free data collection
 
 - `.github/workflows/update.yml` runs every 30 minutes and can be started manually from GitHub Actions.
-- `scripts/update.mjs` collects public headlines from Google News RSS searches, removes duplicates and keeps up to 45 days of coverage.
-- The collector also uses several targeted searches for TCG raffles, store giveaways, booster-box prizes, Pokémon Center lotteries, local card shops and community contests. Search results from these targeted queries are retained even when the short RSS headline/snippet does not repeat the search term.
-- Raffle status is inferred from article headlines/snippets. Clear closed or opening/closing date wording is used when available; ambiguous entries are marked **Verify** rather than being guessed as open.
+- `scripts/update.mjs` collects public headlines from Google News RSS searches, removes duplicates and keeps up to 45 days of regular news coverage.
+- Raffle searches cover TCG giveaways, card raffles, booster boxes, Elite Trainer Boxes, sweepstakes, local card shops, and targeted searches for Target, Walmart, GameStop, Best Buy, Costco and Pokémon Center.
+- Raffle history is retained for up to **365 days**, separately from the regular news retention window. Announcements older than 45 days are moved to **Closed** as archived leads unless the source gives a more specific date/status; the card explains that this is an age-based inference.
+- `feed-status.json` records how many searches responded, how many raw results each returned, how many leads were saved, and which requests failed. Open **VIEW FEED SOURCE STATUS** below the result counter to diagnose a zero count.
+- Raffle status is inferred from article headlines/snippets, not verified directly by retailers. Ambiguous fresh entries are marked **Verify** rather than being guessed as open.
 
 **Important:** this is a free public-news radar, not a live retailer inventory checker or official raffle-registration integration. Search coverage can miss active store-run giveaways and can surface old or incomplete information. The raffle status is not confirmed by the retailer. Open the source and check the official entry page for current dates, rules, eligibility and availability.
 
@@ -33,6 +35,8 @@ Upload one complete project ZIP at a time. Do not put the ZIP in the repository 
 2. In GitHub, open **Settings → Pages** and make sure Pages is configured to deploy from the branch containing these files (usually the root of `main`).
 3. Open **Settings → Actions → General → Workflow permissions** and select **Read and write permissions** so the updater can commit `posts.json` and `raffles.json`.
 4. Open **Actions → Update feed → Run workflow** to refresh headlines and giveaway leads immediately. Scheduled runs follow every 30 minutes.
+
+Because the ZIP importer protects workflow files, make this one-time change directly in `.github/workflows/update.yml` after the first upload: use `actions/checkout@v5` instead of `@v4`, and change `git add posts.json raffles.json` to `git add posts.json raffles.json feed-status.json`. This lets scheduled runs publish the new on-page source diagnostics.
 
 ## Customize search sources
 

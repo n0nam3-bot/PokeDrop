@@ -55,33 +55,35 @@
             <p class="section-kicker">01 / SELECT YOUR MISSION</p>
             <h2 id="filter-title">DROP FINDER</h2>
           </div>
-          <span class="pixel-label">FILTER MENU</span>
+          <button type="button" class="pixel-label filter-menu-toggle" id="filter-menu-toggle" aria-expanded="true" aria-controls="filter-controls">FILTER MENU</button>
         </div>
 
-        <nav class="category-nav" aria-label="Filter alerts by category"></nav>
+        <div class="filter-controls" id="filter-controls">
+          <nav class="category-nav" aria-label="Filter alerts by category"></nav>
 
-        <nav class="raffle-status-nav" id="raffle-status-filter" aria-label="Filter raffles and giveaways by entry status" hidden>
-          <span class="control-label">ENTRY STATUS</span>
-          <button type="button" data-status="All" aria-pressed="true">ALL STATUSES</button>
-          <button type="button" data-status="Upcoming" aria-pressed="false">UPCOMING</button>
-          <button type="button" data-status="Open" aria-pressed="false">OPEN</button>
-          <button type="button" data-status="Closed" aria-pressed="false">CLOSED</button>
-          <button type="button" data-status="Verify" aria-pressed="false">VERIFY</button>
-        </nav>
+          <nav class="raffle-status-nav" id="raffle-status-filter" aria-label="Filter raffles and giveaways by entry status" hidden>
+            <span class="control-label">ENTRY STATUS</span>
+            <button type="button" data-status="All" aria-pressed="true">ALL STATUSES</button>
+            <button type="button" data-status="Upcoming" aria-pressed="false">UPCOMING</button>
+            <button type="button" data-status="Open" aria-pressed="false">OPEN</button>
+            <button type="button" data-status="Closed" aria-pressed="false">CLOSED</button>
+            <button type="button" data-status="Verify" aria-pressed="false">VERIFY</button>
+          </nav>
 
-        <div class="search-controls">
-          <label class="search-wrap">
-            <span class="control-label">SEARCH THE FEED</span>
-            <input type="search" id="search" placeholder="SEARCH SETS, PRODUCTS, RETAILERS..." aria-label="Search alerts">
-          </label>
-          <label class="retailer-wrap">
-            <span class="control-label">RETAILER</span>
-            <select id="retailer-filter" aria-label="Filter by retailer">
-              <option value="all">ALL RETAILERS</option>
-            </select>
-          </label>
+          <div class="search-controls">
+            <label class="search-wrap">
+              <span class="control-label">SEARCH THE FEED</span>
+              <input type="search" id="search" placeholder="SEARCH SETS, PRODUCTS, RETAILERS..." aria-label="Search alerts">
+            </label>
+            <label class="retailer-wrap">
+              <span class="control-label">RETAILER</span>
+              <select id="retailer-filter" aria-label="Filter by retailer">
+                <option value="all">ALL RETAILERS</option>
+              </select>
+            </label>
+          </div>
+          <p class="filter-note">TIP: Search a set name, product, store or promo to narrow the radar.</p>
         </div>
-        <p class="filter-note">TIP: Search a set name, product, store or promo to narrow the radar.</p>
       </section>
 
       <section class="feed-section" aria-labelledby="feed-title">
@@ -97,6 +99,10 @@
           <span class="status-pixel" aria-hidden="true"></span>
           <span>CONNECTING TO THE DROP RADAR...</span>
         </div>
+        <details class="feed-diagnostics" id="feed-diagnostics">
+          <summary>VIEW FEED SOURCE STATUS</summary>
+          <div id="feed-diagnostics-content">Waiting for the first feed update.</div>
+        </details>
         <section id="feed" class="feed-grid" aria-label="Latest Pokémon TCG alerts" aria-live="polite"></section>
       </section>
 
