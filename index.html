@@ -7,7 +7,7 @@
   <meta name="description" content="A free Pokémon TCG radar for restocks, deals, rare drops, raffles and giveaways.">
   <title>PokeDrop - Pokémon TCG Drop Finder</title>
   <link rel="preload" href="fonts/PKMN-RBYGSC.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=raffle-inline-fix-2">
 </head>
 <body>
   <div class="page-shell">
@@ -59,16 +59,20 @@
         </div>
 
         <div class="filter-controls" id="filter-controls">
-          <nav class="category-nav" aria-label="Filter alerts by category">
-            <div class="raffle-status-nav" id="raffle-status-filter" role="group" aria-label="Filter raffles and giveaways by entry status" hidden>
-              <span class="control-label">ENTRY STATUS</span>
-              <button type="button" data-status="All" aria-pressed="true">ALL STATUSES</button>
-              <button type="button" data-status="Upcoming" aria-pressed="false">UPCOMING</button>
-              <button type="button" data-status="Open" aria-pressed="false">OPEN</button>
-              <button type="button" data-status="Closed" aria-pressed="false">CLOSED</button>
-              <button type="button" data-status="Verify" aria-pressed="false">VERIFY</button>
+          <div class="category-filter-row">
+            <nav class="category-nav" aria-label="Filter alerts by category"></nav>
+            <div class="raffle-filter-group">
+              <button type="button" class="category-button" id="raffle-category-button" data-value="Raffle" aria-pressed="false">RAFFLES + GIVEAWAYS</button>
+              <div class="raffle-status-nav" id="raffle-status-filter" role="group" aria-label="Filter raffles and giveaways by entry status" hidden>
+                <span class="control-label">ENTRY STATUS</span>
+                <button type="button" data-status="All" aria-pressed="true">ALL STATUSES</button>
+                <button type="button" data-status="Upcoming" aria-pressed="false">UPCOMING</button>
+                <button type="button" data-status="Open" aria-pressed="false">OPEN</button>
+                <button type="button" data-status="Closed" aria-pressed="false">CLOSED</button>
+                <button type="button" data-status="Verify" aria-pressed="false">VERIFY</button>
+              </div>
             </div>
-          </nav>
+          </div>
 
           <div class="search-controls">
             <label class="search-wrap">
@@ -123,6 +127,6 @@
     </footer>
   </div>
 
-  <script src="app.js" defer></script>
+  <script src="app.js?v=raffle-inline-fix-2" defer></script>
 </body>
 </html>

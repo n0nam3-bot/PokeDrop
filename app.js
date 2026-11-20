@@ -12,6 +12,8 @@
     { label: "RAFFLES + GIVEAWAYS", value: "Raffle" }
   ];
 
+  // Keep the full retailer directory visible even when a store has no current alert.
+  // Dynamic stores found in the feed are appended below this known list.
   const retailerNames = [
     ["Pokémon Center", /pok[eé]mon\s*center/i],
     ["Target", /\btarget\b/i],
@@ -21,7 +23,29 @@
     ["Best Buy", /best\s*buy/i],
     ["Amazon", /\bamazon\b/i],
     ["Sam's Club", /sam'?s\s*club/i],
+    ["Barnes & Noble", /barnes\s*(?:&|and)\s*noble/i],
+    ["Macy's", /macy'?s/i],
+    ["Kohl's", /kohl'?s/i],
+    ["Meijer", /\bmeijer\b/i],
+    ["Kroger", /\bkroger\b/i],
+    ["H-E-B", /\bh[- ]?e[- ]?b\b/i],
+    ["Fred Meyer", /fred\s*meyer/i],
+    ["BJ's Wholesale Club", /bj'?s\s*wholesale/i],
+    ["Five Below", /five\s*below/i],
+    ["Hot Topic", /hot\s*topic/i],
+    ["BoxLunch", /box\s*lunch/i],
+    ["FYE", /\bfye\b/i],
+    ["Fanatics", /\bfanatics\b/i],
     ["TCGplayer", /tcgplayer/i],
+    ["eBay", /\bebay\b/i],
+    ["Cardmarket", /cardmarket/i],
+    ["Dave & Adam's Card World", /dave\s*(?:&|and)\s*adam'?s/i],
+    ["Steel City Collectibles", /steel\s*city\s*collectibles/i],
+    ["Troll and Toad", /troll\s*(?:and|&)\s*toad/i],
+    ["Safari Zone", /safari\s*zone/i],
+    ["Forge and Fire Gaming", /forge\s*(?:and|&)\s*fire/i],
+    ["Game Nerdz", /game\s*nerdz/i],
+    ["Smoke & Mirrors Hobby", /smoke\s*(?:&|and)\s*mirrors/i],
     ["Local Card Shop", /card\s*shop|game\s*store|\bLGS\b/i]
   ];
 
@@ -42,6 +66,7 @@
   const status = $("#feed-status");
   const resultCount = $("#result-count");
   const raffleStatusNav = $("#raffle-status-filter");
+  const raffleCategoryButton = $("#raffle-category-button");
   const filterMenuToggle = $("#filter-menu-toggle");
   const filterControls = $("#filter-controls");
   const diagnosticsContent = $("#feed-diagnostics-content");
@@ -168,7 +193,7 @@
 
   function renderCategories() {
     nav.replaceChildren();
-    for (const option of categoryOptions) {
+    for (const option of categoryOptions.filter((item) => item.value !== "Raffle")) {
       const button = makeElement("button", "category-button", option.label);
       button.type = "button";
       button.dataset.value = option.value;
@@ -180,17 +205,23 @@
       });
       nav.append(button);
     }
-    // Keep the conditional status controls immediately beside the category button row.
-    nav.append(raffleStatusNav);
+    raffleCategoryButton.setAttribute("aria-pressed", String(state.category === "Raffle"));
     raffleStatusNav.hidden = state.category !== "Raffle";
     raffleStatusNav.setAttribute("aria-hidden", String(state.category !== "Raffle"));
     renderRaffleStatusButtons();
   }
 
+  raffleCategoryButton.addEventListener("click", () => {
+    state.category = "Raffle";
+    renderCategories();
+    renderFeed();
+  });
+
   function renderRetailerOptions() {
     const selected = state.retailer;
-    const values = [...new Set(getAllItems().map(findRetailer).filter((name) => name !== "Other"))]
-      .sort((a, b) => a.localeCompare(b));
+    const known = retailerNames.map(([name]) => name);
+    const detected = getAllItems().map(findRetailer).filter((name) => name !== "Other");
+    const values = [...new Set([...known, ...detected])];
     retailerFilter.replaceChildren(new Option("ALL RETAILERS / STORES", "all"));
     for (const value of values) retailerFilter.append(new Option(value.toUpperCase(), value));
     if (selected !== "all" && values.includes(selected)) retailerFilter.value = selected;
