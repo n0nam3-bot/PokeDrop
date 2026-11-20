@@ -1,0 +1,20 @@
+{
+ "schemaVersion": 1,
+ "state": "not-run",
+ "news": {
+  "sourceCount": 0,
+  "sourcesResponded": 0,
+  "searchResults": 0,
+  "sources": []
+ },
+ "raffles": {
+  "sourceCount": 0,
+  "sourcesResponded": 0,
+  "searchResults": 0,
+  "uniqueLeads": 0,
+  "savedLeads": 0,
+  "historyDays": 365,
+  "sources": []
+ },
+ "failures": []
+}
