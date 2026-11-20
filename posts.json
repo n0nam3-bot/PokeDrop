@@ -1,0 +1,30 @@
+[
+  {
+    "date": "2026-11-19",
+    "cat": "Restock",
+    "title": "SAMPLE: ELITE TRAINER BOXES BACK IN STOCK",
+    "text": "Edit posts.json to replace these sample posts with your own alerts. Keep each one short and punchy.",
+    "url": "https://example.com"
+  },
+  {
+    "date": "2026-11-18",
+    "cat": "Release",
+    "title": "SAMPLE: NEW SET RELEASE DATE CONFIRMED",
+    "text": "Each post needs a date, a category, a title, a short text and an optional url.",
+    "url": "https://example.com"
+  },
+  {
+    "date": "2026-11-17",
+    "cat": "Promo",
+    "title": "SAMPLE: STORE PROMO CARDS ANNOUNCED",
+    "text": "Categories are Restock, Release, Promo and Collab. Add more in app.js if you want.",
+    "url": ""
+  },
+  {
+    "date": "2026-11-16",
+    "cat": "Collab",
+    "title": "SAMPLE: NEW POKéMON COLLAB COMING SOON",
+    "text": "Use plain letters and the characters ! ? $ : / . , in titles. The font has no % + # or arrow glyphs.",
+    "url": "https://example.com"
+  }
+]
