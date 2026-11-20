@@ -230,6 +230,155 @@ function raffleStore(post) {
   return match ? match[0] : "Other";
 }
 
+function isGoogleHost(hostname) {
+  return /(^|\.)google\.[a-z.]+$/i.test(String(hostname || "")) || /(^|\.)news\.google\.com$/i.test(String(hostname || ""));
+}
+
+function resolveHttpUrl(value, baseUrl) {
+  try {
+    let url = new URL(decodeEntities(String(value || "").trim()), baseUrl);
+    if (/(^|\.)google\.[a-z.]+$/i.test(url.hostname) && url.pathname === "/url") {
+      const wrapped = url.searchParams.get("q") || url.searchParams.get("url") || url.searchParams.get("u");
+      if (wrapped) url = new URL(wrapped);
+    }
+    return /^https?:$/.test(url.protocol) ? url.href : "";
+  } catch {
+    return "";
+  }
+}
+
+function htmlAttribute(attributes, name) {
+  const escaped = name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const match = String(attributes || "").match(new RegExp(`\\b${escaped}\\s*=\\s*(?:"([^"]*)"|'([^']*)'|([^\\s>]+))`, "i"));
+  return match ? decodeEntities(match[1] ?? match[2] ?? match[3] ?? "") : "";
+}
+
+function canonicalPageUrl(html, fallbackUrl) {
+  const linkTags = [...String(html || "").matchAll(/<link\b([^>]*)>/gi)];
+  for (const [, attributes] of linkTags) {
+    if (/\bcanonical\b/i.test(htmlAttribute(attributes, "rel"))) {
+      const candidate = resolveHttpUrl(htmlAttribute(attributes, "href"), fallbackUrl);
+      if (candidate) return candidate;
+    }
+  }
+  const metaTags = [...String(html || "").matchAll(/<meta\b([^>]*)>/gi)];
+  for (const [, attributes] of metaTags) {
+    const property = htmlAttribute(attributes, "property") || htmlAttribute(attributes, "name");
+    if (/^(og:url|twitter:url)$/i.test(property)) {
+      const candidate = resolveHttpUrl(htmlAttribute(attributes, "content"), fallbackUrl);
+      if (candidate) return candidate;
+    }
+  }
+  return fallbackUrl;
+}
+
+function isEntryPlatform(hostname) {
+  return /(^|\.)(gleam\.io|sweepwidget\.com|rafflecopter\.com|raffall\.com|viral-sweep\.com|viralsweep\.com|sweeppea\.com|easypromosapp\.com|woobox\.com|shortstack\.com|kingsumo\.com|typeform\.com|jotform\.com)$/i.test(String(hostname || ""));
+}
+
+function looksLikeEntryPage(url, html) {
+  try {
+    const parsed = new URL(url);
+    if (isEntryPlatform(parsed.hostname)) return true;
+    const forms = [...String(html || "").matchAll(/<form\b([^>]*)>([\s\S]*?)<\/form>/gi)];
+    return forms.some(([, attributes, body]) => {
+      const formEvidence = `${htmlAttribute(attributes, "action")} ${body}`;
+      const mentionsGiveaway = /\b(raffle|giveaway|sweepstakes|contest|lottery|enter to win|entry)\b/i.test(formEvidence);
+      const hasSubmitAction = /\b(enter|submit|register|join|participate|send entry)\b|type\s*=\s*["']?submit/i.test(formEvidence);
+      return mentionsGiveaway && hasSubmitAction;
+    });
+  } catch {
+    return false;
+  }
+}
+
+function findEntryCandidates(html, articleUrl) {
+  const candidates = [];
+  const articleHost = (() => {
+    try { return new URL(articleUrl).hostname.toLowerCase(); } catch { return ""; }
+  })();
+  const source = String(html || "");
+  const anchorPattern = /<a\b([^>]*)>([\s\S]*?)<\/a>/gi;
+  for (const match of source.matchAll(anchorPattern)) {
+    const attributes = match[1];
+    const rawHref = htmlAttribute(attributes, "href") || htmlAttribute(attributes, "data-href");
+    const href = resolveHttpUrl(rawHref, articleUrl);
+    if (!href) continue;
+    let parsed;
+    try { parsed = new URL(href); } catch { continue; }
+    if (isGoogleHost(parsed.hostname) || /^(?:mailto|tel):/i.test(href)) continue;
+
+    const anchorText = stripMarkup(match[2]).toLowerCase();
+    const start = Math.max(0, match.index - 360);
+    const end = Math.min(source.length, match.index + match[0].length + 360);
+    const context = stripMarkup(source.slice(start, end)).toLowerCase();
+    const urlText = `${parsed.pathname} ${parsed.search}`.toLowerCase();
+    const hasEntryAction = /\b(enter(?: now| here| to win)?|submit (?:your )?entr(?:y|ies)|register(?: now)?|join (?:the )?(?:giveaway|raffle|contest)|participate|fill out (?:the )?(?:form|entry)|entry form|click here to enter)\b/.test(anchorText)
+      || (/\bclick here\b/.test(anchorText) && /\b(raffle|giveaway|sweepstakes|contest|pokemon|pokémon|tcg)\b/.test(context));
+    const hasContestUrl = /raffle|giveaway|sweepstakes|contest|lottery|(?:^|\/)entry(?:\/|$)/i.test(urlText);
+    const contestContext = /\b(raffle|giveaway|sweepstakes|contest|lottery|pokemon|pokémon|tcg)\b/.test(context);
+    const platform = isEntryPlatform(parsed.hostname);
+    const isExternal = !articleHost || parsed.hostname.toLowerCase() !== articleHost;
+    const isRulesOnly = /\b(official rules|rules and regulations|terms and conditions)\b/.test(anchorText) && !hasEntryAction;
+    let score = (hasEntryAction ? 10 : 0) + (hasContestUrl ? 5 : 0) + (contestContext ? 2 : 0) + (platform ? 5 : 0) + (isExternal ? 1 : 0);
+    if (isRulesOnly) score -= 7;
+    if (/\/(?:news|article|articles|blog|press-release)\//i.test(parsed.pathname) && !platform) score -= 3;
+
+    const sufficientlySpecific = (hasEntryAction && contestContext) || (hasContestUrl && (platform || contestContext)) || (platform && contestContext);
+    if (sufficientlySpecific && score >= 11) {
+      candidates.push({ url: parsed.href, score, label: anchorText.slice(0, 100) });
+    }
+  }
+  candidates.sort((a, b) => b.score - a.score);
+  return candidates;
+}
+
+async function resolveRaffleEntryLink(sourceUrl) {
+  try {
+    const response = await fetch(sourceUrl, {
+      redirect: "follow",
+      headers: {
+        "user-agent": "Mozilla/5.0 (compatible; PokeDropCommunityRadar/1.0)",
+        accept: "text/html,application/xhtml+xml"
+      },
+      signal: AbortSignal.timeout(10000)
+    });
+    if (!response.ok) return { status: "error", sourceUrl, entryUrl: "", error: `Article page HTTP ${response.status}` };
+
+    const html = (await response.text()).slice(0, 2500000);
+    const finalUrl = response.url || sourceUrl;
+    const canonicalUrl = canonicalPageUrl(html, finalUrl);
+    const articleUrl = !isGoogleHost(new URL(finalUrl).hostname)
+      ? canonicalUrl
+      : (!isGoogleHost(new URL(canonicalUrl).hostname) ? canonicalUrl : sourceUrl);
+
+    if (looksLikeEntryPage(finalUrl, html)) {
+      return { status: "found", sourceUrl: articleUrl, entryUrl: finalUrl, entryLinkLabel: "Direct giveaway page" };
+    }
+    if (looksLikeEntryPage(canonicalUrl, html)) {
+      return { status: "found", sourceUrl: articleUrl, entryUrl: canonicalUrl, entryLinkLabel: "Direct giveaway page" };
+    }
+
+    const entry = findEntryCandidates(html, articleUrl)[0];
+    return entry
+      ? { status: "found", sourceUrl: articleUrl, entryUrl: entry.url, entryLinkLabel: entry.label || "Entry link" }
+      : { status: "not-found", sourceUrl: articleUrl, entryUrl: "", error: "No direct entry link was identified on the source page." };
+  } catch (error) {
+    return { status: "error", sourceUrl, entryUrl: "", error: error?.message || String(error) };
+  }
+}
+
+async function mapWithConcurrency(items, limit, worker) {
+  let nextIndex = 0;
+  const workers = Array.from({ length: Math.min(limit, items.length) }, async () => {
+    while (nextIndex < items.length) {
+      const index = nextIndex++;
+      await worker(items[index], index);
+    }
+  });
+  await Promise.all(workers);
+}
+
 function loadPrevious(file) {
   try {
     const parsed = JSON.parse(readFileSync(file, "utf8"));
@@ -338,8 +487,8 @@ const uniqueRaffles = new Map();
 for (const post of raffleCandidates) {
   const title = clean(post.title);
   const summary = compactSummary(post.summary || post.text || "");
-  const url = String(post.url || "").trim();
-  const identity = raffleIdentity(post);
+  const url = String(post.url || post.sourceUrl || "").trim();
+  const identity = raffleIdentity({ ...post, url });
   const isTargetedResult = identity && targetedRaffleUrls.has(identity);
   const isRetainedLead = identity && previousRaffleUrls.has(identity);
   if (!isTargetedResult && !isRetainedLead && !isTcgRaffleCandidate({ ...post, title, summary })) continue;
@@ -355,15 +504,57 @@ for (const post of raffleCandidates) {
     status: status.status,
     statusDate: status.statusDate,
     statusNote: status.statusNote,
-    url
+    url,
+    sourceUrl: String(post.sourceUrl || post.resolvedArticleUrl || post.url || url).trim(),
+    entryUrl: String(post.entryUrl || "").trim(),
+    entryLinkLabel: String(post.entryLinkLabel || "").trim(),
+    entryLookupAt: String(post.entryLookupAt || "").trim(),
+    entryLookupStatus: String(post.entryLookupStatus || "").trim()
   };
   const existing = uniqueRaffles.get(key);
-  if (!existing || Date.parse(normalized.date) > Date.parse(existing.date)) uniqueRaffles.set(key, normalized);
+  if (!existing || Date.parse(normalized.date) > Date.parse(existing.date)) {
+    normalized.entryUrl ||= existing?.entryUrl || "";
+    normalized.entryLinkLabel ||= existing?.entryLinkLabel || "";
+    normalized.sourceUrl ||= existing?.sourceUrl || existing?.url || "";
+    normalized.entryLookupAt ||= existing?.entryLookupAt || "";
+    normalized.entryLookupStatus ||= existing?.entryLookupStatus || "";
+    uniqueRaffles.set(key, normalized);
+  } else if (!existing.entryUrl && normalized.entryUrl) {
+    existing.entryUrl = normalized.entryUrl;
+    existing.entryLinkLabel = normalized.entryLinkLabel;
+  }
 }
-const raffles = [...uniqueRaffles.values()].sort((a, b) => {
+
+const raffleList = [...uniqueRaffles.values()].sort((a, b) => {
   const rank = { Open: 0, Upcoming: 1, Verify: 2, Closed: 3 };
   return (rank[a.status] ?? 4) - (rank[b.status] ?? 4) || b.date.localeCompare(a.date);
 }).slice(0, MAX_RAFFLES);
+
+// Google News links are discovery links, not entry pages. Resolve the publisher page and
+// look for a clearly signposted entry form/platform. Unresolved leads keep the article
+// only as a secondary source link and are never mislabeled as direct entry links.
+const nowForLookup = Date.now();
+const lookupCandidates = raffleList.filter((raffle) => {
+  if (raffle.entryUrl || !raffle.url) return false;
+  const lastLookup = Date.parse(raffle.entryLookupAt || "");
+  if (!Number.isFinite(lastLookup)) return true;
+  const retryAfter = raffle.entryLookupStatus === "error" ? 864e5 : 7 * 864e5;
+  return nowForLookup - lastLookup >= retryAfter;
+}).slice(0, 32);
+let entryLookupErrors = 0;
+await mapWithConcurrency(lookupCandidates, 4, async (raffle) => {
+  const resolved = await resolveRaffleEntryLink(raffle.sourceUrl || raffle.url);
+  raffle.sourceUrl = resolved.sourceUrl || raffle.sourceUrl || raffle.url;
+  raffle.entryLookupAt = new Date().toISOString();
+  raffle.entryLookupStatus = resolved.status;
+  if (resolved.entryUrl) {
+    raffle.entryUrl = resolved.entryUrl;
+    raffle.entryLinkLabel = resolved.entryLinkLabel || "Entry page";
+  }
+  if (resolved.status === "error") entryLookupErrors += 1;
+});
+
+const raffles = raffleList;
 
 const postsOutput = `${JSON.stringify(posts, null, 1)}\n`;
 const rafflesOutput = `${JSON.stringify(raffles, null, 1)}\n`;
@@ -384,6 +575,10 @@ const feedStatus = {
     searchResults: raffleCollected.length,
     uniqueLeads: uniqueRaffles.size,
     savedLeads: raffles.length,
+    directEntryLinksFound: raffles.filter((raffle) => raffle.entryUrl).length,
+    directEntryLinksMissing: raffles.filter((raffle) => !raffle.entryUrl).length,
+    entryLookupsThisRun: lookupCandidates.length,
+    entryLookupErrors,
     historyDays: RAFFLE_KEEP_DAYS,
     sources: raffleDiagnostics
   },

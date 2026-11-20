@@ -259,14 +259,36 @@
 
     card.append(meta, title, summary);
     if (isRaffle) {
-      const note = makeElement("p", "raffle-status-note", item.statusNote || "Check the original source for current entry status and rules.");
+      const noteText = item.entryUrl
+        ? (item.statusNote || "The entry page was identified from the source. Confirm eligibility and rules before entering.")
+        : `${item.statusNote || "Check the original source for current entry status and rules."} A direct entry page has not been identified yet.`;
+      const note = makeElement("p", "raffle-status-note", noteText);
       if (item.statusDate) note.append(makeElement("span", "raffle-date", ` DATE: ${formatCalendarDate(item.statusDate)}`));
       card.append(note);
     }
     card.append(source);
 
-    if (validHttpUrl(item.url)) {
-      const actionLabel = isRaffle ? "VIEW ENTRY DETAILS" : category === "Restock" ? "CHECK RESTOCK INFO" : category === "Deals" ? "VIEW DEAL DETAILS" : category === "Rare Drop" ? "CHECK RARE DROP" : category === "Promo" ? "VIEW PROMO INFO" : "VIEW RELEASE INFO";
+    if (isRaffle) {
+      const entryUrl = validHttpUrl(item.entryUrl) ? item.entryUrl : "";
+      const sourceUrl = validHttpUrl(item.sourceUrl) ? item.sourceUrl : (validHttpUrl(item.url) ? item.url : "");
+      if (entryUrl) {
+        const entryLink = makeElement("a", "post-action", "OPEN ENTRY PAGE");
+        entryLink.href = entryUrl;
+        entryLink.target = "_blank";
+        entryLink.rel = "noopener noreferrer sponsored";
+        card.append(entryLink);
+      } else {
+        card.append(makeElement("span", "post-action post-action-missing", "DIRECT ENTRY LINK NOT FOUND"));
+        if (sourceUrl) {
+          const sourceLink = makeElement("a", "post-action post-action-secondary", "READ SOURCE ANNOUNCEMENT");
+          sourceLink.href = sourceUrl;
+          sourceLink.target = "_blank";
+          sourceLink.rel = "noopener noreferrer";
+          card.append(sourceLink);
+        }
+      }
+    } else if (validHttpUrl(item.url)) {
+      const actionLabel = category === "Restock" ? "CHECK RESTOCK INFO" : category === "Deals" ? "VIEW DEAL DETAILS" : category === "Rare Drop" ? "CHECK RARE DROP" : category === "Promo" ? "VIEW PROMO INFO" : "VIEW RELEASE INFO";
       const link = makeElement("a", "post-action", actionLabel);
       link.href = item.url;
       link.target = "_blank";
@@ -364,6 +386,8 @@
     const summary = makeElement("p", "diagnostics-summary",
       `RAFFLE SEARCHES: ${raffle.sourcesResponded || 0}/${raffle.sourceCount || 0} SOURCES REACHED · ${raffle.searchResults || 0} RAW RESULTS · ${raffle.savedLeads || 0} SAVED LEADS · ${raffle.historyDays || 365} DAYS OF HISTORY`);
     diagnosticsContent.append(summary);
+    diagnosticsContent.append(makeElement("p", "diagnostics-summary",
+      `ENTRY LINKS: ${raffle.directEntryLinksFound || 0} DIRECT PAGES FOUND · ${raffle.directEntryLinksMissing || 0} NEED MANUAL REVIEW · ${raffle.entryLookupsThisRun || 0} PAGES CHECKED THIS RUN`));
 
     const newsSummary = makeElement("p", "diagnostics-summary",
       `NEWS SEARCHES: ${news.sourcesResponded || 0}/${news.sourceCount || 0} SOURCES REACHED · ${news.searchResults || 0} RAW RESULTS`);

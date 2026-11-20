@@ -166,6 +166,9 @@ select { cursor: pointer; }
 .post-action { display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 39px; margin-top: 13px; padding: 7px 10px; color: var(--white); background: var(--deep); border: 2px solid var(--ink); box-shadow: 3px 3px 0 #b8b39a; text-align: center; text-decoration: none; font-size: 9px; }
 .post-action::after { content: ""; width: 0; height: 0; border-top: 5px solid transparent; border-bottom: 5px solid transparent; border-left: 7px solid currentColor; }
 .post-action:hover { color: var(--ink); background: var(--gold); }
+.post-action-missing { color: var(--muted); background: transparent; border-style: dashed; box-shadow: none; cursor: default; }
+.post-action-missing::after { display: none; }
+.post-action-secondary { color: var(--ink); background: transparent; border-style: dashed; box-shadow: none; }
 .empty-state { grid-column: 1 / -1; padding: 35px 22px; background: var(--paper); border: 3px dashed var(--ink); text-align: center; }
 .empty-state strong { display: block; margin-bottom: 8px; font-size: 12px; }
 .empty-state p { margin: 0; color: var(--muted); font-size: 9px; }
