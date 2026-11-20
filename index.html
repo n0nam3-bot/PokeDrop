@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#173d2b">
-  <meta name="description" content="A free Pokémon TCG radar for restocks, deals, rare drops, raffles and giveaways.">
-  <title>PokeDrop - Pokémon TCG Drop Finder</title>
+  <meta name="description" content="A free Pokémon TCG drop radar for restocks, exclusive deals, rare drops, releases and promos.">
+  <title>PokeDrop - Pokémon TCG Drop Radar</title>
   <link rel="preload" href="fonts/PKMN-RBYGSC.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -29,9 +29,9 @@
         </svg>
 
         <div class="brand-copy">
-          <p class="kicker">THE FREE POKÉMON TCG DROP + RAFFLE RADAR</p>
+          <p class="kicker">THE FREE POKÉMON TCG DROP RADAR</p>
           <h1>POKéDROP<span class="title-star" aria-hidden="true">*</span></h1>
-          <p class="tagline">RESTOCKS. DEALS. RARE DROPS. RAFFLES.</p>
+          <p class="tagline">RESTOCKS. EXCLUSIVE DEALS. RARE DROPS.</p>
           <p class="intro">Your next chase starts here. Keep an eye on the latest Pokémon TCG news, retailer deals and special releases.</p>
         </div>
 
@@ -44,7 +44,7 @@
 
       <div class="hero-footer">
         <span><i class="mini-square" aria-hidden="true"></i> COMMUNITY DROP WATCH</span>
-        <span>HEADLINES + RAFFLE LEADS CHECKED EVERY 30 MIN</span>
+        <span>NEW HEADLINES CHECKED EVERY 30 MIN</span>
       </div>
     </header>
 
@@ -55,35 +55,24 @@
             <p class="section-kicker">01 / SELECT YOUR MISSION</p>
             <h2 id="filter-title">DROP FINDER</h2>
           </div>
-          <button type="button" class="pixel-label filter-menu-toggle" id="filter-menu-toggle" aria-expanded="true" aria-controls="filter-controls">FILTER MENU</button>
+          <span class="pixel-label">FILTER MENU</span>
         </div>
 
-        <div class="filter-controls" id="filter-controls">
-          <nav class="category-nav" aria-label="Filter alerts by category">
-            <div class="raffle-status-nav" id="raffle-status-filter" role="group" aria-label="Filter raffles and giveaways by entry status" hidden>
-              <span class="control-label">ENTRY STATUS</span>
-              <button type="button" data-status="All" aria-pressed="true">ALL STATUSES</button>
-              <button type="button" data-status="Upcoming" aria-pressed="false">UPCOMING</button>
-              <button type="button" data-status="Open" aria-pressed="false">OPEN</button>
-              <button type="button" data-status="Closed" aria-pressed="false">CLOSED</button>
-              <button type="button" data-status="Verify" aria-pressed="false">VERIFY</button>
-            </div>
-          </nav>
+        <nav class="category-nav" aria-label="Filter alerts by category"></nav>
 
-          <div class="search-controls">
-            <label class="search-wrap">
-              <span class="control-label">SEARCH THE FEED</span>
-              <input type="search" id="search" placeholder="SEARCH SETS, PRODUCTS, RETAILERS..." aria-label="Search alerts">
-            </label>
-            <label class="retailer-wrap">
-              <span class="control-label">RETAILER</span>
-              <select id="retailer-filter" aria-label="Filter by retailer">
-                <option value="all">ALL RETAILERS</option>
-              </select>
-            </label>
-          </div>
-          <p class="filter-note">TIP: Search a set name, product, store or promo to narrow the radar.</p>
+        <div class="search-controls">
+          <label class="search-wrap">
+            <span class="control-label">SEARCH THE FEED</span>
+            <input type="search" id="search" placeholder="SEARCH SETS, PRODUCTS, RETAILERS..." aria-label="Search alerts">
+          </label>
+          <label class="retailer-wrap">
+            <span class="control-label">RETAILER</span>
+            <select id="retailer-filter" aria-label="Filter by retailer">
+              <option value="all">ALL RETAILERS</option>
+            </select>
+          </label>
         </div>
+        <p class="filter-note">TIP: Search a set name, product, store or promo to narrow the radar.</p>
       </section>
 
       <section class="feed-section" aria-labelledby="feed-title">
@@ -99,10 +88,6 @@
           <span class="status-pixel" aria-hidden="true"></span>
           <span>CONNECTING TO THE DROP RADAR...</span>
         </div>
-        <details class="feed-diagnostics" id="feed-diagnostics">
-          <summary>VIEW FEED SOURCE STATUS</summary>
-          <div id="feed-diagnostics-content">Waiting for the first feed update.</div>
-        </details>
         <section id="feed" class="feed-grid" aria-label="Latest Pokémon TCG alerts" aria-live="polite"></section>
       </section>
 
@@ -110,7 +95,7 @@
         <span class="note-icon" aria-hidden="true">!</span>
         <div>
           <h2>CHECK BEFORE YOU CHECK OUT</h2>
-          <p>PokeDrop collects public news coverage and raffle leads. A link is not a live stock or active-entry guarantee; prices, dates, rules and availability can change. Open the original source to confirm details before purchasing or entering.</p>
+          <p>PokeDrop collects news and deal coverage from public sources. A link is not a live stock guarantee; prices, queues and availability can change. Open the source to confirm details before purchasing.</p>
         </div>
       </aside>
     </main>
