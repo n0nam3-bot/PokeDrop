@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#173d2b">
   <meta name="description" content="A free Pokémon TCG radar for restocks, deals, rare drops, raffles and giveaways.">
-  <title>PokeDrop - Pokémon TCG Drops, Raffles &amp; Giveaways</title>
+  <title>PokeDrop - Pokémon TCG Drop Finder</title>
   <link rel="preload" href="fonts/PKMN-RBYGSC.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -44,7 +44,7 @@
 
       <div class="hero-footer">
         <span><i class="mini-square" aria-hidden="true"></i> COMMUNITY DROP WATCH</span>
-        <span>HEADLINES + RAFFLES CHECKED EVERY 30 MIN</span>
+        <span>HEADLINES + RAFFLE LEADS CHECKED EVERY 30 MIN</span>
       </div>
     </header>
 
@@ -59,6 +59,15 @@
         </div>
 
         <nav class="category-nav" aria-label="Filter alerts by category"></nav>
+
+        <nav class="raffle-status-nav" id="raffle-status-filter" aria-label="Filter raffles and giveaways by entry status" hidden>
+          <span class="control-label">ENTRY STATUS</span>
+          <button type="button" data-status="All" aria-pressed="true">ALL STATUSES</button>
+          <button type="button" data-status="Upcoming" aria-pressed="false">UPCOMING</button>
+          <button type="button" data-status="Open" aria-pressed="false">OPEN</button>
+          <button type="button" data-status="Closed" aria-pressed="false">CLOSED</button>
+          <button type="button" data-status="Verify" aria-pressed="false">VERIFY</button>
+        </nav>
 
         <div class="search-controls">
           <label class="search-wrap">
@@ -91,50 +100,11 @@
         <section id="feed" class="feed-grid" aria-label="Latest Pokémon TCG alerts" aria-live="polite"></section>
       </section>
 
-      <section class="raffle-section" aria-labelledby="raffle-title">
-        <div class="feed-heading">
-          <div>
-            <p class="section-kicker">03 / LUCKY DRAW BOARD</p>
-            <h2 id="raffle-title">TCG RAFFLES &amp; GIVEAWAYS</h2>
-          </div>
-          <div class="feed-total"><span id="raffle-result-count">0</span><span>ENTRIES</span></div>
-        </div>
-        <p class="raffle-intro">Find Pokémon TCG raffles, sweepstakes and giveaways from retailers, card shops and community sources.</p>
-
-        <nav class="raffle-status-nav" aria-label="Filter raffles by entry status">
-          <button type="button" data-status="All" aria-pressed="true">ALL</button>
-          <button type="button" data-status="Upcoming" aria-pressed="false">UPCOMING</button>
-          <button type="button" data-status="Open" aria-pressed="false">OPEN</button>
-          <button type="button" data-status="Closed" aria-pressed="false">CLOSED</button>
-          <button type="button" data-status="Verify" aria-pressed="false">VERIFY</button>
-        </nav>
-
-        <div class="raffle-controls">
-          <label class="search-wrap">
-            <span class="control-label">SEARCH RAFFLES</span>
-            <input type="search" id="raffle-search" placeholder="SEARCH STORE, PRIZE, SET..." aria-label="Search raffles and giveaways">
-          </label>
-          <label class="retailer-wrap">
-            <span class="control-label">STORE</span>
-            <select id="raffle-store-filter" aria-label="Filter raffles by store">
-              <option value="all">ALL STORES</option>
-            </select>
-          </label>
-        </div>
-
-        <div class="feed-status" id="raffle-feed-status" role="status" aria-live="polite">
-          <span class="status-pixel" aria-hidden="true"></span>
-          <span>CONNECTING TO THE GIVEAWAY RADAR...</span>
-        </div>
-        <section id="raffles" class="raffle-grid" aria-label="Pokémon TCG raffles and giveaways" aria-live="polite"></section>
-        <p class="raffle-disclaimer">STATUS IS ESTIMATED FROM PUBLIC HEADLINES/SNIPPETS. ALWAYS CHECK THE OFFICIAL ENTRY PAGE FOR CURRENT DATES, RULES, ELIGIBILITY AND WINNER ANNOUNCEMENTS.</p>
-      </section>
-
       <aside class="panel signal-note">
         <span class="note-icon" aria-hidden="true">!</span>
         <div>
           <h2>CHECK BEFORE YOU CHECK OUT</h2>
-          <p>PokeDrop collects news and deal coverage from public sources. A link is not a live stock guarantee; prices, queues and availability can change. Open the source to confirm details before purchasing.</p>
+          <p>PokeDrop collects public news coverage and raffle leads. A link is not a live stock or active-entry guarantee; prices, dates, rules and availability can change. Open the original source to confirm details before purchasing or entering.</p>
         </div>
       </aside>
     </main>
