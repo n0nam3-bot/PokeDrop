@@ -4,17 +4,17 @@
  "news": {
   "sourceCount": 5,
   "sourcesResponded": 5,
-  "searchResults": 250,
+  "searchResults": 265,
   "sources": [
    {
     "name": "Restock",
     "ok": true,
-    "results": 45
+    "results": 30
    },
    {
     "name": "Deals",
     "ok": true,
-    "results": 43
+    "results": 72
    },
    {
     "name": "Rare Drop",
@@ -24,7 +24,7 @@
    {
     "name": "Release",
     "ok": true,
-    "results": 67
+    "results": 68
    },
    {
     "name": "Promo",
@@ -36,13 +36,13 @@
  "raffles": {
   "sourceCount": 17,
   "sourcesResponded": 17,
-  "searchResults": 186,
-  "uniqueLeads": 142,
-  "savedLeads": 142,
-  "directEntryLinksFound": 0,
-  "directEntryLinksMissing": 142,
-  "entryLookupsThisRun": 32,
-  "entryLookupErrors": 2,
+  "searchResults": 142,
+  "uniqueLeads": 143,
+  "savedLeads": 143,
+  "directEntryLinksFound": 3,
+  "directEntryLinksMissing": 140,
+  "entryLookupsThisRun": 48,
+  "entryLookupErrors": 6,
   "historyDays": 365,
   "sources": [
    {
@@ -78,12 +78,12 @@
    {
     "name": "TCG sweepstakes",
     "ok": true,
-    "results": 8
+    "results": 9
    },
    {
     "name": "Card shop giveaways",
     "ok": true,
-    "results": 2
+    "results": 1
    },
    {
     "name": "Card shop raffles",
@@ -93,12 +93,12 @@
    {
     "name": "Target giveaways",
     "ok": true,
-    "results": 9
+    "results": 10
    },
    {
     "name": "Walmart giveaways",
     "ok": true,
-    "results": 8
+    "results": 9
    },
    {
     "name": "GameStop giveaways",
@@ -128,9 +128,19 @@
    {
     "name": "Community card giveaways",
     "ok": true,
-    "results": 75
+    "results": 29
    }
-  ]
+  ],
+  "discoveryEngine": {
+   "version": 2,
+   "publisherPagesChecked": 42,
+   "prizeDetailsFound": 5,
+   "startDatesFound": 0,
+   "endDatesFound": 2,
+   "prizeImagesFound": 0,
+   "featuredImagesFound": 28,
+   "structuredEventsFound": 0
+  }
  },
  "failures": []
 }
