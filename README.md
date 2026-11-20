@@ -11,6 +11,14 @@ PokeDrop is a free, Pokémon-inspired 8-bit community feed for Pokémon TCG rest
 
 **Important:** the current free collector is a news and deal-coverage radar, not a live stock checker. It does not query retailer inventory or guarantee that an item is available. Links open the original publisher/source so trainers can confirm product details, price and availability before buying. A true live-stock feature would need supported retailer product feeds or inventory integrations.
 
+## Upload a ZIP to update the repository automatically
+
+1. Open the repository on GitHub and open the `uploads/` folder.
+2. Choose **Add file → Upload files**, select your repository ZIP, and commit the upload.
+3. The **Extract uploaded ZIP** GitHub Actions workflow runs automatically. It extracts the ZIP into the matching repository paths, strips a single outer project folder when present (such as `PokeDrop-main/`), removes the uploaded ZIP, commits the extracted files, and requests a GitHub Pages rebuild.
+
+Upload one complete project ZIP at a time. Do not put the ZIP in the repository root; use `uploads/`. The importer protects its own workflow and extraction script, ignores ZIP paths inside `uploads/`, and rejects unsafe archive paths. GitHub Actions must have **Read and write permissions** under **Settings → Actions → General → Workflow permissions**. No API key, AI provider, or paid token is required.
+
 ## Publish on GitHub Pages
 
 1. Keep the files and folders in this repository structure, including `fonts/`, `scripts/` and `.github/workflows/`.
