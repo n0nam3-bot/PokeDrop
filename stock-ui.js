@@ -1,342 +1,372 @@
-// PokeDrop stock listings share the existing Drop Finder feed and its filters.
-// This file adds only a stock-state button group beside the existing retailer filter.
+// PokeDrop stock integration.
+// Retailer products are normalized into the same posts array consumed by app.js.
+// app.js remains the only feed/card renderer; this file adds only the stock filter.
 (() => {
   "use strict";
 
   const $ = (selector, root = document) => root.querySelector(selector);
-  const make = (tag, className, text) => {
-    const node = document.createElement(tag);
-    if (className) node.className = className;
-    if (text !== undefined && text !== null) node.textContent = text;
-    return node;
-  };
-  const httpUrl = (value) => {
+  const feed = $("#feed");
+  const searchControls = $(".search-controls");
+  const resultCount = $("#result-count");
+  if (!feed || !searchControls) return;
+
+  const nativeFetch = window.fetch.bind(window);
+  const normalize = (value) => String(value || "")
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]/g, "");
+  const validUrl = (value) => {
     try {
-      const url = new URL(value);
+      const url = new URL(value, window.location.href);
       return /^https?:$/.test(url.protocol) ? url.href : "";
     } catch { return ""; }
   };
-  const dateValue = (value) => {
+  const canonicalUrl = (value) => {
+    const url = validUrl(value);
+    return url ? url.split(/[?#]/)[0].replace(/\/$/, "").toLowerCase() : "";
+  };
+  const stateLabel = (state) => ({
+    IN_STOCK: "IN STOCK",
+    PREORDER: "PREORDER",
+    OUT_OF_STOCK: "SOLD OUT",
+    UNKNOWN: "UNCONFIRMED"
+  })[String(state || "UNKNOWN").toUpperCase()] || "UNCONFIRMED";
+  const availabilityLabel = (state) => ({
+    IN_STOCK: "In Stock",
+    PREORDER: "Preorder",
+    OUT_OF_STOCK: "Sold Out",
+    UNKNOWN: "Unconfirmed"
+  })[String(state || "UNKNOWN").toUpperCase()] || "Unconfirmed";
+  const safeDate = (value) => {
     const date = new Date(value);
-    return Number.isFinite(date.getTime()) ? date : null;
-  };
-  const ageLabel = (value) => {
-    const date = dateValue(value);
-    if (!date) return "CHECK TIME UNKNOWN";
-    const minutes = Math.max(0, Math.floor((Date.now() - date.getTime()) / 60000));
-    if (minutes < 1) return "JUST CHECKED";
-    if (minutes < 60) return `${minutes}M AGO`;
-    if (minutes < 1440) return `${Math.floor(minutes / 60)}H AGO`;
-    return `${Math.floor(minutes / 1440)}D AGO`;
-  };
-  const dateLabel = (value) => {
-    const date = dateValue(value);
-    return date ? date.toLocaleString("en-US", { month: "short", day: "numeric", hour: "numeric", minute: "2-digit" }) : "NOT CHECKED";
+    return Number.isFinite(date.getTime()) ? date.toISOString() : new Date().toISOString();
   };
 
-  const feed = $("#feed");
-  const search = $("#search");
-  const retailerFilter = $("#retailer-filter");
-  const searchControls = $(".search-controls");
-  const resultCount = $("#result-count");
-  const diagnostics = $("#feed-diagnostics-content");
-  if (!feed || !search || !retailerFilter || !searchControls) return;
-
-  // Keep the original search box and retailer dropdown. No second search input,
-  // no second retailer dropdown, and no separate stock feed or section is created.
-  const stateWrap = make("div", "stock-state-wrap");
+  const stateWrap = document.createElement("div");
+  stateWrap.className = "stock-state-wrap";
   stateWrap.id = "stock-state-filter-wrap";
-  stateWrap.append(make("span", "control-label", "STOCK STATUS"));
-  const stateButtons = make("div", "stock-state-buttons");
+  const stateLabelNode = document.createElement("span");
+  stateLabelNode.className = "control-label";
+  stateLabelNode.textContent = "STOCK STATUS";
+  const stateButtons = document.createElement("div");
+  stateButtons.className = "stock-state-buttons";
   stateButtons.setAttribute("role", "group");
-  stateButtons.setAttribute("aria-label", "Filter the feed by verified product stock status");
-  const states = [
+  stateButtons.setAttribute("aria-label", "Filter non-raffle feed alerts by product stock status");
+  const stockStates = [
     ["ALL STATES", "all"],
     ["IN STOCK", "IN_STOCK"],
     ["PREORDER", "PREORDER"],
     ["SOLD OUT", "OUT_OF_STOCK"]
   ];
   let selectedState = "all";
-  for (const [label, value] of states) {
-    const button = make("button", "stock-state-button", label);
+
+  for (const [label, value] of stockStates) {
+    const button = document.createElement("button");
     button.type = "button";
+    button.className = "stock-state-button";
     button.dataset.stockState = value;
     button.setAttribute("aria-pressed", String(value === selectedState));
+    button.textContent = label;
     button.addEventListener("click", () => {
       selectedState = value;
       stateButtons.querySelectorAll("button[data-stock-state]").forEach((item) => {
         item.setAttribute("aria-pressed", String(item.dataset.stockState === selectedState));
       });
-      renderIntoUnifiedFeed();
+      applyStockFilter();
     });
     stateButtons.append(button);
   }
-  stateWrap.append(stateButtons);
+  stateWrap.append(stateLabelNode, stateButtons);
   searchControls.append(stateWrap);
 
-  const styles = document.createElement("style");
-  styles.textContent = `
+  const style = document.createElement("style");
+  style.textContent = `
     .search-controls { grid-template-columns: minmax(0, 1fr) minmax(170px, .55fr) minmax(300px, 1fr); align-items: end; }
-    .stock-state-wrap { display: grid; min-width: 0; gap: 6px; }
-    .stock-state-buttons { display: flex; min-height: 46px; align-items: stretch; flex-wrap: wrap; gap: 6px; }
-    .stock-state-button { min-height: 42px; padding: 6px 9px; color: var(--ink); background: var(--white); border: 2px solid var(--ink); box-shadow: 3px 3px 0 var(--paper-shadow); cursor: pointer; font: inherit; font-size: 8px; line-height: 1.45; }
-    .stock-state-button[aria-pressed="true"] { color: var(--white); background: var(--deep); box-shadow: 3px 3px 0 #8a9a78; }
-    .stock-state-button:hover:not([aria-pressed="true"]) { background: #e8edcf; }
-    .stock-product-card { min-width: 0; }
-    .stock-product-image { display: block; width: 100%; max-height: 190px; margin: 11px 0 13px; object-fit: contain; background: var(--white); border: 2px solid var(--ink); }
-    .stock-product-details { display: grid; gap: 4px; margin: 0 0 10px; padding: 9px 10px; color: var(--deep); background: rgba(228,223,190,.48); border: 2px dashed #9a997e; font-size: 8px; line-height: 1.8; overflow-wrap: anywhere; }
-    .stock-product-details strong { color: var(--ink); font-weight: normal; }
-    .stock-product-note { margin: 8px 0 0; color: var(--muted); font-size: 8px; line-height: 1.8; }
-    .stock-product-tag.stock-state-in { color: #fff; background: #347b43; }
-    .stock-product-tag.stock-state-pre { color: var(--ink); background: var(--gold); }
-    .stock-product-tag.stock-state-out { color: #fff; background: var(--red-dark); }
-    .stock-product-tag.stock-state-unknown { color: #fff; background: #5c6670; }
-    .stock-empty-state { grid-column: 1 / -1; }
-    @media (max-width: 760px) {
-      .search-controls { grid-template-columns: minmax(0, 1fr) minmax(250px, 1.15fr); }
-      .search-wrap { grid-column: 1 / -1; }
-      .stock-state-buttons { min-height: 42px; }
+    .stock-state-wrap { display:grid; min-width:0; gap:6px; }
+    .stock-state-wrap[hidden], .post-card[hidden] { display:none !important; }
+    .stock-state-buttons { display:flex; min-height:46px; align-items:stretch; flex-wrap:wrap; gap:6px; }
+    .stock-state-button { min-height:42px; padding:6px 9px; color:var(--ink); background:var(--white); border:2px solid var(--ink); box-shadow:3px 3px 0 var(--paper-shadow); cursor:pointer; font:inherit; font-size:8px; line-height:1.45; }
+    .stock-state-button[aria-pressed="true"] { color:var(--white); background:var(--deep); box-shadow:3px 3px 0 #8a9a78; }
+    .stock-state-button:hover:not([aria-pressed="true"]) { background:#e8edcf; }
+    .stock-state-tag { display:inline-flex; align-items:center; padding:3px 6px; border:1px solid var(--ink); font-size:7px; line-height:1.5; white-space:nowrap; }
+    .stock-state-tag.in-stock { color:#fff; background:#347b43; }
+    .stock-state-tag.preorder { color:var(--ink); background:var(--gold); }
+    .stock-state-tag.sold-out { color:#fff; background:#a83c35; }
+    .stock-state-tag.unknown { color:#fff; background:#5c6670; }
+    .stock-filter-empty { grid-column:1 / -1; }
+    @media (max-width:760px) {
+      .search-controls { grid-template-columns:minmax(0, 1fr) minmax(250px, 1.15fr); }
+      .search-wrap { grid-column:1 / -1; }
+      .stock-state-buttons { min-height:42px; }
     }
-    @media (max-width: 560px) {
-      .search-controls { grid-template-columns: 1fr; }
-      .search-wrap { grid-column: auto; }
-      .stock-state-buttons { min-height: 0; }
-      .stock-state-button { flex: 1 1 calc(50% - 6px); min-height: 38px; }
-      .stock-product-image { max-height: 175px; }
+    @media (max-width:560px) {
+      .search-controls { grid-template-columns:1fr; }
+      .search-wrap { grid-column:auto; }
+      .stock-state-buttons { min-height:0; }
+      .stock-state-button { flex:1 1 calc(50% - 6px); min-height:38px; }
     }
   `;
-  document.head.append(styles);
+  document.head.append(style);
 
-  let products = [];
-  let scanStatus = null;
-  let refreshBusy = false;
+  let lastStockRecords = [];
+  let stockByTitle = new Map();
   let renderQueued = false;
-  let diagnosticsObserver = null;
 
-  function selectedCategory() {
+  function normalizeProduct(product) {
+    const productUrl = validUrl(product?.productUrl);
+    if (!productUrl || !product?.name || !product?.retailer) return null;
+    const state = String(product.stockState || "UNKNOWN").toUpperCase();
+    if (!["IN_STOCK", "PREORDER", "OUT_OF_STOCK", "UNKNOWN"].includes(state)) return null;
+    const checkedAt = safeDate(product.lastCheckedAt || product.firstSeenAt);
+    const retailer = String(product.retailer).trim();
+    const name = String(product.name).trim();
+    const summaryParts = [`${retailer} product listing.`];
+    if (product.price) summaryParts.push(`Listed price: ${product.price}.`);
+    summaryParts.push(`Last retailer page check: ${new Date(checkedAt).toLocaleString("en-US", { month: "short", day: "numeric", hour: "numeric", minute: "2-digit" })}.`);
+    if (state === "UNKNOWN") summaryParts.push("The page did not expose a confirmed availability signal; this is not a sold-out result.");
+    if (product.lastCheckStatus && product.lastCheckStatus !== "OK") {
+      summaryParts.push(`Latest check: ${product.lastCheckStatus}. The displayed status is the last retained product-page signal.`);
+    }
+    return {
+      date: checkedAt,
+      cat: state === "PREORDER" ? "Deals" : "Restock",
+      title: name,
+      summary: summaryParts.join(" "),
+      text: `${retailer} ${name} ${stateLabel(state)}`,
+      source: retailer,
+      store: retailer,
+      // Let raffle-ui.js build the retailer product action from productUrl.
+      // Do not use the product page as a "source announcement" link.
+      url: "",
+      sourceUrl: "",
+      productUrl,
+      productName: name,
+      productPrice: product.price || "",
+      productAvailability: availabilityLabel(state),
+      productRetailer: retailer,
+      imageUrl: product.imageUrl || "",
+      imageUrls: product.imageUrl ? [{ url: product.imageUrl, label: "RETAILER PRODUCT IMAGE", alt: name, kind: "product" }] : [],
+      stockState: state,
+      stockLastCheckedAt: checkedAt,
+      stockCheckStatus: product.lastCheckStatus || "OK",
+      stockLastError: product.lastError || "",
+      stockMonitorItem: true
+    };
+  }
+
+  function postProductUrls(post) {
+    const values = [post?.productUrl];
+    for (const entry of Array.isArray(post?.productLinks) ? post.productLinks : []) values.push(entry?.url);
+    return values.map(canonicalUrl).filter(Boolean);
+  }
+
+  function buildUnifiedPosts(posts, products) {
+    const unified = (Array.isArray(posts) ? posts : []).map((post) => ({ ...post }));
+    const byProductUrl = new Map();
+    const byProductName = new Map();
+    unified.forEach((post) => {
+      for (const url of postProductUrls(post)) byProductUrl.set(url, post);
+      const productName = normalize(post.productName);
+      if (productName) byProductName.set(productName, post);
+      const directState = String(post.stockState || "").toUpperCase();
+      if (["IN_STOCK", "PREORDER", "OUT_OF_STOCK", "UNKNOWN"].includes(directState)) {
+        post.stockState = directState;
+      }
+    });
+
+    const annotations = new Map();
+    lastStockRecords = (Array.isArray(products) ? products : []).map(normalizeProduct).filter(Boolean);
+    const nameCounts = new Map();
+    for (const product of lastStockRecords) {
+      const key = normalize(product.productName);
+      nameCounts.set(key, (nameCounts.get(key) || 0) + 1);
+    }
+    for (const product of lastStockRecords) {
+      const urlKey = canonicalUrl(product.productUrl);
+      const nameKey = normalize(product.productName);
+      // Only merge by name when the monitor found one retailer listing for that
+      // product. Multiple retailers must remain separate normal feed entries.
+      let existing = byProductUrl.get(urlKey) || (nameCounts.get(nameKey) === 1 ? byProductName.get(nameKey) : null);
+      if (!existing && nameCounts.get(nameKey) === 1) {
+        existing = unified.find((post) => normalize(post.title) === nameKey) || null;
+      }
+      if (existing) {
+        Object.assign(existing, {
+          stockState: product.stockState,
+          stockProductUrl: product.productUrl,
+          stockProductName: product.productName,
+          stockPrice: product.productPrice,
+          stockRetailer: product.productRetailer,
+          stockLastCheckedAt: product.stockLastCheckedAt,
+          stockCheckStatus: product.stockCheckStatus,
+          stockLastError: product.stockLastError,
+          productUrl: product.productUrl,
+          productName: product.productName,
+          productPrice: product.productPrice,
+          productAvailability: product.productAvailability,
+          productRetailer: product.productRetailer,
+          store: product.productRetailer
+        });
+        const key = normalize(existing.title);
+        if (key) {
+          if (!annotations.has(key)) annotations.set(key, []);
+          annotations.get(key).push(product);
+        }
+      } else {
+        unified.push(product);
+        const key = normalize(product.title);
+        if (key) {
+          if (!annotations.has(key)) annotations.set(key, []);
+          annotations.get(key).push(product);
+        }
+      }
+    }
+
+    for (const post of unified) {
+      const key = normalize(post.title);
+      const state = String(post.stockState || "").toUpperCase();
+      if (key && ["IN_STOCK", "PREORDER", "OUT_OF_STOCK", "UNKNOWN"].includes(state)) {
+        if (!annotations.has(key)) annotations.set(key, []);
+        if (!annotations.get(key).some((item) => item.stockState === state && normalize(item.productRetailer || item.retailer) === normalize(post.stockRetailer || post.store))) {
+          annotations.get(key).push({
+            stockState: state,
+            productRetailer: post.stockRetailer || post.store || post.productRetailer || "",
+            productName: post.stockProductName || post.productName || post.title,
+            stockLastCheckedAt: post.stockLastCheckedAt || ""
+          });
+        }
+      }
+    }
+    stockByTitle = annotations;
+    return unified;
+  }
+
+  async function loadStockProducts() {
+    try {
+      const response = await nativeFetch(`products.json?stock-filter=${Date.now()}`, { cache: "no-store" });
+      if (!response.ok) return [];
+      const data = await response.json();
+      return Array.isArray(data) ? data : [];
+    } catch (error) {
+      console.warn("PokeDrop stock products unavailable:", error);
+      return [];
+    }
+  }
+  const productsPromise = loadStockProducts();
+
+  // Intercept only posts.json. The retailer records become ordinary post objects,
+  // so app.js builds them with the same card renderer and feed layout as every alert.
+  window.fetch = async (input, init) => {
+    const response = await nativeFetch(input, init);
+    const requestUrl = typeof input === "string" ? input : input?.url || "";
+    let isPostsRequest = false;
+    try { isPostsRequest = new URL(requestUrl, window.location.href).pathname.endsWith("/posts.json"); }
+    catch { /* leave non-post requests unchanged */ }
+    if (!isPostsRequest || !response.ok) return response;
+    try {
+      const [posts, products] = await Promise.all([response.clone().json(), productsPromise]);
+      const unified = buildUnifiedPosts(posts, products);
+      return new Response(JSON.stringify(unified), {
+        status: 200,
+        headers: { "content-type": "application/json; charset=utf-8" }
+      });
+    } catch (error) {
+      console.warn("PokeDrop could not merge stock listings into the feed:", error);
+      return response;
+    }
+  };
+
+  function activeCategory() {
     const raffleButton = $("#raffle-category-button");
     if (raffleButton?.getAttribute("aria-pressed") === "true") return "Raffle";
     const active = $(".category-nav .category-button[aria-pressed=\"true\"]");
     return active?.dataset.value || "All";
   }
 
-  function productBelongsToCategory(item, category) {
-    const stockState = String(item.stockState || "UNKNOWN").toUpperCase();
-    if (category === "All") return true;
-    if (category === "Restock") return stockState !== "PREORDER";
-    if (category === "Deals") return stockState === "PREORDER";
-    return false;
+  function selectStockRecord(title, retailer) {
+    const records = stockByTitle.get(normalize(title)) || [];
+    if (!records.length) return null;
+    const retailerKey = normalize(retailer);
+    return records.find((item) => retailerKey && normalize(item.productRetailer || item.retailer) === retailerKey)
+      || (records.length === 1 ? records[0] : records[0]);
   }
 
-  function selectedProducts() {
-    const category = selectedCategory();
-    const query = search.value.trim().toLowerCase();
-    const retailer = retailerFilter.value;
-    return products.filter((item) => {
-      const stockState = String(item.stockState || "UNKNOWN").toUpperCase();
-      if (selectedState !== "all" && stockState !== selectedState) return false;
-      if (retailer !== "all" && String(item.retailer || "") !== retailer) return false;
-      if (!productBelongsToCategory(item, category)) return false;
-      const haystack = `${item.name || ""} ${item.retailer || ""} ${item.setName || ""} ${item.sku || ""}`.toLowerCase();
-      return haystack.includes(query);
-    }).sort((a, b) => {
-      const rank = { IN_STOCK: 0, PREORDER: 1, OUT_OF_STOCK: 2, UNKNOWN: 3 };
-      return (rank[String(a.stockState || "UNKNOWN").toUpperCase()] ?? 4)
-        - (rank[String(b.stockState || "UNKNOWN").toUpperCase()] ?? 4)
-        || (Date.parse(b.lastCheckedAt || "") || 0) - (Date.parse(a.lastCheckedAt || "") || 0);
-    });
+  function stateClass(state) {
+    if (state === "IN_STOCK") return "in-stock";
+    if (state === "PREORDER") return "preorder";
+    if (state === "OUT_OF_STOCK") return "sold-out";
+    return "unknown";
   }
 
-  function statePresentation(value) {
-    const state = String(value || "UNKNOWN").toUpperCase();
-    if (state === "IN_STOCK") return ["IN STOCK", "stock-state-in"];
-    if (state === "PREORDER") return ["PREORDER", "stock-state-pre"];
-    if (state === "OUT_OF_STOCK") return ["SOLD OUT", "stock-state-out"];
-    return ["UNCONFIRMED", "stock-state-unknown"];
+  function applyStockFilter() {
+    const category = activeCategory();
+    stateWrap.hidden = category === "Raffle";
+    const cards = [...feed.querySelectorAll(":scope > .post-card")];
+    let visibleCount = 0;
+
+    for (const card of cards) {
+      const isRaffle = card.dataset.category === "Raffle" || card.classList.contains("raffle-card");
+      if (isRaffle) {
+        card.hidden = false;
+        visibleCount++;
+        continue;
+      }
+
+      const heading = card.querySelector("h3")?.textContent || "";
+      const retailer = card.querySelector(".retailer-tag")?.textContent || "";
+      const record = selectStockRecord(heading, retailer);
+      const state = String(record?.stockState || card.dataset.stockState || "").toUpperCase();
+      if (record) {
+        card.dataset.stockState = state;
+        const meta = card.querySelector(".post-topline");
+        if (meta && !meta.querySelector(".stock-state-tag")) {
+          const badge = document.createElement("span");
+          badge.className = `stock-state-tag ${stateClass(state)}`;
+          badge.textContent = stateLabel(state);
+          meta.append(badge);
+        }
+      }
+
+      card.hidden = selectedState !== "all" && state !== selectedState;
+      if (!card.hidden) visibleCount++;
+    }
+
+    const existingEmpty = $("#stock-filter-empty-state", feed);
+    const appEmpty = feed.querySelector(":scope > .empty-state:not(#stock-filter-empty-state)");
+    if (existingEmpty) existingEmpty.remove();
+    if (selectedState !== "all" && category !== "Raffle" && visibleCount === 0 && !appEmpty) {
+      const empty = document.createElement("div");
+      empty.id = "stock-filter-empty-state";
+      empty.className = "empty-state stock-filter-empty";
+      const title = document.createElement("strong");
+      title.textContent = `NO ${stateLabel(selectedState)} ALERTS FOUND`;
+      const note = document.createElement("p");
+      note.textContent = "No existing feed item has a matching verified retailer stock signal. Try ALL STATES; raffle and giveaway entries use their separate entry-status filter.";
+      empty.append(title, note);
+      feed.append(empty);
+    }
+    if (resultCount) resultCount.textContent = String(visibleCount);
   }
 
-  function productCard(item) {
-    const stockState = String(item.stockState || "UNKNOWN").toUpperCase();
-    const [label, stateClass] = statePresentation(stockState);
-    const category = stockState === "PREORDER" ? "Deals" : "Restock";
-    const card = make("article", "post-card stock-product-card");
-    card.dataset.stockProduct = "true";
-    card.dataset.category = category;
-
-    const meta = make("div", "post-topline");
-    const tag = make("span", `tag stock-product-tag ${stateClass}`, label);
-    tag.dataset.category = category;
-    meta.append(tag);
-    if (item.retailer) meta.append(make("span", "retailer-tag", String(item.retailer).toUpperCase()));
-    meta.append(make("time", "post-date", ageLabel(item.lastCheckedAt)));
-
-    const title = make("h3", "", String(item.name || "POKÉMON TCG PRODUCT").toUpperCase().replace(/É/g, "é"));
-    card.append(meta, title);
-
-    const imageUrl = httpUrl(item.imageUrl);
-    if (imageUrl) {
-      const image = make("img", "stock-product-image");
-      image.src = imageUrl;
-      image.alt = item.name || "Pokémon TCG product";
-      image.loading = "lazy";
-      image.decoding = "async";
-      image.addEventListener("error", () => image.remove(), { once: true });
-      card.append(image);
-    }
-
-    const details = make("div", "stock-product-details");
-    const price = make("div", "");
-    price.append(make("strong", "", "PRICE:"), document.createTextNode(` ${item.price || "NOT LISTED"}`));
-    details.append(price);
-    const lastCheck = make("div", "");
-    lastCheck.append(make("strong", "", "LAST CHECK:"), document.createTextNode(` ${dateLabel(item.lastCheckedAt)}`));
-    details.append(lastCheck);
-    if (item.availabilitySource) {
-      const source = make("div", "");
-      source.append(make("strong", "", "SIGNAL:"), document.createTextNode(` ${item.availabilitySource === "structured-data" ? "RETAILER PRODUCT DATA" : "PUBLIC PRODUCT PAGE TEXT"}`));
-      details.append(source);
-    }
-    card.append(details);
-
-    const productUrl = httpUrl(item.productUrl);
-    if (productUrl) {
-      const link = make("a", "post-action", `OPEN ${String(item.retailer || "RETAILER").toUpperCase()} PRODUCT PAGE`);
-      link.href = productUrl;
-      link.target = "_blank";
-      link.rel = "noopener noreferrer";
-      card.append(link);
-    }
-
-    let note = "Availability is based on the public retailer product page at the last check.";
-    if (stockState === "UNKNOWN") note = "The retailer product page was identified, but it did not expose a clear stock signal. It is not counted as in stock or sold out.";
-    if (item.lastCheckStatus && item.lastCheckStatus !== "OK") {
-      note += ` Latest check: ${item.lastCheckStatus}. The previous verified stock state is retained.`;
-      if (item.lastError) note += ` ${item.lastError}`;
-    }
-    card.append(make("p", "stock-product-note", note));
-    return card;
-  }
-
-  function makeEmptyState() {
-    const empty = make("div", "empty-state stock-empty-state");
-    empty.append(make("strong", "", "NO VERIFIED PRODUCT LISTINGS MATCH THIS FILTER"));
-    empty.append(make("p", "", "Try All States, another retailer, or a different search. News and giveaway alerts remain available when All States is selected."));
-    return empty;
-  }
-
-  function updateResultCount() {
-    if (!resultCount) return;
-    const count = [...feed.querySelectorAll(":scope > .post-card")].filter((card) => !card.hidden).length;
-    resultCount.textContent = String(count);
-  }
-
-  function renderIntoUnifiedFeed() {
-    const chosenState = selectedState;
-    const category = selectedCategory();
-    const matches = selectedProducts();
-
-    // The original cards stay in the original feed. Choosing a specific stock state
-    // narrows the feed to verified product listings; All States restores news/giveaways.
-    for (const card of feed.querySelectorAll(":scope > .post-card:not(.stock-product-card)")) {
-      card.hidden = chosenState !== "all";
-    }
-    for (const empty of feed.querySelectorAll(":scope > .empty-state:not(.stock-empty-state)")) {
-      empty.hidden = chosenState !== "all" || matches.length > 0;
-    }
-    for (const card of feed.querySelectorAll(":scope > .stock-product-card, :scope > .stock-empty-state")) card.remove();
-
-    const fragment = document.createDocumentFragment();
-    matches.forEach((item) => fragment.append(productCard(item)));
-    if (matches.length) {
-      feed.prepend(fragment);
-    } else if (chosenState !== "all") {
-      feed.append(makeEmptyState());
-    }
-
-    updateResultCount();
-  }
-
-  function scheduleRender() {
+  function scheduleApply() {
     if (renderQueued) return;
     renderQueued = true;
     window.setTimeout(() => {
       renderQueued = false;
-      renderIntoUnifiedFeed();
+      applyStockFilter();
     }, 0);
   }
 
-  function observeFeed() {
-    if (!("MutationObserver" in window)) return;
+  const categoryNav = $(".category-nav");
+  categoryNav?.addEventListener("click", scheduleApply);
+  $("#raffle-category-button")?.addEventListener("click", scheduleApply);
+  if ("MutationObserver" in window) {
     const observer = new MutationObserver((records) => {
-      const containsFeedContentChange = records.some((record) => {
-        const changedNodes = [...record.addedNodes, ...record.removedNodes];
-        return changedNodes.some((node) => {
-          if (!(node instanceof HTMLElement)) return true;
-          return !node.classList.contains("stock-product-card") && !node.classList.contains("stock-empty-state");
-        });
-      });
-      if (containsFeedContentChange) scheduleRender();
+      const changed = records.some((record) => record.type === "childList");
+      if (changed) scheduleApply();
     });
-    observer.observe(feed, { childList: true });
+    observer.observe(feed, { childList: true, subtree: true });
   }
-
-  function addDiagnostics() {
-    if (!diagnostics) return;
-    let line = $("#stock-scan-diagnostics", diagnostics);
-    if (!line) {
-      line = make("p", "diagnostics-summary");
-      line.id = "stock-scan-diagnostics";
-      diagnostics.append(line);
-    }
-    let message = "STOCK CHECKS: WAITING FOR THE FIRST HOSTED RETAILER SCAN.";
-    if (scanStatus) {
-      const stockCounts = products.reduce((counts, item) => {
-        const state = String(item.stockState || "UNKNOWN").toUpperCase();
-        counts[state] = (counts[state] || 0) + 1;
-        return counts;
-      }, {});
-      message = `STOCK CHECKS: ${scanStatus.productsChecked || 0} PRODUCT PAGES CHECKED · ${scanStatus.productsVerified || 0} STOCK SIGNALS READ · ${products.length} LISTINGS TRACKED · ${stockCounts.IN_STOCK || 0} IN STOCK · ${stockCounts.PREORDER || 0} PREORDER · ${stockCounts.OUT_OF_STOCK || 0} SOLD OUT · ${scanStatus.alertsSent || 0} DISCORD ALERTS SENT`;
-    }
-    if (line.textContent !== message) line.textContent = message;
-  }
-
-  async function loadJson(path, fallback) {
-    try {
-      const response = await fetch(`${path}?t=${Date.now()}`, { cache: "no-store" });
-      if (!response.ok) throw new Error(`${path}: HTTP ${response.status}`);
-      return await response.json();
-    } catch (error) {
-      console.warn(`PokeDrop stock status could not load ${path}:`, error);
-      return fallback;
-    }
-  }
-
-  async function refreshStockData() {
-    if (refreshBusy) return;
-    refreshBusy = true;
-    try {
-      const [nextProducts, nextStatus] = await Promise.all([
-        loadJson("products.json", []),
-        loadJson("product-status.json", null)
-      ]);
-      products = Array.isArray(nextProducts)
-        ? nextProducts.filter((item) => item && item.name && item.retailer && httpUrl(item.productUrl))
-        : [];
-      scanStatus = nextStatus && typeof nextStatus === "object" ? nextStatus : null;
-      renderIntoUnifiedFeed();
-      addDiagnostics();
-    } finally {
-      refreshBusy = false;
-    }
-  }
-
-  observeFeed();
-  if (diagnostics && "MutationObserver" in window) {
-    diagnosticsObserver = new MutationObserver(() => {
-      window.setTimeout(addDiagnostics, 0);
-    });
-    diagnosticsObserver.observe(diagnostics, { childList: true, subtree: true });
-  }
-  refreshStockData();
-  window.setInterval(refreshStockData, 90000);
+  applyStockFilter();
 })();
