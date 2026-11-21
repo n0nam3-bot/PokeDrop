@@ -4,12 +4,17 @@
 // are never treated as prize/item images.
 import { readFileSync, writeFileSync } from "node:fs";
 
-const RESOLVER_VERSION = 5;
+const RESOLVER_VERSION = 6;
 const MAX_RAFFLE_CHECKS_PER_RUN = 40;
 const MAX_POST_IMAGE_CHECKS_PER_RUN = 20;
+const MAX_SEARCH_RESULT_CHECKS = 3;
 const CONCURRENCY = 4;
 const FETCH_TIMEOUT_MS = 14000;
 const MAX_IMAGES_PER_ITEM = 6;
+const SEARCH_STATS = {
+  requests: 0, successfulQueries: 0, resultLinks: 0, errors: 0,
+  bingRequests: 0, duckDuckGoRequests: 0
+};
 
 function readJson(file, fallback) {
   try { return JSON.parse(readFileSync(file, "utf8")); } catch { return fallback; }
@@ -358,7 +363,7 @@ function extractPageMetadata(html, pageUrl, raffle) {
   const prizeImages = images.filter((image) => image.kind === "product");
   const prizeImage = prizeImages[0] || null;
   const prizeTextHint = prizeHintFromText(text);
-  const extractedPrize = prizeTextHint || prize;
+  const extractedPrize = prize || prizeTextHint;
   return {
     pageTitle,
     pageDescription,
@@ -417,6 +422,184 @@ function significantWords(value) {
   return [...new Set(String(value || "").toLowerCase().normalize("NFKD").replace(/[\u0300-\u036f]/g, "")
     .split(/[^a-z0-9]+/).filter((word) => word.length >= 4 && !ignored.has(word)))];
 }
+function unwrapSearchResultUrl(raw, baseUrl) {
+  const resolved = resolveUrl(raw, baseUrl);
+  if (!resolved) return "";
+  try {
+    const parsed = new URL(resolved);
+    if (/duckduckgo\.com$/i.test(parsed.hostname)) {
+      const wrapped = parsed.searchParams.get("uddg") || parsed.searchParams.get("url");
+      if (wrapped) return resolveUrl(wrapped, baseUrl);
+    }
+    if (/bing\.com$/i.test(parsed.hostname)) {
+      const wrapped = parsed.searchParams.get("u");
+      if (wrapped?.startsWith("a1")) {
+        const decoded = Buffer.from(wrapped.slice(2), "base64").toString("utf8");
+        if (/^https?:\/\//i.test(decoded)) return decoded;
+      }
+    }
+    return resolved;
+  } catch { return resolved; }
+}
+function searchResultLinks(html, baseUrl) {
+  const source = String(html || "");
+  const blocks = [];
+  for (const match of source.matchAll(/<li\b([^>]*)>[\s\S]*?<\/li>/gi)) {
+    if (/\bb_algo\b/i.test(attr(match[1], "class"))) blocks.push(match[0]);
+  }
+  for (const match of source.matchAll(/<div\b([^>]*)>[\s\S]*?<\/div>/gi)) {
+    if (/\bresult__body\b|\bresults_links_deep\b/i.test(attr(match[1], "class"))) blocks.push(match[0]);
+  }
+  const results = [];
+  const seen = new Set();
+  const candidates = blocks.length
+    ? blocks
+    : [...source.matchAll(/<a\b([^>]*)>([\s\S]*?)<\/a>/gi)]
+        .filter((match) => /result__a|result-link|result__title/i.test(attr(match[1], "class")))
+        .map((match) => match[0]);
+  for (const block of candidates) {
+    const anchor = block.match(/<a\b([^>]*)>([\s\S]*?)<\/a>/i);
+    if (!anchor) continue;
+    const attrs = anchor[1];
+    const classes = attr(attrs, "class");
+    if (blocks.length && !/b_algo|result__a|result-link|result__title/i.test(`${classes} ${block.slice(0, 260)}`)) continue;
+    const url = unwrapSearchResultUrl(attr(attrs, "href"), baseUrl);
+    if (!url) continue;
+    let parsed;
+    try { parsed = new URL(url); } catch { continue; }
+    const host = parsed.hostname.toLowerCase().replace(/^www\./, "");
+    if (/^(?:bing\.com|duckduckgo\.com|google\.[a-z.]+|news\.google\.com|microsoft\.com)$/i.test(host)) continue;
+    if (/youtube\.com|youtu\.be|facebook\.com|instagram\.com|tiktok\.com|twitter\.com|x\.com|linkedin\.com|pinterest\.com/i.test(host)) continue;
+    const title = stripMarkup(anchor[2]);
+    const snippet = stripMarkup(block).slice(0, 900);
+    const key = url.split(/[?#]/)[0].toLowerCase();
+    if (!title || seen.has(key)) continue;
+    seen.add(key);
+    results.push({ url, title, snippet });
+  }
+  return results;
+}
+async function searchWebResults(query, limit = 8) {
+  const engines = [
+    { name: "Bing", url: `https://www.bing.com/search?q=${encodeURIComponent(query)}&setlang=en-US&cc=us` },
+    { name: "DuckDuckGo", url: `https://html.duckduckgo.com/html/?q=${encodeURIComponent(query)}` }
+  ];
+  for (const engine of engines) {
+    try {
+      SEARCH_STATS.requests += 1;
+      SEARCH_STATS[engine.name === "Bing" ? "bingRequests" : "duckDuckGoRequests"] += 1;
+      const response = await fetch(engine.url, {
+        redirect: "follow",
+        headers: {
+          "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/126 Safari/537.36 PokeDrop/6.0",
+          accept: "text/html,application/xhtml+xml"
+        },
+        signal: AbortSignal.timeout(9000)
+      });
+      if (!response.ok) {
+        SEARCH_STATS.errors += 1;
+        continue;
+      }
+      const html = (await response.text()).slice(0, 1800000);
+      const results = searchResultLinks(html, response.url || engine.url);
+      SEARCH_STATS.resultLinks += results.length;
+      if (results.length) {
+        SEARCH_STATS.successfulQueries += 1;
+        return results.slice(0, limit);
+      }
+    } catch (error) {
+      SEARCH_STATS.errors += 1;
+      console.warn(`Search provider ${engine.name} unavailable: ${error?.message || error}`);
+    }
+  }
+  return [];
+}
+const SOURCE_DOMAINS = {
+  "pokebeach": "pokebeach.com", "pokeguardian": "pokeguardian.com", "pokecollector": "pokecollector.com",
+  "mashable": "mashable.com", "sheknows": "sheknows.com", "screenrant": "screenrant.com",
+  "gamerant": "gamerant.com", "yahoo": "yahoo.com", "ign": "ign.com", "kotaku": "kotaku.com",
+  "dexerto": "dexerto.com", "essentialjapan": "essential-japan.com", "comicbookresources": "comicbook.com",
+  "polygon": "polygon.com", "cnet": "cnet.com", "toms guide": "tomsguide.com", "wargamer": "wargamer.com"
+};
+function publisherHostFor(item) {
+  try {
+    const host = new URL(item?.publisherUrl || "").hostname.toLowerCase().replace(/^www\./, "");
+    if (host && !isGoogleHost(host)) return host;
+  } catch { /* use publisher-name map */ }
+  const source = String(item?.source || "").toLowerCase().replace(/[^a-z0-9 ]/g, "").trim();
+  for (const [name, host] of Object.entries(SOURCE_DOMAINS)) if (source.includes(name)) return host;
+  return "";
+}
+function titleMatchCount(title, candidateText) {
+  const wanted = significantWords(title);
+  const haystack = String(candidateText || "").toLowerCase();
+  return wanted.filter((word) => haystack.includes(word)).length;
+}
+async function searchPublisherArticle(item) {
+  const title = String(item?.title || "").trim();
+  if (!title) return null;
+  const publisherHost = publisherHostFor(item);
+  const queries = publisherHost
+    ? [`site:${publisherHost} "${title}"`, `"${title}" ${String(item.source || "")}`]
+    : [`"${title}" ${String(item.source || "")} Pokemon TCG article`, `"${title}" Pokemon TCG`];
+  for (const query of queries) {
+    const results = await searchWebResults(query, 8);
+    const ranked = results.map((result) => {
+      let host = "";
+      try { host = new URL(result.url).hostname.toLowerCase().replace(/^www\./, ""); } catch { /* no-op */ }
+      const domainMatch = !publisherHost || host === publisherHost || host.endsWith(`.${publisherHost}`);
+      return { ...result, host, domainMatch, score: titleMatchCount(title, `${result.title} ${result.snippet} ${result.url}`) + (domainMatch ? 5 : -5) };
+    }).filter((result) => result.domainMatch && result.score >= 7 && new URL(result.url).pathname !== "/")
+      .sort((a, b) => b.score - a.score);
+    for (const result of ranked.slice(0, 3)) {
+      try {
+        const page = await fetchHtml(result.url);
+        if (isGoogleHost(new URL(page.url).hostname)) continue;
+        const text = `${titleTag(page.html)} ${metaValue(page.html, ["og:title", "og:description", "description"]) } ${pageText(page.html)}`;
+        if (titleMatchCount(title, text) < 2) continue;
+        return page;
+      } catch { /* try the next search result */ }
+    }
+  }
+  return null;
+}
+function isPokemonTcgProductAlert(post) {
+  const text = `${post?.title || ""} ${post?.summary || ""} ${post?.source || ""}`;
+  if (!POKEMON_RE.test(text) || !TCG_PRODUCT_RE.test(text) || CRIME_RE.test(text)) return false;
+  // Exclude mixed-category roundup headlines unless the alert itself names a Pokémon TCG product.
+  if (/magic the gathering|yu-gi-oh|lego|playstation|xbox|nintendo switch|one piece card game/i.test(text)
+    && !/pokemon (?:tcg )?(?:cards?|booster|elite trainer|collection|promo)|pok[eé]mon trading cards/i.test(text)) return false;
+  return true;
+}
+function retailerSearchLinksFor(post, preferred = "Other") {
+  if (!isPokemonTcgProductAlert(post)) return [];
+  const itemTerms = productWords(post).slice(0, 7).join(" ");
+  const query = ["Pokemon TCG", itemTerms].filter(Boolean).join(" ");
+  const named = preferred && preferred !== "Other" ? [preferred] : [];
+  const stores = [...new Set([...named, "TCGplayer", "Amazon", "Target"])].slice(0, 3);
+  return stores.map((retailer) => ({ retailer, url: productSearchUrl(retailer, query) }))
+    .filter((item) => /^https?:\/\//i.test(item.url));
+}
+async function searchGiveawayEntryPage(raffle) {
+  const title = String(raffle?.title || "").trim();
+  if (!title) return null;
+  const queries = [
+    `"${title}" Pokemon TCG giveaway enter`,
+    `"${title}" (Gleam OR SweepWidget OR Rafflecopter OR Raffall) Pokemon cards`
+  ];
+  for (const query of queries) {
+    const results = await searchWebResults(query, 8);
+    for (const result of results.slice(0, MAX_SEARCH_RESULT_CHECKS)) {
+      try {
+        const page = await fetchHtml(result.url);
+        if (!entryPageValid(page.url, page.html, raffle)) continue;
+        return { page, label: result.title || "Verified giveaway entry page" };
+      } catch { /* unverified destination */ }
+    }
+  }
+  return null;
+}
+
 function findPublisherArticleInGooglePage(html, googleUrl, publisherUrl, articleTitle = "") {
   let publisherHost = "";
   try { publisherHost = new URL(publisherUrl).hostname.toLowerCase().replace(/^www\./, ""); } catch { /* title matching can still resolve the article */ }
@@ -453,25 +636,36 @@ function findPublisherArticleInGooglePage(html, googleUrl, publisherUrl, article
 async function fetchPublisherArticle(item) {
   const sourceUrl = String(item.sourceUrl || item.url || "").trim();
   const publisherUrl = String(item.publisherUrl || "").trim();
-  if (!/^https?:\/\//i.test(sourceUrl)) throw new Error("No source article URL was available.");
-  let page = await fetchHtml(sourceUrl);
-  if (isGoogleHost(new URL(page.url).hostname)) {
-    const articleUrl = findPublisherArticleInGooglePage(page.html, page.url, publisherUrl, item.title);
-    if (articleUrl) page = await fetchHtml(articleUrl);
-    else {
-      // A publisher homepage is not a substitute for the individual article page.
-      let hasArticlePath = false;
-      try { hasArticlePath = Boolean(new URL(publisherUrl).pathname.replace(/\/$/, "")); } catch { /* ignore */ }
-      if (hasArticlePath) page = await fetchHtml(publisherUrl);
-      else throw new Error("Google News did not expose the publisher article destination.");
-    }
+  let lastError = "No source article URL was available.";
+  if (/^https?:\/\//i.test(sourceUrl)) {
+    try {
+      const page = await fetchHtml(sourceUrl);
+      if (!isGoogleHost(new URL(page.url).hostname)) {
+        const path = new URL(page.url).pathname;
+        if (path !== "/") return page;
+      } else {
+        const articleUrl = findPublisherArticleInGooglePage(page.html, page.url, publisherUrl, item.title);
+        if (articleUrl) {
+          const article = await fetchHtml(articleUrl);
+          if (!isGoogleHost(new URL(article.url).hostname) && new URL(article.url).pathname !== "/") return article;
+        }
+      }
+    } catch (error) { lastError = error?.message || String(error); }
   }
-  if (isGoogleHost(new URL(page.url).hostname)) throw new Error("Could not resolve Google News to a publisher article.");
-  const path = new URL(page.url).pathname;
-  if (path === "/" && publisherUrl && new URL(publisherUrl).pathname === "/") {
-    throw new Error("Only a publisher homepage was available; no article page was resolved.");
+  // Search by the exact headline and publisher host. The RSS <source url> is only a
+  // homepage, not an article permalink, so it must never be treated as the article itself.
+  const searched = await searchPublisherArticle(item);
+  if (searched) return searched;
+  if (/^https?:\/\//i.test(publisherUrl)) {
+    try {
+      const parsed = new URL(publisherUrl);
+      if (parsed.pathname !== "/") {
+        const page = await fetchHtml(publisherUrl);
+        if (new URL(page.url).pathname !== "/") return page;
+      }
+    } catch (error) { lastError = error?.message || String(error); }
   }
-  return page;
+  throw new Error(`Publisher article could not be resolved from RSS redirect or exact-title search (${lastError}).`);
 }
 function entryCandidates(html, pageUrl, raffle) {
   const source = String(html || "");
@@ -570,7 +764,7 @@ function storeFromText(text, fallback) {
   ];
   return patterns.find(([, regex]) => regex.test(haystack))?.[0] || fallback || "Other";
 }
-function inferStatus(startDate, endDate, bodyText) {
+function inferStatus(startDate, endDate, bodyText, hasVerifiedEntry = false) {
   const now = Date.now();
   const start = Date.parse(startDate || "");
   const end = Date.parse(endDate || "");
@@ -587,55 +781,83 @@ function inferStatus(startDate, endDate, bodyText) {
   // Once a verified entry-opening date has passed, the draw is treated as Open until
   // an explicit close notice or a verified past deadline is found.
   if (Number.isFinite(start) && start <= now) return { status: "Open", statusDate: "", statusNote: "The verified entry start date has passed; no closing date was published, so the giveaway is treated as ongoing until the page says otherwise." };
-  if (explicitlyOpen) return { status: "Open", statusDate: "", statusNote: "The page indicates entries are open, but does not provide a verified deadline." };
+  if (explicitlyOpen && hasVerifiedEntry) return { status: "Open", statusDate: "", statusNote: "The verified entry page indicates entries are open, but does not provide a deadline." };
+  if (explicitlyOpen) return { status: "Verify", statusDate: "", statusNote: "The announcement says to enter, but no working entry destination was verified." };
   return { status: "Verify", statusDate: "", statusNote: "The giveaway is relevant, but its entry window could not be verified." };
 }
 async function resolveRaffle(raffle) {
-  const page = await fetchPublisherArticle(raffle);
-  const pageCanonical = canonicalUrl(page.html, page.url);
-  const sourceText = pageText(page.html);
-  const metadata = extractPageMetadata(page.html, pageCanonical, raffle);
-  const combined = `${raffle.title || ""} ${raffle.summary || ""} ${metadata.pageTitle} ${metadata.pageDescription} ${sourceText}`;
-  const relevant = isTcgGiveawayText(combined) && !CRIME_RE.test(combined) && !metadata.cashOnlyPrize;
-  if (!relevant) return { relevant: false, sourceUrl: pageCanonical, metadata, bodyText: sourceText };
+  let page = null;
+  let pageError = "";
+  try { page = await fetchPublisherArticle(raffle); }
+  catch (error) { pageError = error?.message || String(error); }
 
+  let pageCanonical = "";
+  let sourceText = "";
+  let metadata = {};
   let entryUrl = "";
   let entryLinkLabel = "";
-  if (entryPageValid(page.url, page.html, raffle) || entryPageValid(pageCanonical, page.html, raffle)) {
-    entryUrl = page.url;
-    entryLinkLabel = "Verified Pokémon TCG entry page";
-  } else {
-    const candidates = entryCandidates(page.html, page.url, raffle).slice(0, 5);
-    for (const candidate of candidates) {
-      try {
-        const entryPage = await fetchHtml(candidate.url);
-        if (!entryPageValid(entryPage.url, entryPage.html, raffle)) continue;
-        entryUrl = entryPage.url;
-        entryLinkLabel = candidate.label || "Verified giveaway entry";
-        const entryMetadata = extractPageMetadata(entryPage.html, entryPage.url, raffle);
-        if (entryMetadata.prize) metadata.prize = entryMetadata.prize;
-        if (entryMetadata.startDate) metadata.startDate = entryMetadata.startDate;
-        if (entryMetadata.endDate) metadata.endDate = entryMetadata.endDate;
-        if (entryMetadata.imageUrl) {
-          metadata.imageUrl = entryMetadata.imageUrl;
-          metadata.imageType = entryMetadata.imageType;
-          metadata.imageUrls = entryMetadata.imageUrls;
-        }
-        break;
-      } catch {
-        // Failed or non-HTML destinations are not advertised as entry pages.
+  if (page) {
+    pageCanonical = canonicalUrl(page.html, page.url);
+    sourceText = pageText(page.html);
+    metadata = extractPageMetadata(page.html, pageCanonical, raffle);
+    const combined = `${raffle.title || ""} ${raffle.summary || ""} ${metadata.pageTitle} ${metadata.pageDescription} ${sourceText}`;
+    const relevant = isTcgGiveawayText(combined) && !CRIME_RE.test(combined) && !metadata.cashOnlyPrize;
+    if (!relevant) return { relevant: false, sourceUrl: pageCanonical, metadata, bodyText: sourceText };
+
+    if (entryPageValid(page.url, page.html, raffle) || entryPageValid(pageCanonical, page.html, raffle)) {
+      entryUrl = page.url;
+      entryLinkLabel = "Verified Pokémon TCG entry page";
+    } else {
+      const candidates = entryCandidates(page.html, page.url, raffle).slice(0, 5);
+      for (const candidate of candidates) {
+        try {
+          const entryPage = await fetchHtml(candidate.url);
+          if (!entryPageValid(entryPage.url, entryPage.html, raffle)) continue;
+          entryUrl = entryPage.url;
+          entryLinkLabel = candidate.label || "Verified giveaway entry";
+          const entryMetadata = extractPageMetadata(entryPage.html, entryPage.url, raffle);
+          for (const field of ["prize", "startDate", "endDate", "imageUrl", "imageType", "imageUrls"]) {
+            if (entryMetadata[field]) metadata[field] = entryMetadata[field];
+          }
+          break;
+        } catch { /* Failed or non-HTML destinations are not advertised as entry pages. */ }
       }
+    }
+  } else {
+    // The Google News article redirect may not expose a publisher permalink. Search for
+    // the exact giveaway and validate the destination itself before accepting it.
+    const searchedEntry = await searchGiveawayEntryPage(raffle);
+    if (searchedEntry) {
+      page = searchedEntry.page;
+      pageCanonical = canonicalUrl(page.html, page.url);
+      sourceText = pageText(page.html);
+      metadata = extractPageMetadata(page.html, pageCanonical, raffle);
+      entryUrl = page.url;
+      entryLinkLabel = "Verified Pokémon TCG entry page";
+    } else {
+      return {
+        relevant: true,
+        sourceUrl: String(raffle.sourceUrl || raffle.url || ""),
+        entryUrl: "",
+        entryLinkLabel: "",
+        entrySearchUrl: `https://www.google.com/search?q=${encodeURIComponent(`"${raffle.title}" Pokémon TCG giveaway entry`)}`,
+        metadata: { siteName: raffle.source || "Original publisher", siteUrl: raffle.publisherUrl || "" },
+        inferredStatus: { status: "Verify", statusDate: "", statusNote: "No publisher or entry page could be verified. Search the exact giveaway title before entering." },
+        bodyText: "",
+        pageError
+      };
     }
   }
 
-  const status = inferStatus(metadata.startDate, metadata.endDate, `${sourceText} ${pageText(page.html)}`);
+  const status = inferStatus(metadata.startDate, metadata.endDate, sourceText, Boolean(entryUrl));
   const host = (() => { try { return new URL(pageCanonical).hostname.replace(/^www\./, ""); } catch { return ""; } })();
   return {
     relevant: true,
-    sourceUrl: pageCanonical,
+    sourceUrl: pageCanonical || String(raffle.sourceUrl || raffle.url || ""),
     entryUrl,
     entryLinkLabel,
-    metadata: { ...metadata, siteName: metadata.siteName || raffle.siteName || host, siteUrl: metadata.siteUrl || (() => { try { return new URL(pageCanonical).origin; } catch { return ""; } })() },
+    entrySearchUrl: entryUrl ? "" : `https://www.google.com/search?q=${encodeURIComponent(`"${raffle.title}" Pokémon TCG giveaway entry`)}`,
+    metadata: { ...metadata, siteName: metadata.siteName || raffle.siteName || host || raffle.source || "Original publisher", siteUrl: metadata.siteUrl || (() => { try { return new URL(pageCanonical).origin; } catch { return raffle.publisherUrl || ""; } })() },
     inferredStatus: status,
     bodyText: sourceText
   };
@@ -687,6 +909,7 @@ function productSearchUrl(retailer, query) {
   const q = encodeURIComponent(String(query || "").replace(/\b(restock|restocks|back in stock|available now|deal|deals|price drop|discount|sale|release|revealed|announced)\b/ig, " ").replace(/\s+/g, " ").trim());
   if (!q) return "";
   const paths = {
+    "Pokémon Center": `https://www.pokemoncenter.com/search?q=${q}`,
     "Amazon": `https://www.amazon.com/s?k=${q}`,
     "Target": `https://www.target.com/s?searchTerm=${q}`,
     "Walmart": `https://www.walmart.com/search?q=${q}`,
@@ -779,15 +1002,23 @@ function validateProductPage(productPage, canonical, post) {
   };
 }
 async function resolvePostImages(post) {
-  const page = await fetchPublisherArticle(post);
-  const canonical = canonicalUrl(page.html, page.url);
-  const subject = `${post.title || ""} ${post.summary || ""}`;
-  const nodes = jsonLdNodes(page.html);
-  const structuredProduct = nodes.filter((node) => typeIncludes(node, "Product"))
-    .find((node) => /pok[eé]mon/i.test(`${node.name || ""} ${node.description || ""}`) && TCG_PRODUCT_RE.test(`${node.name || ""} ${node.description || ""}`)) || null;
-  const images = extractItemImages(page.html, canonical, subject, "post", null, structuredProduct);
+  let page = null;
+  let canonical = String(post.sourceUrl || post.url || "");
+  const subject = `${post.title || ""} ${post.summary || ""} ${post.source || ""}`;
+  const images = [];
   const verifiedProducts = [];
   let productPageChecks = 0;
+  try {
+    page = await fetchPublisherArticle(post);
+    canonical = canonicalUrl(page.html, page.url);
+    const nodes = jsonLdNodes(page.html);
+    const structuredProduct = nodes.filter((node) => typeIncludes(node, "Product"))
+      .find((node) => /pok[eé]mon/i.test(`${node.name || ""} ${node.description || ""}`) && TCG_PRODUCT_RE.test(`${node.name || ""} ${node.description || ""}`)) || null;
+    images.push(...extractItemImages(page.html, canonical, subject, "post", null, structuredProduct));
+  } catch (error) {
+    console.warn(`Publisher article lookup skipped for ${post.title}: ${error?.message || error}`);
+  }
+
   const verifyCandidates = async (candidateList, limit = 2) => {
     for (const candidate of candidateList.slice(0, limit)) {
       try {
@@ -805,34 +1036,53 @@ async function resolvePostImages(post) {
     }
   };
 
-  const sourceProductLinks = productPageCandidates(page.html, canonical, post);
-  await verifyCandidates(sourceProductLinks, 2);
-  const primaryProduct = verifiedProducts[0] || null;
-  const subjectRetailer = storeFromText(subject, "Other");
-  const pageRetailer = storeFromText(pageText(page.html), "Other");
-  const retailerFallback = primaryProduct?.retailer || sourceProductLinks[0]?.retailer
-    || (subjectRetailer !== "Other" ? subjectRetailer : pageRetailer);
+  let sourceProductLinks = [];
+  if (page) {
+    sourceProductLinks = productPageCandidates(page.html, canonical, post);
+    await verifyCandidates(sourceProductLinks, 2);
+  }
 
-  // If the article has no usable product link, search the named retailer's public search
-  // page and validate the resulting product detail pages. The search URL itself is only a
-  // fallback; it is never stored as a verified product URL.
-  const retailerSearch = !primaryProduct ? productSearchUrl(retailerFallback, post.title) : "";
-  if (!primaryProduct && retailerSearch) {
-    try {
-      const searchPage = await fetchHtml(retailerSearch);
-      productPageChecks += 1;
-      const searchCanonical = canonicalUrl(searchPage.html, searchPage.url);
-      const searchCandidates = productPageCandidates(searchPage.html, searchCanonical, post);
-      await verifyCandidates(searchCandidates, 2);
-    } catch (error) {
-      console.warn(`Retailer search skipped (${retailerFallback}): ${error?.message || error}`);
+  const subjectRetailer = storeFromText(subject, "Other");
+  const pageRetailer = page ? storeFromText(pageText(page.html), "Other") : "Other";
+  const preferredRetailer = subjectRetailer !== "Other" ? subjectRetailer : pageRetailer;
+
+  // Search indexed retailer product details when the article has no product URL or the
+  // article itself could not be retrieved. Only validated product-detail pages become BUY links.
+  if (!verifiedProducts.length) {
+    const retailerOrder = preferredRetailer !== "Other"
+      ? [preferredRetailer, "TCGplayer", "Amazon"]
+      : ["TCGplayer", "Amazon", "Target"];
+    const domainFor = {
+      "Pokémon Center": "pokemoncenter.com", "TCGplayer": "tcgplayer.com", "Amazon": "amazon.com",
+      "Target": "target.com", "Walmart": "walmart.com", "Best Buy": "bestbuy.com",
+      "GameStop": "gamestop.com", "Costco": "costco.com", "Barnes & Noble": "barnesandnoble.com",
+      "Meijer": "meijer.com", "Five Below": "fivebelow.com", "Hot Topic": "hottopic.com",
+      "Fanatics": "fanatics.com", "Dave & Adam's Card World": "dacardworld.com",
+      "Steel City Collectibles": "steelcitycollectibles.com", "Game Nerdz": "gamenerdz.com",
+      "Forge and Fire Gaming": "forgeandfiregaming.com"
+    };
+    const queryTerms = productWords(post).slice(0, 7).join(" ") || "Pokemon TCG booster box cards";
+    for (const retailer of [...new Set(retailerOrder)].slice(0, 3)) {
+      const domain = domainFor[retailer];
+      if (!domain) continue;
+      const results = await searchWebResults(`site:${domain} "${queryTerms}" Pokemon TCG product buy`, 8);
+      const candidates = results.filter((result) => {
+        try {
+          const host = new URL(result.url).hostname.toLowerCase().replace(/^www\./, "");
+          return host === domain || host.endsWith(`.${domain}`);
+        } catch { return false; }
+      }).map((result) => ({ url: result.url, retailer, label: result.title, score: titleMatchCount(queryTerms, `${result.title} ${result.snippet}`) }));
+      await verifyCandidates(candidates.sort((a, b) => b.score - a.score), 2);
+      if (verifiedProducts.length) break;
     }
   }
-  const dedupedImages = uniqueImages(images);
+
   const finalProduct = verifiedProducts[0] || null;
+  const fallbackLinks = finalProduct ? [] : retailerSearchLinksFor(post, preferredRetailer);
+  const dedupedImages = uniqueImages(images);
   return {
     sourceUrl: canonical,
-    siteUrl: finalProduct ? (() => { try { return new URL(finalProduct.url).origin; } catch { return ""; } })() : (() => { try { return new URL(canonical).origin; } catch { return ""; } })(),
+    siteUrl: finalProduct ? (() => { try { return new URL(finalProduct.url).origin; } catch { return ""; } })() : (page ? (() => { try { return new URL(canonical).origin; } catch { return ""; } })() : ""),
     images: dedupedImages,
     productUrl: finalProduct?.url || "",
     productRetailer: finalProduct?.retailer || "",
@@ -840,9 +1090,10 @@ async function resolvePostImages(post) {
     productPrice: finalProduct?.price || "",
     productAvailability: finalProduct?.availability || "",
     productLinks: verifiedProducts.map(({ url, retailer, name, price, availability }) => ({ url, retailer, name, price, availability })),
-    productSearchUrl: finalProduct ? "" : retailerSearch,
-    productSearchRetailer: finalProduct ? "" : (retailerSearch ? retailerFallback : ""),
-    productLookupStatus: finalProduct ? "verified" : (sourceProductLinks.length || retailerSearch ? "search-fallback" : "not-found"),
+    productSearchLinks: fallbackLinks,
+    productSearchUrl: finalProduct ? "" : (fallbackLinks[0]?.url || ""),
+    productSearchRetailer: finalProduct ? "" : (fallbackLinks[0]?.retailer || ""),
+    productLookupStatus: finalProduct ? "verified" : (fallbackLinks.length ? "search-fallback" : "not-found"),
     productPageChecks
   };
 }
@@ -889,6 +1140,7 @@ if (Array.isArray(posts) && posts.length) {
       post.productPrice = resolved.productPrice || "";
       post.productAvailability = resolved.productAvailability || "";
       post.productLinks = resolved.productLinks || [];
+      post.productSearchLinks = resolved.productSearchLinks || [];
       post.productSearchUrl = resolved.productSearchUrl || "";
       post.productSearchRetailer = resolved.productSearchRetailer || "";
       post.productLookupStatus = resolved.productLookupStatus || "not-found";
@@ -905,10 +1157,14 @@ if (Array.isArray(posts) && posts.length) {
       post.imageLookupError = String(error?.message || error).slice(0, 160);
       post.productUrl = "";
       post.productLinks = [];
-      post.productLookupStatus = "error";
+      const fallbackRetailer = storeFromText(`${post.title || ""} ${post.summary || ""} ${post.source || ""}`, "Other");
+      post.productSearchLinks = retailerSearchLinksFor(post, fallbackRetailer);
+      post.productSearchUrl = post.productSearchLinks[0]?.url || "";
+      post.productSearchRetailer = post.productSearchLinks[0]?.retailer || "";
+      post.productLookupStatus = post.productSearchUrl ? "search-fallback" : "error";
+      post.productLookupError = String(error?.message || error).slice(0, 160);
       post.productLookupAt = checkedAt;
       post.productLookupVersion = RESOLVER_VERSION;
-      post.productSearchUrl = "";
       postImageErrors += 1;
     }
   });
@@ -921,14 +1177,16 @@ if (Array.isArray(posts) && posts.length) {
     itemsWithImages: posts.filter((post) => normalizeImages(post.imageUrls).length).length,
     verifiedProductPages: posts.filter((post) => post.productUrl).length,
     retailerSearchFallbacks: posts.filter((post) => post.productSearchUrl).length,
+    productSearchLinksAvailable: posts.filter((post) => Array.isArray(post.productSearchLinks) && post.productSearchLinks.length).length,
     productPagesMissing: posts.filter((post) => !post.productUrl && !post.productSearchUrl).length,
     productDetailPagesChecked: posts.reduce((total, post) => total + (Number(post.productPageChecks) || 0), 0),
-    imageErrors: postImageErrors
+    imageErrors: postImageErrors,
+    search: { ...SEARCH_STATS }
   };
   writeJson("feed-status.json", feedStatus);
 }
 
-// Enrich, revalidate and prune giveaway leads. Old resolver results are not trusted in v5.
+// Enrich, revalidate and prune giveaway leads. Old resolver results are not trusted in v6.
 const raffles = readJson("raffles.json", []);
 if (!Array.isArray(raffles) || !raffles.length) {
   console.log("Raffle discovery: no raffle leads to validate.");
@@ -937,6 +1195,7 @@ if (!Array.isArray(raffles) || !raffles.length) {
     if (Number(raffle.entryLookupVersion || 0) < RESOLVER_VERSION) {
       raffle.entryUrl = "";
       raffle.entryLinkLabel = "";
+      raffle.entrySearchUrl = "";
       raffle.startDate = "";
       raffle.endDate = "";
       raffle.prize = "";
@@ -945,7 +1204,7 @@ if (!Array.isArray(raffles) || !raffles.length) {
       raffle.imageUrls = [];
       raffle.status = "Verify";
       raffle.statusDate = null;
-      raffle.statusNote = "Waiting for v5 giveaway verification; old entry links and dates were not trusted.";
+      raffle.statusNote = "Waiting for v6 destination verification; old entry links and dates were not trusted.";
       raffle.qualificationStatus = "pending";
     }
     const brief = `${raffle.title || ""} ${raffle.summary || ""}`;
@@ -984,6 +1243,7 @@ if (!Array.isArray(raffles) || !raffles.length) {
       raffle.sourceUrl = resolved.sourceUrl || raffle.sourceUrl || raffle.url;
       raffle.entryUrl = resolved.entryUrl || ""; // never carry an unverified legacy URL forward
       raffle.entryLinkLabel = resolved.entryLinkLabel || "";
+      raffle.entrySearchUrl = resolved.entrySearchUrl || "";
       raffle.entryLookupStatus = resolved.relevant ? (resolved.entryUrl ? "found" : "not-found") : "rejected";
       raffle.entryLookupAt = checkedAt;
       raffle.entryLookupVersion = RESOLVER_VERSION;
@@ -1011,6 +1271,7 @@ if (!Array.isArray(raffles) || !raffles.length) {
     } catch (error) {
       raffle.entryUrl = "";
       raffle.entryLinkLabel = "";
+      raffle.entrySearchUrl = `https://www.google.com/search?q=${encodeURIComponent(`"${raffle.title}" Pokémon TCG giveaway entry`)}`;
       raffle.entryLookupStatus = "error";
       raffle.entryLookupAt = checkedAt;
       raffle.entryLookupVersion = RESOLVER_VERSION;
@@ -1043,6 +1304,7 @@ if (!Array.isArray(raffles) || !raffles.length) {
   feedStatus.raffles.directEntryLinksMissing = validRaffles.filter((item) => !/^https?:\/\//i.test(item.entryUrl || "")).length;
   feedStatus.raffles.entryLookupsThisRun = candidates.length;
   feedStatus.raffles.entryLookupErrors = lookupErrors;
+  feedStatus.raffles.entrySearchFallbacks = validRaffles.filter((item) => /^https?:\/\//i.test(item.entrySearchUrl || "")).length;
   feedStatus.raffles.qualifiedLeads = validRaffles.length;
   feedStatus.raffles.rejectedLeads = raffles.length - validRaffles.length;
   feedStatus.raffles.discoveryEngine = {
@@ -1053,7 +1315,8 @@ if (!Array.isArray(raffles) || !raffles.length) {
     endDatesFound: validRaffles.filter((item) => item.endDate).length,
     prizeImagesFound: validRaffles.filter((item) => item.imageUrl && item.imageType === "prize").length,
     rejectedFalsePositives: raffles.length - validRaffles.length,
-    entryLinksValidated: validRaffles.filter((item) => item.entryUrl).length
+    entryLinksValidated: validRaffles.filter((item) => item.entryUrl).length,
+    search: { ...SEARCH_STATS }
   };
   writeJson("feed-status.json", feedStatus);
   console.log(`PokeDrop discovery v${RESOLVER_VERSION}: ${candidates.length} checked; ${validRaffles.length} qualified; ${feedStatus.raffles.directEntryLinksFound} verified entry URLs; ${lookupErrors} page errors.`);

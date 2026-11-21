@@ -229,6 +229,7 @@ function inferStatus(title, summary, publishedDate, startDate = "", endDate = ""
     return { status: "Closed", statusDate: closingDate, statusNote: "The source indicates entries have closed or winners were announced." };
   }
   if (closingDate && Date.parse(closingDate) < now) return { status: "Closed", statusDate: closingDate, statusNote: "The listed entry deadline appears to have passed." };
+  if (Number.isFinite(start) && start <= now) return { status: "Open", statusDate: endDate || "", statusNote: "The verified entry start date has passed; no closing date was published, so the giveaway is treated as ongoing until the page says otherwise." };
   if (openingDate && Date.parse(openingDate) > now) return { status: "Upcoming", statusDate: openingDate, statusNote: "The source indicates a future entry window." };
   if (/\b(coming soon|upcoming raffle|upcoming giveaway|will launch|will open|registration opens soon|entries open soon|starts soon|pre[- ]?registration)\b/.test(text)) {
     return { status: "Upcoming", statusDate: openingDate, statusNote: "The source describes a future entry window; confirm its opening date." };
@@ -301,6 +302,12 @@ const validRecent = (post) => {
 
 const postCandidates = [...collected, ...previousPosts].filter(validRecent);
 const uniquePosts = new Map();
+const POST_ENRICHMENT_FIELDS = [
+  "publisherUrl", "sourceUrl", "siteUrl", "imageUrls", "imageLookupAt", "imageLookupStatus", "imageLookupVersion", "imageLookupError",
+  "productUrl", "productRetailer", "productName", "productPrice", "productAvailability", "productLinks", "productSearchLinks",
+  "productSearchUrl", "productSearchRetailer", "productLookupStatus", "productLookupAt", "productLookupVersion", "productPageChecks",
+  "productVerifiedAt", "productLookupError"
+];
 for (const post of postCandidates) {
   const title = clean(post.title);
   const key = normalizedKey(title);
@@ -319,12 +326,24 @@ for (const post of postCandidates) {
     imageLookupVersion: Number(post.imageLookupVersion || 0),
     url: String(post.url || "").trim()
   };
+  for (const field of POST_ENRICHMENT_FIELDS) {
+    if (field in post) {
+      if (field === "imageUrls" || field === "productLinks" || field === "productSearchLinks") normalized[field] = Array.isArray(post[field]) ? post[field] : [];
+      else if (field.endsWith("Version") || field === "productPageChecks") normalized[field] = Number(post[field] || 0);
+      else normalized[field] = String(post[field] || "").trim();
+    }
+  }
   if (!/^https?:\/\//i.test(normalized.url)) continue;
   const existing = uniquePosts.get(key);
   if (existing) {
-    for (const field of ["publisherUrl", "sourceUrl", "imageLookupAt", "imageLookupStatus"]) normalized[field] ||= existing[field] || "";
-    if (!normalized.imageLookupVersion) normalized.imageLookupVersion = Number(existing.imageLookupVersion || 0);
-    if (!normalized.imageUrls.length) normalized.imageUrls = Array.isArray(existing.imageUrls) ? existing.imageUrls : [];
+    for (const field of POST_ENRICHMENT_FIELDS) {
+      const isArray = field === "imageUrls" || field === "productLinks" || field === "productSearchLinks";
+      const isEmpty = (value) => isArray
+        ? !Array.isArray(value) || value.length === 0
+        : value === "" || value === 0 || value === undefined || value === null;
+      if (isEmpty(normalized[field]) && !isEmpty(existing[field])) normalized[field] = existing[field];
+      else if (isEmpty(existing[field]) && !isEmpty(normalized[field])) existing[field] = normalized[field];
+    }
   }
   if (!existing || Date.parse(normalized.date) > Date.parse(existing.date)) uniquePosts.set(key, normalized);
 }
@@ -346,16 +365,12 @@ for (const post of raffleCandidates) {
   const candidateIdentity = raffleIdentity(post);
   const isTargetedResult = candidateIdentity && targetedRaffleUrls.has(candidateIdentity);
   const isRetainedLead = candidateIdentity && previousRaffleUrls.has(candidateIdentity);
-  // The targeted RSS query itself is Pokemon/TCG scoped. Keep those results and prior
-  // saved leads even when the short RSS snippet omits the search terms; apply strict
-  // text qualification only to incidental raffle mentions from general news feeds.
   if (!isTargetedResult && !isRetainedLead && !isTcgRaffleCandidate({ ...post, title, summary })) continue;
   const url = String(post.url || post.sourceUrl || "").trim();
   if (!/^https?:\/\//i.test(url)) continue;
   const identity = raffleIdentity({ url });
   const titleKey = normalizedKey(title);
   const prior = previousByIdentity.get(identity) || null;
-  // Keep distinct publishers/entries even when they use the same generic giveaway title.
   const key = identity || titleKey;
   const status = inferStatus(title, summary, post.date, post.startDate || prior?.startDate, post.endDate || prior?.endDate);
   const normalized = {
@@ -374,6 +389,8 @@ for (const post of raffleCandidates) {
     targetedSearch: Boolean(isTargetedResult || prior?.targetedSearch),
     entryUrl: String(post.entryUrl || prior?.entryUrl || "").trim(),
     entryLinkLabel: String(post.entryLinkLabel || prior?.entryLinkLabel || "").trim(),
+    entrySearchUrl: String(post.entrySearchUrl || prior?.entrySearchUrl || "").trim(),
+    qualificationStatus: String(post.qualificationStatus || prior?.qualificationStatus || "").trim(),
     entryLookupAt: String(post.entryLookupAt || prior?.entryLookupAt || "").trim(),
     entryLookupStatus: String(post.entryLookupStatus || prior?.entryLookupStatus || "").trim(),
     entryLookupVersion: Number(post.entryLookupVersion || prior?.entryLookupVersion || 0),
@@ -391,8 +408,7 @@ for (const post of raffleCandidates) {
   if (!normalized.sourceUrl) normalized.sourceUrl = url;
   const existing = uniqueRaffles.get(key);
   if (!existing || Date.parse(normalized.date) > Date.parse(existing.date)) {
-    // Carry enrichment from an older duplicate when a fresher syndicated link has no details yet.
-    for (const field of ["entryUrl", "entryLinkLabel", "entryLookupAt", "entryLookupStatus", "entryLookupVersion", "publisherUrl", "targetedSearch", "siteName", "siteUrl", "pageTitle", "pageDescription", "startDate", "endDate", "prize", "imageUrl", "imageType", "lastVerifiedAt"]) {
+    for (const field of ["entryUrl", "entryLinkLabel", "entrySearchUrl", "qualificationStatus", "entryLookupAt", "entryLookupStatus", "entryLookupVersion", "publisherUrl", "targetedSearch", "siteName", "siteUrl", "pageTitle", "pageDescription", "startDate", "endDate", "prize", "imageUrl", "imageType", "lastVerifiedAt"]) {
       if (!normalized[field] && existing?.[field]) normalized[field] = existing[field];
     }
     if (!post.sourceUrl && existing?.sourceUrl && isGoogleNewsUrl(normalized.sourceUrl)) normalized.sourceUrl = existing.sourceUrl;

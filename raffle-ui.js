@@ -223,29 +223,60 @@
     const actions = [...card.querySelectorAll("a.post-action")];
     const original = actions.find((link) => !link.classList.contains("post-action-secondary")) || null;
     const productUrl = httpUrl(item.productUrl);
-    const searchUrl = httpUrl(item.productSearchUrl);
-    const retailer = String(item.productRetailer || item.productSearchRetailer || "retailer").toUpperCase();
+    const fallbackLinks = (Array.isArray(item.productSearchLinks) ? item.productSearchLinks : [])
+      .map((entry) => ({ url: httpUrl(entry?.url), retailer: String(entry?.retailer || "retailer") }))
+      .filter((entry) => entry.url);
+    const legacySearchUrl = httpUrl(item.productSearchUrl);
+    if (!fallbackLinks.length && legacySearchUrl) {
+      fallbackLinks.push({ url: legacySearchUrl, retailer: String(item.productSearchRetailer || "retailer") });
+    }
+    const sourceLinkExists = () => [...card.querySelectorAll("a.post-action")].some((link) => link.classList.contains("post-action-secondary"));
 
-    if (original && productUrl) {
-      original.href = productUrl;
-      original.textContent = /out of stock|sold out|discontinued/i.test(item.productAvailability || "")
+    if (productUrl) {
+      let link = original;
+      if (!link) {
+        link = document.createElement("a");
+        link.className = "post-action";
+        card.append(link);
+      }
+      const retailer = String(item.productRetailer || "retailer").toUpperCase();
+      link.href = productUrl;
+      link.textContent = /out of stock|sold out|discontinued/i.test(item.productAvailability || "")
         ? `OPEN ${retailer} PRODUCT PAGE`
         : /in stock|pre.?order|back order/i.test(item.productAvailability || "")
           ? `BUY AT ${retailer}`
           : `VIEW PRODUCT AT ${retailer}`;
-      original.dataset.destinationType = "verified-product";
-      original.rel = "noopener noreferrer sponsored";
+      link.dataset.destinationType = "verified-product";
+      link.rel = "noopener noreferrer sponsored";
       addSourceArticleLink(card, item);
-    } else if (original && searchUrl) {
-      original.href = searchUrl;
-      original.textContent = `SEARCH ${retailer} FOR ITEM`;
-      original.dataset.destinationType = "retailer-search";
-      original.rel = "noopener noreferrer";
+    } else if (fallbackLinks.length) {
+      const first = fallbackLinks[0];
+      let link = original;
+      if (!link) {
+        link = document.createElement("a");
+        link.className = "post-action";
+        card.append(link);
+      }
+      link.href = first.url;
+      link.textContent = `SEARCH ${first.retailer.toUpperCase()} FOR ITEM`;
+      link.dataset.destinationType = "retailer-search";
+      link.rel = "noopener noreferrer";
+      for (const entry of fallbackLinks.slice(1)) {
+        const extra = document.createElement("a");
+        extra.className = "post-action post-action-secondary product-search-alternative";
+        extra.href = entry.url;
+        extra.target = "_blank";
+        extra.rel = "noopener noreferrer";
+        extra.textContent = `ALSO SEARCH ${entry.retailer.toUpperCase()}`;
+        card.append(extra);
+      }
       addSourceArticleLink(card, item);
       const note = document.createElement("p");
       note.className = "product-destination-note";
-      note.textContent = "Retailer search only — a matching individual product page has not been verified.";
-      card.insertBefore(note, original);
+      note.textContent = "These open retailer search results, not a confirmed individual product listing. Check the exact item, seller and stock before buying.";
+      const summary = card.querySelector(".post-summary");
+      if (summary) summary.insertAdjacentElement("afterend", note);
+      else card.insertBefore(note, link);
     } else {
       if (original) {
         const missing = document.createElement("span");
@@ -256,12 +287,12 @@
       addSourceArticleLink(card, item);
       const note = document.createElement("p");
       note.className = "product-destination-note";
-      note.textContent = "This is a news/source alert, not a confirmed purchase listing. No retailer product URL was found.";
+      note.textContent = "This is a news/source alert, not a confirmed purchase listing. No retailer destination was found.";
       const summary = card.querySelector(".post-summary");
       if (summary) summary.insertAdjacentElement("afterend", note);
     }
 
-    if (productUrl || searchUrl || item.productPrice || item.productAvailability) {
+    if (productUrl || fallbackLinks.length || item.productPrice || item.productAvailability) {
       const details = document.createElement("div");
       details.className = "product-extra-details";
       if (item.productName) {
@@ -316,6 +347,15 @@
     if (!isRaffle) {
       enhanceProductDestination(card, item);
       return;
+    }
+    if (!item.entryUrl && item.entrySearchUrl && !card.querySelector(".entry-search-fallback")) {
+      const searchLink = document.createElement("a");
+      searchLink.className = "post-action post-action-secondary entry-search-fallback";
+      searchLink.href = httpUrl(item.entrySearchUrl);
+      searchLink.target = "_blank";
+      searchLink.rel = "noopener noreferrer";
+      searchLink.textContent = "SEARCH FOR OFFICIAL ENTRY PAGE";
+      if (searchLink.href) card.append(searchLink);
     }
     if (card.dataset.raffleExtraDetails === "true") return;
     const details = document.createElement("div");
@@ -447,15 +487,25 @@
       }
       const imageSummary = `ITEM IMAGES: ${imageDiscovery.itemsWithImages || 0} ALERTS WITH IMAGES · ${imageDiscovery.pagesChecked || 0} PAGES CHECKED THIS RUN`;
       if (imageLine.textContent !== imageSummary) imageLine.textContent = imageSummary;
-      let productLine = document.querySelector("#product-destination-diagnostics");
-      if (!productLine) {
-        productLine = document.createElement("p");
-        productLine.id = "product-destination-diagnostics";
-        productLine.className = "diagnostics-summary";
-        holder.append(productLine);
+      let destinationLine = document.querySelector("#destination-diagnostics");
+      if (!destinationLine) {
+        destinationLine = document.createElement("p");
+        destinationLine.id = "destination-diagnostics";
+        destinationLine.className = "diagnostics-summary";
+        holder.append(destinationLine);
       }
-      const productSummary = `PURCHASE DESTINATIONS: ${imageDiscovery.verifiedProductPages || 0} VERIFIED PRODUCT PAGES · ${imageDiscovery.retailerSearchFallbacks || 0} RETAILER SEARCH FALLBACKS · ${imageDiscovery.productPagesMissing || 0} SOURCE-ONLY ALERTS`;
-      if (productLine.textContent !== productSummary) productLine.textContent = productSummary;
+      const destinationSummary = `PURCHASE DESTINATIONS: ${imageDiscovery.verifiedProductPages || 0} VERIFIED PRODUCT PAGES · ${imageDiscovery.retailerSearchFallbacks || 0} RETAILER SEARCH FALLBACKS · GIVEAWAY ENTRIES: ${raffle.directEntryLinksFound || 0} VERIFIED ENTRY PAGES · ${raffle.entrySearchFallbacks || 0} ENTRY SEARCH FALLBACKS`;
+      if (destinationLine.textContent !== destinationSummary) destinationLine.textContent = destinationSummary;
+      let searchLine = document.querySelector("#search-diagnostics");
+      if (!searchLine) {
+        searchLine = document.createElement("p");
+        searchLine.id = "search-diagnostics";
+        searchLine.className = "diagnostics-summary";
+        holder.append(searchLine);
+      }
+      const searchStats = discovery.search || imageDiscovery.search || {};
+      const searchSummary = `PUBLIC SEARCH LOOKUPS: ${searchStats.successfulQueries || 0} QUERIES RETURNED RESULTS · ${searchStats.resultLinks || 0} RESULT LINKS PARSED · ${searchStats.errors || 0} REQUEST ERRORS`;
+      if (searchLine.textContent !== searchSummary) searchLine.textContent = searchSummary;
     } catch (error) {
       console.warn("PokeDrop image/giveaway diagnostics unavailable:", error);
     }
