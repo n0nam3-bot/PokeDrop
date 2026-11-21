@@ -19,7 +19,21 @@ PokeDrop is a free, Pokémon-inspired 8-bit community radar for Pokémon TCG res
 - `feed-status.json` records how many searches responded, how many raw results each returned, how many leads were saved, and which requests failed. Open **VIEW FEED SOURCE STATUS** below the result counter to diagnose a zero count.
 - Raffle status is inferred from article headlines/snippets, not verified directly by retailers. Ambiguous fresh entries are marked **Verify** rather than being guessed as open.
 
-**Important:** this is a free public-news radar, not a live retailer inventory checker or official raffle-registration integration. Search coverage can miss active store-run giveaways and can surface old or incomplete information. The raffle status is not confirmed by the retailer. Open the source and check the official entry page for current dates, rules, eligibility and availability.
+**Important:** the GitHub Pages feed is a free public-news radar, not a live retailer inventory checker or official raffle-registration integration. Search coverage can miss active store-run giveaways and can surface old or incomplete information. The raffle status is not confirmed by the retailer. Open the source and check the official entry page for current dates, rules, eligibility and availability.
+
+## Free local product monitor (Windows)
+
+The optional `local-monitor/` tool complements the website by checking the **direct retailer product URLs you add** and sending Discord restock alerts. It is not a paid hosted service and does not change the GitHub Pages feed.
+
+- Runs on your own Windows PC using free **Node.js 20+** and built-in Node features; no npm packages, AI provider, paid API key, database, or proxy is required.
+- Tracks up to 30 direct product pages and checks every 2–30 minutes (3 minutes by default).
+- Reads public Schema.org/JSON-LD and common product availability metadata, with a public Shopify product-data fallback when available.
+- Sends a Discord webhook alert when the first scan finds an available item (optional) or an item changes from OUT OF STOCK/UNKNOWN to IN STOCK/PREORDER.
+- Keeps the watchlist and Discord webhook in `local-monitor/data/` on that PC. Those runtime files are excluded from Git.
+
+To start it, get the updated repository files onto your Windows PC, install Node.js 20 LTS or later, and double-click `local-monitor/start.bat`. Add the retailer's actual product detail page in the local dashboard at `http://127.0.0.1:8787`, then configure a Discord webhook under **Configure Discord Notifications**. Keep the terminal window open and the PC awake for scheduled checks. Full setup and troubleshooting are in [`local-monitor/README.md`](local-monitor/README.md).
+
+This monitor is a watchlist tracker, not an automatic catalog crawler: use the news feed to discover a product, then paste its direct retailer product page into the watchlist. Some retailers block automated requests or do not expose stock status. Such pages are marked **UNKNOWN**, **BLOCKED**, or **ERROR** instead of generating guessed restock alerts. The monitor does not bypass queues, CAPTCHAs, account protections, or automate checkout.
 
 ## Upload a ZIP to update the repository automatically
 
@@ -27,7 +41,7 @@ PokeDrop is a free, Pokémon-inspired 8-bit community radar for Pokémon TCG res
 2. Choose **Add file → Upload files**, select your repository ZIP, and commit the upload.
 3. The **Extract uploaded ZIP** GitHub Actions workflow runs automatically. It extracts the ZIP into matching repository paths, strips one outer project folder when present, removes the uploaded ZIP, commits the extracted files, and requests a GitHub Pages rebuild.
 
-Upload one complete project ZIP at a time. Do not put the ZIP in the repository root; use `uploads/`. The importer protects every file under `.github/workflows/` and its own extraction script, ignores ZIP paths inside `uploads/`, and rejects unsafe archive paths. This is intentional: the automatic Actions token can update site files, but cannot replace workflow definitions. Update workflow files directly in GitHub when needed. GitHub Actions must have **Read and write permissions** under **Settings → Actions → General → Workflow permissions**. No API key, AI provider, or paid token is required.
+Upload one project or patch ZIP at a time. Do not put the ZIP in the repository root; use `uploads/`. The importer protects every file under `.github/workflows/` and its own extraction script, ignores ZIP paths inside `uploads/`, and rejects unsafe archive paths. This is intentional: the automatic Actions token can update site files, but cannot replace workflow definitions. Update workflow files directly in GitHub when needed. GitHub Actions must have **Read and write permissions** under **Settings → Actions → General → Workflow permissions**. No API key, AI provider, or paid token is required.
 
 ## Publish on GitHub Pages
 
