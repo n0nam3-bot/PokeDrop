@@ -4,7 +4,7 @@
  "news": {
   "sourceCount": 5,
   "sourcesResponded": 5,
-  "searchResults": 241,
+  "searchResults": 240,
   "sources": [
    {
     "name": "Restock",
@@ -14,7 +14,7 @@
    {
     "name": "Deals",
     "ok": true,
-    "results": 47
+    "results": 46
    },
    {
     "name": "Rare Drop",
@@ -37,37 +37,37 @@
    "pagesChecked": 20,
    "itemsWithImages": 0,
    "verifiedProductPages": 0,
-   "retailerSearchFallbacks": 9,
-   "productSearchLinksAvailable": 9,
-   "productPagesMissing": 111,
+   "retailerSearchFallbacks": 21,
+   "productSearchLinksAvailable": 21,
+   "productPagesMissing": 99,
    "productDetailPagesChecked": 8,
    "imageErrors": 0,
    "search": {
-    "requests": 98,
-    "successfulQueries": 96,
-    "resultLinks": 868,
+    "requests": 113,
+    "successfulQueries": 85,
+    "resultLinks": 752,
     "errors": 0,
-    "bingRequests": 97,
-    "duckDuckGoRequests": 1
+    "bingRequests": 99,
+    "duckDuckGoRequests": 14
    }
   }
  },
  "raffles": {
   "sourceCount": 17,
   "sourcesResponded": 17,
-  "searchResults": 159,
-  "uniqueLeads": 101,
-  "savedLeads": 101,
+  "searchResults": 130,
+  "uniqueLeads": 84,
+  "savedLeads": 84,
   "directEntryLinksFound": 0,
   "directEntryLinksMissing": 20,
-  "entryLookupsThisRun": 20,
+  "entryLookupsThisRun": 0,
   "entryLookupErrors": 0,
   "historyDays": 365,
   "sources": [
    {
     "name": "TCG giveaways",
     "ok": true,
-    "results": 25
+    "results": 14
    },
    {
     "name": "TCG raffles",
@@ -77,7 +77,7 @@
    {
     "name": "Pokémon card giveaways",
     "ok": true,
-    "results": 24
+    "results": 10
    },
    {
     "name": "Pokémon card raffles",
@@ -117,7 +117,7 @@
    {
     "name": "Walmart giveaways",
     "ok": true,
-    "results": 9
+    "results": 8
    },
    {
     "name": "GameStop giveaways",
@@ -142,33 +142,33 @@
    {
     "name": "Local card shop contests",
     "ok": true,
-    "results": 9
+    "results": 7
    },
    {
     "name": "Community card giveaways",
     "ok": true,
-    "results": 22
+    "results": 21
    }
   ],
   "entrySearchFallbacks": 20,
   "qualifiedLeads": 20,
-  "rejectedLeads": 81,
+  "rejectedLeads": 64,
   "discoveryEngine": {
    "version": 6,
-   "publisherPagesChecked": 20,
+   "publisherPagesChecked": 0,
    "prizeDetailsFound": 0,
    "startDatesFound": 0,
    "endDatesFound": 0,
    "prizeImagesFound": 0,
-   "rejectedFalsePositives": 81,
+   "rejectedFalsePositives": 64,
    "entryLinksValidated": 0,
    "search": {
-    "requests": 178,
-    "successfulQueries": 176,
-    "resultLinks": 1551,
+    "requests": 113,
+    "successfulQueries": 85,
+    "resultLinks": 752,
     "errors": 0,
-    "bingRequests": 177,
-    "duckDuckGoRequests": 1
+    "bingRequests": 99,
+    "duckDuckGoRequests": 14
    }
   }
  },
