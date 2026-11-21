@@ -3,131 +3,90 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#173d2b">
-  <meta name="description" content="A free Pokémon TCG radar for restocks, deals, rare drops, raffles and giveaways.">
-  <title>PokeDrop - Pokémon TCG Drop Finder</title>
-  <link rel="preload" href="fonts/PKMN-RBYGSC.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="stylesheet" href="style.css?v=raffle-inline-fix-2">
+  <meta name="theme-color" content="#10251c">
+  <meta name="description" content="PokeDrop checks public Pokémon TCG retailer listings and tracks verified stock changes, giveaways, and news.">
+  <title>PokeDrop — Pokémon TCG Stock Radar</title>
+  <link rel="stylesheet" href="storefront.css?v=online-radar-1">
 </head>
 <body>
-  <div class="page-shell">
-    <header class="panel masthead">
-      <div class="topline">
-        <span class="eyebrow"><span class="status-pixel" aria-hidden="true"></span> TRAINER ALERT NETWORK</span>
-        <span class="free-stamp">100 PERCENT FREE FEED</span>
-      </div>
-
-      <div class="hero-content">
-        <svg class="pixel-ball" viewBox="0 0 64 64" role="img" aria-label="Pixel art Poké Ball" shape-rendering="crispEdges">
-          <path fill="#171b18" d="M20 2h24v4h8v4h4v8h4v28h-4v8h-4v4h-8v4H20v-4h-8v-4H8v-8H4V18h4v-8h4V6h8z"/>
-          <path fill="#e7473f" d="M20 6h24v4h8v4h4v8h4v8H8v-8h4v-8h4v-4h4z"/>
-          <path fill="#f7f2d8" d="M8 34h48v8h-4v8h-4v4h-8v4H20v-4h-8v-4H8v-8H4v-8z"/>
-          <path fill="#171b18" d="M8 30h48v8H8z"/>
-          <path fill="#171b18" d="M24 22h16v4h4v12h-4v4H24v-4h-4V26h4z"/>
-          <path fill="#f7f2d8" d="M28 26h8v12h-8z"/>
-          <path fill="#171b18" d="M30 28h4v8h-4z"/>
-        </svg>
-
-        <div class="brand-copy">
-          <p class="kicker">THE FREE POKÉMON TCG DROP + RAFFLE RADAR</p>
-          <h1>POKéDROP<span class="title-star" aria-hidden="true">*</span></h1>
-          <p class="tagline">RESTOCKS. DEALS. RARE DROPS. RAFFLES.</p>
-          <p class="intro">Your next chase starts here. Keep an eye on the latest Pokémon TCG news, retailer deals and special releases.</p>
-        </div>
-
-        <div class="hero-badge" aria-label="Community feed, updated automatically">
-          <span class="badge-top">TRAINER</span>
-          <span class="badge-main">RADAR</span>
-          <span class="badge-bottom">ONLINE</span>
-        </div>
-      </div>
-
-      <div class="hero-footer">
-        <span><i class="mini-square" aria-hidden="true"></i> COMMUNITY DROP WATCH</span>
-        <span>HEADLINES + RAFFLE LEADS CHECKED EVERY 30 MIN</span>
+  <div class="app-shell">
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="PokeDrop home">
+        <span class="brand-mark" aria-hidden="true"><span></span></span>
+        <span class="brand-copy"><strong>POKÉDROP</strong><small>THE TCG STOCK RADAR</small></span>
+      </a>
+      <div class="header-right">
+        <span class="free-pill"><span class="pulse-dot"></span> FREE COMMUNITY RADAR</span>
+        <span class="scan-pill" id="header-scan-time">WAITING FOR FIRST SCAN</span>
       </div>
     </header>
 
-    <main>
-      <section class="panel filter-panel" aria-labelledby="filter-title">
-        <div class="section-heading">
-          <div>
-            <p class="section-kicker">01 / SELECT YOUR MISSION</p>
-            <h2 id="filter-title">DROP FINDER</h2>
-          </div>
-          <button type="button" class="pixel-label filter-menu-toggle" id="filter-menu-toggle" aria-expanded="true" aria-controls="filter-controls">FILTER MENU</button>
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">FIND THE DROP. SKIP THE NOISE.</p>
+          <h1>Don't miss the<br><em>next restock.</em></h1>
+          <p class="hero-description">PokeDrop checks public product listings from major retailers and shows stock only when a product page exposes a clear availability signal.</p>
+          <div class="hero-meta"><span class="live-indicator"><i></i> CLOUD CHECKS</span><span>Scheduled every 5 minutes</span><span>No checkout bots. No paid APIs.</span></div>
         </div>
-
-        <div class="filter-controls" id="filter-controls">
-          <div class="category-filter-row">
-            <nav class="category-nav" aria-label="Filter alerts by category"></nav>
-            <div class="raffle-filter-group">
-              <button type="button" class="category-button" id="raffle-category-button" data-value="Raffle" aria-pressed="false">RAFFLES + GIVEAWAYS</button>
-              <div class="raffle-status-nav" id="raffle-status-filter" role="group" aria-label="Filter raffles and giveaways by entry status" hidden>
-                <span class="control-label">ENTRY STATUS</span>
-                <button type="button" data-status="All" aria-pressed="true">ALL STATUSES</button>
-                <button type="button" data-status="Upcoming" aria-pressed="false">UPCOMING</button>
-                <button type="button" data-status="Open" aria-pressed="false">OPEN</button>
-                <button type="button" data-status="Closed" aria-pressed="false">CLOSED</button>
-                <button type="button" data-status="Verify" aria-pressed="false">VERIFY</button>
-              </div>
-            </div>
-          </div>
-
-          <div class="search-controls">
-            <label class="search-wrap">
-              <span class="control-label">SEARCH THE FEED</span>
-              <input type="search" id="search" placeholder="SEARCH SETS, PRODUCTS, RETAILERS..." aria-label="Search alerts">
-            </label>
-            <label class="retailer-wrap">
-              <span class="control-label">RETAILER</span>
-              <select id="retailer-filter" aria-label="Filter by retailer">
-                <option value="all">ALL RETAILERS</option>
-              </select>
-            </label>
-          </div>
-          <p class="filter-note">TIP: Search a set name, product, store or promo to narrow the radar.</p>
+        <div class="hero-art" aria-hidden="true">
+          <div class="orb orb-back"></div><div class="orb orb-front"></div>
+          <div class="card-art"><div class="card-art-top"></div><div class="card-art-spark">✦</div><div class="card-art-bottom"></div></div>
+          <span class="hero-spark spark-one">✦</span><span class="hero-spark spark-two">✧</span>
         </div>
       </section>
 
-      <section class="feed-section" aria-labelledby="feed-title">
-        <div class="feed-heading">
-          <div>
-            <p class="section-kicker">02 / LATEST SIGNALS</p>
-            <h2 id="feed-title">TRAINER ALERTS</h2>
-          </div>
-          <div class="feed-total"><span id="result-count">0</span><span>ALERTS</span></div>
+      <section class="stats-grid" aria-label="Stock radar summary">
+        <article class="stat-card"><span class="stat-label">LISTINGS TRACKED</span><strong id="stat-total">—</strong><small>Verified retailer pages</small></article>
+        <article class="stat-card stat-good"><span class="stat-label">IN STOCK NOW</span><strong id="stat-stock">—</strong><small>Publicly marked available</small></article>
+        <article class="stat-card stat-preorder"><span class="stat-label">PREORDERS</span><strong id="stat-preorder">—</strong><small>Retailer pre-order signals</small></article>
+        <article class="stat-card"><span class="stat-label">RETAILERS REACHED</span><strong id="stat-retailers">—</strong><small id="stat-health">Waiting for scan</small></article>
+      </section>
+
+      <section class="radar-panel" aria-labelledby="radar-heading">
+        <div class="section-head">
+          <div><p class="eyebrow">01 / PRODUCT AVAILABILITY</p><h2 id="radar-heading">STOCK RADAR</h2><p class="section-subtitle">Only verified retailer product pages appear here. News articles are not treated as stock.</p></div>
+          <div class="updated-chip"><span class="pulse-dot"></span><span id="last-updated">LAST CHECK —</span></div>
         </div>
 
-        <div class="feed-status" id="feed-status" role="status" aria-live="polite">
-          <span class="status-pixel" aria-hidden="true"></span>
-          <span>CONNECTING TO THE DROP RADAR...</span>
+        <div class="toolbar">
+          <div class="tab-list" role="group" aria-label="Filter products">
+            <button class="tab is-active" type="button" data-tab="all" aria-pressed="true">ALL LISTINGS <span id="count-all">0</span></button>
+            <button class="tab" type="button" data-tab="in-stock" aria-pressed="false">IN STOCK <span id="count-stock">0</span></button>
+            <button class="tab" type="button" data-tab="preorder" aria-pressed="false">PREORDER <span id="count-preorder">0</span></button>
+            <button class="tab" type="button" data-tab="out-of-stock" aria-pressed="false">SOLD OUT <span id="count-sold">0</span></button>
+          </div>
+          <div class="filters">
+            <label class="search-box"><span class="sr-only">Search listings</span><span aria-hidden="true">⌕</span><input id="search-input" type="search" placeholder="Search set, product, store…"></label>
+            <label class="select-wrap"><span class="sr-only">Filter retailer</span><select id="retailer-select"><option value="all">All retailers</option></select></label>
+          </div>
         </div>
-        <details class="feed-diagnostics" id="feed-diagnostics">
-          <summary>VIEW FEED SOURCE STATUS</summary>
-          <div id="feed-diagnostics-content">Waiting for the first feed update.</div>
+
+        <div class="notice-line" id="monitor-notice" role="status"><span class="notice-dot"></span><span>Loading the latest stock scan…</span></div>
+        <div class="product-grid" id="product-grid" aria-live="polite"></div>
+        <details class="diagnostics">
+          <summary>CHECK SOURCE HEALTH & SCAN DETAILS</summary>
+          <div id="diagnostics-content" class="diagnostics-content">No scan data yet.</div>
         </details>
-        <section id="feed" class="feed-grid" aria-label="Latest Pokémon TCG alerts" aria-live="polite"></section>
       </section>
 
-      <aside class="panel signal-note">
-        <span class="note-icon" aria-hidden="true">!</span>
-        <div>
-          <h2>CHECK BEFORE YOU CHECK OUT</h2>
-          <p>PokeDrop collects public news coverage and raffle leads. A link is not a live stock or active-entry guarantee; prices, dates, rules and availability can change. Open the original source to confirm details before purchasing or entering.</p>
+      <section class="community-section" aria-labelledby="community-heading">
+        <div class="section-head community-head">
+          <div><p class="eyebrow">02 / COMMUNITY DISCOVERIES</p><h2 id="community-heading">GIVEAWAYS & NEWS</h2><p class="section-subtitle">These are announcements and leads—not verified retailer inventory.</p></div>
+          <div class="community-tabs" role="group" aria-label="Show community updates"><button class="community-tab is-active" type="button" data-community="giveaways" aria-pressed="true">GIVEAWAYS</button><button class="community-tab" type="button" data-community="news" aria-pressed="false">TCG NEWS</button></div>
         </div>
-      </aside>
+        <div id="community-grid" class="community-grid" aria-live="polite"></div>
+      </section>
+
+      <section class="how-it-works">
+        <div><span class="step-number">01</span><strong>PUBLIC LISTINGS</strong><p>Checks publicly accessible retailer product pages and search listings.</p></div>
+        <div><span class="step-number">02</span><strong>VERIFY STOCK</strong><p>Looks for product-specific availability signals, not article headlines.</p></div>
+        <div><span class="step-number">03</span><strong>ALERT ON CHANGE</strong><p>Publishes updates here and can send a free Discord alert for new stock.</p></div>
+      </section>
     </main>
 
-    <footer class="panel site-footer">
-      <div class="footer-brand">POKéDROP <span>///</span> TRAINER NETWORK</div>
-      <p>Fan-made community project. Not affiliated with Nintendo, Game Freak or The Pokémon Company. Product names and trademarks belong to their respective owners.</p>
-      <p class="affiliate-note">Some links may be affiliate links and could earn a commission at no extra cost to you.</p>
-      <p class="footer-small">BUILT FOR TRAINERS. FREE TO USE.</p>
-    </footer>
+    <footer class="site-footer"><div class="footer-brand">POKÉDROP <span>✦</span></div><p>Fan-made community project. Not affiliated with Nintendo, Game Freak or The Pokémon Company. Retailer stock can change between scans; always confirm on the retailer's own page.</p><p class="footer-note">PokeDrop does not automate checkout, bypass queues, or solve CAPTCHAs.</p></footer>
   </div>
-
-  <script src="app.js?v=raffle-discovery-v2" defer></script>
-  <script src="raffle-ui.js?v=raffle-destinations-v6" defer></script>
+  <script src="storefront.js?v=online-radar-1" defer></script>
 </body>
 </html>

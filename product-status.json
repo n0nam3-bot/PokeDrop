@@ -1,0 +1,13 @@
+{
+  "state": "waiting",
+  "lastScanAt": null,
+  "retailersChecked": 0,
+  "retailersReached": 0,
+  "productsFound": 0,
+  "productsChecked": 0,
+  "productsVerified": 0,
+  "alertsSent": 0,
+  "sources": [],
+  "errors": [],
+  "note": "The hosted retailer monitor has not completed its first scan yet."
+}
