@@ -1,12 +1,12 @@
 {
   "state": "ok",
-  "lastScanAt": "2026-11-21T19:58:43.095Z",
+  "lastScanAt": "2026-11-21T23:28:23.591Z",
   "retailersChecked": 10,
   "retailersReached": 10,
-  "retailersWithProducts": 1,
-  "productsFound": 1,
-  "productsChecked": 3,
-  "productsVerified": 1,
+  "retailersWithProducts": 4,
+  "productsFound": 8,
+  "productsChecked": 12,
+  "productsVerified": 6,
   "alertsSent": 0,
   "sources": [
     {
@@ -22,10 +22,10 @@
       "retailer": "Target",
       "ok": true,
       "responded": true,
-      "productsFound": 0,
-      "pagesChecked": 0,
-      "method": "none",
-      "error": "Retailer search page loaded but did not expose matching product-detail links in its HTML | bing-rss: response contained no matching product-detail links | bing-html: response contained no matching product-detail links | duckduckgo-html: res"
+      "productsFound": 4,
+      "pagesChecked": 3,
+      "method": "duckduckgo-html",
+      "error": ""
     },
     {
       "retailer": "Walmart",
@@ -58,28 +58,28 @@
       "retailer": "Amazon",
       "ok": true,
       "responded": true,
-      "productsFound": 12,
-      "pagesChecked": 3,
-      "method": "retailer-search",
-      "error": "Final destination is not a retailer product-detail page"
+      "productsFound": 3,
+      "pagesChecked": 4,
+      "method": "duckduckgo-html",
+      "error": "HTTP 503"
     },
     {
       "retailer": "Costco",
       "ok": true,
       "responded": true,
-      "productsFound": 0,
-      "pagesChecked": 0,
-      "method": "none",
-      "error": "Retailer search page loaded but did not expose matching product-detail links in its HTML | bing-rss: response contained no matching product-detail links | bing-html: response contained no matching product-detail links | duckduckgo-html: res"
+      "productsFound": 3,
+      "pagesChecked": 3,
+      "method": "duckduckgo-html",
+      "error": "HTTP 429"
     },
     {
       "retailer": "TCGplayer",
       "ok": true,
       "responded": true,
-      "productsFound": 0,
-      "pagesChecked": 0,
-      "method": "none",
-      "error": "Retailer search page loaded but did not expose matching product-detail links in its HTML | bing-rss: response contained no matching product-detail links | bing-html: response contained no matching product-detail links | duckduckgo-html: res"
+      "productsFound": 2,
+      "pagesChecked": 2,
+      "method": "duckduckgo-html",
+      "error": ""
     },
     {
       "retailer": "Barnes & Noble",
@@ -101,19 +101,19 @@
     }
   ],
   "errors": [
-    "Amazon: Product detail page did not confirm a Pokémon TCG item",
-    "Amazon: Final destination is not a retailer product-detail page"
+    "Amazon: HTTP 503",
+    "Costco: HTTP 429"
   ],
   "search": {
-    "requests": 37,
+    "requests": 40,
     "retailerSearchPages": 10,
-    "bingRssRequests": 9,
-    "bingHtmlRequests": 9,
-    "duckduckgoRequests": 9,
-    "successfulSearches": 1,
+    "bingRssRequests": 10,
+    "bingHtmlRequests": 10,
+    "duckduckgoRequests": 10,
+    "successfulSearches": 4,
     "resultLinks": 12,
-    "blockedResponses": 2,
-    "errors": 4
+    "blockedResponses": 3,
+    "errors": 5
   },
   "note": "Stock states come from validated product pages. A page that cannot be reached retains its last verified stock state and is marked with a failed check.",
   "discord": {
