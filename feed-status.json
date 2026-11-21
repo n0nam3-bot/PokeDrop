@@ -4,7 +4,7 @@
  "news": {
   "sourceCount": 5,
   "sourcesResponded": 5,
-  "searchResults": 57,
+  "searchResults": 60,
   "sources": [
    {
     "name": "Restock",
@@ -14,7 +14,7 @@
    {
     "name": "Deals",
     "ok": true,
-    "results": 11
+    "results": 12
    },
    {
     "name": "Rare Drop",
@@ -24,18 +24,18 @@
    {
     "name": "Release",
     "ok": true,
-    "results": 11
+    "results": 12
    },
    {
     "name": "Promo",
     "ok": true,
-    "results": 11
+    "results": 12
    }
   ],
   "itemImageDiscovery": {
    "version": 7,
    "pagesChecked": 20,
-   "itemsWithImages": 9,
+   "itemsWithImages": 18,
    "verifiedProductPages": 0,
    "retailerSearchFallbacks": 59,
    "productSearchLinksAvailable": 59,
@@ -43,11 +43,11 @@
    "productDetailPagesChecked": 13,
    "imageErrors": 0,
    "search": {
-    "requests": 89,
-    "successfulQueries": 89,
-    "resultLinks": 814,
+    "requests": 85,
+    "successfulQueries": 85,
+    "resultLinks": 765,
     "errors": 0,
-    "bingRequests": 89,
+    "bingRequests": 85,
     "duckDuckGoRequests": 0
    }
   }
@@ -55,12 +55,12 @@
  "raffles": {
   "sourceCount": 17,
   "sourcesResponded": 17,
-  "searchResults": 175,
-  "uniqueLeads": 129,
-  "savedLeads": 129,
+  "searchResults": 174,
+  "uniqueLeads": 126,
+  "savedLeads": 126,
   "directEntryLinksFound": 0,
-  "directEntryLinksMissing": 31,
-  "entryLookupsThisRun": 32,
+  "directEntryLinksMissing": 32,
+  "entryLookupsThisRun": 2,
   "entryLookupErrors": 0,
   "historyDays": 365,
   "sources": [
@@ -112,7 +112,7 @@
    {
     "name": "Target giveaways",
     "ok": true,
-    "results": 12
+    "results": 11
    },
    {
     "name": "Walmart giveaways",
@@ -150,24 +150,24 @@
     "results": 11
    }
   ],
-  "entrySearchFallbacks": 31,
-  "qualifiedLeads": 31,
-  "rejectedLeads": 98,
+  "entrySearchFallbacks": 32,
+  "qualifiedLeads": 32,
+  "rejectedLeads": 94,
   "discoveryEngine": {
    "version": 7,
-   "publisherPagesChecked": 32,
-   "prizeDetailsFound": 8,
+   "publisherPagesChecked": 2,
+   "prizeDetailsFound": 9,
    "startDatesFound": 1,
    "endDatesFound": 1,
    "prizeImagesFound": 8,
-   "rejectedFalsePositives": 98,
+   "rejectedFalsePositives": 94,
    "entryLinksValidated": 0,
    "search": {
-    "requests": 149,
-    "successfulQueries": 149,
-    "resultLinks": 1394,
+    "requests": 85,
+    "successfulQueries": 85,
+    "resultLinks": 765,
     "errors": 0,
-    "bingRequests": 149,
+    "bingRequests": 85,
     "duckDuckGoRequests": 0
    }
   }
