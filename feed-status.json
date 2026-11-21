@@ -4,27 +4,27 @@
  "news": {
   "sourceCount": 5,
   "sourcesResponded": 5,
-  "searchResults": 241,
+  "searchResults": 273,
   "sources": [
    {
     "name": "Restock",
     "ok": true,
-    "results": 29
+    "results": 59
    },
    {
     "name": "Deals",
     "ok": true,
-    "results": 45
+    "results": 42
    },
    {
     "name": "Rare Drop",
     "ok": true,
-    "results": 39
+    "results": 46
    },
    {
     "name": "Release",
     "ok": true,
-    "results": 66
+    "results": 64
    },
    {
     "name": "Promo",
@@ -37,17 +37,17 @@
    "pagesChecked": 20,
    "itemsWithImages": 3,
    "verifiedProductPages": 0,
-   "retailerSearchFallbacks": 49,
-   "productSearchLinksAvailable": 49,
-   "productPagesMissing": 71,
-   "productDetailPagesChecked": 13,
+   "retailerSearchFallbacks": 59,
+   "productSearchLinksAvailable": 59,
+   "productPagesMissing": 61,
+   "productDetailPagesChecked": 15,
    "imageErrors": 0,
    "search": {
-    "requests": 94,
-    "successfulQueries": 94,
-    "resultLinks": 860,
+    "requests": 97,
+    "successfulQueries": 97,
+    "resultLinks": 899,
     "errors": 0,
-    "bingRequests": 94,
+    "bingRequests": 97,
     "duckDuckGoRequests": 0
    }
   }
@@ -55,9 +55,9 @@
  "raffles": {
   "sourceCount": 17,
   "sourcesResponded": 17,
-  "searchResults": 147,
-  "uniqueLeads": 96,
-  "savedLeads": 96,
+  "searchResults": 131,
+  "uniqueLeads": 84,
+  "savedLeads": 84,
   "directEntryLinksFound": 0,
   "directEntryLinksMissing": 20,
   "entryLookupsThisRun": 0,
@@ -67,7 +67,7 @@
    {
     "name": "TCG giveaways",
     "ok": true,
-    "results": 15
+    "results": 14
    },
    {
     "name": "TCG raffles",
@@ -77,7 +77,7 @@
    {
     "name": "Pokémon card giveaways",
     "ok": true,
-    "results": 24
+    "results": 10
    },
    {
     "name": "Pokémon card raffles",
@@ -117,7 +117,7 @@
    {
     "name": "Walmart giveaways",
     "ok": true,
-    "results": 8
+    "results": 9
    },
    {
     "name": "GameStop giveaways",
@@ -127,7 +127,7 @@
    {
     "name": "Best Buy giveaways",
     "ok": true,
-    "results": 9
+    "results": 8
    },
    {
     "name": "Costco giveaways",
@@ -147,12 +147,12 @@
    {
     "name": "Community card giveaways",
     "ok": true,
-    "results": 19
+    "results": 18
    }
   ],
   "entrySearchFallbacks": 20,
   "qualifiedLeads": 20,
-  "rejectedLeads": 76,
+  "rejectedLeads": 64,
   "discoveryEngine": {
    "version": 6,
    "publisherPagesChecked": 0,
@@ -160,14 +160,14 @@
    "startDatesFound": 0,
    "endDatesFound": 0,
    "prizeImagesFound": 0,
-   "rejectedFalsePositives": 76,
+   "rejectedFalsePositives": 64,
    "entryLinksValidated": 0,
    "search": {
-    "requests": 94,
-    "successfulQueries": 94,
-    "resultLinks": 860,
+    "requests": 97,
+    "successfulQueries": 97,
+    "resultLinks": 899,
     "errors": 0,
-    "bingRequests": 94,
+    "bingRequests": 97,
     "duckDuckGoRequests": 0
    }
   }
