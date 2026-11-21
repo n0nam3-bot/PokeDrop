@@ -4,7 +4,7 @@
  "news": {
   "sourceCount": 5,
   "sourcesResponded": 5,
-  "searchResults": 265,
+  "searchResults": 304,
   "sources": [
    {
     "name": "Restock",
@@ -14,7 +14,7 @@
    {
     "name": "Deals",
     "ok": true,
-    "results": 72
+    "results": 71
    },
    {
     "name": "Rare Drop",
@@ -24,25 +24,31 @@
    {
     "name": "Release",
     "ok": true,
-    "results": 68
+    "results": 67
    },
    {
     "name": "Promo",
     "ok": true,
-    "results": 59
+    "results": 100
    }
-  ]
+  ],
+  "itemImageDiscovery": {
+   "version": 4,
+   "pagesChecked": 40,
+   "itemsWithImages": 0,
+   "imageErrors": 40
+  }
  },
  "raffles": {
   "sourceCount": 17,
   "sourcesResponded": 17,
-  "searchResults": 142,
+  "searchResults": 141,
   "uniqueLeads": 143,
   "savedLeads": 143,
-  "directEntryLinksFound": 3,
-  "directEntryLinksMissing": 140,
-  "entryLookupsThisRun": 48,
-  "entryLookupErrors": 6,
+  "directEntryLinksFound": 0,
+  "directEntryLinksMissing": 13,
+  "entryLookupsThisRun": 19,
+  "entryLookupErrors": 18,
   "historyDays": 365,
   "sources": [
    {
@@ -128,18 +134,20 @@
    {
     "name": "Community card giveaways",
     "ok": true,
-    "results": 29
+    "results": 28
    }
   ],
+  "qualifiedLeads": 13,
+  "rejectedLeads": 130,
   "discoveryEngine": {
-   "version": 2,
-   "publisherPagesChecked": 42,
-   "prizeDetailsFound": 5,
+   "version": 4,
+   "publisherPagesChecked": 0,
+   "prizeDetailsFound": 0,
    "startDatesFound": 0,
-   "endDatesFound": 2,
+   "endDatesFound": 0,
    "prizeImagesFound": 0,
-   "featuredImagesFound": 28,
-   "structuredEventsFound": 0
+   "rejectedFalsePositives": 130,
+   "entryLinksValidated": 0
   }
  },
  "failures": []
