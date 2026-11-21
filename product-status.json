@@ -1,104 +1,120 @@
 {
-  "state": "ok",
-  "lastScanAt": "2026-11-21T03:49:59.698Z",
+  "state": "limited",
+  "lastScanAt": "2026-11-21T04:44:07.331Z",
   "retailersChecked": 10,
   "retailersReached": 10,
+  "retailersWithProducts": 1,
   "productsFound": 0,
-  "productsChecked": 0,
+  "productsChecked": 3,
   "productsVerified": 0,
   "alertsSent": 0,
   "sources": [
     {
       "retailer": "Pokémon Center",
       "ok": true,
+      "responded": true,
       "productsFound": 0,
       "pagesChecked": 0,
-      "error": "No matching product detail pages in search results",
-      "engine": ""
+      "method": "none",
+      "error": "Retailer search: HTTP 403 | bing-rss: response contained no matching product-detail links | bing-html: response contained no matching product-detail links | duckduckgo-html: response contained no matching product-detail links"
     },
     {
       "retailer": "Target",
       "ok": true,
+      "responded": true,
       "productsFound": 0,
       "pagesChecked": 0,
-      "error": "No matching product detail pages in search results",
-      "engine": ""
+      "method": "none",
+      "error": "Retailer search page loaded but did not expose matching product-detail links in its HTML | bing-rss: response contained no matching product-detail links | bing-html: response contained no matching product-detail links | duckduckgo-html: res"
     },
     {
       "retailer": "Walmart",
       "ok": true,
+      "responded": true,
       "productsFound": 0,
       "pagesChecked": 0,
-      "error": "No matching product detail pages in search results",
-      "engine": ""
+      "method": "none",
+      "error": "Retailer search page loaded but did not expose matching product-detail links in its HTML | bing-rss: response contained no matching product-detail links | bing-html: response contained no matching product-detail links | duckduckgo-html: res"
     },
     {
       "retailer": "Best Buy",
       "ok": true,
+      "responded": true,
       "productsFound": 0,
       "pagesChecked": 0,
-      "error": "No matching product detail pages in search results",
-      "engine": ""
+      "method": "none",
+      "error": "Retailer search: The operation was aborted due to timeout | bing-rss: response contained no matching product-detail links | bing-html: response contained no matching product-detail links | duckduckgo-html: response contained no matching pro"
     },
     {
       "retailer": "GameStop",
       "ok": true,
+      "responded": true,
       "productsFound": 0,
       "pagesChecked": 0,
-      "error": "No matching product detail pages in search results",
-      "engine": ""
+      "method": "none",
+      "error": "Retailer search page loaded but did not expose matching product-detail links in its HTML | bing-rss: response contained no matching product-detail links | bing-html: response contained no matching product-detail links | duckduckgo-html: res"
     },
     {
       "retailer": "Amazon",
       "ok": true,
-      "productsFound": 0,
-      "pagesChecked": 0,
-      "error": "No matching product detail pages in search results",
-      "engine": ""
+      "responded": true,
+      "productsFound": 12,
+      "pagesChecked": 3,
+      "method": "retailer-search",
+      "error": "Product detail page did not confirm a Pokémon TCG item"
     },
     {
       "retailer": "Costco",
       "ok": true,
+      "responded": true,
       "productsFound": 0,
       "pagesChecked": 0,
-      "error": "No matching product detail pages in search results",
-      "engine": ""
+      "method": "none",
+      "error": "Retailer search page loaded but did not expose matching product-detail links in its HTML | bing-rss: response contained no matching product-detail links | bing-html: response contained no matching product-detail links | duckduckgo-html: res"
     },
     {
       "retailer": "TCGplayer",
       "ok": true,
+      "responded": true,
       "productsFound": 0,
       "pagesChecked": 0,
-      "error": "No matching product detail pages in search results",
-      "engine": ""
+      "method": "none",
+      "error": "Retailer search page loaded but did not expose matching product-detail links in its HTML | bing-rss: response contained no matching product-detail links | bing-html: response contained no matching product-detail links | duckduckgo-html: res"
     },
     {
       "retailer": "Barnes & Noble",
       "ok": true,
+      "responded": true,
       "productsFound": 0,
       "pagesChecked": 0,
-      "error": "No matching product detail pages in search results",
-      "engine": ""
+      "method": "none",
+      "error": "Retailer search: HTTP 404 | bing-rss: response contained no matching product-detail links | bing-html: response contained no matching product-detail links | duckduckgo-html: response contained no matching product-detail links"
     },
     {
       "retailer": "Meijer",
       "ok": true,
+      "responded": true,
       "productsFound": 0,
       "pagesChecked": 0,
-      "error": "No matching product detail pages in search results",
-      "engine": ""
+      "method": "none",
+      "error": "Retailer search: HTTP 403 | bing-rss: response contained no matching product-detail links | bing-html: response contained no matching product-detail links | duckduckgo-html: response contained no matching product-detail links"
     }
   ],
-  "errors": [],
+  "errors": [
+    "Amazon: Product detail page did not confirm a Pokémon TCG item"
+  ],
   "search": {
-    "requests": 20,
-    "successful": 0,
-    "resultLinks": 0,
-    "errors": 0,
-    "bing": 10,
-    "duckduckgo": 10
+    "requests": 37,
+    "retailerSearchPages": 10,
+    "bingRssRequests": 9,
+    "bingHtmlRequests": 9,
+    "duckduckgoRequests": 9,
+    "successfulSearches": 1,
+    "resultLinks": 12,
+    "blockedResponses": 2,
+    "errors": 4
   },
-  "note": "Only pages with product-specific Pokémon TCG identity and readable stock signals can generate availability alerts.",
+  "note": "Product pages were reached, but none exposed a readable stock signal. Listings remain unconfirmed; do not interpret this as sold out.",
   "discord": {
     "configured": false,
     "sent": false,
