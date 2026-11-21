@@ -9,8 +9,10 @@ permissions:
   contents: write
   pages: write
 
+# Share the existing Update feed concurrency group to prevent simultaneous
+# workflow commits from racing and rejecting each other's git pushes.
 concurrency:
-  group: retailer-stock-monitor
+  group: update-feed
   cancel-in-progress: false
 
 jobs:
@@ -21,12 +23,17 @@ jobs:
       - name: Check out PokeDrop
         uses: actions/checkout@v5
 
+      - name: Remove unused PC-only monitor and replacement UI files
+        run: |
+          rm -rf local-monitor
+          rm -f storefront.css storefront.js retailer-monitor.workflow.txt
+
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      - name: Check retailer product pages and notify Discord
+      - name: Search retailer catalogs, verify product pages and notify Discord
         run: node scripts/retailer-monitor.mjs
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
@@ -37,7 +44,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add products.json product-status.json
+          git add -A
           if ! git diff --cached --quiet; then
             git commit -m "Update retailer stock radar"
             git push
