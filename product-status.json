@@ -1,12 +1,12 @@
 {
-  "state": "limited",
-  "lastScanAt": "2026-11-21T18:17:10.963Z",
+  "state": "ok",
+  "lastScanAt": "2026-11-21T19:58:43.095Z",
   "retailersChecked": 10,
   "retailersReached": 10,
-  "retailersWithProducts": 0,
-  "productsFound": 0,
-  "productsChecked": 0,
-  "productsVerified": 0,
+  "retailersWithProducts": 1,
+  "productsFound": 1,
+  "productsChecked": 3,
+  "productsVerified": 1,
   "alertsSent": 0,
   "sources": [
     {
@@ -58,10 +58,10 @@
       "retailer": "Amazon",
       "ok": true,
       "responded": true,
-      "productsFound": 0,
-      "pagesChecked": 0,
-      "method": "none",
-      "error": "Retailer search: HTTP 503 | bing-rss: response contained no matching product-detail links | bing-html: response contained no matching product-detail links | duckduckgo-html: response contained no matching product-detail links"
+      "productsFound": 12,
+      "pagesChecked": 3,
+      "method": "retailer-search",
+      "error": "Final destination is not a retailer product-detail page"
     },
     {
       "retailer": "Costco",
@@ -100,19 +100,22 @@
       "error": "Retailer search: HTTP 403 | bing-rss: response contained no matching product-detail links | bing-html: response contained no matching product-detail links | duckduckgo-html: response contained no matching product-detail links"
     }
   ],
-  "errors": [],
+  "errors": [
+    "Amazon: Product detail page did not confirm a Pokémon TCG item",
+    "Amazon: Final destination is not a retailer product-detail page"
+  ],
   "search": {
-    "requests": 40,
+    "requests": 37,
     "retailerSearchPages": 10,
-    "bingRssRequests": 10,
-    "bingHtmlRequests": 10,
-    "duckduckgoRequests": 10,
-    "successfulSearches": 0,
-    "resultLinks": 0,
-    "blockedResponses": 3,
-    "errors": 5
+    "bingRssRequests": 9,
+    "bingHtmlRequests": 9,
+    "duckduckgoRequests": 9,
+    "successfulSearches": 1,
+    "resultLinks": 12,
+    "blockedResponses": 2,
+    "errors": 4
   },
-  "note": "No retailer product detail pages were checked. Retailer/search pages may be blocking or hiding product links; this is not evidence that products are sold out.",
+  "note": "Stock states come from validated product pages. A page that cannot be reached retains its last verified stock state and is marked with a failed check.",
   "discord": {
     "configured": false,
     "sent": false,

@@ -1,1 +1,17 @@
-[]
+[
+  {
+    "id": "https://www.amazon.com/pok%c3%a9mon-tcg-evolution-delta-reign-trainer/dp/b0hg3mqdwp",
+    "name": "Amazon.com: Pokémon TCG: Mega Evolution—Delta Reign Elite Trainer Box : Toys & Games",
+    "retailer": "Amazon",
+    "productUrl": "https://www.amazon.com/Pok%C3%A9mon-TCG-Evolution-Delta-Reign-Trainer/dp/B0HG3MQDWP",
+    "imageUrl": "",
+    "price": "",
+    "stockState": "IN_STOCK",
+    "availabilitySource": "page-text",
+    "firstSeenAt": "2026-11-21T19:58:52.458Z",
+    "lastCheckedAt": "2026-11-21T19:58:52.458Z",
+    "lastCheckStatus": "OK",
+    "lastError": "",
+    "history": []
+  }
+]
