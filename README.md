@@ -1,53 +1,48 @@
-# PokeDrop — web-only stock radar update
+# PokeDrop patch — restore the original site and repair cloud stock discovery
 
-This update changes PokeDrop from a headline-first page into a product-first Pokémon TCG stock dashboard. It is designed to run entirely online using GitHub Pages and GitHub Actions. **There is no PC app, local server, Node installation, or computer that must stay running.**
+This patch restores the original PokeDrop Drop Finder page and adds a Stock Radar section in the same existing pixel-art style. It does not load the redesigned `storefront.css` / `storefront.js` files. The replacement cloud workflow also removes the abandoned PC-only `local-monitor/` folder and the unused redesign files on its first run.
 
-## What changes
+## What this patch changes
 
-- The home page opens on **Stock Radar**, not a mixed headline feed.
-- Stock cards are populated only from retailer product-detail pages that pass the Pokémon TCG product identity checks.
-- Stock states are separate: **In Stock**, **Preorder**, **Sold Out**, **Unconfirmed**, and **Check Blocked**. A blocked page is never labeled sold out.
-- News and giveaway leads are moved to a separate community section. They do not count as products or restocks.
-- Search, retailer filters, responsive cards, product images, prices, last-check time, and source diagnostics are included.
-- A cloud workflow searches public retailer listings, checks product pages, updates `products.json`, and can send Discord restock alerts.
+- Restores `index.html` to the original PokeDrop layout and adds only the `stock-ui.js` script include.
+- Adds a Stock Radar panel that reuses the existing `feed-section`, `feed-grid`, `post-card`, and tag styles. It does not replace the site's header, colors, fonts, layout, filters, or existing news/giveaway feed.
+- Reworks `scripts/retailer-monitor.mjs` to search each retailer's own public product-search page first, then fall back to Bing RSS, Bing HTML, and DuckDuckGo HTML result links. It no longer depends only on Bing/DDG CSS class names that produced zero parsed links.
+- Separates retailer search responses from actual product-page checks. A search page returning HTTP 200 with no product links is reported as a limited scan, not a completed stock check.
+- Rechecks known product URLs and retains their last verified stock state when a later retailer check is blocked or errors. Failed checks do not turn a product into “sold out.”
+- Adds visible product search filters and per-retailer health diagnostics to the original page style.
+- Provides an updated workflow file that shares the existing `update-feed` concurrency group to prevent the feed updater and stock monitor from racing to push commits at the same time.
 
-## One-time GitHub setup
+## Install through the existing ZIP importer
 
-The ZIP importer intentionally protects `.github/workflows/`, so it will skip the workflow file inside this patch. Upload this ZIP through the repository's existing `uploads/` folder first. After the extraction workflow finishes, create the new workflow in GitHub:
+1. Upload this ZIP to the repository's `uploads/` folder and commit it.
+2. Wait for **Extract uploaded ZIP** to finish.
+3. Because the ZIP importer protects `.github/workflows/`, open `.github/workflows/retailer-monitor.yml` directly in GitHub and replace its contents with `retailer-monitor.workflow.txt` from this patch. Commit that file change.
+4. Run **Actions → Retailer stock monitor → Run workflow**.
+5. The first run also removes the obsolete PC-only monitor folder and unused redesign files from the repository. Let the run complete, then refresh the Pages site. The stock panel will appear above the existing Trainer Alerts section.
 
-1. Open **Add file → Create new file** in the repository.
-2. Set the path to `.github/workflows/retailer-monitor.yml`.
-3. Copy the complete contents from the root file `retailer-monitor.workflow.txt` in the extracted repository.
-4. Commit the new workflow.
+The existing `Update feed` workflow already uses the `update-feed` concurrency group. The replacement retailer workflow uses that same group to prevent the two jobs from checking out the same old commit and then racing their `git push` operations.
 
-The new workflow checks on a five-minute schedule and can also be run manually from **Actions → Retailer stock monitor → Run workflow**. GitHub may delay scheduled starts; five minutes is the schedule interval, not a guaranteed real-time SLA.
+## Notifications
 
-## Optional free Discord alerts
+Discord is optional. Create a Discord webhook and add it in **Repository → Settings → Secrets and variables → Actions → New repository secret**:
 
-To receive notifications when a newly found product is in stock / preorder or when a previously unavailable product becomes available:
+- Name: `DISCORD_WEBHOOK_URL`
+- Value: your Discord webhook URL
 
-1. Create a Discord webhook in a channel you control.
-2. In GitHub, open **Settings → Secrets and variables → Actions → New repository secret**.
-3. Name the secret `DISCORD_WEBHOOK_URL` and paste the webhook URL as its value.
+No AI, paid API, npm package, local server, PC installation, or continuously running computer is required.
 
-Without this secret, the hosted page and product checks still work; only Discord delivery is disabled. The webhook is kept in GitHub Secrets and is never written into the website files.
+## Important limitations
 
-## Cost and limits
+The cloud scan uses public retailer search pages and public product detail pages. Some retailers return search results only after JavaScript, block cloud-hosted requests, or do not expose product availability in page markup. Those cases are marked as limited, blocked, or unconfirmed. A store that cannot be checked is not treated as sold out, and no alert is sent without a product-specific page and an explicit availability signal.
 
-- GitHub Pages: free for this public repository.
-- GitHub Actions: standard public-repository runner usage for this scheduled monitor.
-- Retailer discovery: free public Bing / DuckDuckGo search result pages; no paid search API.
-- Notifications: free Discord webhook.
-- AI / LLM: none.
-- Paid APIs, npm packages, local installs, checkout automation, queue bypass, and CAPTCHA solving: none.
+GitHub Actions' five-minute schedule is a requested cadence, not a guaranteed real-time polling SLA. GitHub can delay scheduled jobs under load. The system never automates checkout, bypasses queues, or solves CAPTCHAs.
 
-Retailers can block automated requests or serve incomplete pages. The monitor records those cases as **Check Blocked** / **Unconfirmed** and will not fabricate an in-stock result. The first scan may take a few minutes to populate. The checker currently covers the retailer domains listed in `scripts/retailer-monitor.mjs`; it is not a promise of complete coverage of every retailer or every SKU.
+## Local test
 
-## Files in this patch
+The scanner has an offline fixture test:
 
-- Replaces `index.html` and `README.md`.
-- Adds `storefront.css`, `storefront.js`, `products.json`, `product-status.json`, and `scripts/retailer-monitor.mjs`.
-- Provides `retailer-monitor.workflow.txt`, which must be copied once into `.github/workflows/retailer-monitor.yml` because the ZIP importer protects workflow paths.
-- No existing news collector or giveaway data file is deleted or overwritten.
+```bash
+node scripts/retailer-monitor.mjs --self-test
+```
 
-The old `local-monitor/` directory from the earlier add-on is not referenced by this page or cloud workflow. It can be deleted from the repository after this update; it is not required and must not be run.
+This tests retailer product URL parsing, retailer-page link extraction, Bing RSS parsing, product structured data, stock classification, and duplicate-alert handling. It does not claim live retailer access; the first hosted scan is the real integration check.
