@@ -41,6 +41,9 @@
     .raffle-extra-label { display:block; color:var(--muted); font-size:7px; letter-spacing:.05em; text-transform:uppercase; }
     .raffle-extra-site { color:var(--deep); text-decoration:underline; text-underline-offset:2px; }
     .raffle-extra-verified { color:var(--muted); font-size:7px; }
+    .product-extra-details { display:grid; gap:5px; margin:0 0 10px; padding:8px 10px; color:var(--deep); background:rgba(228,223,190,.42); border:1px dashed #9a997e; font-size:8px; line-height:1.7; }
+    .product-extra-details strong { color:var(--ink); font-weight:normal; }
+    .product-destination-note { margin:6px 0 0; color:var(--muted); font-size:7px; line-height:1.7; }
     @media (max-width:560px) {
       .item-image-carousel { padding:7px; margin-bottom:12px; }
       .item-image-slide { min-height:130px; }
@@ -197,6 +200,96 @@
     parent.append(row);
   }
 
+  function addSourceArticleLink(card, item) {
+    const sourceUrl = httpUrl(item.sourceUrl) || httpUrl(item.url);
+    if (!sourceUrl) return;
+    const existing = [...card.querySelectorAll("a.post-action")].find((link) => link.href === sourceUrl);
+    if (existing) {
+      existing.classList.add("post-action-secondary");
+      existing.textContent = "READ SOURCE ANNOUNCEMENT";
+      return;
+    }
+    const link = document.createElement("a");
+    link.className = "post-action post-action-secondary product-source-link";
+    link.href = sourceUrl;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.textContent = "READ SOURCE ANNOUNCEMENT";
+    card.append(link);
+  }
+
+  function enhanceProductDestination(card, item) {
+    if (card.dataset.productDestinationBuilt === "true") return;
+    const actions = [...card.querySelectorAll("a.post-action")];
+    const original = actions.find((link) => !link.classList.contains("post-action-secondary")) || null;
+    const productUrl = httpUrl(item.productUrl);
+    const searchUrl = httpUrl(item.productSearchUrl);
+    const retailer = String(item.productRetailer || item.productSearchRetailer || "retailer").toUpperCase();
+
+    if (original && productUrl) {
+      original.href = productUrl;
+      original.textContent = /out of stock|sold out|discontinued/i.test(item.productAvailability || "")
+        ? `OPEN ${retailer} PRODUCT PAGE`
+        : /in stock|pre.?order|back order/i.test(item.productAvailability || "")
+          ? `BUY AT ${retailer}`
+          : `VIEW PRODUCT AT ${retailer}`;
+      original.dataset.destinationType = "verified-product";
+      original.rel = "noopener noreferrer sponsored";
+      addSourceArticleLink(card, item);
+    } else if (original && searchUrl) {
+      original.href = searchUrl;
+      original.textContent = `SEARCH ${retailer} FOR ITEM`;
+      original.dataset.destinationType = "retailer-search";
+      original.rel = "noopener noreferrer";
+      addSourceArticleLink(card, item);
+      const note = document.createElement("p");
+      note.className = "product-destination-note";
+      note.textContent = "Retailer search only — a matching individual product page has not been verified.";
+      card.insertBefore(note, original);
+    } else {
+      if (original) {
+        const missing = document.createElement("span");
+        missing.className = "post-action post-action-missing";
+        missing.textContent = "PRODUCT PAGE NOT VERIFIED";
+        original.replaceWith(missing);
+      }
+      addSourceArticleLink(card, item);
+      const note = document.createElement("p");
+      note.className = "product-destination-note";
+      note.textContent = "This is a news/source alert, not a confirmed purchase listing. No retailer product URL was found.";
+      const summary = card.querySelector(".post-summary");
+      if (summary) summary.insertAdjacentElement("afterend", note);
+    }
+
+    if (productUrl || searchUrl || item.productPrice || item.productAvailability) {
+      const details = document.createElement("div");
+      details.className = "product-extra-details";
+      if (item.productName) {
+        const name = document.createElement("div");
+        name.textContent = item.productName;
+        details.append(name);
+      }
+      if (item.productPrice) {
+        const price = document.createElement("div");
+        const label = document.createElement("strong");
+        label.textContent = "PRICE:";
+        price.append(label, document.createTextNode(` ${String(item.productPrice)}`));
+        details.append(price);
+      }
+      if (item.productAvailability) {
+        const availability = document.createElement("div");
+        const label = document.createElement("strong");
+        label.textContent = "LISTING STATUS:";
+        availability.append(label, document.createTextNode(` ${String(item.productAvailability)}`));
+        details.append(availability);
+      }
+      const source = card.querySelector(".post-source");
+      if (source) card.insertBefore(details, source);
+      else card.append(details);
+    }
+    card.dataset.productDestinationBuilt = "true";
+  }
+
   function enhanceCard(card) {
     if (!ready || !(card instanceof HTMLElement)) return;
     const heading = card.querySelector("h3");
@@ -220,7 +313,11 @@
       card.dataset.itemImagesBuilt = "true";
     }
 
-    if (!isRaffle || card.dataset.raffleExtraDetails === "true") return;
+    if (!isRaffle) {
+      enhanceProductDestination(card, item);
+      return;
+    }
+    if (card.dataset.raffleExtraDetails === "true") return;
     const details = document.createElement("div");
     details.className = "raffle-extra-details";
     let hasContent = false;
@@ -350,6 +447,15 @@
       }
       const imageSummary = `ITEM IMAGES: ${imageDiscovery.itemsWithImages || 0} ALERTS WITH IMAGES · ${imageDiscovery.pagesChecked || 0} PAGES CHECKED THIS RUN`;
       if (imageLine.textContent !== imageSummary) imageLine.textContent = imageSummary;
+      let productLine = document.querySelector("#product-destination-diagnostics");
+      if (!productLine) {
+        productLine = document.createElement("p");
+        productLine.id = "product-destination-diagnostics";
+        productLine.className = "diagnostics-summary";
+        holder.append(productLine);
+      }
+      const productSummary = `PURCHASE DESTINATIONS: ${imageDiscovery.verifiedProductPages || 0} VERIFIED PRODUCT PAGES · ${imageDiscovery.retailerSearchFallbacks || 0} RETAILER SEARCH FALLBACKS · ${imageDiscovery.productPagesMissing || 0} SOURCE-ONLY ALERTS`;
+      if (productLine.textContent !== productSummary) productLine.textContent = productSummary;
     } catch (error) {
       console.warn("PokeDrop image/giveaway diagnostics unavailable:", error);
     }

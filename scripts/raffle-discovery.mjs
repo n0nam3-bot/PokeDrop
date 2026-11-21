@@ -1,12 +1,12 @@
-// PokeDrop v4 discovery/enrichment.
+// PokeDrop v5 discovery/enrichment: verified retailer product pages and giveaway entry destinations.
 // Entry URLs are saved only after the destination itself is fetched and verified as a
 // Pokémon TCG giveaway page. Generic platform links, favicons and unrelated article images
 // are never treated as prize/item images.
 import { readFileSync, writeFileSync } from "node:fs";
 
-const RESOLVER_VERSION = 4;
+const RESOLVER_VERSION = 5;
 const MAX_RAFFLE_CHECKS_PER_RUN = 40;
-const MAX_POST_IMAGE_CHECKS_PER_RUN = 40;
+const MAX_POST_IMAGE_CHECKS_PER_RUN = 20;
 const CONCURRENCY = 4;
 const FETCH_TIMEOUT_MS = 14000;
 const MAX_IMAGES_PER_ITEM = 6;
@@ -397,7 +397,7 @@ async function fetchHtml(url) {
   const response = await fetch(url, {
     redirect: "follow",
     headers: {
-      "user-agent": "Mozilla/5.0 (compatible; PokeDropRaffleRadar/4.0; +https://github.com/n0nam3-bot/PokeDrop)",
+      "user-agent": "Mozilla/5.0 (compatible; PokeDropRaffleRadar/5.0; +https://github.com/n0nam3-bot/PokeDrop)",
       accept: "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
     },
     signal: AbortSignal.timeout(FETCH_TIMEOUT_MS)
@@ -407,27 +407,48 @@ async function fetchHtml(url) {
   if (contentType && !/(text\/html|application\/xhtml\+xml)/i.test(contentType)) throw new Error(`Not an HTML page (${contentType})`);
   return { html: (await response.text()).slice(0, 3000000), url: response.url || url };
 }
-function findPublisherArticleInGooglePage(html, googleUrl, publisherUrl) {
+function significantWords(value) {
+  const ignored = new Set([
+    "pokemon", "pokémon", "trading", "cards", "card", "tcg", "giveaway", "raffle", "contest",
+    "sweepstakes", "restock", "restocks", "back", "stock", "deal", "deals", "sale", "sales",
+    "release", "released", "new", "latest", "available", "today", "this", "that", "with", "from",
+    "into", "your", "their", "the", "and", "for", "are", "was", "how", "what", "where", "when"
+  ]);
+  return [...new Set(String(value || "").toLowerCase().normalize("NFKD").replace(/[\u0300-\u036f]/g, "")
+    .split(/[^a-z0-9]+/).filter((word) => word.length >= 4 && !ignored.has(word)))];
+}
+function findPublisherArticleInGooglePage(html, googleUrl, publisherUrl, articleTitle = "") {
   let publisherHost = "";
-  try { publisherHost = new URL(publisherUrl).hostname.toLowerCase().replace(/^www\./, ""); } catch { return ""; }
-  // Google News sometimes exposes the article only through canonical/OG metadata.
+  try { publisherHost = new URL(publisherUrl).hostname.toLowerCase().replace(/^www\./, ""); } catch { /* title matching can still resolve the article */ }
   const canonical = canonicalUrl(html, googleUrl);
   try {
-    const canonicalHost = new URL(canonical).hostname.toLowerCase().replace(/^www\./, "");
-    if (!isGoogleHost(canonicalHost) && (canonicalHost === publisherHost || canonicalHost.endsWith(`.${publisherHost}`))) return canonical;
+    const parsed = new URL(canonical);
+    const host = parsed.hostname.toLowerCase().replace(/^www\./, "");
+    if (!isGoogleHost(host) && (!publisherHost || host === publisherHost || host.endsWith(`.${publisherHost}`))
+      && parsed.pathname !== "/") return canonical;
   } catch { /* keep searching anchors */ }
+
+  const wanted = significantWords(articleTitle);
+  const candidates = [];
   for (const [, attributes, inner] of String(html || "").matchAll(/<a\b([^>]*)>([\s\S]*?)<\/a>/gi)) {
     const href = resolveUrl(attr(attributes, "href") || attr(attributes, "data-href"), googleUrl);
     if (!href) continue;
     try {
       const parsed = new URL(href);
-      const candidateHost = parsed.hostname.toLowerCase().replace(/^www\./, "");
-      if (candidateHost !== publisherHost && !candidateHost.endsWith(`.${publisherHost}`)) continue;
-      if (parsed.pathname === "/" || /\/(?:search|author|category|tag|feed)(?:\/|$)/i.test(parsed.pathname)) continue;
-      if (stripMarkup(inner).length || parsed.pathname.split("/").filter(Boolean).length >= 1) return parsed.href;
-    } catch { /* ignore malformed wrapper links */ }
+      const host = parsed.hostname.toLowerCase().replace(/^www\./, "");
+      if (isGoogleHost(host) || /(^|\.)(youtube\.com|youtu\.be|facebook\.com|instagram\.com|tiktok\.com|x\.com|twitter\.com|linkedin\.com)$/i.test(host)) continue;
+      if (parsed.pathname === "/" || /\/(?:search|author|category|tag|feed|privacy|terms)(?:\/|$)/i.test(parsed.pathname)) continue;
+      if (publisherHost && host !== publisherHost && !host.endsWith(`.${publisherHost}`)) continue;
+      const anchorText = stripMarkup(inner) || attr(attributes, "aria-label") || attr(attributes, "title");
+      const combined = `${anchorText} ${attr(attributes, "title")} ${parsed.pathname}`;
+      const matches = wanted.filter((word) => combined.toLowerCase().includes(word));
+      const score = (publisherHost ? 4 : 0) + matches.length * 3 + (anchorText.length > 20 ? 1 : 0) + (parsed.pathname.split("/").filter(Boolean).length > 1 ? 1 : 0);
+      if ((!publisherHost && (matches.length < 2 || score < 7)) || (publisherHost && matches.length === 0 && !anchorText)) continue;
+      candidates.push({ url: parsed.href, score });
+    } catch { /* ignore non-http and malformed links */ }
   }
-  return "";
+  candidates.sort((a, b) => b.score - a.score);
+  return candidates[0]?.url || "";
 }
 async function fetchPublisherArticle(item) {
   const sourceUrl = String(item.sourceUrl || item.url || "").trim();
@@ -435,7 +456,7 @@ async function fetchPublisherArticle(item) {
   if (!/^https?:\/\//i.test(sourceUrl)) throw new Error("No source article URL was available.");
   let page = await fetchHtml(sourceUrl);
   if (isGoogleHost(new URL(page.url).hostname)) {
-    const articleUrl = findPublisherArticleInGooglePage(page.html, page.url, publisherUrl);
+    const articleUrl = findPublisherArticleInGooglePage(page.html, page.url, publisherUrl, item.title);
     if (articleUrl) page = await fetchHtml(articleUrl);
     else {
       // A publisher homepage is not a substitute for the individual article page.
@@ -464,14 +485,20 @@ function entryCandidates(html, pageUrl, raffle) {
     if (!url) return;
     let parsed;
     try { parsed = new URL(url); } catch { return; }
-    if (isGoogleHost(parsed.hostname) || parsed.hostname.toLowerCase() === pageHost) return;
+    if (isGoogleHost(parsed.hostname)) return;
+    if (parsed.hostname.toLowerCase() === pageHost && parsed.pathname === new URL(pageUrl).pathname) return;
     const platform = isEntryPlatform(parsed.hostname);
     const combined = `${label || ""} ${context || ""} ${parsed.pathname}`.toLowerCase();
     const action = /\b(enter(?: now| here| to win)?|submit (?:your )?entr(?:y|ies)|register(?: now)?|join (?:the )?(?:giveaway|raffle|contest)|participate|sign up|entry form|apply now|click (?:here|to enter)|giveaway entry)\b/.test(String(label || "").toLowerCase());
     const contestPath = /raffle|giveaway|sweepstakes|contest|lottery|(?:^|\/)(?:entry|enter)(?:\/|$)|enter-to-win/i.test(combined);
     const rulesOnly = /official rules|terms and conditions|privacy policy|learn more about/i.test(String(label || "")) && !action;
     const pathLooksLikeArticle = /\/(?:news|article|articles|blog|press-release|stories)\//i.test(parsed.pathname);
-    const validCandidate = !rulesOnly && !pathLooksLikeArticle && (platform || action || contestPath || kind === "iframe" || kind === "form");
+    const samePage = parsed.hostname.toLowerCase() === pageHost && parsed.pathname === new URL(pageUrl).pathname;
+    const validCandidate = !samePage && !rulesOnly && !pathLooksLikeArticle
+      && ((platform && /giveaway|raffle|contest|entry|sweepstakes/i.test(`${label} ${context}`))
+        || (action && /pokemon|pok[eé]mon|tcg|trading cards?/i.test(context))
+        || (contestPath && /pokemon|pok[eé]mon|tcg|trading cards?/i.test(context))
+        || ((kind === "iframe" || kind === "form") && /pokemon|pok[eé]mon|tcg|trading cards?/i.test(context)));
     if (validCandidate) candidates.push({ url: parsed.href, label: String(label || (platform ? "Giveaway platform" : "Entry link")).slice(0, 100), score: (platform ? 9 : 0) + (action ? 8 : 0) + (contestPath ? 5 : 0) + (kind === "iframe" ? 2 : 0) + (kind === "form" ? 3 : 0) });
   };
   for (const match of source.matchAll(/<a\b([^>]*)>([\s\S]*?)<\/a>/gi)) {
@@ -501,25 +528,36 @@ function entryCandidates(html, pageUrl, raffle) {
   return candidates.sort((a, b) => b.score - a.score).filter((item, index, list) => list.findIndex((other) => other.url === item.url) === index);
 }
 function entryPageValid(url, html, raffle) {
-  const host = (() => { try { return new URL(url).hostname; } catch { return ""; } })();
+  const host = (() => { try { return new URL(url).hostname.toLowerCase(); } catch { return ""; } })();
   const body = pageText(html);
-  // Ignore scripts and embedded JSON when judging destination relevance. This prevents an
-  // unrelated page from passing simply because a widget/config contains Pokémon keywords.
-  const headings = `${titleTag(html)} ${metaValue(html, ["og:title", "og:description", "description", "twitter:title", "twitter:description"])}`;
+  const headings = `${titleTag(html)} ${metaValue(html, ["og:title", "og:description", "description", "twitter:title", "twitter:description"] )}`;
   const visibleDetails = `${headings} ${body}`;
-  if (body.length < 35 || !isTcgGiveawayText(visibleDetails)) return false;
-  if (CRIME_RE.test(visibleDetails)) return false;
-  const prizeHint = prizeHintFromText(visibleDetails);
+  if (body.length < 70 || CRIME_RE.test(visibleDetails)) return false;
+
+  const raffleContext = `${raffle?.title || ""} ${raffle?.summary || ""} ${raffle?.prize || ""}`;
+  const combined = `${visibleDetails} ${raffleContext}`;
+  if (!isTcgGiveawayText(combined)) return false;
+  const destinationHasTcgIdentity = isTcgGiveawayText(visibleDetails);
+  const titleTokens = significantWords(raffle?.title || "").filter((word) => !["giveaway", "raffle", "contest", "pokemon", "pokémon", "trading", "cards", "tcg"].includes(word));
+  const destinationMatchesTitle = titleTokens.filter((word) => visibleDetails.toLowerCase().includes(word)).length;
+  const destinationHasEntryLanguage = PROMOTION_RE.test(visibleDetails)
+    && /\b(enter|entry|submit|register|join|participate|winner|prize)\b/i.test(visibleDetails);
+  // A generic form or an unrelated Gleam page is not an entry destination. The destination
+  // itself must identify Pokémon TCG, or independently identify the named giveaway/prize.
+  if (!destinationHasTcgIdentity && !(destinationHasEntryLanguage && destinationMatchesTitle >= 2)) return false;
+  const prizeHint = prizeHintFromText(`${visibleDetails} ${raffle?.prize || ""}`);
   if (isMoneyOnlyPrize(raffle?.prize) || isMoneyOnlyPrize(prizeHint)) return false;
+
   const forms = [...String(html || "").matchAll(/<form\b([^>]*)>([\s\S]*?)<\/form>/gi)];
   const hasVerifiedEntryForm = forms.some(([, attributes, content]) => {
     const formText = `${attr(attributes, "action")} ${stripMarkup(content)}`;
-    const hasEntryWords = /\b(enter|entry|submit|giveaway|raffle|sweepstakes|contest|participate|register)\b/i.test(formText);
+    const hasEntryWords = /\b(enter|entry|submit|giveaway|raffle|sweepstakes|contest|participate|register|join)\b/i.test(formText);
     const hasControl = /<(?:input|button|select)\b|type\s*=\s*["']?submit/i.test(content);
     return hasEntryWords && hasControl;
   });
-  const platformHasEntryAction = isEntryPlatform(host)
-    && /\b(enter now|enter here|enter to win|submit entry|register now|join giveaway|giveaway is live|raffle is live|start entry)\b/i.test(body);
+  const visibleEntryAction = /\b(enter now|enter here|enter to win|submit entry|register now|join giveaway|giveaway is live|raffle is live|start entry|complete (?:your )?entry|entries? (?:are )?open)\b/i.test(visibleDetails);
+  const platformHasEntryAction = isEntryPlatform(host) && visibleEntryAction;
+  // Do not accept a platform URL simply because its host is Gleam/SweepWidget/etc.
   return hasVerifiedEntryForm || platformHasEntryAction;
 }
 function storeFromText(text, fallback) {
@@ -602,72 +640,211 @@ async function resolveRaffle(raffle) {
     bodyText: sourceText
   };
 }
+const RETAILER_HOSTS = [
+  ["Pokémon Center", /(^|\.)pokemoncenter\.com$/i],
+  ["Target", /(^|\.)target\.com$/i],
+  ["Walmart", /(^|\.)walmart\.com$/i],
+  ["Amazon", /(^|\.)amazon\.com$/i],
+  ["Best Buy", /(^|\.)bestbuy\.com$/i],
+  ["GameStop", /(^|\.)gamestop\.com$/i],
+  ["Costco", /(^|\.)costco\.com$/i],
+  ["TCGplayer", /(^|\.)tcgplayer\.com$/i],
+  ["Barnes & Noble", /(^|\.)barnesandnoble\.com$/i],
+  ["Meijer", /(^|\.)meijer\.com$/i],
+  ["Five Below", /(^|\.)fivebelow\.com$/i],
+  ["Hot Topic", /(^|\.)hottopic\.com$/i],
+  ["Fanatics", /(^|\.)fanatics\.com$/i],
+  ["Dave & Adam's Card World", /(^|\.)dacardworld\.com$/i],
+  ["Steel City Collectibles", /(^|\.)steelcitycollectibles\.com$/i],
+  ["Game Nerdz", /(^|\.)gamenerdz\.com$/i],
+  ["Forge and Fire Gaming", /(^|\.)forgeandfiregaming\.com$/i]
+];
+function retailerForUrl(value) {
+  try {
+    const host = new URL(value).hostname.toLowerCase().replace(/^www\./, "");
+    return RETAILER_HOSTS.find(([, pattern]) => pattern.test(host))?.[0] || "";
+  } catch { return ""; }
+}
+function isRetailerRedirectHost(value) {
+  try {
+    const host = new URL(value).hostname.toLowerCase().replace(/^www\./, "");
+    return /(^|\.)(amzn\.to|bit\.ly|t\.co|linksynergy\.com|awin1\.com|impact\.com|go\.skimresources\.com|redirect\.viglink\.com|sovrn\.co|shop-links\.co|rstyle\.me|shareasale\.com|clickbank\.net)$/i.test(host);
+  } catch { return false; }
+}
+function retailerProductPath(retailer, pathname) {
+  const path = String(pathname || "").toLowerCase();
+  if (retailer === "Amazon") return /\/(?:dp|gp\/product)\/[a-z0-9]{8,}/i.test(path);
+  if (retailer === "Target") return /\/p\//i.test(path);
+  if (retailer === "Walmart") return /\/ip\//i.test(path);
+  if (retailer === "Best Buy") return /\/site\/[^/]+\/\d{5,}\.p/i.test(path) || /\/site\/[^/]+\/\d{5,}/i.test(path);
+  if (retailer === "GameStop") return /\/product\//i.test(path);
+  if (retailer === "Pokémon Center") return /\/product\//i.test(path);
+  if (retailer === "Costco") return /\/(?:p|product)\//i.test(path);
+  if (retailer === "TCGplayer") return /\/product\//i.test(path);
+  return /\/(?:product|products|item|p)\//i.test(path);
+}
+function productSearchUrl(retailer, query) {
+  const q = encodeURIComponent(String(query || "").replace(/\b(restock|restocks|back in stock|available now|deal|deals|price drop|discount|sale|release|revealed|announced)\b/ig, " ").replace(/\s+/g, " ").trim());
+  if (!q) return "";
+  const paths = {
+    "Amazon": `https://www.amazon.com/s?k=${q}`,
+    "Target": `https://www.target.com/s?searchTerm=${q}`,
+    "Walmart": `https://www.walmart.com/search?q=${q}`,
+    "Best Buy": `https://www.bestbuy.com/site/searchpage.jsp?st=${q}`,
+    "GameStop": `https://www.gamestop.com/search/?q=${q}`,
+    "Costco": `https://www.costco.com/CatalogSearch?keyword=${q}`,
+    "TCGplayer": `https://www.tcgplayer.com/search/pokemon/product?q=${q}`
+  };
+  return paths[retailer] || "";
+}
+function productWords(post) {
+  const ignored = new Set([
+    "pokemon", "pokémon", "trading", "cards", "card", "tcg", "booster", "packs", "pack", "elite", "trainer", "box", "collection", "promo", "promos", "restock", "restocks", "back", "stock", "available", "deal", "deals", "sale", "price", "drop", "rare", "new", "release", "releases", "revealed", "announced", "preorder", "preorders", "best", "latest", "store", "retailer", "amazon", "target", "walmart", "costco", "gamestop", "buy", "shop", "check", "live", "updates", "update", "where", "find", "get", "today", "november", "december", "january", "february", "march", "april", "may", "june", "july", "august", "september", "october"
+  ]);
+  return significantWords(`${post?.title || ""} ${post?.summary || ""}`).filter((word) => !ignored.has(word));
+}
+function extractOffer(product) {
+  const offers = Array.isArray(product?.offers) ? product.offers[0] : product?.offers;
+  if (!offers || typeof offers !== "object") return { price: "", availability: "" };
+  const price = offers.price ?? offers.lowPrice ?? offers.highPrice ?? "";
+  const currency = offers.priceCurrency || "USD";
+  const availability = String(offers.availability || "").split(/[\/#]/).pop().replace(/([A-Z])/g, " $1").trim();
+  return {
+    price: price !== "" ? `${currency === "USD" ? "$" : `${currency} `}${price}` : "",
+    availability
+  };
+}
 function productPageCandidates(html, pageUrl, post) {
-  const subject = `${post?.title || ""} ${post?.summary || ""}`;
   const candidates = [];
   const seen = new Set();
+  const wanted = productWords(post);
   for (const match of String(html || "").matchAll(/<a\b([^>]*)>([\s\S]*?)<\/a>/gi)) {
     const attributes = match[1];
-    const href = resolveUrl(attr(attributes, "href") || attr(attributes, "data-href") || attr(attributes, "data-url"), pageUrl);
+    const rawHref = attr(attributes, "href") || attr(attributes, "data-href") || attr(attributes, "data-url") || attr(attributes, "data-link");
+    const href = resolveUrl(rawHref, pageUrl);
     if (!href) continue;
     let parsed;
     try { parsed = new URL(href); } catch { continue; }
-    if (parsed.hostname === new URL(pageUrl).hostname || isGoogleHost(parsed.hostname)) continue;
-    if (/\/(?:news|article|articles|blog|press-release|stories|raffle|giveaway|sweepstakes)(?:\/|$)/i.test(parsed.pathname)) continue;
+    if (isGoogleHost(parsed.hostname)) continue;
+    const retailer = retailerForUrl(href);
+    const redirectLink = isRetailerRedirectHost(href);
+    if ((!retailer || !retailerProductPath(retailer, parsed.pathname)) && !redirectLink) continue;
     const label = stripMarkup(match[2]) || attr(attributes, "aria-label") || attr(attributes, "title");
-    const near = stripMarkup(String(html).slice(Math.max(0, match.index - 420), Math.min(String(html).length, match.index + match[0].length + 420)));
-    const context = `${label} ${near} ${parsed.pathname} ${subject}`;
-    const action = /\b(shop|buy|view product|product details|check price|preorder|pre-order|available at|shop now)\b/i.test(label);
-    const genericWords = new Set(["pokemon", "pokémon", "trading", "cards", "tcg", "restock", "back", "stock", "available", "deal", "deals", "price", "release", "new"]);
-    const itemWords = subject.toLowerCase().split(/[^a-z0-9]+/).filter((word) => word.length > 3 && !genericWords.has(word));
-    const anchorSpecific = `${label} ${parsed.pathname}`.toLowerCase();
-    const directItemMatch = itemWords.some((word) => anchorSpecific.includes(word));
-    const nearbyItemMatches = itemWords.filter((word) => near.toLowerCase().includes(word)).length;
-    const productClue = TCG_PRODUCT_RE.test(context) || /pokemon|pok[eé]mon|booster|elite.trainer|collection|promo.card/i.test(parsed.pathname);
-    const retailerOrProductPath = /pokemon|pok[eé]mon|product|products|\/dp\/|\/gp\/product|item|shop/i.test(`${parsed.hostname} ${parsed.pathname}`);
-    if (!productClue || !(action || retailerOrProductPath) || (!directItemMatch && nearbyItemMatches < 2)) continue;
-    const key = parsed.href.split(/[?#]/)[0];
+    const nearby = stripMarkup(String(html).slice(Math.max(0, match.index - 700), Math.min(String(html).length, match.index + match[0].length + 700)));
+    const context = `${label} ${nearby} ${parsed.pathname}`.toLowerCase();
+    const action = /\b(shop now|buy now|view product|product details|check price|pre-?order|available at|add to cart|see product)\b/i.test(label);
+    const matchedWords = wanted.filter((word) => context.includes(word));
+    const hasPokemon = /pok[eé]mon/i.test(context);
+    const hasTcgProduct = TCG_PRODUCT_RE.test(context);
+    if (!hasPokemon || !hasTcgProduct || matchedWords.length < Math.min(2, Math.max(1, wanted.length))) continue;
+    if (redirectLink && !action) continue;
+    const key = parsed.href.split(/[?#]/)[0].toLowerCase();
     if (seen.has(key)) continue;
     seen.add(key);
-    candidates.push({ url: parsed.href, score: (action ? 3 : 0) + (retailerOrProductPath ? 2 : 0) + (TCG_PRODUCT_RE.test(`${label} ${parsed.pathname}`) ? 3 : 0) });
+    candidates.push({ url: parsed.href, retailer: retailer || "Redirect", label: label.slice(0, 100), score: matchedWords.length * 3 + (action ? 5 : 0) + 4 });
   }
-  return candidates.sort((a, b) => b.score - a.score).slice(0, 2);
+  return candidates.sort((a, b) => b.score - a.score).slice(0, 5);
+}
+function validateProductPage(productPage, canonical, post) {
+  const retailer = retailerForUrl(canonical);
+  if (!retailer || !retailerProductPath(retailer, new URL(canonical).pathname)) return null;
+  const nodes = jsonLdNodes(productPage.html);
+  const products = nodes.filter((node) => typeIncludes(node, "Product"));
+  const subject = `${post?.title || ""} ${post?.summary || ""}`;
+  const itemWords = productWords(post);
+  const detailsText = `${titleTag(productPage.html)} ${metaValue(productPage.html, ["og:title", "og:description", "description", "twitter:title"])} ${pageText(productPage.html)}`;
+  const product = products.find((node) => {
+    const productText = `${node.name || ""} ${node.description || ""}`;
+    return /pok[eé]mon/i.test(productText) && TCG_PRODUCT_RE.test(productText)
+      && itemWords.filter((word) => productText.toLowerCase().includes(word)).length >= Math.min(2, Math.max(1, itemWords.length));
+  }) || products.find((node) => /pok[eé]mon/i.test(`${node.name || ""} ${node.description || ""}`) && TCG_PRODUCT_RE.test(`${node.name || ""} ${node.description || ""}`)) || null;
+  const identityText = `${firstText(product?.name, metaValue(productPage.html, ["og:title"]), titleTag(productPage.html))} ${product?.description || ""}`;
+  const combined = `${detailsText} ${identityText}`;
+  if (!/pok[eé]mon/i.test(identityText) || !TCG_PRODUCT_RE.test(identityText)) return null;
+  const matched = itemWords.filter((word) => identityText.toLowerCase().includes(word));
+  if (itemWords.length >= 2 && matched.length < Math.min(2, itemWords.length)) return null;
+
+  const hasPurchaseSignal = Boolean(product?.offers)
+    || /\b(add to cart|add to bag|buy now|pre-?order|sold out|out of stock|notify me|check availability|choose options|available online)\b/i.test(detailsText);
+  if (!product && !hasPurchaseSignal) return null;
+  const offer = extractOffer(product);
+  const images = extractItemImages(productPage.html, canonical, `${subject} ${combined}`, "post", null, product, true);
+  return {
+    url: canonical,
+    retailer,
+    name: firstText(product?.name, titleTag(productPage.html), metaValue(productPage.html, ["og:title"])),
+    price: offer.price,
+    availability: offer.availability || (/\bsold out|out of stock\b/i.test(detailsText) ? "Out Of Stock" : /\badd to cart|buy now\b/i.test(detailsText) ? "In Stock" : "Check retailer"),
+    images
+  };
 }
 async function resolvePostImages(post) {
   const page = await fetchPublisherArticle(post);
   const canonical = canonicalUrl(page.html, page.url);
   const subject = `${post.title || ""} ${post.summary || ""}`;
   const nodes = jsonLdNodes(page.html);
-  const product = nodes.filter((node) => typeIncludes(node, "Product"))
-    .find((node) => TCG_PRODUCT_RE.test(`${node.name || ""} ${node.description || ""}`)
-      && (POKEMON_RE.test(`${node.name || ""} ${node.description || ""}`)
-        || (POKEMON_RE.test(subject) && TCG_PRODUCT_RE.test(subject)))) || null;
-  const images = extractItemImages(page.html, canonical, subject, "post", null, product);
-
-  // If an article only includes text links to the product, follow up to two relevant
-  // retailer product pages and use their structured/large product images.
-  if (images.length < 3) {
-    const productLinks = productPageCandidates(page.html, canonical, post);
-    for (const candidate of productLinks) {
+  const structuredProduct = nodes.filter((node) => typeIncludes(node, "Product"))
+    .find((node) => /pok[eé]mon/i.test(`${node.name || ""} ${node.description || ""}`) && TCG_PRODUCT_RE.test(`${node.name || ""} ${node.description || ""}`)) || null;
+  const images = extractItemImages(page.html, canonical, subject, "post", null, structuredProduct);
+  const verifiedProducts = [];
+  let productPageChecks = 0;
+  const verifyCandidates = async (candidateList, limit = 2) => {
+    for (const candidate of candidateList.slice(0, limit)) {
       try {
         const productPage = await fetchHtml(candidate.url);
+        productPageChecks += 1;
         const productCanonical = canonicalUrl(productPage.html, productPage.url);
-        const productNodes = jsonLdNodes(productPage.html).filter((node) => typeIncludes(node, "Product"));
-        const pageDetails = `${titleTag(productPage.html)} ${metaValue(productPage.html, ["og:title", "og:description", "description"])} ${pageText(productPage.html)}`;
-        if (!POKEMON_RE.test(pageDetails) || !TCG_PRODUCT_RE.test(pageDetails)) continue;
-        const structuredProduct = productNodes.find((node) => TCG_PRODUCT_RE.test(`${node.name || ""} ${node.description || ""}`)
-          && (POKEMON_RE.test(`${node.name || ""} ${node.description || ""}`) || POKEMON_RE.test(pageDetails))) || null;
-        const productImages = extractItemImages(productPage.html, productCanonical, `${subject} ${pageDetails}`, "post", null, structuredProduct, true);
-        images.push(...productImages);
-        const deduped = uniqueImages(images);
-        images.splice(0, images.length, ...deduped);
-        if (images.length >= 3) break;
+        const verified = validateProductPage(productPage, productCanonical, post);
+        if (!verified) continue;
+        if (!verifiedProducts.some((item) => item.url === verified.url)) verifiedProducts.push(verified);
+        images.push(...verified.images);
+        if (verifiedProducts.length >= 3) break;
       } catch (error) {
-        console.warn(`Product image lookup skipped: ${candidate.url} // ${error?.message || error}`);
+        console.warn(`Retailer product check skipped: ${candidate.url} // ${error?.message || error}`);
       }
     }
+  };
+
+  const sourceProductLinks = productPageCandidates(page.html, canonical, post);
+  await verifyCandidates(sourceProductLinks, 2);
+  const primaryProduct = verifiedProducts[0] || null;
+  const subjectRetailer = storeFromText(subject, "Other");
+  const pageRetailer = storeFromText(pageText(page.html), "Other");
+  const retailerFallback = primaryProduct?.retailer || sourceProductLinks[0]?.retailer
+    || (subjectRetailer !== "Other" ? subjectRetailer : pageRetailer);
+
+  // If the article has no usable product link, search the named retailer's public search
+  // page and validate the resulting product detail pages. The search URL itself is only a
+  // fallback; it is never stored as a verified product URL.
+  const retailerSearch = !primaryProduct ? productSearchUrl(retailerFallback, post.title) : "";
+  if (!primaryProduct && retailerSearch) {
+    try {
+      const searchPage = await fetchHtml(retailerSearch);
+      productPageChecks += 1;
+      const searchCanonical = canonicalUrl(searchPage.html, searchPage.url);
+      const searchCandidates = productPageCandidates(searchPage.html, searchCanonical, post);
+      await verifyCandidates(searchCandidates, 2);
+    } catch (error) {
+      console.warn(`Retailer search skipped (${retailerFallback}): ${error?.message || error}`);
+    }
   }
-  return { sourceUrl: canonical, siteUrl: (() => { try { return new URL(canonical).origin; } catch { return ""; } })(), images: uniqueImages(images) };
+  const dedupedImages = uniqueImages(images);
+  const finalProduct = verifiedProducts[0] || null;
+  return {
+    sourceUrl: canonical,
+    siteUrl: finalProduct ? (() => { try { return new URL(finalProduct.url).origin; } catch { return ""; } })() : (() => { try { return new URL(canonical).origin; } catch { return ""; } })(),
+    images: dedupedImages,
+    productUrl: finalProduct?.url || "",
+    productRetailer: finalProduct?.retailer || "",
+    productName: finalProduct?.name || "",
+    productPrice: finalProduct?.price || "",
+    productAvailability: finalProduct?.availability || "",
+    productLinks: verifiedProducts.map(({ url, retailer, name, price, availability }) => ({ url, retailer, name, price, availability })),
+    productSearchUrl: finalProduct ? "" : retailerSearch,
+    productSearchRetailer: finalProduct ? "" : (retailerSearch ? retailerFallback : ""),
+    productLookupStatus: finalProduct ? "verified" : (sourceProductLinks.length || retailerSearch ? "search-fallback" : "not-found"),
+    productPageChecks
+  };
 }
 async function mapWithConcurrency(items, limit, worker) {
   let nextIndex = 0;
@@ -690,11 +867,10 @@ const posts = readJson("posts.json", []);
 if (Array.isArray(posts) && posts.length) {
   const now = Date.now();
   const candidates = posts.filter((post) => {
-    const version = Number(post.imageLookupVersion || 0);
-    if (version < RESOLVER_VERSION) return true;
-    if (post.imageLookupStatus === "found" && normalizeImages(post.imageUrls).length) return false;
-    const last = Date.parse(post.imageLookupAt || "");
-    return !Number.isFinite(last) || now - last >= (post.imageLookupStatus === "error" ? 864e5 : 7 * 864e5);
+    if (Number(post.productLookupVersion || 0) < RESOLVER_VERSION) return true;
+    if (post.productLookupStatus === "verified" && /^https?:\/\//i.test(post.productUrl || "")) return false;
+    const last = Date.parse(post.productLookupAt || post.imageLookupAt || "");
+    return !Number.isFinite(last) || now - last >= ((post.productLookupStatus === "error" || post.imageLookupStatus === "error") ? 864e5 : 7 * 864e5);
   }).slice(0, MAX_POST_IMAGE_CHECKS_PER_RUN);
   let postImageErrors = 0;
   await mapWithConcurrency(candidates, CONCURRENCY, async (post) => {
@@ -707,6 +883,19 @@ if (Array.isArray(posts) && posts.length) {
       post.imageLookupStatus = resolved.images.length ? "found" : "not-found";
       post.imageLookupAt = checkedAt;
       post.imageLookupVersion = RESOLVER_VERSION;
+      post.productUrl = resolved.productUrl || "";
+      post.productRetailer = resolved.productRetailer || "";
+      post.productName = resolved.productName || "";
+      post.productPrice = resolved.productPrice || "";
+      post.productAvailability = resolved.productAvailability || "";
+      post.productLinks = resolved.productLinks || [];
+      post.productSearchUrl = resolved.productSearchUrl || "";
+      post.productSearchRetailer = resolved.productSearchRetailer || "";
+      post.productLookupStatus = resolved.productLookupStatus || "not-found";
+      post.productLookupAt = checkedAt;
+      post.productLookupVersion = RESOLVER_VERSION;
+      post.productPageChecks = resolved.productPageChecks || 0;
+      post.productVerifiedAt = resolved.productUrl ? checkedAt : "";
       console.log(`Item images (${resolved.images.length}): ${post.title}`);
     } catch (error) {
       post.imageUrls = normalizeImages(post.imageUrls);
@@ -714,6 +903,12 @@ if (Array.isArray(posts) && posts.length) {
       post.imageLookupAt = checkedAt;
       post.imageLookupVersion = RESOLVER_VERSION;
       post.imageLookupError = String(error?.message || error).slice(0, 160);
+      post.productUrl = "";
+      post.productLinks = [];
+      post.productLookupStatus = "error";
+      post.productLookupAt = checkedAt;
+      post.productLookupVersion = RESOLVER_VERSION;
+      post.productSearchUrl = "";
       postImageErrors += 1;
     }
   });
@@ -724,12 +919,16 @@ if (Array.isArray(posts) && posts.length) {
     version: RESOLVER_VERSION,
     pagesChecked: candidates.length,
     itemsWithImages: posts.filter((post) => normalizeImages(post.imageUrls).length).length,
+    verifiedProductPages: posts.filter((post) => post.productUrl).length,
+    retailerSearchFallbacks: posts.filter((post) => post.productSearchUrl).length,
+    productPagesMissing: posts.filter((post) => !post.productUrl && !post.productSearchUrl).length,
+    productDetailPagesChecked: posts.reduce((total, post) => total + (Number(post.productPageChecks) || 0), 0),
     imageErrors: postImageErrors
   };
   writeJson("feed-status.json", feedStatus);
 }
 
-// Enrich, revalidate and prune giveaway leads. Old resolver results are not trusted in v4.
+// Enrich, revalidate and prune giveaway leads. Old resolver results are not trusted in v5.
 const raffles = readJson("raffles.json", []);
 if (!Array.isArray(raffles) || !raffles.length) {
   console.log("Raffle discovery: no raffle leads to validate.");
@@ -746,7 +945,7 @@ if (!Array.isArray(raffles) || !raffles.length) {
       raffle.imageUrls = [];
       raffle.status = "Verify";
       raffle.statusDate = null;
-      raffle.statusNote = "Waiting for v4 giveaway verification; old entry links and dates were not trusted.";
+      raffle.statusNote = "Waiting for v5 giveaway verification; old entry links and dates were not trusted.";
       raffle.qualificationStatus = "pending";
     }
     const brief = `${raffle.title || ""} ${raffle.summary || ""}`;
@@ -857,5 +1056,5 @@ if (!Array.isArray(raffles) || !raffles.length) {
     entryLinksValidated: validRaffles.filter((item) => item.entryUrl).length
   };
   writeJson("feed-status.json", feedStatus);
-  console.log(`Raffle discovery v${RESOLVER_VERSION}: ${candidates.length} checked; ${validRaffles.length} qualified; ${feedStatus.raffles.directEntryLinksFound} verified entry URLs; ${lookupErrors} page errors.`);
+  console.log(`PokeDrop discovery v${RESOLVER_VERSION}: ${candidates.length} checked; ${validRaffles.length} qualified; ${feedStatus.raffles.directEntryLinksFound} verified entry URLs; ${lookupErrors} page errors.`);
 }
