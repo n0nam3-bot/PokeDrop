@@ -4,50 +4,50 @@
  "news": {
   "sourceCount": 5,
   "sourcesResponded": 5,
-  "searchResults": 273,
+  "searchResults": 57,
   "sources": [
    {
     "name": "Restock",
     "ok": true,
-    "results": 59
+    "results": 12
    },
    {
     "name": "Deals",
     "ok": true,
-    "results": 42
+    "results": 11
    },
    {
     "name": "Rare Drop",
     "ok": true,
-    "results": 46
+    "results": 12
    },
    {
     "name": "Release",
     "ok": true,
-    "results": 64
+    "results": 11
    },
    {
     "name": "Promo",
     "ok": true,
-    "results": 62
+    "results": 11
    }
   ],
   "itemImageDiscovery": {
-   "version": 6,
+   "version": 7,
    "pagesChecked": 20,
-   "itemsWithImages": 3,
+   "itemsWithImages": 9,
    "verifiedProductPages": 0,
    "retailerSearchFallbacks": 59,
    "productSearchLinksAvailable": 59,
    "productPagesMissing": 61,
-   "productDetailPagesChecked": 15,
+   "productDetailPagesChecked": 13,
    "imageErrors": 0,
    "search": {
-    "requests": 97,
-    "successfulQueries": 97,
-    "resultLinks": 899,
+    "requests": 89,
+    "successfulQueries": 89,
+    "resultLinks": 814,
     "errors": 0,
-    "bingRequests": 97,
+    "bingRequests": 89,
     "duckDuckGoRequests": 0
    }
   }
@@ -55,29 +55,29 @@
  "raffles": {
   "sourceCount": 17,
   "sourcesResponded": 17,
-  "searchResults": 131,
-  "uniqueLeads": 84,
-  "savedLeads": 84,
+  "searchResults": 175,
+  "uniqueLeads": 129,
+  "savedLeads": 129,
   "directEntryLinksFound": 0,
-  "directEntryLinksMissing": 20,
-  "entryLookupsThisRun": 0,
+  "directEntryLinksMissing": 31,
+  "entryLookupsThisRun": 32,
   "entryLookupErrors": 0,
   "historyDays": 365,
   "sources": [
    {
     "name": "TCG giveaways",
     "ok": true,
-    "results": 14
+    "results": 12
    },
    {
     "name": "TCG raffles",
     "ok": true,
-    "results": 10
+    "results": 12
    },
    {
     "name": "Pokémon card giveaways",
     "ok": true,
-    "results": 10
+    "results": 11
    },
    {
     "name": "Pokémon card raffles",
@@ -87,87 +87,87 @@
    {
     "name": "Booster box prizes",
     "ok": true,
-    "results": 0
+    "results": 4
    },
    {
     "name": "Elite Trainer Box prizes",
     "ok": true,
-    "results": 0
+    "results": 3
    },
    {
     "name": "TCG sweepstakes",
     "ok": true,
-    "results": 9
+    "results": 12
    },
    {
     "name": "Card shop giveaways",
     "ok": true,
-    "results": 1
+    "results": 12
    },
    {
     "name": "Card shop raffles",
     "ok": true,
-    "results": 0
+    "results": 12
    },
    {
     "name": "Target giveaways",
     "ok": true,
-    "results": 10
+    "results": 12
    },
    {
     "name": "Walmart giveaways",
     "ok": true,
-    "results": 9
+    "results": 11
    },
    {
     "name": "GameStop giveaways",
     "ok": true,
-    "results": 10
+    "results": 11
    },
    {
     "name": "Best Buy giveaways",
     "ok": true,
-    "results": 8
+    "results": 11
    },
    {
     "name": "Costco giveaways",
     "ok": true,
-    "results": 4
+    "results": 9
    },
    {
     "name": "Pokémon Center lotteries",
     "ok": true,
-    "results": 10
+    "results": 12
    },
    {
     "name": "Local card shop contests",
     "ok": true,
-    "results": 9
+    "results": 11
    },
    {
     "name": "Community card giveaways",
     "ok": true,
-    "results": 18
+    "results": 11
    }
   ],
-  "entrySearchFallbacks": 20,
-  "qualifiedLeads": 20,
-  "rejectedLeads": 64,
+  "entrySearchFallbacks": 31,
+  "qualifiedLeads": 31,
+  "rejectedLeads": 98,
   "discoveryEngine": {
-   "version": 6,
-   "publisherPagesChecked": 0,
-   "prizeDetailsFound": 0,
-   "startDatesFound": 0,
-   "endDatesFound": 0,
-   "prizeImagesFound": 0,
-   "rejectedFalsePositives": 64,
+   "version": 7,
+   "publisherPagesChecked": 32,
+   "prizeDetailsFound": 8,
+   "startDatesFound": 1,
+   "endDatesFound": 1,
+   "prizeImagesFound": 8,
+   "rejectedFalsePositives": 98,
    "entryLinksValidated": 0,
    "search": {
-    "requests": 97,
-    "successfulQueries": 97,
-    "resultLinks": 899,
+    "requests": 149,
+    "successfulQueries": 149,
+    "resultLinks": 1394,
     "errors": 0,
-    "bingRequests": 97,
+    "bingRequests": 149,
     "duckDuckGoRequests": 0
    }
   }
