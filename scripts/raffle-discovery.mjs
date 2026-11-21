@@ -4,7 +4,7 @@
 // are never treated as prize/item images.
 import { readFileSync, writeFileSync } from "node:fs";
 
-const RESOLVER_VERSION = 6;
+const RESOLVER_VERSION = 7;
 const MAX_RAFFLE_CHECKS_PER_RUN = 40;
 const MAX_POST_IMAGE_CHECKS_PER_RUN = 20;
 const MAX_SEARCH_RESULT_CHECKS = 3;
@@ -16,6 +16,12 @@ const SEARCH_STATS = {
   bingRequests: 0, duckDuckGoRequests: 0
 };
 
+// Bing News supplies a thumbnail of the article. Use it only when the page itself yields no image.
+function thumbRecords(item) {
+  return /^https?:\/\//i.test(item?.thumbUrl || "")
+    ? [{ url: item.thumbUrl, label: "ARTICLE IMAGE", kind: "article", alt: item.title || "Pokémon TCG news" }]
+    : [];
+}
 function readJson(file, fallback) {
   try { return JSON.parse(readFileSync(file, "utf8")); } catch { return fallback; }
 }
@@ -148,7 +154,7 @@ function normalizeDate(value) {
   const date = new Date(value);
   return Number.isNaN(date.getTime()) ? "" : date.toISOString();
 }
-function dateFromText(text, kind) {
+function dateFromTextLegacy(text, kind) {
   const month = "(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)";
   const date = `(${month}\\s+\\d{1,2}(?:st|nd|rd|th)?(?:,?\\s+\\d{4})?|\\d{1,2}\\/\\d{1,2}(?:\\/\\d{2,4})?)`;
   // Deliberately require giveaway/entry wording. Product release dates are NOT raffle dates.
@@ -172,6 +178,67 @@ function dateFromText(text, kind) {
   return "";
 }
 
+// Entry windows. Times are read in US Eastern unless the page names another US zone. A deadline with no
+// time means the end of that day, and an opening with no time means the start of that day.
+const MONTH_NAMES = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"];
+const MONTH_PATTERN = "(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:t(?:ember)?)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)";
+function usDst(year, month, day) {
+  const nthSunday = (m, n) => {
+    let count = 0;
+    for (let d = 1; d <= 31; d += 1) {
+      const t = new Date(Date.UTC(year, m, d));
+      if (t.getUTCMonth() !== m) break;
+      if (t.getUTCDay() === 0 && ++count === n) return d;
+    }
+    return 0;
+  };
+  return (month > 2 && month < 10) || (month === 2 && day >= nthSunday(2, 2)) || (month === 10 && day < nthSunday(10, 1));
+}
+function zonedIso(year, month, day, hour, minute, zone = "ET", second = 0) {
+  const z = String(zone || "ET").toLowerCase();
+  const base = { et: -5, ct: -6, mt: -7, pt: -8 }[z.length === 2 ? z : `${z[0]}t`] ?? -5;
+  const dst = z.length === 3 ? z[1] === "d" : usDst(year, month, day);
+  return new Date(Date.UTC(year, month, day, hour - base - (dst ? 1 : 0), minute, second)).toISOString();
+}
+function whenAt(monthName, dayText, yearText, tail, kind) {
+  const month = MONTH_NAMES.indexOf(String(monthName).slice(0, 3).toLowerCase());
+  const day = Number(dayText);
+  if (month < 0 || day < 1 || day > 31) return "";
+  let year = yearText ? Number(yearText) : new Date().getUTCFullYear();
+  if (!yearText && Date.UTC(year, month, day) < Date.now() - 150 * 864e5) year += 1;
+  const time = String(tail || "").match(/^[^.\n]{0,22}?\b(\d{1,2})(?::(\d{2}))?\s*([ap])\.?m\b\.?\s*(E[SD]?T|C[SD]?T|M[SD]?T|P[SD]?T)?/i);
+  if (time) return zonedIso(year, month, day, (Number(time[1]) % 12) + (/p/i.test(time[3]) ? 12 : 0), Number(time[2] || 0), time[4] || "ET");
+  return kind === "end" ? zonedIso(year, month, day, 23, 59, "ET", 59) : zonedIso(year, month, day, 0, 0, "ET");
+}
+function dateFromText(text, kind) {
+  const src = String(text || "");
+  const D = `(${MONTH_PATTERN})\\.?\\s+(\\d{1,2})(?:st|nd|rd|th)?(?:,?\\s+(\\d{4}))?`;
+  const W = "(?:entries|entry|registration|sign[- ]?ups?|raffle|giveaway|sweepstakes|contest|lottery|drawing|invites?|queue)";
+  const tailOf = (m) => src.slice(m.index + m[0].length, m.index + m[0].length + 40);
+  const range = src.match(new RegExp(`${W}\\b[^.\\n]{0,60}?${D}\\s*(?:-|–|—|to|through|thru|until)\\s*(?:(${MONTH_PATTERN})\\.?\\s+)?(\\d{1,2})(?:st|nd|rd|th)?(?:,?\\s+(\\d{4}))?`, "i"));
+  if (range) {
+    return kind === "end"
+      ? whenAt(range[4] || range[1], range[5], range[6] || range[3], tailOf(range), "end")
+      : whenAt(range[1], range[2], range[3], "", "start");
+  }
+  const cues = kind === "end"
+    ? [`${W}\\b[^.\\n]{0,40}?\\b(?:clos(?:e|es|ed|ing)|end(?:s|ed|ing)?|expires?|deadline)\\b[^.\\n]{0,18}?${D}`,
+       `\\b(?:enter|register|sign up|submit)\\b[^.\\n]{0,30}?\\b(?:by|until|through|before)\\b\\s*${D}`,
+       `${D}\\s*(?:is the )?(?:entry )?(?:deadline|last day to enter)`]
+    : [`${W}\\b[^.\\n]{0,40}?\\b(?:opens?|opened|starts?|started|begins?|began|goes live|went live|launch(?:es|ed)?)\\b[^.\\n]{0,18}?${D}`];
+  for (const cue of cues) {
+    const m = src.match(new RegExp(cue, "i"));
+    if (m) return whenAt(m[1], m[2], m[3], tailOf(m), kind);
+  }
+  const legacy = dateFromTextLegacy(src, kind);
+  if (kind === "end" && /T00:00:00\.000Z$/.test(legacy)) { const d = new Date(legacy); return zonedIso(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate(), 23, 59, "ET", 59); }
+  return legacy;
+}
+function dayBoundary(iso, kind) {
+  if (!/T00:00:00\.000Z$/.test(iso || "")) return iso;
+  const d = new Date(iso);
+  return kind === "end" ? zonedIso(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate(), 23, 59, "ET", 59) : zonedIso(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate(), 0, 0, "ET");
+}
 const PROMOTION_RE = /\b(raffle|giveaway|give aways|give away|sweepstakes|enter to win|contest|drawing|lottery|prize draw)\b/i;
 const POKEMON_RE = /\b(pok[eé]mon)\b/i;
 const TCG_PRODUCT_RE = /\b(tcg|trading cards?|pok[eé]mon cards?|booster (?:box|packs?)|elite trainer boxes?|\betb\b|promo cards?|collector(?:'s)? boxes?|pok[eé]mon (?:collection|tins?)|sealed (?:pokemon|tcg))\b/i;
@@ -337,8 +404,8 @@ function extractPageMetadata(html, pageUrl, raffle) {
   const siteName = firstText(metaValue(html, ["og:site_name", "application-name"]), website.name, organization.name, publisher.publisher?.name, host);
 
   const allowedStructuredDates = Boolean(event);
-  const startDate = (allowedStructuredDates ? normalizeDate(event.startDate) : "") || dateFromText(text, "start");
-  const endDate = (allowedStructuredDates ? normalizeDate(event.endDate || event.offers?.validThrough) : "") || dateFromText(text, "end");
+  const startDate = dayBoundary((allowedStructuredDates ? normalizeDate(event.startDate) : "") || dateFromText(text, "start"), "start");
+  const endDate = dayBoundary((allowedStructuredDates ? normalizeDate(event.endDate || event.offers?.validThrough) : "") || dateFromText(text, "end"), "end");
 
   let prize = "";
   if (event && isTcgGiveawayText(`${event.name || ""} ${event.description || ""} ${event.award || ""} ${event.prize || ""} ${raffle?.title || ""}`)) {
@@ -417,10 +484,13 @@ function significantWords(value) {
     "pokemon", "pokémon", "trading", "cards", "card", "tcg", "giveaway", "raffle", "contest",
     "sweepstakes", "restock", "restocks", "back", "stock", "deal", "deals", "sale", "sales",
     "release", "released", "new", "latest", "available", "today", "this", "that", "with", "from",
-    "into", "your", "their", "the", "and", "for", "are", "was", "how", "what", "where", "when"
+    "into", "your", "their", "the", "and", "for", "are", "was", "how", "what", "where", "when",
+    "opens", "open", "soon", "enter", "entry", "entries", "starts", "start", "starting", "begins", "closes", "close",
+    "ends", "ending", "before", "after", "winner", "winners", "live", "here", "know", "need", "guide", "announced",
+    "announces", "reveals", "revealed", "details", "limited", "online", "store", "stores", "worked", "works"
   ]);
   return [...new Set(String(value || "").toLowerCase().normalize("NFKD").replace(/[\u0300-\u036f]/g, "")
-    .split(/[^a-z0-9]+/).filter((word) => word.length >= 4 && !ignored.has(word)))];
+    .split(/[^a-z0-9]+/).filter((word) => word.length >= 4 && !ignored.has(word) && !/^20\d\d$/.test(word)))];
 }
 function unwrapSearchResultUrl(raw, baseUrl) {
   const resolved = resolveUrl(raw, baseUrl);
@@ -1130,7 +1200,7 @@ if (Array.isArray(posts) && posts.length) {
       const resolved = await resolvePostImages(post);
       post.sourceUrl = resolved.sourceUrl || post.sourceUrl || post.url;
       post.siteUrl = resolved.siteUrl || post.siteUrl || "";
-      post.imageUrls = resolved.images;
+      post.imageUrls = resolved.images.length ? resolved.images : thumbRecords(post);
       post.imageLookupStatus = resolved.images.length ? "found" : "not-found";
       post.imageLookupAt = checkedAt;
       post.imageLookupVersion = RESOLVER_VERSION;
@@ -1151,6 +1221,7 @@ if (Array.isArray(posts) && posts.length) {
       console.log(`Item images (${resolved.images.length}): ${post.title}`);
     } catch (error) {
       post.imageUrls = normalizeImages(post.imageUrls);
+      if (!post.imageUrls.length) post.imageUrls = thumbRecords(post);
       post.imageLookupStatus = "error";
       post.imageLookupAt = checkedAt;
       post.imageLookupVersion = RESOLVER_VERSION;
@@ -1260,6 +1331,7 @@ if (!Array.isArray(raffles) || !raffles.length) {
           raffle[field] = metadata[field] || "";
         }
         raffle.imageUrls = normalizeImages(metadata.imageUrls || []);
+        if (!raffle.imageUrls.length) raffle.imageUrls = thumbRecords(raffle);
         const status = resolved.inferredStatus || inferStatus(raffle.startDate, raffle.endDate, resolved.bodyText || "");
         raffle.status = status.status;
         raffle.statusDate = status.statusDate || null;
@@ -1269,6 +1341,7 @@ if (!Array.isArray(raffles) || !raffles.length) {
       publisherPagesChecked += 1;
       console.log(`Giveaway ${raffle.qualificationStatus}: ${raffle.title}`);
     } catch (error) {
+      if (!Array.isArray(raffle.imageUrls) || !raffle.imageUrls.length) raffle.imageUrls = thumbRecords(raffle);
       raffle.entryUrl = "";
       raffle.entryLinkLabel = "";
       raffle.entrySearchUrl = `https://www.google.com/search?q=${encodeURIComponent(`"${raffle.title}" Pokémon TCG giveaway entry`)}`;

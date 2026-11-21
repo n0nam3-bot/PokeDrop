@@ -142,7 +142,63 @@ function splitFeedItem(item) {
   };
 }
 
+const BING_NEWS_URL = "https://www.bing.com/news/search?format=rss&setlang=en-US&cc=US&qft=sortbydate%3d%221%22&q=";
+const BROWSER_UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36";
+
+// Google News RSS links are JavaScript redirects that a server cannot follow, so the real article was
+// never opened (no entry links, dates or images). Bing News RSS puts the publisher URL inside every
+// link, so the rest of the pipeline can fetch the actual article page. Google stays as a fallback.
+function bingNewsItem(item) {
+  const link = readTag(item, "link");
+  let url = "";
+  try {
+    const parsed = new URL(link);
+    url = parsed.searchParams.get("url") || (/(^|\.)bing\.com$/i.test(parsed.hostname) ? "" : link);
+  } catch {}
+  const title = clean(readTag(item, "title"));
+  const date = new Date(readTag(item, "pubDate"));
+  if (!/^https?:\/\//i.test(url) || !title || Number.isNaN(date.getTime())) return null;
+  const thumb = readTag(item, "News:Image").replace(/^http:/i, "https:");
+  let origin = "";
+  try { origin = new URL(url).origin; } catch {}
+  return {
+    date: date.toISOString(),
+    title,
+    summary: compactSummary(readTag(item, "description")),
+    source: clean(readTag(item, "News:Source")),
+    publisherUrl: origin,
+    sourceUrl: url,
+    thumbUrl: /^https:\/\//.test(thumb) ? `${thumb}${thumb.includes("?") ? "&" : "?"}w=480&h=360&c=14` : "",
+    url
+  };
+}
+
+function shouldReplace(existing, next) {
+  if (!existing) return true;
+  const wasGoogle = isGoogleNewsUrl(existing.url), isGoogle = isGoogleNewsUrl(next.url);
+  if (wasGoogle !== isGoogle) return wasGoogle; // a real publisher URL always beats a Google redirect
+  return Date.parse(next.date) > Date.parse(existing.date);
+}
+
 async function loadFeed([category, query]) {
+  const bingQuery = query.replace(/\s*when:\d+d/gi, "").trim();
+  let items = [];
+  try {
+    const response = await fetch(BING_NEWS_URL + encodeURIComponent(bingQuery), {
+      headers: { "user-agent": BROWSER_UA, "accept-language": "en-US,en;q=0.9" },
+      signal: AbortSignal.timeout(20000)
+    });
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const xml = await response.text();
+    items = [...xml.matchAll(/<item>([\s\S]*?)<\/item>/gi)].map(([, item]) => bingNewsItem(item)).filter(Boolean);
+  } catch (error) {
+    console.error(`${category}: Bing News failed (${error.message}); trying Google News.`);
+  }
+  if (!items.length) return loadGoogleFeed([category, query]);
+  return items.map((item) => ({ ...item, cat: categoryFor(`${item.title} ${item.summary}`, category) }));
+}
+
+async function loadGoogleFeed([category, query]) {
   const url = "https://news.google.com/rss/search?hl=en-US&gl=US&ceid=US:en&q=" + encodeURIComponent(query);
   const response = await fetch(url, {
     headers: { "user-agent": "Mozilla/5.0 PokeDrop free community feed" },
@@ -306,7 +362,7 @@ const POST_ENRICHMENT_FIELDS = [
   "publisherUrl", "sourceUrl", "siteUrl", "imageUrls", "imageLookupAt", "imageLookupStatus", "imageLookupVersion", "imageLookupError",
   "productUrl", "productRetailer", "productName", "productPrice", "productAvailability", "productLinks", "productSearchLinks",
   "productSearchUrl", "productSearchRetailer", "productLookupStatus", "productLookupAt", "productLookupVersion", "productPageChecks",
-  "productVerifiedAt", "productLookupError"
+  "productVerifiedAt", "productLookupError", "thumbUrl"
 ];
 for (const post of postCandidates) {
   const title = clean(post.title);
@@ -345,7 +401,7 @@ for (const post of postCandidates) {
       else if (isEmpty(existing[field]) && !isEmpty(normalized[field])) existing[field] = normalized[field];
     }
   }
-  if (!existing || Date.parse(normalized.date) > Date.parse(existing.date)) uniquePosts.set(key, normalized);
+  if (shouldReplace(existing, normalized)) uniquePosts.set(key, normalized);
 }
 const posts = [...uniquePosts.values()].sort((a, b) => b.date.localeCompare(a.date)).slice(0, MAX_POSTS);
 
@@ -371,7 +427,7 @@ for (const post of raffleCandidates) {
   const identity = raffleIdentity({ url });
   const titleKey = normalizedKey(title);
   const prior = previousByIdentity.get(identity) || null;
-  const key = identity || titleKey;
+  const key = titleKey || identity;
   const status = inferStatus(title, summary, post.date, post.startDate || prior?.startDate, post.endDate || prior?.endDate);
   const normalized = {
     ...(prior || {}),
@@ -402,12 +458,13 @@ for (const post of raffleCandidates) {
     endDate: String(post.endDate || prior?.endDate || "").trim(),
     prize: String(post.prize || prior?.prize || "").trim(),
     imageUrl: String(post.imageUrl || prior?.imageUrl || "").trim(),
+    thumbUrl: String(post.thumbUrl || prior?.thumbUrl || "").trim(),
     imageType: String(post.imageType || prior?.imageType || "").trim(),
     lastVerifiedAt: String(post.lastVerifiedAt || prior?.lastVerifiedAt || "").trim()
   };
   if (!normalized.sourceUrl) normalized.sourceUrl = url;
   const existing = uniqueRaffles.get(key);
-  if (!existing || Date.parse(normalized.date) > Date.parse(existing.date)) {
+  if (shouldReplace(existing, normalized)) {
     for (const field of ["entryUrl", "entryLinkLabel", "entrySearchUrl", "qualificationStatus", "entryLookupAt", "entryLookupStatus", "entryLookupVersion", "publisherUrl", "targetedSearch", "siteName", "siteUrl", "pageTitle", "pageDescription", "startDate", "endDate", "prize", "imageUrl", "imageType", "lastVerifiedAt"]) {
       if (!normalized[field] && existing?.[field]) normalized[field] = existing[field];
     }
