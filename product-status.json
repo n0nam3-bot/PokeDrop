@@ -1,13 +1,107 @@
 {
-  "state": "waiting",
-  "lastScanAt": null,
-  "retailersChecked": 0,
-  "retailersReached": 0,
+  "state": "ok",
+  "lastScanAt": "2026-11-21T03:49:59.698Z",
+  "retailersChecked": 10,
+  "retailersReached": 10,
   "productsFound": 0,
   "productsChecked": 0,
   "productsVerified": 0,
   "alertsSent": 0,
-  "sources": [],
+  "sources": [
+    {
+      "retailer": "Pokémon Center",
+      "ok": true,
+      "productsFound": 0,
+      "pagesChecked": 0,
+      "error": "No matching product detail pages in search results",
+      "engine": ""
+    },
+    {
+      "retailer": "Target",
+      "ok": true,
+      "productsFound": 0,
+      "pagesChecked": 0,
+      "error": "No matching product detail pages in search results",
+      "engine": ""
+    },
+    {
+      "retailer": "Walmart",
+      "ok": true,
+      "productsFound": 0,
+      "pagesChecked": 0,
+      "error": "No matching product detail pages in search results",
+      "engine": ""
+    },
+    {
+      "retailer": "Best Buy",
+      "ok": true,
+      "productsFound": 0,
+      "pagesChecked": 0,
+      "error": "No matching product detail pages in search results",
+      "engine": ""
+    },
+    {
+      "retailer": "GameStop",
+      "ok": true,
+      "productsFound": 0,
+      "pagesChecked": 0,
+      "error": "No matching product detail pages in search results",
+      "engine": ""
+    },
+    {
+      "retailer": "Amazon",
+      "ok": true,
+      "productsFound": 0,
+      "pagesChecked": 0,
+      "error": "No matching product detail pages in search results",
+      "engine": ""
+    },
+    {
+      "retailer": "Costco",
+      "ok": true,
+      "productsFound": 0,
+      "pagesChecked": 0,
+      "error": "No matching product detail pages in search results",
+      "engine": ""
+    },
+    {
+      "retailer": "TCGplayer",
+      "ok": true,
+      "productsFound": 0,
+      "pagesChecked": 0,
+      "error": "No matching product detail pages in search results",
+      "engine": ""
+    },
+    {
+      "retailer": "Barnes & Noble",
+      "ok": true,
+      "productsFound": 0,
+      "pagesChecked": 0,
+      "error": "No matching product detail pages in search results",
+      "engine": ""
+    },
+    {
+      "retailer": "Meijer",
+      "ok": true,
+      "productsFound": 0,
+      "pagesChecked": 0,
+      "error": "No matching product detail pages in search results",
+      "engine": ""
+    }
+  ],
   "errors": [],
-  "note": "The hosted retailer monitor has not completed its first scan yet."
+  "search": {
+    "requests": 20,
+    "successful": 0,
+    "resultLinks": 0,
+    "errors": 0,
+    "bing": 10,
+    "duckduckgo": 10
+  },
+  "note": "Only pages with product-specific Pokémon TCG identity and readable stock signals can generate availability alerts.",
+  "discord": {
+    "configured": false,
+    "sent": false,
+    "note": "DISCORD_WEBHOOK_URL secret is not configured"
+  }
 }
