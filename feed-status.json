@@ -4,7 +4,7 @@
  "news": {
   "sourceCount": 5,
   "sourcesResponded": 5,
-  "searchResults": 240,
+  "searchResults": 280,
   "sources": [
    {
     "name": "Restock",
@@ -29,35 +29,35 @@
    {
     "name": "Promo",
     "ok": true,
-    "results": 60
+    "results": 100
    }
   ],
   "itemImageDiscovery": {
    "version": 6,
    "pagesChecked": 20,
-   "itemsWithImages": 0,
+   "itemsWithImages": 1,
    "verifiedProductPages": 0,
-   "retailerSearchFallbacks": 21,
-   "productSearchLinksAvailable": 21,
-   "productPagesMissing": 99,
+   "retailerSearchFallbacks": 37,
+   "productSearchLinksAvailable": 37,
+   "productPagesMissing": 83,
    "productDetailPagesChecked": 8,
    "imageErrors": 0,
    "search": {
-    "requests": 113,
-    "successfulQueries": 85,
-    "resultLinks": 752,
+    "requests": 99,
+    "successfulQueries": 99,
+    "resultLinks": 935,
     "errors": 0,
     "bingRequests": 99,
-    "duckDuckGoRequests": 14
+    "duckDuckGoRequests": 0
    }
   }
  },
  "raffles": {
   "sourceCount": 17,
   "sourcesResponded": 17,
-  "searchResults": 130,
-  "uniqueLeads": 84,
-  "savedLeads": 84,
+  "searchResults": 137,
+  "uniqueLeads": 88,
+  "savedLeads": 88,
   "directEntryLinksFound": 0,
   "directEntryLinksMissing": 20,
   "entryLookupsThisRun": 0,
@@ -117,7 +117,7 @@
    {
     "name": "Walmart giveaways",
     "ok": true,
-    "results": 8
+    "results": 9
    },
    {
     "name": "GameStop giveaways",
@@ -137,12 +137,12 @@
    {
     "name": "Pokémon Center lotteries",
     "ok": true,
-    "results": 9
+    "results": 13
    },
    {
     "name": "Local card shop contests",
     "ok": true,
-    "results": 7
+    "results": 9
    },
    {
     "name": "Community card giveaways",
@@ -152,7 +152,7 @@
   ],
   "entrySearchFallbacks": 20,
   "qualifiedLeads": 20,
-  "rejectedLeads": 64,
+  "rejectedLeads": 68,
   "discoveryEngine": {
    "version": 6,
    "publisherPagesChecked": 0,
@@ -160,15 +160,15 @@
    "startDatesFound": 0,
    "endDatesFound": 0,
    "prizeImagesFound": 0,
-   "rejectedFalsePositives": 64,
+   "rejectedFalsePositives": 68,
    "entryLinksValidated": 0,
    "search": {
-    "requests": 113,
-    "successfulQueries": 85,
-    "resultLinks": 752,
+    "requests": 99,
+    "successfulQueries": 99,
+    "resultLinks": 935,
     "errors": 0,
     "bingRequests": 99,
-    "duckDuckGoRequests": 14
+    "duckDuckGoRequests": 0
    }
   }
  },

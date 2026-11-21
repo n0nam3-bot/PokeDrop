@@ -634,21 +634,9 @@
   "imageLookupStatus": "not-found",
   "imageLookupVersion": 6,
   "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE02Z0F5VzJBX0xUSU1qT3M0ZmpPaXI2Q2EyR3BvcTZxY2ozOFZ5MHpNZkQxWmZnRmJBZ1JVelBsRGxYVlMxcklPc0NXQkNYd0Yybl94MGdBeUtiLTZKZFBHNmdYOEhfZ1R4RkhRamFZZzhSaXN1MEhfY19R?oc=5",
-  "siteUrl": "",
-  "productUrl": "",
-  "productRetailer": "",
-  "productName": "",
-  "productPrice": "",
-  "productAvailability": "",
-  "productLinks": [],
-  "productSearchLinks": [],
-  "productSearchUrl": "",
-  "productSearchRetailer": "",
   "productLookupStatus": "not-found",
   "productLookupAt": "2026-11-21T03:20:21.261Z",
-  "productLookupVersion": 6,
-  "productPageChecks": 0,
-  "productVerifiedAt": ""
+  "productLookupVersion": 6
  },
  {
   "date": "2026-11-20T12:20:03.000Z",
@@ -663,13 +651,6 @@
   "imageLookupStatus": "not-found",
   "imageLookupVersion": 6,
   "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5UVXZkWTAxbmU3dDhmbHpfdXpKTUkySDRLRlhldHktUFlHemY3MThFMWdXRElvX2FETDltRU5NamFPbjBCNXIyM1hOa2luYzMzdS1hMWdURWJQamtlY0pCZDF2MS1rc0xFWHZFOXJYU21UZ2dl?oc=5",
-  "siteUrl": "",
-  "productUrl": "",
-  "productRetailer": "",
-  "productName": "",
-  "productPrice": "",
-  "productAvailability": "",
-  "productLinks": [],
   "productSearchLinks": [
    {
     "retailer": "TCGplayer",
@@ -688,9 +669,7 @@
   "productSearchRetailer": "TCGplayer",
   "productLookupStatus": "search-fallback",
   "productLookupAt": "2026-11-21T03:20:21.263Z",
-  "productLookupVersion": 6,
-  "productPageChecks": 0,
-  "productVerifiedAt": ""
+  "productLookupVersion": 6
  },
  {
   "date": "2026-11-20T11:48:26.000Z",
@@ -734,13 +713,6 @@
   "imageLookupStatus": "not-found",
   "imageLookupVersion": 6,
   "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNWDZfLTNtc1lUWmxjek1TRVUxSWtZUGc5N05zdjQ2cHhvTEdFZXVNR29CNjQ5d2VsNUdEenhCdHA0eGxXOERpWFVBUDQwQ1dYSGhzcTh1VUxrUUx3RkFFSlZaWU5SQktQSDR4N21EWGdFM1cwSVNXb3djUUY1SnJ1cE5STm1sYzUySko1QTVUQVhMbHJWZE1EeTAwTGhpWXptQmNZck5zbDN6XzYtUVhCWTFXYlZsZDJPTF9oakVseC1mQQ?oc=5",
-  "siteUrl": "",
-  "productUrl": "",
-  "productRetailer": "",
-  "productName": "",
-  "productPrice": "",
-  "productAvailability": "",
-  "productLinks": [],
   "productSearchLinks": [
    {
     "retailer": "Target",
@@ -759,9 +731,7 @@
   "productSearchRetailer": "Target",
   "productLookupStatus": "search-fallback",
   "productLookupAt": "2026-11-21T03:20:22.285Z",
-  "productLookupVersion": 6,
-  "productPageChecks": 0,
-  "productVerifiedAt": ""
+  "productLookupVersion": 6
  },
  {
   "date": "2026-11-20T11:31:10.000Z",
@@ -776,13 +746,6 @@
   "imageLookupStatus": "not-found",
   "imageLookupVersion": 6,
   "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPcEJvdVhvcjlJZ2F6bm8tSk9ENDhUb3hadEFHMHNjZVlmZkctYzk3T3NDU1oyeG1XS1NCMlNBV2VqTjZ0Vk5NZDVTNmszTkxUVEI4QnA2dWNzZTBGbkhZRHYwMlFNZnk3YkhTcEtibVBVYnN3WWtYa0VJalJZX250U2JMYV9EUlY4czlULWRxQmdsT0U?oc=5",
-  "siteUrl": "",
-  "productUrl": "",
-  "productRetailer": "",
-  "productName": "",
-  "productPrice": "",
-  "productAvailability": "",
-  "productLinks": [],
   "productSearchLinks": [
    {
     "retailer": "TCGplayer",
@@ -801,9 +764,7 @@
   "productSearchRetailer": "TCGplayer",
   "productLookupStatus": "search-fallback",
   "productLookupAt": "2026-11-21T03:20:22.454Z",
-  "productLookupVersion": 6,
-  "productPageChecks": 0,
-  "productVerifiedAt": ""
+  "productLookupVersion": 6
  },
  {
   "date": "2026-11-20T11:31:10.000Z",
@@ -818,13 +779,6 @@
   "imageLookupStatus": "not-found",
   "imageLookupVersion": 6,
   "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNTkxBU1JBQmZqaExlaWtOR0JSV2cwbHBFZ2dZcUlSbmhLUHlYZFpXQUIyWm9WZERUNHFJYWFBb25kU0M1RFRXUEE0R2lFRDhQRTZ3RU5tcDZUcnBrNDNhTlVvcEJPSlJ1djc2ZjM2U1BnaG1oNVBHVHVST25qNy11aVRXcUV2Y25IdEdmZlZEN3JtNzdlX284VEJ4UnVtY1dOeFltcDlhYXI1WVJCZlR5QjZDSTNkeFk?oc=5",
-  "siteUrl": "",
-  "productUrl": "",
-  "productRetailer": "",
-  "productName": "",
-  "productPrice": "",
-  "productAvailability": "",
-  "productLinks": [],
   "productSearchLinks": [
    {
     "retailer": "TCGplayer",
@@ -843,9 +797,7 @@
   "productSearchRetailer": "TCGplayer",
   "productLookupStatus": "search-fallback",
   "productLookupAt": "2026-11-21T03:20:22.465Z",
-  "productLookupVersion": 6,
-  "productPageChecks": 0,
-  "productVerifiedAt": ""
+  "productLookupVersion": 6
  },
  {
   "date": "2026-11-20T11:27:28.000Z",
@@ -860,21 +812,9 @@
   "imageLookupStatus": "not-found",
   "imageLookupVersion": 6,
   "url": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxNdWxXRUtvSDRFQ19JYTBkSkZHejltNDllNjdzbVp6R2t6TzdMZGR1ZEtZV2tuZkdVeGVmNjNXU2FMQzkxZGpxYW9HNm04WGxWSFFLNzI2X2NEWXptdk96d1VvUVh5SzZIU2FuMURxZmlZM1dpamFKeFc4YXRYczA1NjhVQWVZWmRFZWh0c2ZVbzN5YnFHVkthZUJQSFJGRG1xVUtSci1YeVNZcUhpNWNjNXBpa3VXekpWdlNGUGZEMFFHbUpyTWVXMFAxbDc0MWNYdWVfZnViMUlFQ0oyUnRwM3FqRlRFeXZ6SjFac0w4UUVMVHNjYlc0YUlhREpTN0HSAf8BQVVfeXFMUGdrN21VTXV1WC0tQ3NQNmYxLUpqaE83MHVrcjRvNS0wZlZPRDdyZV9FZlpwRUZjWlFNSzJORWxpWGJqZzUyQkFJZUczQ2NVQmJXZzRxZjFkcjdZZDJiOW9tazM4aHN1bEhic293Q0l2cTd5S01tQjJyY1NuT2QxWWVhRkt1bTNMcWJkTWc0bnhJc2tyRmtNUzFQbWZUcm1CQlFiS012ZWJVNnNSN2QzLTRac2ppTW9MTnd1R0t6R1FIWHhKVlMzS3FmaTJJc0xQTV9TZmZHMm9IaVZUVVlGMnZ0aDQycGlBRHkzQnYteUtoaG9GdTFUTHBGdTJGMHR3?oc=5",
-  "siteUrl": "",
-  "productUrl": "",
-  "productRetailer": "",
-  "productName": "",
-  "productPrice": "",
-  "productAvailability": "",
-  "productLinks": [],
-  "productSearchLinks": [],
-  "productSearchUrl": "",
-  "productSearchRetailer": "",
   "productLookupStatus": "not-found",
   "productLookupAt": "2026-11-21T03:20:22.709Z",
-  "productLookupVersion": 6,
-  "productPageChecks": 0,
-  "productVerifiedAt": ""
+  "productLookupVersion": 6
  },
  {
   "date": "2026-11-20T10:44:50.000Z",
@@ -918,13 +858,6 @@
   "imageLookupStatus": "not-found",
   "imageLookupVersion": 6,
   "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNUEg0cHZzSlVhdkN4SDdRdnRhaXZHRjBkYzdDM0Etb2syS295V0VJZXA2YTNPQjRGR3FuSm5sZFNVbjBVcWRvc1daUHQ0eFBRQXBKY1hobTJHc1VVSTYyTk95WFBrS3VHb2UtVG5sV3lHdzlWVkpYOE9CLVZOc3NTbi1BRlVPbHVxNm1IUWo2b3R0N0ZnR1dvLXBNZGhXY2FSamx6UmhCOFJoMEY3?oc=5",
-  "siteUrl": "",
-  "productUrl": "",
-  "productRetailer": "",
-  "productName": "",
-  "productPrice": "",
-  "productAvailability": "",
-  "productLinks": [],
   "productSearchLinks": [
    {
     "retailer": "TCGplayer",
@@ -943,9 +876,7 @@
   "productSearchRetailer": "TCGplayer",
   "productLookupStatus": "search-fallback",
   "productLookupAt": "2026-11-21T03:20:23.599Z",
-  "productLookupVersion": 6,
-  "productPageChecks": 0,
-  "productVerifiedAt": ""
+  "productLookupVersion": 6
  },
  {
   "date": "2026-11-20T08:11:33.000Z",
@@ -960,13 +891,6 @@
   "imageLookupStatus": "not-found",
   "imageLookupVersion": 6,
   "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQdndFNUtYa0ZlZDcwOUFhdk40THJzcnRpYTBtTDhYYUJWTWZ4MjNRbXNDWDJnTjNrMUs1b0F6U2RVajdZN3dWa3hPa1VGbnROYjJHVjdrWGZYd3FxbnRKLVFybzU4SmVxYjlfdGdXZmpOVjk5dW9KUlNHTXY0QUMycWJUUERFYVdiOS14NGNHbUZUMUw5T2tDcV9sTHNGYUNhV0VZcFR3Yw?oc=5",
-  "siteUrl": "",
-  "productUrl": "",
-  "productRetailer": "",
-  "productName": "",
-  "productPrice": "",
-  "productAvailability": "",
-  "productLinks": [],
   "productSearchLinks": [
    {
     "retailer": "TCGplayer",
@@ -985,9 +909,7 @@
   "productSearchRetailer": "TCGplayer",
   "productLookupStatus": "search-fallback",
   "productLookupAt": "2026-11-21T03:20:23.743Z",
-  "productLookupVersion": 6,
-  "productPageChecks": 0,
-  "productVerifiedAt": ""
+  "productLookupVersion": 6
  },
  {
   "date": "2026-11-20T08:11:07.000Z",
@@ -1002,21 +924,9 @@
   "imageLookupStatus": "not-found",
   "imageLookupVersion": 6,
   "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPdFVnY01jQW13RUJGa2xkNlRXYlBzZlBlZnlhcTg5djc4dEthdEc3anI3RmhhWVllRmVraWYxZ3AtcmpfU2pjWmk1b1hUOU9pOVZGOTdGU2lVRWtiVE84UkoybkVzSWlJcld3WmZxN1lmWWl1eHY5Z2g0d2F1RkVUTXh3?oc=5",
-  "siteUrl": "",
-  "productUrl": "",
-  "productRetailer": "",
-  "productName": "",
-  "productPrice": "",
-  "productAvailability": "",
-  "productLinks": [],
-  "productSearchLinks": [],
-  "productSearchUrl": "",
-  "productSearchRetailer": "",
   "productLookupStatus": "not-found",
   "productLookupAt": "2026-11-21T03:20:24.209Z",
-  "productLookupVersion": 6,
-  "productPageChecks": 0,
-  "productVerifiedAt": ""
+  "productLookupVersion": 6
  },
  {
   "date": "2026-11-20T04:46:00.000Z",
@@ -1102,21 +1012,9 @@
   "imageLookupStatus": "not-found",
   "imageLookupVersion": 6,
   "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9nd3dDR3cyOEpTOGhob2RzV29HOGFaaDNTc0ZDTDlTQmNmSXJGTnpLWHVPd2ZIcEFWVXNYbXJCX3NCY0xvVEJ3NEQ5aDliV1RYRGcwLTFWWjlfeTh3Y09KSGtsXzVUbTFnTmlDa1lwUmVZUGNxZlBvUXo1Tm4?oc=5",
-  "siteUrl": "",
-  "productUrl": "",
-  "productRetailer": "",
-  "productName": "",
-  "productPrice": "",
-  "productAvailability": "",
-  "productLinks": [],
-  "productSearchLinks": [],
-  "productSearchUrl": "",
-  "productSearchRetailer": "",
   "productLookupStatus": "not-found",
   "productLookupAt": "2026-11-21T03:20:24.919Z",
-  "productLookupVersion": 6,
-  "productPageChecks": 0,
-  "productVerifiedAt": ""
+  "productLookupVersion": 6
  },
  {
   "date": "2026-11-19T22:37:33.000Z",
@@ -1173,13 +1071,6 @@
   "imageLookupStatus": "not-found",
   "imageLookupVersion": 6,
   "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQQWlFT3R2RFlyT3o5RDRJU0N5VG52RUdBa1pHbjRGdDdkb0M5VmVTNXR3b2c2RlQ3dGJDcXlOM1hBNm1KZXc0Z2NpdlhJOThqdTVVTGR3NXduV0Jmcnk5eUdUREZDZ0NTY19kNklNdlNzU1dUT1hOWmxCa0o5bzBwQmVKbHZRQWZuczBqeDB5SHlCM3c?oc=5",
-  "siteUrl": "",
-  "productUrl": "",
-  "productRetailer": "",
-  "productName": "",
-  "productPrice": "",
-  "productAvailability": "",
-  "productLinks": [],
   "productSearchLinks": [
    {
     "retailer": "TCGplayer",
@@ -1198,9 +1089,7 @@
   "productSearchRetailer": "TCGplayer",
   "productLookupStatus": "search-fallback",
   "productLookupAt": "2026-11-21T03:20:25.504Z",
-  "productLookupVersion": 6,
-  "productPageChecks": 0,
-  "productVerifiedAt": ""
+  "productLookupVersion": 6
  },
  {
   "date": "2026-11-19T21:02:13.000Z",
@@ -1215,13 +1104,6 @@
   "imageLookupStatus": "not-found",
   "imageLookupVersion": 6,
   "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxObklBX3ZoZWE5VC04TDdxUm1XcHJfakZKdHBuLXU2ZkVETURlSmhkamhUbTZEbjdmaXhYUlZJTVUtUlB3ZFJCbHNWNUNZVEIxd3pYV0JDNVFMVXFjS1R1bTYzNVkxVjNnMXVzZC1tb3JWOHJjLUZNM2oyV1ZjSTE5cGxSWk5DU2hwaUNLX2JMYmg?oc=5",
-  "siteUrl": "",
-  "productUrl": "",
-  "productRetailer": "",
-  "productName": "",
-  "productPrice": "",
-  "productAvailability": "",
-  "productLinks": [],
   "productSearchLinks": [
    {
     "retailer": "TCGplayer",
@@ -1240,9 +1122,7 @@
   "productSearchRetailer": "TCGplayer",
   "productLookupStatus": "search-fallback",
   "productLookupAt": "2026-11-21T03:20:25.575Z",
-  "productLookupVersion": 6,
-  "productPageChecks": 0,
-  "productVerifiedAt": ""
+  "productLookupVersion": 6
  },
  {
   "date": "2026-11-19T19:27:58.000Z",
@@ -1257,21 +1137,9 @@
   "imageLookupStatus": "not-found",
   "imageLookupVersion": 6,
   "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOcmxUNk9uYjNuaXMtNGlUWWF5X1h4Q0ZmQ1B2NjhVV01WUDgwajRIZnVPWHZ2MGRQWnoyc2hCNk9CbE01UDcyNkJOdGx2R3JHNWpqM2xaTGhrVFdkbWNEbC1GdFRFU0tGdUM1ajkwbnk0STd2OHBiT21rcF9mT2pmTzNnWG02SkgxUzEwNTdnTmljVWpMTTFwc3B5RENfQ2ZHQVE?oc=5",
-  "siteUrl": "",
-  "productUrl": "",
-  "productRetailer": "",
-  "productName": "",
-  "productPrice": "",
-  "productAvailability": "",
-  "productLinks": [],
-  "productSearchLinks": [],
-  "productSearchUrl": "",
-  "productSearchRetailer": "",
   "productLookupStatus": "not-found",
   "productLookupAt": "2026-11-21T03:20:25.961Z",
-  "productLookupVersion": 6,
-  "productPageChecks": 0,
-  "productVerifiedAt": ""
+  "productLookupVersion": 6
  },
  {
   "date": "2026-11-19T18:30:55.000Z",
@@ -1286,13 +1154,6 @@
   "imageLookupStatus": "not-found",
   "imageLookupVersion": 6,
   "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5OSFNrV1BpdmJGQmdoQzJLUGhRWWpEc21jeWlHaFhrSGZuOE5QQjNpcUNYd08zRWhXamZqZ1hDazExb1pER1lRNlA0NmlnMXExSVVPTDJxM2h1V3U3NXhLWGZrZHpZX20yUzhCdU9laE5WT2szXzcw?oc=5",
-  "siteUrl": "",
-  "productUrl": "",
-  "productRetailer": "",
-  "productName": "",
-  "productPrice": "",
-  "productAvailability": "",
-  "productLinks": [],
   "productSearchLinks": [
    {
     "retailer": "TCGplayer",
@@ -1311,9 +1172,7 @@
   "productSearchRetailer": "TCGplayer",
   "productLookupStatus": "search-fallback",
   "productLookupAt": "2026-11-21T03:20:26.085Z",
-  "productLookupVersion": 6,
-  "productPageChecks": 0,
-  "productVerifiedAt": ""
+  "productLookupVersion": 6
  },
  {
   "date": "2026-11-19T18:22:17.000Z",
@@ -1322,12 +1181,40 @@
   "summary": "Pokémon TCG: Mega Evolution-Flowing Fists Expansion Announced Bleeding Cool News",
   "source": "Bleeding Cool News",
   "publisherUrl": "https://bleedingcool.com",
-  "sourceUrl": "",
+  "sourceUrl": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPVkNwNzFkWHlEX3JLRWNncm93bzNiUUlqX1gtcXpXT1ZqeDJoaXVMZ3V6RUtybjRudDNfRktpdmtMWG10T2JIalZfRFlyQTNEMmdEWjBfSXB6SG1VeFpVVTdZTlZUQmtGeFZIbXQ0eU9qSDZmTUI4bnhEUElmVzd4ZTdxbWhpenFGWC1TdFoyTXI5ZXJCeGhV?oc=5",
   "imageUrls": [],
-  "imageLookupAt": "",
-  "imageLookupStatus": "",
-  "imageLookupVersion": 0,
-  "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPVkNwNzFkWHlEX3JLRWNncm93bzNiUUlqX1gtcXpXT1ZqeDJoaXVMZ3V6RUtybjRudDNfRktpdmtMWG10T2JIalZfRFlyQTNEMmdEWjBfSXB6SG1VeFpVVTdZTlZUQmtGeFZIbXQ0eU9qSDZmTUI4bnhEUElmVzd4ZTdxbWhpenFGWC1TdFoyTXI5ZXJCeGhV?oc=5"
+  "imageLookupAt": "2026-11-21T03:20:50.050Z",
+  "imageLookupStatus": "not-found",
+  "imageLookupVersion": 6,
+  "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPVkNwNzFkWHlEX3JLRWNncm93bzNiUUlqX1gtcXpXT1ZqeDJoaXVMZ3V6RUtybjRudDNfRktpdmtMWG10T2JIalZfRFlyQTNEMmdEWjBfSXB6SG1VeFpVVTdZTlZUQmtGeFZIbXQ0eU9qSDZmTUI4bnhEUElmVzd4ZTdxbWhpenFGWC1TdFoyTXI5ZXJCeGhV?oc=5",
+  "siteUrl": "",
+  "productUrl": "",
+  "productRetailer": "",
+  "productName": "",
+  "productPrice": "",
+  "productAvailability": "",
+  "productLinks": [],
+  "productSearchLinks": [
+   {
+    "retailer": "TCGplayer",
+    "url": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20mega%20evolution%20flowing%20fists%20expansion%20bleeding%20cool"
+   },
+   {
+    "retailer": "Amazon",
+    "url": "https://www.amazon.com/s?k=Pokemon%20TCG%20mega%20evolution%20flowing%20fists%20expansion%20bleeding%20cool"
+   },
+   {
+    "retailer": "Target",
+    "url": "https://www.target.com/s?searchTerm=Pokemon%20TCG%20mega%20evolution%20flowing%20fists%20expansion%20bleeding%20cool"
+   }
+  ],
+  "productSearchUrl": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20mega%20evolution%20flowing%20fists%20expansion%20bleeding%20cool",
+  "productSearchRetailer": "TCGplayer",
+  "productLookupStatus": "search-fallback",
+  "productLookupAt": "2026-11-21T03:20:50.050Z",
+  "productLookupVersion": 6,
+  "productPageChecks": 0,
+  "productVerifiedAt": ""
  },
  {
   "date": "2026-11-19T17:40:37.000Z",
@@ -1336,12 +1223,40 @@
   "summary": "Walmart just dropped this Pokémon TCG 30th Celebration box to a record-low $69 - nearly matching market price IGN",
   "source": "IGN",
   "publisherUrl": "https://www.ign.com",
-  "sourceUrl": "",
+  "sourceUrl": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOZ1I4VFZhbFhoODlZeW1KNzFqT05vM1pCQ2dKWE1JZkxzNVlsMDhWSHhscGJtcUdGTlpnb3dDRkdISTM0YjY2bFFpSW5GRHh6azg3eXVhaFFmcW9vdFMwbmZfc0RuemZ2ZHFTSndudXFlTmJZMDdMYkY1cmJLZEhBY3hmcw?oc=5",
   "imageUrls": [],
-  "imageLookupAt": "",
-  "imageLookupStatus": "",
-  "imageLookupVersion": 0,
-  "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOZ1I4VFZhbFhoODlZeW1KNzFqT05vM1pCQ2dKWE1JZkxzNVlsMDhWSHhscGJtcUdGTlpnb3dDRkdISTM0YjY2bFFpSW5GRHh6azg3eXVhaFFmcW9vdFMwbmZfc0RuemZ2ZHFTSndudXFlTmJZMDdMYkY1cmJLZEhBY3hmcw?oc=5"
+  "imageLookupAt": "2026-11-21T03:20:50.051Z",
+  "imageLookupStatus": "not-found",
+  "imageLookupVersion": 6,
+  "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOZ1I4VFZhbFhoODlZeW1KNzFqT05vM1pCQ2dKWE1JZkxzNVlsMDhWSHhscGJtcUdGTlpnb3dDRkdISTM0YjY2bFFpSW5GRHh6azg3eXVhaFFmcW9vdFMwbmZfc0RuemZ2ZHFTSndudXFlTmJZMDdMYkY1cmJLZEhBY3hmcw?oc=5",
+  "siteUrl": "",
+  "productUrl": "",
+  "productRetailer": "",
+  "productName": "",
+  "productPrice": "",
+  "productAvailability": "",
+  "productLinks": [],
+  "productSearchLinks": [
+   {
+    "retailer": "Walmart",
+    "url": "https://www.walmart.com/search?q=Pokemon%20TCG%20just%20dropped%2030th%20celebration%20record%20nearly%20matching"
+   },
+   {
+    "retailer": "TCGplayer",
+    "url": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20just%20dropped%2030th%20celebration%20record%20nearly%20matching"
+   },
+   {
+    "retailer": "Amazon",
+    "url": "https://www.amazon.com/s?k=Pokemon%20TCG%20just%20dropped%2030th%20celebration%20record%20nearly%20matching"
+   }
+  ],
+  "productSearchUrl": "https://www.walmart.com/search?q=Pokemon%20TCG%20just%20dropped%2030th%20celebration%20record%20nearly%20matching",
+  "productSearchRetailer": "Walmart",
+  "productLookupStatus": "search-fallback",
+  "productLookupAt": "2026-11-21T03:20:50.051Z",
+  "productLookupVersion": 6,
+  "productPageChecks": 0,
+  "productVerifiedAt": ""
  },
  {
   "date": "2026-11-19T17:32:01.000Z",
@@ -1350,12 +1265,47 @@
   "summary": "Pokémon TCG: Flowing Fists Card List, Set Details, Products and More Joseph Writer Anderson",
   "source": "Joseph Writer Anderson",
   "publisherUrl": "",
-  "sourceUrl": "",
-  "imageUrls": [],
-  "imageLookupAt": "",
-  "imageLookupStatus": "",
-  "imageLookupVersion": 0,
-  "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPUy1EX0xaZ3R0Y1ZMQm9Uc2x3X3lmUVlZRjlyUjlZbTA1U0E0VnJhdlVRelNxUm9yOGFSRlQ5YjVvRHo4YkQwSXU0aTVqT2s4SjZzSWVXZjhMT0gxTFpOWElmaHBmRGxOWVRTVDFLQ3BTS01GMFYwdV96MlljWUNlQUdKTEJneUJpeFBXQlNfSWJxcjd1TDZHNDhKUlZKalZPWTZWRlVsUHU?oc=5"
+  "sourceUrl": "https://pokemondb.net/pokedex/national",
+  "imageUrls": [
+   {
+    "url": "https://img.pokemondb.net/design/main/header-sm.png",
+    "label": "ITEM IMAGE",
+    "kind": "product",
+    "alt": "Pokemon Database logo"
+   }
+  ],
+  "imageLookupAt": "2026-11-21T03:20:50.052Z",
+  "imageLookupStatus": "found",
+  "imageLookupVersion": 6,
+  "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPUy1EX0xaZ3R0Y1ZMQm9Uc2x3X3lmUVlZRjlyUjlZbTA1U0E0VnJhdlVRelNxUm9yOGFSRlQ5YjVvRHo4YkQwSXU0aTVqT2s4SjZzSWVXZjhMT0gxTFpOWElmaHBmRGxOWVRTVDFLQ3BTS01GMFYwdV96MlljWUNlQUdKTEJneUJpeFBXQlNfSWJxcjd1TDZHNDhKUlZKalZPWTZWRlVsUHU?oc=5",
+  "siteUrl": "https://pokemondb.net",
+  "productUrl": "",
+  "productRetailer": "",
+  "productName": "",
+  "productPrice": "",
+  "productAvailability": "",
+  "productLinks": [],
+  "productSearchLinks": [
+   {
+    "retailer": "TCGplayer",
+    "url": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20flowing%20fists%20list%20details%20products%20more%20joseph"
+   },
+   {
+    "retailer": "Amazon",
+    "url": "https://www.amazon.com/s?k=Pokemon%20TCG%20flowing%20fists%20list%20details%20products%20more%20joseph"
+   },
+   {
+    "retailer": "Target",
+    "url": "https://www.target.com/s?searchTerm=Pokemon%20TCG%20flowing%20fists%20list%20details%20products%20more%20joseph"
+   }
+  ],
+  "productSearchUrl": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20flowing%20fists%20list%20details%20products%20more%20joseph",
+  "productSearchRetailer": "TCGplayer",
+  "productLookupStatus": "search-fallback",
+  "productLookupAt": "2026-11-21T03:20:50.052Z",
+  "productLookupVersion": 6,
+  "productPageChecks": 0,
+  "productVerifiedAt": ""
  },
  {
   "date": "2026-11-19T17:19:16.000Z",
@@ -1364,12 +1314,40 @@
   "summary": "Mega Lucario Z heads a new type of Mega Evolution in the new Pokémon TCG expansion, Flowing Fists Diario AS",
   "source": "Diario AS",
   "publisherUrl": "https://en.as.com",
-  "sourceUrl": "",
+  "sourceUrl": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQbVhrLXNjRlgxQUxxT01TemRaanVvLVVzcHJXX2wxakFKczZGTndrTmpWZ0ZTVTFiVHZ2UVVUdW5hUURmVGVxMTgzOXJHMTJlRHphLVA5bVk2YVJPM3VwcEY2Qk1pZUpNNVpCWFB6ZnhHOERvZFNtWTJSSnRDVGlaMmxERzVjRG5lN1pibkhzdEN6OVJXUVBxY1hhcldjZllEWWg3RmQ1QWlBaHZpaGxnSkd6T2JNdTNRS3hZYWRBS2RPck5TWXd5TkZINWNZNkdzQWJMQVAwTEpPUdIB7gFBVV95cUxObGtpbUdvOWl4S0VzNGx0c3ZXamVRYTBYQm1XZURCQ0dDM1dXUXZUODV1U2UxNVpYWEtLTl9FMkdaWVNIYm0xRXp5QVpmelFseW95V2g3QVNjUlFkcG9LMDhWSjBJSFpkeFBTdlhBQjVkNzBCTXR3ai1fZlMyVHdDVTd6b3VfejJCdV96aUpXVy03TnkxYTZjRHVZanRqX2Rkd1hMYUE0Rks1cXNaR3FUR1NsT3NUSEZIeE8ybGM3MVhiNl9uRFVhOUoyMHIwTUhOS2lOR2FjZDd1Vlg1QUxiSTZreXJJT2hPS2stYXR3?oc=5",
   "imageUrls": [],
-  "imageLookupAt": "",
-  "imageLookupStatus": "",
-  "imageLookupVersion": 0,
-  "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQbVhrLXNjRlgxQUxxT01TemRaanVvLVVzcHJXX2wxakFKczZGTndrTmpWZ0ZTVTFiVHZ2UVVUdW5hUURmVGVxMTgzOXJHMTJlRHphLVA5bVk2YVJPM3VwcEY2Qk1pZUpNNVpCWFB6ZnhHOERvZFNtWTJSSnRDVGlaMmxERzVjRG5lN1pibkhzdEN6OVJXUVBxY1hhcldjZllEWWg3RmQ1QWlBaHZpaGxnSkd6T2JNdTNRS3hZYWRBS2RPck5TWXd5TkZINWNZNkdzQWJMQVAwTEpPUdIB7gFBVV95cUxObGtpbUdvOWl4S0VzNGx0c3ZXamVRYTBYQm1XZURCQ0dDM1dXUXZUODV1U2UxNVpYWEtLTl9FMkdaWVNIYm0xRXp5QVpmelFseW95V2g3QVNjUlFkcG9LMDhWSjBJSFpkeFBTdlhBQjVkNzBCTXR3ai1fZlMyVHdDVTd6b3VfejJCdV96aUpXVy03TnkxYTZjRHVZanRqX2Rkd1hMYUE0Rks1cXNaR3FUR1NsT3NUSEZIeE8ybGM3MVhiNl9uRFVhOUoyMHIwTUhOS2lOR2FjZDd1Vlg1QUxiSTZreXJJT2hPS2stYXR3?oc=5"
+  "imageLookupAt": "2026-11-21T03:20:50.053Z",
+  "imageLookupStatus": "not-found",
+  "imageLookupVersion": 6,
+  "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQbVhrLXNjRlgxQUxxT01TemRaanVvLVVzcHJXX2wxakFKczZGTndrTmpWZ0ZTVTFiVHZ2UVVUdW5hUURmVGVxMTgzOXJHMTJlRHphLVA5bVk2YVJPM3VwcEY2Qk1pZUpNNVpCWFB6ZnhHOERvZFNtWTJSSnRDVGlaMmxERzVjRG5lN1pibkhzdEN6OVJXUVBxY1hhcldjZllEWWg3RmQ1QWlBaHZpaGxnSkd6T2JNdTNRS3hZYWRBS2RPck5TWXd5TkZINWNZNkdzQWJMQVAwTEpPUdIB7gFBVV95cUxObGtpbUdvOWl4S0VzNGx0c3ZXamVRYTBYQm1XZURCQ0dDM1dXUXZUODV1U2UxNVpYWEtLTl9FMkdaWVNIYm0xRXp5QVpmelFseW95V2g3QVNjUlFkcG9LMDhWSjBJSFpkeFBTdlhBQjVkNzBCTXR3ai1fZlMyVHdDVTd6b3VfejJCdV96aUpXVy03TnkxYTZjRHVZanRqX2Rkd1hMYUE0Rks1cXNaR3FUR1NsT3NUSEZIeE8ybGM3MVhiNl9uRFVhOUoyMHIwTUhOS2lOR2FjZDd1Vlg1QUxiSTZreXJJT2hPS2stYXR3?oc=5",
+  "siteUrl": "",
+  "productUrl": "",
+  "productRetailer": "",
+  "productName": "",
+  "productPrice": "",
+  "productAvailability": "",
+  "productLinks": [],
+  "productSearchLinks": [
+   {
+    "retailer": "TCGplayer",
+    "url": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20mega%20lucario%20heads%20type%20evolution%20expansion%20flowing"
+   },
+   {
+    "retailer": "Amazon",
+    "url": "https://www.amazon.com/s?k=Pokemon%20TCG%20mega%20lucario%20heads%20type%20evolution%20expansion%20flowing"
+   },
+   {
+    "retailer": "Target",
+    "url": "https://www.target.com/s?searchTerm=Pokemon%20TCG%20mega%20lucario%20heads%20type%20evolution%20expansion%20flowing"
+   }
+  ],
+  "productSearchUrl": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20mega%20lucario%20heads%20type%20evolution%20expansion%20flowing",
+  "productSearchRetailer": "TCGplayer",
+  "productLookupStatus": "search-fallback",
+  "productLookupAt": "2026-11-21T03:20:50.053Z",
+  "productLookupVersion": 6,
+  "productPageChecks": 0,
+  "productVerifiedAt": ""
  },
  {
   "date": "2026-11-19T17:11:12.000Z",
@@ -1378,12 +1356,40 @@
   "summary": "",
   "source": "Wargamer",
   "publisherUrl": "",
-  "sourceUrl": "",
+  "sourceUrl": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9IZXlhcjhhRUpsR2RNWUVQX2tfS29HR3R5a3djVzhCdkdxY1FfWXMwd0F4Sk9udXZvYXVjMllodDFGYVQ0NWdqOHFuLWpTdkRYZFVUR2xXTlFudV9yRGdyalk0OFJoWHNuWG5UalB3cVctY1lpY0w4RFNNb3NGQQ?oc=5",
   "imageUrls": [],
-  "imageLookupAt": "",
-  "imageLookupStatus": "",
-  "imageLookupVersion": 0,
-  "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9IZXlhcjhhRUpsR2RNWUVQX2tfS29HR3R5a3djVzhCdkdxY1FfWXMwd0F4Sk9udXZvYXVjMllodDFGYVQ0NWdqOHFuLWpTdkRYZFVUR2xXTlFudV9yRGdyalk0OFJoWHNuWG5UalB3cVctY1lpY0w4RFNNb3NGQQ?oc=5"
+  "imageLookupAt": "2026-11-21T03:20:50.884Z",
+  "imageLookupStatus": "not-found",
+  "imageLookupVersion": 6,
+  "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9IZXlhcjhhRUpsR2RNWUVQX2tfS29HR3R5a3djVzhCdkdxY1FfWXMwd0F4Sk9udXZvYXVjMllodDFGYVQ0NWdqOHFuLWpTdkRYZFVUR2xXTlFudV9yRGdyalk0OFJoWHNuWG5UalB3cVctY1lpY0w4RFNNb3NGQQ?oc=5",
+  "siteUrl": "",
+  "productUrl": "",
+  "productRetailer": "",
+  "productName": "",
+  "productPrice": "",
+  "productAvailability": "",
+  "productLinks": [],
+  "productSearchLinks": [
+   {
+    "retailer": "TCGplayer",
+    "url": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20reveals%20hint%20theme"
+   },
+   {
+    "retailer": "Amazon",
+    "url": "https://www.amazon.com/s?k=Pokemon%20TCG%20reveals%20hint%20theme"
+   },
+   {
+    "retailer": "Target",
+    "url": "https://www.target.com/s?searchTerm=Pokemon%20TCG%20reveals%20hint%20theme"
+   }
+  ],
+  "productSearchUrl": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20reveals%20hint%20theme",
+  "productSearchRetailer": "TCGplayer",
+  "productLookupStatus": "search-fallback",
+  "productLookupAt": "2026-11-21T03:20:50.884Z",
+  "productLookupVersion": 6,
+  "productPageChecks": 0,
+  "productVerifiedAt": ""
  },
  {
   "date": "2026-11-19T17:04:46.000Z",
@@ -1392,12 +1398,27 @@
   "summary": "\"Flowing Fists\" TCG Set Officially Revealed for February, Full Product Lineup Revealed! PokeBeach",
   "source": "PokeBeach",
   "publisherUrl": "https://www.pokebeach.com",
-  "sourceUrl": "",
+  "sourceUrl": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPZW5BTUhJcTM0blR5ZThSbFJ6aFB6XzNkdkU1QjV5TndHbklLRERkNE5od09fS2NjalZrZ1k1QnlndmNfaDFaMEt1S0d3eFVNTWRhU2RBdV9sLVhSMnNtLXdKRGgyWXd4VkpFLThQWmtFWURCb2hYTnVMS1RxVkx4T0hFYVRJeDhyVnZCTzIyZUxFR1NJeXA0WTdoYTBPUVpCZFlFLVJsQzBJeFNXakh4RkhzS3BwVDVU?oc=5",
   "imageUrls": [],
-  "imageLookupAt": "",
-  "imageLookupStatus": "",
-  "imageLookupVersion": 0,
-  "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPZW5BTUhJcTM0blR5ZThSbFJ6aFB6XzNkdkU1QjV5TndHbklLRERkNE5od09fS2NjalZrZ1k1QnlndmNfaDFaMEt1S0d3eFVNTWRhU2RBdV9sLVhSMnNtLXdKRGgyWXd4VkpFLThQWmtFWURCb2hYTnVMS1RxVkx4T0hFYVRJeDhyVnZCTzIyZUxFR1NJeXA0WTdoYTBPUVpCZFlFLVJsQzBJeFNXakh4RkhzS3BwVDVU?oc=5"
+  "imageLookupAt": "2026-11-21T03:20:50.886Z",
+  "imageLookupStatus": "not-found",
+  "imageLookupVersion": 6,
+  "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPZW5BTUhJcTM0blR5ZThSbFJ6aFB6XzNkdkU1QjV5TndHbklLRERkNE5od09fS2NjalZrZ1k1QnlndmNfaDFaMEt1S0d3eFVNTWRhU2RBdV9sLVhSMnNtLXdKRGgyWXd4VkpFLThQWmtFWURCb2hYTnVMS1RxVkx4T0hFYVRJeDhyVnZCTzIyZUxFR1NJeXA0WTdoYTBPUVpCZFlFLVJsQzBJeFNXakh4RkhzS3BwVDVU?oc=5",
+  "siteUrl": "",
+  "productUrl": "",
+  "productRetailer": "",
+  "productName": "",
+  "productPrice": "",
+  "productAvailability": "",
+  "productLinks": [],
+  "productSearchLinks": [],
+  "productSearchUrl": "",
+  "productSearchRetailer": "",
+  "productLookupStatus": "not-found",
+  "productLookupAt": "2026-11-21T03:20:50.886Z",
+  "productLookupVersion": 6,
+  "productPageChecks": 0,
+  "productVerifiedAt": ""
  },
  {
   "date": "2026-11-19T15:59:49.000Z",
@@ -1406,12 +1427,40 @@
   "summary": "The Pokémon TCG Brings Z Megas With Mega Evolution- Flowing Fists Comics Gaming Magazine",
   "source": "Comics Gaming Magazine",
   "publisherUrl": "https://www.cgmagonline.com",
-  "sourceUrl": "",
+  "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE9VM3gzZUxHalVRd1pMeTJCeVdHeWE0WEpHZGJDQnh0S3NZbThBNElRVk1vVDNRWFZ6dG0tOEF3Um9Ra1FXUm1jNElVQVl2Ti1WNDc1MVVOaFJRTkRyYUlTcy1HRWlZejhoaWVaeDdiVnM1Zw?oc=5",
   "imageUrls": [],
-  "imageLookupAt": "",
-  "imageLookupStatus": "",
-  "imageLookupVersion": 0,
-  "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9VM3gzZUxHalVRd1pMeTJCeVdHeWE0WEpHZGJDQnh0S3NZbThBNElRVk1vVDNRWFZ6dG0tOEF3Um9Ra1FXUm1jNElVQVl2Ti1WNDc1MVVOaFJRTkRyYUlTcy1HRWlZejhoaWVaeDdiVnM1Zw?oc=5"
+  "imageLookupAt": "2026-11-21T03:20:51.139Z",
+  "imageLookupStatus": "not-found",
+  "imageLookupVersion": 6,
+  "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9VM3gzZUxHalVRd1pMeTJCeVdHeWE0WEpHZGJDQnh0S3NZbThBNElRVk1vVDNRWFZ6dG0tOEF3Um9Ra1FXUm1jNElVQVl2Ti1WNDc1MVVOaFJRTkRyYUlTcy1HRWlZejhoaWVaeDdiVnM1Zw?oc=5",
+  "siteUrl": "",
+  "productUrl": "",
+  "productRetailer": "",
+  "productName": "",
+  "productPrice": "",
+  "productAvailability": "",
+  "productLinks": [],
+  "productSearchLinks": [
+   {
+    "retailer": "TCGplayer",
+    "url": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20brings%20megas%20mega%20evolution%20flowing%20fists%20comics"
+   },
+   {
+    "retailer": "Amazon",
+    "url": "https://www.amazon.com/s?k=Pokemon%20TCG%20brings%20megas%20mega%20evolution%20flowing%20fists%20comics"
+   },
+   {
+    "retailer": "Target",
+    "url": "https://www.target.com/s?searchTerm=Pokemon%20TCG%20brings%20megas%20mega%20evolution%20flowing%20fists%20comics"
+   }
+  ],
+  "productSearchUrl": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20brings%20megas%20mega%20evolution%20flowing%20fists%20comics",
+  "productSearchRetailer": "TCGplayer",
+  "productLookupStatus": "search-fallback",
+  "productLookupAt": "2026-11-21T03:20:51.139Z",
+  "productLookupVersion": 6,
+  "productPageChecks": 0,
+  "productVerifiedAt": ""
  },
  {
   "date": "2026-11-19T15:28:17.000Z",
@@ -1420,12 +1469,40 @@
   "summary": "Christie's Puts Pokémon Cards in an Art Sale: Eight PSA 10 Lots Open Pop Culture in Asia stupidDOPE",
   "source": "stupidDOPE",
   "publisherUrl": "https://stupiddope.com",
-  "sourceUrl": "",
+  "sourceUrl": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPbDFFd0tmMkJGZUxiZnNWNzdta1Bfd0FfeDFlWlVQM3kwUWFiSDA4MGNodjZUYVhBMEt2NlNkb3hxcS1ta3VkMVA0UmUyZDE0ekhWTmFtZDZtWHF3S1VlaElTOHJTVnBZNUVkb3ZwZ3c3bGV6dF9YNU9YdEtpUWtQMnh2TmN6Xzd6NW1xcVdaeDFYM2xOaDJBWGFKMDQ1U1I3NnM5ek9RTFZyaGRRUzdGcWJ0ejNMdXVoU2c?oc=5",
   "imageUrls": [],
-  "imageLookupAt": "",
-  "imageLookupStatus": "",
-  "imageLookupVersion": 0,
-  "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPbDFFd0tmMkJGZUxiZnNWNzdta1Bfd0FfeDFlWlVQM3kwUWFiSDA4MGNodjZUYVhBMEt2NlNkb3hxcS1ta3VkMVA0UmUyZDE0ekhWTmFtZDZtWHF3S1VlaElTOHJTVnBZNUVkb3ZwZ3c3bGV6dF9YNU9YdEtpUWtQMnh2TmN6Xzd6NW1xcVdaeDFYM2xOaDJBWGFKMDQ1U1I3NnM5ek9RTFZyaGRRUzdGcWJ0ejNMdXVoU2c?oc=5"
+  "imageLookupAt": "2026-11-21T03:20:51.196Z",
+  "imageLookupStatus": "not-found",
+  "imageLookupVersion": 6,
+  "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPbDFFd0tmMkJGZUxiZnNWNzdta1Bfd0FfeDFlWlVQM3kwUWFiSDA4MGNodjZUYVhBMEt2NlNkb3hxcS1ta3VkMVA0UmUyZDE0ekhWTmFtZDZtWHF3S1VlaElTOHJTVnBZNUVkb3ZwZ3c3bGV6dF9YNU9YdEtpUWtQMnh2TmN6Xzd6NW1xcVdaeDFYM2xOaDJBWGFKMDQ1U1I3NnM5ek9RTFZyaGRRUzdGcWJ0ejNMdXVoU2c?oc=5",
+  "siteUrl": "",
+  "productUrl": "",
+  "productRetailer": "",
+  "productName": "",
+  "productPrice": "",
+  "productAvailability": "",
+  "productLinks": [],
+  "productSearchLinks": [
+   {
+    "retailer": "TCGplayer",
+    "url": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20christie%20puts%20eight%20lots%20open%20culture%20asia"
+   },
+   {
+    "retailer": "Amazon",
+    "url": "https://www.amazon.com/s?k=Pokemon%20TCG%20christie%20puts%20eight%20lots%20open%20culture%20asia"
+   },
+   {
+    "retailer": "Target",
+    "url": "https://www.target.com/s?searchTerm=Pokemon%20TCG%20christie%20puts%20eight%20lots%20open%20culture%20asia"
+   }
+  ],
+  "productSearchUrl": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20christie%20puts%20eight%20lots%20open%20culture%20asia",
+  "productSearchRetailer": "TCGplayer",
+  "productLookupStatus": "search-fallback",
+  "productLookupAt": "2026-11-21T03:20:51.196Z",
+  "productLookupVersion": 6,
+  "productPageChecks": 0,
+  "productVerifiedAt": ""
  },
  {
   "date": "2026-11-19T15:28:17.000Z",
@@ -1434,12 +1511,40 @@
   "summary": "Christie's Pop Culture Asia: PSA 10 Pokémon Cards, Munch and Van Gogh Lots Explained stupidDOPE",
   "source": "stupidDOPE",
   "publisherUrl": "https://stupiddope.com",
-  "sourceUrl": "",
+  "sourceUrl": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPbDFFd0tmMkJGZUxiZnNWNzdta1Bfd0FfeDFlWlVQM3kwUWFiSDA4MGNodjZUYVhBMEt2NlNkb3hxcS1ta3VkMVA0UmUyZDE0ekhWTmFtZDZtWHF3S1VlaElTOHJTVnBZNUVkb3ZwZ3c3bGV6dF9YNU9YdEtpUWtQMnh2TmN6Xzd6NW1xcVdaeDFYM2xOaDJBWGFKMDQ1U1I3NnM5ek9RTFZyaGRRUzdGcWJ0ejNMdXVoU2c?oc=5",
   "imageUrls": [],
-  "imageLookupAt": "",
-  "imageLookupStatus": "",
-  "imageLookupVersion": 0,
-  "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPbDFFd0tmMkJGZUxiZnNWNzdta1Bfd0FfeDFlWlVQM3kwUWFiSDA4MGNodjZUYVhBMEt2NlNkb3hxcS1ta3VkMVA0UmUyZDE0ekhWTmFtZDZtWHF3S1VlaElTOHJTVnBZNUVkb3ZwZ3c3bGV6dF9YNU9YdEtpUWtQMnh2TmN6Xzd6NW1xcVdaeDFYM2xOaDJBWGFKMDQ1U1I3NnM5ek9RTFZyaGRRUzdGcWJ0ejNMdXVoU2c?oc=5"
+  "imageLookupAt": "2026-11-21T03:20:51.563Z",
+  "imageLookupStatus": "not-found",
+  "imageLookupVersion": 6,
+  "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPbDFFd0tmMkJGZUxiZnNWNzdta1Bfd0FfeDFlWlVQM3kwUWFiSDA4MGNodjZUYVhBMEt2NlNkb3hxcS1ta3VkMVA0UmUyZDE0ekhWTmFtZDZtWHF3S1VlaElTOHJTVnBZNUVkb3ZwZ3c3bGV6dF9YNU9YdEtpUWtQMnh2TmN6Xzd6NW1xcVdaeDFYM2xOaDJBWGFKMDQ1U1I3NnM5ek9RTFZyaGRRUzdGcWJ0ejNMdXVoU2c?oc=5",
+  "siteUrl": "",
+  "productUrl": "",
+  "productRetailer": "",
+  "productName": "",
+  "productPrice": "",
+  "productAvailability": "",
+  "productLinks": [],
+  "productSearchLinks": [
+   {
+    "retailer": "TCGplayer",
+    "url": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20christie%20culture%20asia%20munch%20gogh%20lots%20explained"
+   },
+   {
+    "retailer": "Amazon",
+    "url": "https://www.amazon.com/s?k=Pokemon%20TCG%20christie%20culture%20asia%20munch%20gogh%20lots%20explained"
+   },
+   {
+    "retailer": "Target",
+    "url": "https://www.target.com/s?searchTerm=Pokemon%20TCG%20christie%20culture%20asia%20munch%20gogh%20lots%20explained"
+   }
+  ],
+  "productSearchUrl": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20christie%20culture%20asia%20munch%20gogh%20lots%20explained",
+  "productSearchRetailer": "TCGplayer",
+  "productLookupStatus": "search-fallback",
+  "productLookupAt": "2026-11-21T03:20:51.563Z",
+  "productLookupVersion": 6,
+  "productPageChecks": 0,
+  "productVerifiedAt": ""
  },
  {
   "date": "2026-11-19T15:19:13.000Z",
@@ -1448,12 +1553,40 @@
   "summary": "Pokémon cards come out swinging with the next expansion, Flowing Fists GamesRadar PLUS",
   "source": "GamesRadar PLUS",
   "publisherUrl": "https://www.gamesradar.com",
-  "sourceUrl": "",
+  "sourceUrl": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPZTVic0R4d3lmeF9qN0RzMWtocjNQVGNUZGNESTJmSFp2c3o1VHNUdWpZcmk5cEtmSi1aNDhscGtJS1BaczA3cnJTeWdsUEpDUl9fbHI1bUZDWDk4bVUxTVRaSGpkdjlMa2lrMmYwNE5SQklqT1dVNEhPMlZWWGRnU3lqNzVUeU1pRUhRQjRtVl9ZbkhqSUxLOVZfNUo4WHRnTDBTLUphY1hfLU1Bb1hScGN3aw?oc=5",
   "imageUrls": [],
-  "imageLookupAt": "",
-  "imageLookupStatus": "",
-  "imageLookupVersion": 0,
-  "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPZTVic0R4d3lmeF9qN0RzMWtocjNQVGNUZGNESTJmSFp2c3o1VHNUdWpZcmk5cEtmSi1aNDhscGtJS1BaczA3cnJTeWdsUEpDUl9fbHI1bUZDWDk4bVUxTVRaSGpkdjlMa2lrMmYwNE5SQklqT1dVNEhPMlZWWGRnU3lqNzVUeU1pRUhRQjRtVl9ZbkhqSUxLOVZfNUo4WHRnTDBTLUphY1hfLU1Bb1hScGN3aw?oc=5"
+  "imageLookupAt": "2026-11-21T03:20:51.750Z",
+  "imageLookupStatus": "not-found",
+  "imageLookupVersion": 6,
+  "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPZTVic0R4d3lmeF9qN0RzMWtocjNQVGNUZGNESTJmSFp2c3o1VHNUdWpZcmk5cEtmSi1aNDhscGtJS1BaczA3cnJTeWdsUEpDUl9fbHI1bUZDWDk4bVUxTVRaSGpkdjlMa2lrMmYwNE5SQklqT1dVNEhPMlZWWGRnU3lqNzVUeU1pRUhRQjRtVl9ZbkhqSUxLOVZfNUo4WHRnTDBTLUphY1hfLU1Bb1hScGN3aw?oc=5",
+  "siteUrl": "",
+  "productUrl": "",
+  "productRetailer": "",
+  "productName": "",
+  "productPrice": "",
+  "productAvailability": "",
+  "productLinks": [],
+  "productSearchLinks": [
+   {
+    "retailer": "TCGplayer",
+    "url": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20come%20swinging%20next%20expansion%20flowing%20fists%20gamesradar"
+   },
+   {
+    "retailer": "Amazon",
+    "url": "https://www.amazon.com/s?k=Pokemon%20TCG%20come%20swinging%20next%20expansion%20flowing%20fists%20gamesradar"
+   },
+   {
+    "retailer": "Target",
+    "url": "https://www.target.com/s?searchTerm=Pokemon%20TCG%20come%20swinging%20next%20expansion%20flowing%20fists%20gamesradar"
+   }
+  ],
+  "productSearchUrl": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20come%20swinging%20next%20expansion%20flowing%20fists%20gamesradar",
+  "productSearchRetailer": "TCGplayer",
+  "productLookupStatus": "search-fallback",
+  "productLookupAt": "2026-11-21T03:20:51.750Z",
+  "productLookupVersion": 6,
+  "productPageChecks": 0,
+  "productVerifiedAt": ""
  },
  {
   "date": "2026-11-19T15:14:11.000Z",
@@ -1462,12 +1595,27 @@
   "summary": "Pokémon GO and Duolingo just launched a collab: How to unlock free Pikachu suits and Shiny encounters Mashable",
   "source": "Mashable",
   "publisherUrl": "https://mashable.com",
-  "sourceUrl": "",
+  "sourceUrl": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOS3A5azRBX3NNVHlVQlZEUTY3NkxfMU1TRlRXQWdTNFpvNXBxVlNtOVk5c09Gb3NhTXFTU1hGLWV4VW1SYTItQzR5bkE4ek5IVzZlcENDaTNrYllLX051UExvQ1RvNC1tWkxMVDlNd1p6aWFUakFqZXFJdUNtLUw4Zw?oc=5",
   "imageUrls": [],
-  "imageLookupAt": "",
-  "imageLookupStatus": "",
-  "imageLookupVersion": 0,
-  "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOS3A5azRBX3NNVHlVQlZEUTY3NkxfMU1TRlRXQWdTNFpvNXBxVlNtOVk5c09Gb3NhTXFTU1hGLWV4VW1SYTItQzR5bkE4ek5IVzZlcENDaTNrYllLX051UExvQ1RvNC1tWkxMVDlNd1p6aWFUakFqZXFJdUNtLUw4Zw?oc=5"
+  "imageLookupAt": "2026-11-21T03:20:51.886Z",
+  "imageLookupStatus": "not-found",
+  "imageLookupVersion": 6,
+  "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOS3A5azRBX3NNVHlVQlZEUTY3NkxfMU1TRlRXQWdTNFpvNXBxVlNtOVk5c09Gb3NhTXFTU1hGLWV4VW1SYTItQzR5bkE4ek5IVzZlcENDaTNrYllLX051UExvQ1RvNC1tWkxMVDlNd1p6aWFUakFqZXFJdUNtLUw4Zw?oc=5",
+  "siteUrl": "",
+  "productUrl": "",
+  "productRetailer": "",
+  "productName": "",
+  "productPrice": "",
+  "productAvailability": "",
+  "productLinks": [],
+  "productSearchLinks": [],
+  "productSearchUrl": "",
+  "productSearchRetailer": "",
+  "productLookupStatus": "not-found",
+  "productLookupAt": "2026-11-21T03:20:51.886Z",
+  "productLookupVersion": 6,
+  "productPageChecks": 0,
+  "productVerifiedAt": ""
  },
  {
   "date": "2026-11-19T14:55:29.000Z",
@@ -1476,12 +1624,40 @@
   "summary": "Pokémon TCG: Mega Evolution - Flowing Fists Revealed PokeGuardian",
   "source": "PokeGuardian",
   "publisherUrl": "https://www.pokeguardian.com",
-  "sourceUrl": "",
+  "sourceUrl": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPQThLTjc3M0Nucm9yaGVDaVp1Y0lIbDEwVzl3amdSN3JwLVJqekNIOHJXcVY0WWNWRENRWGppcXY3ZkVJTVJzeGowLVljLWRiUDF0M3lleERyanJ6WklGb0VFQk1IZXppZUpIMk5lXy15MWVIZEVUWHdZZXFXczV3YU1BTlBsc0taaV9oQ3NOaw?oc=5",
   "imageUrls": [],
-  "imageLookupAt": "",
-  "imageLookupStatus": "",
-  "imageLookupVersion": 0,
-  "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPQThLTjc3M0Nucm9yaGVDaVp1Y0lIbDEwVzl3amdSN3JwLVJqekNIOHJXcVY0WWNWRENRWGppcXY3ZkVJTVJzeGowLVljLWRiUDF0M3lleERyanJ6WklGb0VFQk1IZXppZUpIMk5lXy15MWVIZEVUWHdZZXFXczV3YU1BTlBsc0taaV9oQ3NOaw?oc=5"
+  "imageLookupAt": "2026-11-21T03:20:51.976Z",
+  "imageLookupStatus": "not-found",
+  "imageLookupVersion": 6,
+  "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPQThLTjc3M0Nucm9yaGVDaVp1Y0lIbDEwVzl3amdSN3JwLVJqekNIOHJXcVY0WWNWRENRWGppcXY3ZkVJTVJzeGowLVljLWRiUDF0M3lleERyanJ6WklGb0VFQk1IZXppZUpIMk5lXy15MWVIZEVUWHdZZXFXczV3YU1BTlBsc0taaV9oQ3NOaw?oc=5",
+  "siteUrl": "",
+  "productUrl": "",
+  "productRetailer": "",
+  "productName": "",
+  "productPrice": "",
+  "productAvailability": "",
+  "productLinks": [],
+  "productSearchLinks": [
+   {
+    "retailer": "TCGplayer",
+    "url": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20mega%20evolution%20flowing%20fists%20pokeguardian"
+   },
+   {
+    "retailer": "Amazon",
+    "url": "https://www.amazon.com/s?k=Pokemon%20TCG%20mega%20evolution%20flowing%20fists%20pokeguardian"
+   },
+   {
+    "retailer": "Target",
+    "url": "https://www.target.com/s?searchTerm=Pokemon%20TCG%20mega%20evolution%20flowing%20fists%20pokeguardian"
+   }
+  ],
+  "productSearchUrl": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20mega%20evolution%20flowing%20fists%20pokeguardian",
+  "productSearchRetailer": "TCGplayer",
+  "productLookupStatus": "search-fallback",
+  "productLookupAt": "2026-11-21T03:20:51.976Z",
+  "productLookupVersion": 6,
+  "productPageChecks": 0,
+  "productVerifiedAt": ""
  },
  {
   "date": "2026-11-19T14:52:40.000Z",
@@ -1490,12 +1666,40 @@
   "summary": "Pokémon TCG announces Mega Evolution Flowing Fists expansion: How to gain early access to Z Mega Evolution cards Yahoo",
   "source": "Yahoo",
   "publisherUrl": "https://www.yahoo.com",
-  "sourceUrl": "",
+  "sourceUrl": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQbWJ1dFBfY1BEMVZRMTltem1RVDBwX1F5N25QTDdFbkdqNWJZb1FDbkU2WVdKOXdibEhUaS1Vc2hqOWRvdmN4dW1lNThzdndyS2Q2X1lsc19xVy10Vm1sd0dJTHYxZVVsSVFBdnoxeDF5RjdrTUVSRnduRERxZi1XRnl4UHVBQkZLSEt2aVNuWQ?oc=5",
   "imageUrls": [],
-  "imageLookupAt": "",
-  "imageLookupStatus": "",
-  "imageLookupVersion": 0,
-  "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQbWJ1dFBfY1BEMVZRMTltem1RVDBwX1F5N25QTDdFbkdqNWJZb1FDbkU2WVdKOXdibEhUaS1Vc2hqOWRvdmN4dW1lNThzdndyS2Q2X1lsc19xVy10Vm1sd0dJTHYxZVVsSVFBdnoxeDF5RjdrTUVSRnduRERxZi1XRnl4UHVBQkZLSEt2aVNuWQ?oc=5"
+  "imageLookupAt": "2026-11-21T03:20:52.326Z",
+  "imageLookupStatus": "not-found",
+  "imageLookupVersion": 6,
+  "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQbWJ1dFBfY1BEMVZRMTltem1RVDBwX1F5N25QTDdFbkdqNWJZb1FDbkU2WVdKOXdibEhUaS1Vc2hqOWRvdmN4dW1lNThzdndyS2Q2X1lsc19xVy10Vm1sd0dJTHYxZVVsSVFBdnoxeDF5RjdrTUVSRnduRERxZi1XRnl4UHVBQkZLSEt2aVNuWQ?oc=5",
+  "siteUrl": "",
+  "productUrl": "",
+  "productRetailer": "",
+  "productName": "",
+  "productPrice": "",
+  "productAvailability": "",
+  "productLinks": [],
+  "productSearchLinks": [
+   {
+    "retailer": "TCGplayer",
+    "url": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20announces%20mega%20evolution%20flowing%20fists%20expansion%20gain"
+   },
+   {
+    "retailer": "Amazon",
+    "url": "https://www.amazon.com/s?k=Pokemon%20TCG%20announces%20mega%20evolution%20flowing%20fists%20expansion%20gain"
+   },
+   {
+    "retailer": "Target",
+    "url": "https://www.target.com/s?searchTerm=Pokemon%20TCG%20announces%20mega%20evolution%20flowing%20fists%20expansion%20gain"
+   }
+  ],
+  "productSearchUrl": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20announces%20mega%20evolution%20flowing%20fists%20expansion%20gain",
+  "productSearchRetailer": "TCGplayer",
+  "productLookupStatus": "search-fallback",
+  "productLookupAt": "2026-11-21T03:20:52.326Z",
+  "productLookupVersion": 6,
+  "productPageChecks": 0,
+  "productVerifiedAt": ""
  },
  {
   "date": "2026-11-19T14:05:30.000Z",
@@ -1504,12 +1708,40 @@
   "summary": "The Pokémon TCG: Mega Evolution-Flowing Fists Expansion Arrives February 6, 2027 Pokémon.com",
   "source": "Pokémon.com",
   "publisherUrl": "https://www.pokemon.com",
-  "sourceUrl": "",
+  "sourceUrl": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQbzhrSHZCelR1MUN6RkxoRHMyNXZsWXh4c2pyVHdxVjQwR2VFUmxqejJYNFZYS3NScmtmcmg3djFTN2YyZ0RRSzlNRmZfVjdBbzlhMVc3Z3RrWGZHZm1UMWY5N1FBTVlra1BXLTIzdGZTMHJJdldmOUp6VmlRMkR6M1N0dWdrdnJ5eG9HSzBlMmdBR2h6eng1MWd2STdpXzVEM01JSHNEdFZOQWFVdENj?oc=5",
   "imageUrls": [],
-  "imageLookupAt": "",
-  "imageLookupStatus": "",
-  "imageLookupVersion": 0,
-  "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQbzhrSHZCelR1MUN6RkxoRHMyNXZsWXh4c2pyVHdxVjQwR2VFUmxqejJYNFZYS3NScmtmcmg3djFTN2YyZ0RRSzlNRmZfVjdBbzlhMVc3Z3RrWGZHZm1UMWY5N1FBTVlra1BXLTIzdGZTMHJJdldmOUp6VmlRMkR6M1N0dWdrdnJ5eG9HSzBlMmdBR2h6eng1MWd2STdpXzVEM01JSHNEdFZOQWFVdENj?oc=5"
+  "imageLookupAt": "2026-11-21T03:20:52.528Z",
+  "imageLookupStatus": "not-found",
+  "imageLookupVersion": 6,
+  "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQbzhrSHZCelR1MUN6RkxoRHMyNXZsWXh4c2pyVHdxVjQwR2VFUmxqejJYNFZYS3NScmtmcmg3djFTN2YyZ0RRSzlNRmZfVjdBbzlhMVc3Z3RrWGZHZm1UMWY5N1FBTVlra1BXLTIzdGZTMHJJdldmOUp6VmlRMkR6M1N0dWdrdnJ5eG9HSzBlMmdBR2h6eng1MWd2STdpXzVEM01JSHNEdFZOQWFVdENj?oc=5",
+  "siteUrl": "",
+  "productUrl": "",
+  "productRetailer": "",
+  "productName": "",
+  "productPrice": "",
+  "productAvailability": "",
+  "productLinks": [],
+  "productSearchLinks": [
+   {
+    "retailer": "TCGplayer",
+    "url": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20mega%20evolution%20flowing%20fists%20expansion%20arrives%202027"
+   },
+   {
+    "retailer": "Amazon",
+    "url": "https://www.amazon.com/s?k=Pokemon%20TCG%20mega%20evolution%20flowing%20fists%20expansion%20arrives%202027"
+   },
+   {
+    "retailer": "Target",
+    "url": "https://www.target.com/s?searchTerm=Pokemon%20TCG%20mega%20evolution%20flowing%20fists%20expansion%20arrives%202027"
+   }
+  ],
+  "productSearchUrl": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20mega%20evolution%20flowing%20fists%20expansion%20arrives%202027",
+  "productSearchRetailer": "TCGplayer",
+  "productLookupStatus": "search-fallback",
+  "productLookupAt": "2026-11-21T03:20:52.528Z",
+  "productLookupVersion": 6,
+  "productPageChecks": 0,
+  "productVerifiedAt": ""
  },
  {
   "date": "2026-11-19T14:02:59.000Z",
@@ -1518,12 +1750,40 @@
   "summary": "MEDIA ALERT: Z Mega Evolution Pokémon to Debut in New Pokémon Trading Card Game: Mega Evolution-Flowing Fists Expansion Coming Soon Pokémon.com",
   "source": "Pokémon.com",
   "publisherUrl": "https://press.pokemon.com",
-  "sourceUrl": "",
+  "sourceUrl": "https://news.google.com/rss/articles/CBMirAFBVV95cUxORlo1b05CclJMdm8tdERuOXFNWnBSeVFMdkk1UE9CbkEtb1NIVS03RUdubjNvQWl3Z2tLU0s4UVZqcmhOaUNpR2pIRUVHLWpqZFFUNjg4cDl5TUVBcm9hanJYUjgyMXpaeG0xQzJjRW1LTklvcWxwZVRlMGszdUNnenhsWktJZWhYSUJad3VyUVlGbEV1am4yTExiV0E3Mzc3anZubWJjbFl5WHdT?oc=5",
   "imageUrls": [],
-  "imageLookupAt": "",
-  "imageLookupStatus": "",
-  "imageLookupVersion": 0,
-  "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxORlo1b05CclJMdm8tdERuOXFNWnBSeVFMdkk1UE9CbkEtb1NIVS03RUdubjNvQWl3Z2tLU0s4UVZqcmhOaUNpR2pIRUVHLWpqZFFUNjg4cDl5TUVBcm9hanJYUjgyMXpaeG0xQzJjRW1LTklvcWxwZVRlMGszdUNnenhsWktJZWhYSUJad3VyUVlGbEV1am4yTExiV0E3Mzc3anZubWJjbFl5WHdT?oc=5"
+  "imageLookupAt": "2026-11-21T03:20:52.630Z",
+  "imageLookupStatus": "not-found",
+  "imageLookupVersion": 6,
+  "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxORlo1b05CclJMdm8tdERuOXFNWnBSeVFMdkk1UE9CbkEtb1NIVS03RUdubjNvQWl3Z2tLU0s4UVZqcmhOaUNpR2pIRUVHLWpqZFFUNjg4cDl5TUVBcm9hanJYUjgyMXpaeG0xQzJjRW1LTklvcWxwZVRlMGszdUNnenhsWktJZWhYSUJad3VyUVlGbEV1am4yTExiV0E3Mzc3anZubWJjbFl5WHdT?oc=5",
+  "siteUrl": "",
+  "productUrl": "",
+  "productRetailer": "",
+  "productName": "",
+  "productPrice": "",
+  "productAvailability": "",
+  "productLinks": [],
+  "productSearchLinks": [
+   {
+    "retailer": "TCGplayer",
+    "url": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20media%20alert%20mega%20evolution%20debut%20game%20flowing"
+   },
+   {
+    "retailer": "Amazon",
+    "url": "https://www.amazon.com/s?k=Pokemon%20TCG%20media%20alert%20mega%20evolution%20debut%20game%20flowing"
+   },
+   {
+    "retailer": "Target",
+    "url": "https://www.target.com/s?searchTerm=Pokemon%20TCG%20media%20alert%20mega%20evolution%20debut%20game%20flowing"
+   }
+  ],
+  "productSearchUrl": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20media%20alert%20mega%20evolution%20debut%20game%20flowing",
+  "productSearchRetailer": "TCGplayer",
+  "productLookupStatus": "search-fallback",
+  "productLookupAt": "2026-11-21T03:20:52.630Z",
+  "productLookupVersion": 6,
+  "productPageChecks": 0,
+  "productVerifiedAt": ""
  },
  {
   "date": "2026-11-19T11:49:21.000Z",
@@ -1532,12 +1792,40 @@
   "summary": "Pokémon TCG 30th Anniversary Ultra-Premium Collection is live on Amazon: Buy at market price Mashable",
   "source": "Mashable",
   "publisherUrl": "https://mashable.com",
-  "sourceUrl": "",
+  "sourceUrl": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOcWo1dGtyelpPSnNXNGt3d01xa2VfNmFvV2ljN1djU2dubDhpNTU4cFZJWHExMi1MZ254RUt4djBTRzZaNXc2dnZmWjdSZTJiclp1SDIwbWNaUGtfQUFuTE5Ia0xoSnZuaVBqd2hzQ0ZNenZLVHN0aV84VThhakZoRE1fRnlaS283RmU3cw?oc=5",
   "imageUrls": [],
-  "imageLookupAt": "",
-  "imageLookupStatus": "",
-  "imageLookupVersion": 0,
-  "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOcWo1dGtyelpPSnNXNGt3d01xa2VfNmFvV2ljN1djU2dubDhpNTU4cFZJWHExMi1MZ254RUt4djBTRzZaNXc2dnZmWjdSZTJiclp1SDIwbWNaUGtfQUFuTE5Ia0xoSnZuaVBqd2hzQ0ZNenZLVHN0aV84VThhakZoRE1fRnlaS283RmU3cw?oc=5"
+  "imageLookupAt": "2026-11-21T03:20:52.820Z",
+  "imageLookupStatus": "not-found",
+  "imageLookupVersion": 6,
+  "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOcWo1dGtyelpPSnNXNGt3d01xa2VfNmFvV2ljN1djU2dubDhpNTU4cFZJWHExMi1MZ254RUt4djBTRzZaNXc2dnZmWjdSZTJiclp1SDIwbWNaUGtfQUFuTE5Ia0xoSnZuaVBqd2hzQ0ZNenZLVHN0aV84VThhakZoRE1fRnlaS283RmU3cw?oc=5",
+  "siteUrl": "",
+  "productUrl": "",
+  "productRetailer": "",
+  "productName": "",
+  "productPrice": "",
+  "productAvailability": "",
+  "productLinks": [],
+  "productSearchLinks": [
+   {
+    "retailer": "Amazon",
+    "url": "https://www.amazon.com/s?k=Pokemon%20TCG%2030th%20anniversary%20ultra%20premium%20market%20mashable"
+   },
+   {
+    "retailer": "TCGplayer",
+    "url": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%2030th%20anniversary%20ultra%20premium%20market%20mashable"
+   },
+   {
+    "retailer": "Target",
+    "url": "https://www.target.com/s?searchTerm=Pokemon%20TCG%2030th%20anniversary%20ultra%20premium%20market%20mashable"
+   }
+  ],
+  "productSearchUrl": "https://www.amazon.com/s?k=Pokemon%20TCG%2030th%20anniversary%20ultra%20premium%20market%20mashable",
+  "productSearchRetailer": "Amazon",
+  "productLookupStatus": "search-fallback",
+  "productLookupAt": "2026-11-21T03:20:52.820Z",
+  "productLookupVersion": 6,
+  "productPageChecks": 0,
+  "productVerifiedAt": ""
  },
  {
   "date": "2026-11-19T08:23:07.000Z",
@@ -1546,12 +1834,27 @@
   "summary": "",
   "source": "Pokémon GO Hub",
   "publisherUrl": "",
-  "sourceUrl": "",
+  "sourceUrl": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPYlFlS0pKNzh4S1Rpc2ZGV2NTMGRCNkJ2YkltazZBS3R1Q2tuN1VBOVcycjdKLXlDa2JxRUZSNDFyV015Qzl3RVdaakVaeEc0QjVmUmwwaVc1NFlYVWdxdWFkM3NzUDRMdGZZRExYcEFVM0l2UTZBcFcySW9wYWlFN3E1LXgzNllVU0Q2Ny0zd1M2MHllMFNib1lweHNwOVFoajhkUmtENGRJaTljQWV1Szc0VQ?oc=5",
   "imageUrls": [],
-  "imageLookupAt": "",
-  "imageLookupStatus": "",
-  "imageLookupVersion": 0,
-  "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPYlFlS0pKNzh4S1Rpc2ZGV2NTMGRCNkJ2YkltazZBS3R1Q2tuN1VBOVcycjdKLXlDa2JxRUZSNDFyV015Qzl3RVdaakVaeEc0QjVmUmwwaVc1NFlYVWdxdWFkM3NzUDRMdGZZRExYcEFVM0l2UTZBcFcySW9wYWlFN3E1LXgzNllVU0Q2Ny0zd1M2MHllMFNib1lweHNwOVFoajhkUmtENGRJaTljQWV1Szc0VQ?oc=5"
+  "imageLookupAt": "2026-11-21T03:20:53.312Z",
+  "imageLookupStatus": "not-found",
+  "imageLookupVersion": 6,
+  "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPYlFlS0pKNzh4S1Rpc2ZGV2NTMGRCNkJ2YkltazZBS3R1Q2tuN1VBOVcycjdKLXlDa2JxRUZSNDFyV015Qzl3RVdaakVaeEc0QjVmUmwwaVc1NFlYVWdxdWFkM3NzUDRMdGZZRExYcEFVM0l2UTZBcFcySW9wYWlFN3E1LXgzNllVU0Q2Ny0zd1M2MHllMFNib1lweHNwOVFoajhkUmtENGRJaTljQWV1Szc0VQ?oc=5",
+  "siteUrl": "",
+  "productUrl": "",
+  "productRetailer": "",
+  "productName": "",
+  "productPrice": "",
+  "productAvailability": "",
+  "productLinks": [],
+  "productSearchLinks": [],
+  "productSearchUrl": "",
+  "productSearchRetailer": "",
+  "productLookupStatus": "not-found",
+  "productLookupAt": "2026-11-21T03:20:53.312Z",
+  "productLookupVersion": 6,
+  "productPageChecks": 0,
+  "productVerifiedAt": ""
  },
  {
   "date": "2026-11-19T08:17:59.000Z",
@@ -1560,12 +1863,40 @@
   "summary": "Christie's Introduces Pop Culture Category in Asia With Rare Pokémon Card Auction Hypebeast",
   "source": "Hypebeast",
   "publisherUrl": "https://hypebeast.com",
-  "sourceUrl": "",
+  "sourceUrl": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPQUVWd2NaR2RvZFNXNS1oVXhnYWp4YVVIMkMwbUY3WWZkdHgtQ0RNTmYxYWJhUkhEUExraFN0dk0zaHRMVHc2T1R6ZGFqOWIzMGFRVHlDRW1YTURIeFNrOENPVWJiOEhwUzZRaEhkanNYSEdEVWpFQ21LTkZnT0RtWHVrZWR0X2lERzZ4NVd6eFVoUkpnUU8xOGJIb3lieDYzZzUwUERTWF9HWG43S2hZ?oc=5",
   "imageUrls": [],
-  "imageLookupAt": "",
-  "imageLookupStatus": "",
-  "imageLookupVersion": 0,
-  "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPQUVWd2NaR2RvZFNXNS1oVXhnYWp4YVVIMkMwbUY3WWZkdHgtQ0RNTmYxYWJhUkhEUExraFN0dk0zaHRMVHc2T1R6ZGFqOWIzMGFRVHlDRW1YTURIeFNrOENPVWJiOEhwUzZRaEhkanNYSEdEVWpFQ21LTkZnT0RtWHVrZWR0X2lERzZ4NVd6eFVoUkpnUU8xOGJIb3lieDYzZzUwUERTWF9HWG43S2hZ?oc=5"
+  "imageLookupAt": "2026-11-21T03:20:53.380Z",
+  "imageLookupStatus": "not-found",
+  "imageLookupVersion": 6,
+  "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPQUVWd2NaR2RvZFNXNS1oVXhnYWp4YVVIMkMwbUY3WWZkdHgtQ0RNTmYxYWJhUkhEUExraFN0dk0zaHRMVHc2T1R6ZGFqOWIzMGFRVHlDRW1YTURIeFNrOENPVWJiOEhwUzZRaEhkanNYSEdEVWpFQ21LTkZnT0RtWHVrZWR0X2lERzZ4NVd6eFVoUkpnUU8xOGJIb3lieDYzZzUwUERTWF9HWG43S2hZ?oc=5",
+  "siteUrl": "",
+  "productUrl": "",
+  "productRetailer": "",
+  "productName": "",
+  "productPrice": "",
+  "productAvailability": "",
+  "productLinks": [],
+  "productSearchLinks": [
+   {
+    "retailer": "TCGplayer",
+    "url": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20christie%20introduces%20culture%20category%20asia%20auction%20hypebeast"
+   },
+   {
+    "retailer": "Amazon",
+    "url": "https://www.amazon.com/s?k=Pokemon%20TCG%20christie%20introduces%20culture%20category%20asia%20auction%20hypebeast"
+   },
+   {
+    "retailer": "Target",
+    "url": "https://www.target.com/s?searchTerm=Pokemon%20TCG%20christie%20introduces%20culture%20category%20asia%20auction%20hypebeast"
+   }
+  ],
+  "productSearchUrl": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20christie%20introduces%20culture%20category%20asia%20auction%20hypebeast",
+  "productSearchRetailer": "TCGplayer",
+  "productLookupStatus": "search-fallback",
+  "productLookupAt": "2026-11-21T03:20:53.380Z",
+  "productLookupVersion": 6,
+  "productPageChecks": 0,
+  "productVerifiedAt": ""
  },
  {
   "date": "2026-11-19T02:09:00.000Z",
@@ -1574,12 +1905,40 @@
   "summary": "The 10 Most Expensive Trading Cards Ever Sold. A Pokémon Card Now Outranks Every Mickey Mantle 24/7 Wall St.",
   "source": "24/7 Wall St.",
   "publisherUrl": "https://247wallst.com",
-  "sourceUrl": "",
+  "sourceUrl": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxQQURad0hnQ1Zic2wxVWQ0VTcta1djNjctZTN3elNYY0h1V2N4dkRsX3RtOWRmQ2RGeDB4enozLTYtWEFoajZ3NEVRWnRDTEVMTWh4WVhWTmRNQ0otc2dxV2UxOW9aOHlhVU5fRzRUNHA5RHJCOTRIZWJjcEdxM242RUxDeE9aT3Vicm9xcFE4bEVqNWlOSHhQT2JRODFIN3o5RWpmOGlEcnAyQmRDZmdfWTlneW9xVy00WW9CMWF0Zy1uVEVLaEo5VGx0TGhVd1E0WnFTS3hTdlN5QlE4?oc=5",
   "imageUrls": [],
-  "imageLookupAt": "",
-  "imageLookupStatus": "",
-  "imageLookupVersion": 0,
-  "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxQQURad0hnQ1Zic2wxVWQ0VTcta1djNjctZTN3elNYY0h1V2N4dkRsX3RtOWRmQ2RGeDB4enozLTYtWEFoajZ3NEVRWnRDTEVMTWh4WVhWTmRNQ0otc2dxV2UxOW9aOHlhVU5fRzRUNHA5RHJCOTRIZWJjcEdxM242RUxDeE9aT3Vicm9xcFE4bEVqNWlOSHhQT2JRODFIN3o5RWpmOGlEcnAyQmRDZmdfWTlneW9xVy00WW9CMWF0Zy1uVEVLaEo5VGx0TGhVd1E0WnFTS3hTdlN5QlE4?oc=5"
+  "imageLookupAt": "2026-11-21T03:20:53.424Z",
+  "imageLookupStatus": "not-found",
+  "imageLookupVersion": 6,
+  "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxQQURad0hnQ1Zic2wxVWQ0VTcta1djNjctZTN3elNYY0h1V2N4dkRsX3RtOWRmQ2RGeDB4enozLTYtWEFoajZ3NEVRWnRDTEVMTWh4WVhWTmRNQ0otc2dxV2UxOW9aOHlhVU5fRzRUNHA5RHJCOTRIZWJjcEdxM242RUxDeE9aT3Vicm9xcFE4bEVqNWlOSHhQT2JRODFIN3o5RWpmOGlEcnAyQmRDZmdfWTlneW9xVy00WW9CMWF0Zy1uVEVLaEo5VGx0TGhVd1E0WnFTS3hTdlN5QlE4?oc=5",
+  "siteUrl": "",
+  "productUrl": "",
+  "productRetailer": "",
+  "productName": "",
+  "productPrice": "",
+  "productAvailability": "",
+  "productLinks": [],
+  "productSearchLinks": [
+   {
+    "retailer": "TCGplayer",
+    "url": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20most%20expensive%20ever%20sold%20outranks%20every%20mickey"
+   },
+   {
+    "retailer": "Amazon",
+    "url": "https://www.amazon.com/s?k=Pokemon%20TCG%20most%20expensive%20ever%20sold%20outranks%20every%20mickey"
+   },
+   {
+    "retailer": "Target",
+    "url": "https://www.target.com/s?searchTerm=Pokemon%20TCG%20most%20expensive%20ever%20sold%20outranks%20every%20mickey"
+   }
+  ],
+  "productSearchUrl": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20most%20expensive%20ever%20sold%20outranks%20every%20mickey",
+  "productSearchRetailer": "TCGplayer",
+  "productLookupStatus": "search-fallback",
+  "productLookupAt": "2026-11-21T03:20:53.424Z",
+  "productLookupVersion": 6,
+  "productPageChecks": 0,
+  "productVerifiedAt": ""
  },
  {
   "date": "2026-11-18T21:00:00.000Z",
@@ -1588,12 +1947,27 @@
   "summary": "Walmart Is Restocking These Hard-to-Find NeeDoh Sets Today - Here's When You'll Want to Be Online SheKnows",
   "source": "SheKnows",
   "publisherUrl": "https://www.sheknows.com",
-  "sourceUrl": "",
+  "sourceUrl": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQazl4X1h6eXFVdVZsMDZoSHByMHZZdlNwbXdQVDd5cjU5Qlc2R1R4LURzcnR3Z0psdHBfZXFVZEVuU0FzcFRzT2lhUmJ2d21lU0FrS0MzcUZnc2ZNQ25kOFhqMVg2a0RnRWJWWmg4aDZWMnAwdGhqVlRYYlNDcG55X2NyaHJ0dFVRM3RIbHhnY1hZLXM?oc=5",
   "imageUrls": [],
-  "imageLookupAt": "",
-  "imageLookupStatus": "",
-  "imageLookupVersion": 0,
-  "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQazl4X1h6eXFVdVZsMDZoSHByMHZZdlNwbXdQVDd5cjU5Qlc2R1R4LURzcnR3Z0psdHBfZXFVZEVuU0FzcFRzT2lhUmJ2d21lU0FrS0MzcUZnc2ZNQ25kOFhqMVg2a0RnRWJWWmg4aDZWMnAwdGhqVlRYYlNDcG55X2NyaHJ0dFVRM3RIbHhnY1hZLXM?oc=5"
+  "imageLookupAt": "2026-11-21T03:20:53.447Z",
+  "imageLookupStatus": "not-found",
+  "imageLookupVersion": 6,
+  "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQazl4X1h6eXFVdVZsMDZoSHByMHZZdlNwbXdQVDd5cjU5Qlc2R1R4LURzcnR3Z0psdHBfZXFVZEVuU0FzcFRzT2lhUmJ2d21lU0FrS0MzcUZnc2ZNQ25kOFhqMVg2a0RnRWJWWmg4aDZWMnAwdGhqVlRYYlNDcG55X2NyaHJ0dFVRM3RIbHhnY1hZLXM?oc=5",
+  "siteUrl": "",
+  "productUrl": "",
+  "productRetailer": "",
+  "productName": "",
+  "productPrice": "",
+  "productAvailability": "",
+  "productLinks": [],
+  "productSearchLinks": [],
+  "productSearchUrl": "",
+  "productSearchRetailer": "",
+  "productLookupStatus": "not-found",
+  "productLookupAt": "2026-11-21T03:20:53.447Z",
+  "productLookupVersion": 6,
+  "productPageChecks": 0,
+  "productVerifiedAt": ""
  },
  {
   "date": "2026-11-18T13:17:07.000Z",
