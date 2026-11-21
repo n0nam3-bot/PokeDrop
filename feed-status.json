@@ -9,12 +9,12 @@
    {
     "name": "Restock",
     "ok": true,
-    "results": 30
+    "results": 29
    },
    {
     "name": "Deals",
     "ok": true,
-    "results": 46
+    "results": 47
    },
    {
     "name": "Rare Drop",
@@ -33,32 +33,41 @@
    }
   ],
   "itemImageDiscovery": {
-   "version": 5,
+   "version": 6,
    "pagesChecked": 20,
    "itemsWithImages": 0,
    "verifiedProductPages": 0,
-   "retailerSearchFallbacks": 0,
-   "productPagesMissing": 120,
-   "productDetailPagesChecked": 0,
-   "imageErrors": 20
+   "retailerSearchFallbacks": 9,
+   "productSearchLinksAvailable": 9,
+   "productPagesMissing": 111,
+   "productDetailPagesChecked": 8,
+   "imageErrors": 0,
+   "search": {
+    "requests": 98,
+    "successfulQueries": 96,
+    "resultLinks": 868,
+    "errors": 0,
+    "bingRequests": 97,
+    "duckDuckGoRequests": 1
+   }
   }
  },
  "raffles": {
   "sourceCount": 17,
   "sourcesResponded": 17,
-  "searchResults": 134,
-  "uniqueLeads": 86,
-  "savedLeads": 86,
+  "searchResults": 159,
+  "uniqueLeads": 101,
+  "savedLeads": 101,
   "directEntryLinksFound": 0,
-  "directEntryLinksMissing": 13,
-  "entryLookupsThisRun": 18,
-  "entryLookupErrors": 18,
+  "directEntryLinksMissing": 20,
+  "entryLookupsThisRun": 20,
+  "entryLookupErrors": 0,
   "historyDays": 365,
   "sources": [
    {
     "name": "TCG giveaways",
     "ok": true,
-    "results": 14
+    "results": 25
    },
    {
     "name": "TCG raffles",
@@ -68,7 +77,7 @@
    {
     "name": "Pokémon card giveaways",
     "ok": true,
-    "results": 10
+    "results": 24
    },
    {
     "name": "Pokémon card raffles",
@@ -108,7 +117,7 @@
    {
     "name": "Walmart giveaways",
     "ok": true,
-    "results": 8
+    "results": 9
    },
    {
     "name": "GameStop giveaways",
@@ -138,20 +147,29 @@
    {
     "name": "Community card giveaways",
     "ok": true,
-    "results": 23
+    "results": 22
    }
   ],
-  "qualifiedLeads": 13,
-  "rejectedLeads": 73,
+  "entrySearchFallbacks": 20,
+  "qualifiedLeads": 20,
+  "rejectedLeads": 81,
   "discoveryEngine": {
-   "version": 5,
-   "publisherPagesChecked": 0,
+   "version": 6,
+   "publisherPagesChecked": 20,
    "prizeDetailsFound": 0,
    "startDatesFound": 0,
    "endDatesFound": 0,
    "prizeImagesFound": 0,
-   "rejectedFalsePositives": 73,
-   "entryLinksValidated": 0
+   "rejectedFalsePositives": 81,
+   "entryLinksValidated": 0,
+   "search": {
+    "requests": 178,
+    "successfulQueries": 176,
+    "resultLinks": 1551,
+    "errors": 0,
+    "bingRequests": 177,
+    "duckDuckGoRequests": 1
+   }
   }
  },
  "failures": []
