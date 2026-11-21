@@ -4,7 +4,7 @@
  "news": {
   "sourceCount": 5,
   "sourcesResponded": 5,
-  "searchResults": 304,
+  "searchResults": 241,
   "sources": [
    {
     "name": "Restock",
@@ -14,40 +14,44 @@
    {
     "name": "Deals",
     "ok": true,
-    "results": 71
+    "results": 46
    },
    {
     "name": "Rare Drop",
     "ok": true,
-    "results": 36
+    "results": 37
    },
    {
     "name": "Release",
     "ok": true,
-    "results": 67
+    "results": 68
    },
    {
     "name": "Promo",
     "ok": true,
-    "results": 100
+    "results": 60
    }
   ],
   "itemImageDiscovery": {
-   "version": 4,
-   "pagesChecked": 40,
+   "version": 5,
+   "pagesChecked": 20,
    "itemsWithImages": 0,
-   "imageErrors": 40
+   "verifiedProductPages": 0,
+   "retailerSearchFallbacks": 0,
+   "productPagesMissing": 120,
+   "productDetailPagesChecked": 0,
+   "imageErrors": 20
   }
  },
  "raffles": {
   "sourceCount": 17,
   "sourcesResponded": 17,
-  "searchResults": 141,
-  "uniqueLeads": 143,
-  "savedLeads": 143,
+  "searchResults": 134,
+  "uniqueLeads": 86,
+  "savedLeads": 86,
   "directEntryLinksFound": 0,
   "directEntryLinksMissing": 13,
-  "entryLookupsThisRun": 19,
+  "entryLookupsThisRun": 18,
   "entryLookupErrors": 18,
   "historyDays": 365,
   "sources": [
@@ -99,12 +103,12 @@
    {
     "name": "Target giveaways",
     "ok": true,
-    "results": 10
+    "results": 9
    },
    {
     "name": "Walmart giveaways",
     "ok": true,
-    "results": 9
+    "results": 8
    },
    {
     "name": "GameStop giveaways",
@@ -134,19 +138,19 @@
    {
     "name": "Community card giveaways",
     "ok": true,
-    "results": 28
+    "results": 23
    }
   ],
   "qualifiedLeads": 13,
-  "rejectedLeads": 130,
+  "rejectedLeads": 73,
   "discoveryEngine": {
-   "version": 4,
+   "version": 5,
    "publisherPagesChecked": 0,
    "prizeDetailsFound": 0,
    "startDatesFound": 0,
    "endDatesFound": 0,
    "prizeImagesFound": 0,
-   "rejectedFalsePositives": 130,
+   "rejectedFalsePositives": 73,
    "entryLinksValidated": 0
   }
  },
