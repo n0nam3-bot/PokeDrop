@@ -311,10 +311,21 @@ for (const post of postCandidates) {
     title,
     summary: compactSummary(post.summary || (/^via\s+/i.test(post.text || "") ? "" : post.text || "")),
     source: clean(post.source || String(post.text || "").replace(/^via\s+/i, "")),
+    publisherUrl: String(post.publisherUrl || "").trim(),
+    sourceUrl: String(post.sourceUrl || "").trim(),
+    imageUrls: Array.isArray(post.imageUrls) ? post.imageUrls : [],
+    imageLookupAt: String(post.imageLookupAt || "").trim(),
+    imageLookupStatus: String(post.imageLookupStatus || "").trim(),
+    imageLookupVersion: Number(post.imageLookupVersion || 0),
     url: String(post.url || "").trim()
   };
   if (!/^https?:\/\//i.test(normalized.url)) continue;
   const existing = uniquePosts.get(key);
+  if (existing) {
+    for (const field of ["publisherUrl", "sourceUrl", "imageLookupAt", "imageLookupStatus"]) normalized[field] ||= existing[field] || "";
+    if (!normalized.imageLookupVersion) normalized.imageLookupVersion = Number(existing.imageLookupVersion || 0);
+    if (!normalized.imageUrls.length) normalized.imageUrls = Array.isArray(existing.imageUrls) ? existing.imageUrls : [];
+  }
   if (!existing || Date.parse(normalized.date) > Date.parse(existing.date)) uniquePosts.set(key, normalized);
 }
 const posts = [...uniquePosts.values()].sort((a, b) => b.date.localeCompare(a.date)).slice(0, MAX_POSTS);
@@ -360,6 +371,7 @@ for (const post of raffleCandidates) {
     url,
     sourceUrl: String(post.sourceUrl || prior?.sourceUrl || post.resolvedArticleUrl || url).trim(),
     publisherUrl: String(post.publisherUrl || prior?.publisherUrl || "").trim(),
+    targetedSearch: Boolean(isTargetedResult || prior?.targetedSearch),
     entryUrl: String(post.entryUrl || prior?.entryUrl || "").trim(),
     entryLinkLabel: String(post.entryLinkLabel || prior?.entryLinkLabel || "").trim(),
     entryLookupAt: String(post.entryLookupAt || prior?.entryLookupAt || "").trim(),
@@ -380,7 +392,7 @@ for (const post of raffleCandidates) {
   const existing = uniqueRaffles.get(key);
   if (!existing || Date.parse(normalized.date) > Date.parse(existing.date)) {
     // Carry enrichment from an older duplicate when a fresher syndicated link has no details yet.
-    for (const field of ["entryUrl", "entryLinkLabel", "entryLookupAt", "entryLookupStatus", "entryLookupVersion", "publisherUrl", "siteName", "siteUrl", "pageTitle", "pageDescription", "startDate", "endDate", "prize", "imageUrl", "imageType", "lastVerifiedAt"]) {
+    for (const field of ["entryUrl", "entryLinkLabel", "entryLookupAt", "entryLookupStatus", "entryLookupVersion", "publisherUrl", "targetedSearch", "siteName", "siteUrl", "pageTitle", "pageDescription", "startDate", "endDate", "prize", "imageUrl", "imageType", "lastVerifiedAt"]) {
       if (!normalized[field] && existing?.[field]) normalized[field] = existing[field];
     }
     if (!post.sourceUrl && existing?.sourceUrl && isGoogleNewsUrl(normalized.sourceUrl)) normalized.sourceUrl = existing.sourceUrl;
@@ -436,5 +448,6 @@ if (feedStatusOutput !== oldFeedStatus) writeFileSync("feed-status.json", feedSt
 console.log(`Saved ${posts.length} headlines and ${raffles.length} TCG raffle/giveaway leads.`);
 console.log(`Raffle searches: ${raffleSucceeded}/${raffleDiagnostics.length} sources responded; ${raffleCollected.length} raw results.`);
 
-// Run the dedicated raffle-only page resolver after the discovery feeds have been saved.
+// Run the strict, versioned giveaway validator and product-image carousel enrichment after feeds are saved.
+// This helper owns its version so new validation rules can invalidate stale entry links and page-icon images.
 await import("./raffle-discovery.mjs");
