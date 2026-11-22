@@ -273,3 +273,17 @@ select { cursor: pointer; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
 }
+
+/* Date filter: sits beside the FILTER MENU button */
+.section-heading { flex-wrap: wrap; }
+.heading-actions { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: flex-end; gap: 10px; }
+.date-range { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 8px; }
+.date-field { display: grid; gap: 4px; }
+.date-field .control-label { margin: 0; }
+.date-field input[type="date"] { width: auto; min-width: 142px; min-height: 36px; padding: 5px 8px; font-size: 9px; cursor: pointer; color-scheme: light; }
+.date-clear, .heading-actions .filter-menu-toggle { appearance: none; cursor: pointer; min-height: 36px; }
+.date-clear:hover { color: var(--ink); background: var(--gold); }
+@media (max-width: 560px) {
+  .heading-actions { width: 100%; justify-content: flex-start; }
+  .date-field input[type="date"] { min-width: 126px; }
+}

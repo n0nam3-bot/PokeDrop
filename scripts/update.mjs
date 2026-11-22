@@ -1,7 +1,7 @@
 // Free Pokémon TCG headlines and dedicated raffle/giveaway discovery.
 // The raffle enrichment stage runs after the feed refresh and uses only public pages/RSS.
 import { readFileSync, writeFileSync } from "node:fs";
-import { stashDropEvents, publishDropEvents } from "./drop-feeds.mjs";
+import { stashDropEvents, publishDropEvents, isOnTopic } from "./drop-feeds.mjs";
 
 const FEEDS = [
   ["Restock", 'pokemon (tcg OR cards OR "trading cards") (restock OR "back in stock" OR "in stock" OR "stock alert" OR "available now") when:14d'],
@@ -197,8 +197,10 @@ async function loadFeed([category, query]) {
   } catch (error) {
     console.error(`${category}: Bing News failed (${error.message}); trying Google News.`);
   }
-  if (!items.length) return loadGoogleFeed([category, query]);
-  return items.map((item) => ({ ...item, cat: categoryFor(`${item.title} ${item.summary}`, category) }));
+  const found = items.length
+    ? items.map((item) => ({ ...item, cat: categoryFor(`${item.title} ${item.summary}`, category) }))
+    : await loadGoogleFeed([category, query]);
+  return found.filter((item) => isOnTopic(item.title, item.summary));
 }
 
 async function loadGoogleFeed([category, query]) {
@@ -316,7 +318,7 @@ function raffleStore(post) {
 
 const previousPostsRaw = (() => { try { return readFileSync("posts.json", "utf8"); } catch { return ""; } })();
 const stashedDropEvents = stashDropEvents();
-const previousPosts = loadPrevious("posts.json");
+const previousPosts = loadPrevious("posts.json").filter((item) => isOnTopic(item?.title, item?.summary));
 const previousRafflesRaw = (() => { try { return readFileSync("raffles.json", "utf8"); } catch { return ""; } })();
 const previousRaffles = loadPrevious("raffles.json").filter((item) => item?.origin !== "drop-feed");
 const previousByIdentity = new Map(previousRaffles.map((item) => [raffleIdentity(item), item]).filter(([key]) => key));

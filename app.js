@@ -56,6 +56,8 @@
     query: "",
     retailer: "all",
     raffleStatus: "All",
+    dateFrom: "",
+    dateTo: "",
     diagnostics: null
   };
 
@@ -69,6 +71,9 @@
   const raffleCategoryButton = $("#raffle-category-button");
   const filterMenuToggle = $("#filter-menu-toggle");
   const filterControls = $("#filter-controls");
+  const dateFrom = $("#date-from");
+  const dateTo = $("#date-to");
+  const dateClear = $("#date-clear");
   const diagnosticsContent = $("#feed-diagnostics-content");
 
   function makeElement(tag, className, text) {
@@ -218,6 +223,7 @@
   });
 
   function renderRetailerOptions() {
+    updateDateBounds();
     const selected = state.retailer;
     const known = retailerNames.map(([name]) => name);
     const detected = getAllItems().map(findRetailer).filter((name) => name !== "Other");
@@ -298,6 +304,30 @@
     return card;
   }
 
+  // Date filter: keeps alerts posted from the chosen oldest day through the chosen newest day (local time).
+  const pad2 = (n) => String(n).padStart(2, "0");
+  const ymdLocal = (ms) => { const d = new Date(ms); return `${d.getFullYear()}-${pad2(d.getMonth() + 1)}-${pad2(d.getDate())}`; };
+  const dayBounds = (ymd) => {
+    const [y, m, d] = ymd.split("-").map(Number);
+    return [new Date(y, m - 1, d, 0, 0, 0, 0).getTime(), new Date(y, m - 1, d, 23, 59, 59, 999).getTime()];
+  };
+  function inDateRange(item) {
+    if (!state.dateFrom && !state.dateTo) return true;
+    const time = Date.parse(item.date || "");
+    if (!time) return false;
+    let from = state.dateFrom, to = state.dateTo;
+    if (from && to && from > to) [from, to] = [to, from];
+    if (from && time < dayBounds(from)[0]) return false;
+    if (to && time > dayBounds(to)[1]) return false;
+    return true;
+  }
+  function updateDateBounds() {
+    const times = getAllItems().map((item) => Date.parse(item.date || "")).filter(Boolean);
+    if (!times.length) return;
+    dateFrom.min = dateTo.min = ymdLocal(Math.min(...times));
+    dateFrom.max = dateTo.max = ymdLocal(Date.now());
+  }
+
   function getVisibleEntries() {
     let entries;
     if (state.category === "Raffle") {
@@ -317,6 +347,8 @@
 
       const itemStatus = normalizedStatus(item.status);
       if (state.category === "Raffle" && state.raffleStatus !== "All" && itemStatus !== state.raffleStatus) return false;
+
+      if (!inDateRange(item)) return false;
 
       const retailer = findRetailer(item);
       if (state.retailer !== "all" && retailer !== state.retailer) return false;
@@ -440,6 +472,23 @@
   retailerFilter.addEventListener("change", () => {
     state.retailer = retailerFilter.value;
     renderFeed();
+  });
+
+  function onDateChange() {
+    state.dateFrom = dateFrom.value;
+    state.dateTo = dateTo.value;
+    updateDateBounds();
+    if (state.dateFrom) dateTo.min = state.dateFrom;
+    if (state.dateTo) dateFrom.max = state.dateTo;
+    dateClear.hidden = !state.dateFrom && !state.dateTo;
+    renderFeed();
+  }
+  dateFrom.addEventListener("input", onDateChange);
+  dateTo.addEventListener("input", onDateChange);
+  dateClear.addEventListener("click", () => {
+    dateFrom.value = "";
+    dateTo.value = "";
+    onDateChange();
   });
 
   raffleStatusNav.addEventListener("click", (event) => {

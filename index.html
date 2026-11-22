@@ -7,7 +7,7 @@
   <meta name="description" content="A free Pokémon TCG radar for restocks, deals, rare drops, raffles and giveaways.">
   <title>PokeDrop - Pokémon TCG Drop Finder</title>
   <link rel="preload" href="fonts/PKMN-RBYGSC.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="stylesheet" href="style.css?v=raffle-inline-fix-2">
+  <link rel="stylesheet" href="style.css?v=date-filter-1">
 </head>
 <body>
   <div class="page-shell">
@@ -44,7 +44,7 @@
 
       <div class="hero-footer">
         <span><i class="mini-square" aria-hidden="true"></i> COMMUNITY DROP WATCH</span>
-        <span>HEADLINES + RAFFLE LEADS CHECKED EVERY 30 MIN</span>
+        <span>HEADLINES + RAFFLE ALERTS CHECKED ABOUT EVERY 30 MIN</span>
       </div>
     </header>
 
@@ -55,7 +55,14 @@
             <p class="section-kicker">01 / SELECT YOUR MISSION</p>
             <h2 id="filter-title">DROP FINDER</h2>
           </div>
-          <button type="button" class="pixel-label filter-menu-toggle" id="filter-menu-toggle" aria-expanded="true" aria-controls="filter-controls">FILTER MENU</button>
+          <div class="heading-actions">
+            <div class="date-range" role="group" aria-label="Filter alerts by posted date">
+              <label class="date-field"><span class="control-label">FROM</span><input type="date" id="date-from" title="Show alerts posted on or after this day" aria-label="Oldest posted date"></label>
+              <label class="date-field"><span class="control-label">TO</span><input type="date" id="date-to" title="Show alerts posted on or before this day" aria-label="Newest posted date"></label>
+              <button type="button" class="pixel-label date-clear" id="date-clear" hidden>CLEAR DATES</button>
+            </div>
+            <button type="button" class="pixel-label filter-menu-toggle" id="filter-menu-toggle" aria-expanded="true" aria-controls="filter-controls">FILTER MENU</button>
+          </div>
         </div>
 
         <div class="filter-controls" id="filter-controls">
@@ -129,7 +136,7 @@
 
   <!-- Load stock integration first so it can add stock listings to app.js's normal feed data. -->
   <script src="stock-ui.js?v=unified-feed-stock-filter-v3" defer></script>
-  <script src="app.js?v=raffle-discovery-v2" defer></script>
+  <script src="app.js?v=date-filter-1" defer></script>
   <script src="raffle-ui.js?v=raffle-destinations-v6" defer></script>
 </body>
 </html>

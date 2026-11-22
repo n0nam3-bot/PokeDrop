@@ -11,6 +11,13 @@ const SOURCES = [
 ];
 const MAX_NEW_PER_RUN = 25, KEEP_DAYS = 45, IMAGE_FILLS_PER_RUN = 30;
 const UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36";
+// Keeps the feed about Pokemon cards: drops PS5 deals, Lego sales, other card games and similar noise.
+const POKEMON_RE = /pok[e\u00e9]mon|pikachu|charizard|poke ?ball/i;
+const CARDISH_RE = /\b(tcg|cards?|trading card|booster|etb|elite trainer|collection|packs?|box(?:es)?|tins?|bundle|raffles?|giveaways?|lotter(?:y|ies)|drawings?|restock(?:s|ed)?|preorders?|promos?|queue|sets?|expansion|display|blister|binder|upcs?)\b/i;
+export const isOnTopic = (title = "", summary = "") => {
+  const text = `${title} ${summary}`;
+  return (POKEMON_RE.test(text) && CARDISH_RE.test(text)) || /\b(etb|elite trainer box|ultra[- ]premium collection)\b/i.test(text);
+};
 const EVENT_RE = /\b(draw(?:ing|ings)?|raffles?|lotter(?:y|ies)|invites?|invitations?|queue|giveaways?|sweepstakes)\b/i;
 
 const STORES = [
@@ -26,9 +33,11 @@ const STORES = [
 ];
 
 // ---------- small helpers ----------
-const decode = (s) => String(s)
-  .replace(/&(amp|lt|gt|quot|apos|#39|nbsp);/g, (_, e) => ({ amp: "&", lt: "<", gt: ">", quot: '"', apos: "'", "#39": "'", nbsp: " " })[e])
-  .replace(/&#(\d+);/g, (_, n) => String.fromCharCode(Number(n)));
+const NAMED = { amp: "&", lt: "<", gt: ">", quot: '"', apos: "'", nbsp: " ", rsquo: "\u2019", lsquo: "\u2018", rdquo: "\u201d", ldquo: "\u201c", mdash: "\u2014", ndash: "\u2013", hellip: "\u2026" };
+const decode = (s) => String(s).replace(/&(#x[0-9a-f]+|#\d+|[a-z]+);/gi, (m, e) => {
+  if (e[0] === "#") { const n = e[1].toLowerCase() === "x" ? parseInt(e.slice(2), 16) : Number(e.slice(1)); return n > 0 && n < 0x110000 ? String.fromCodePoint(n) : m; }
+  return NAMED[e.toLowerCase()] ?? m;
+});
 const textOf = (html) => decode(String(html).replace(/<(script|style|noscript|svg)\b[\s\S]*?<\/\1>/gi, " ").replace(/<[^>]*>/g, " ")).replace(/\s+/g, " ").trim();
 const attr = (attrs, name) => { const m = String(attrs).match(new RegExp(`\\b${name}\\s*=\\s*(?:"([^"]*)"|'([^']*)')`, "i")); return m ? (m[1] ?? m[2] ?? "") : ""; };
 function metaOf(html, key) {
@@ -184,22 +193,34 @@ const KINDS = [
   [/booster bundle/i, /booster bundle/i], [/booster (?:box|display)/i, /booster (?:box|display)/i],
   [/blister/i, /blister/i], [/build\s*&\s*battle/i, /build\s*&\s*battle/i], [/binder/i, /binder/i], [/\btin\b/i, /\btin\b/i], [/collection/i, /collection/i]
 ];
-export async function imageFor(text) {
-  const raw = String(text || "");
-  const hay = ` ${raw.toLowerCase().replace(/[^a-z0-9]+/g, " ")} `;
-  let best = null;
+// `text` is the title, summary and the start of the post body. `claims` is only the title and summary.
+// A set named in the claims wins, so promo footers lower down a post cannot change which set is meant.
+export async function imageFor(text, claims = text) {
+  const norm = (v) => ` ${String(v || "").toLowerCase().replace(/[^a-z0-9]+/g, " ")} `;
+  const claimHay = norm(claims), fullHay = norm(text);
+  const sets = [];
   for (const g of await groups()) {
     const key = setKey(g.name);
     if (key.length < 6 || /miscellaneous|promo|prize pack|world championship|classic|deck/.test(key)) continue;
-    const at = hay.indexOf(` ${key} `);
-    if (at >= 0 && (!best || at < best.at || (at === best.at && key.length > best.key.length))) best = { g, key, at };
+    sets.push({ g, key, name: fontSafe(g.name).replace(/^[A-Za-z0-9.]{1,10}:\s*/, ""), claim: claimHay.indexOf(` ${key} `), full: fullHay.indexOf(` ${key} `) });
   }
-  if (!best) return null;
-  const sealed = (await productsOf(best.g.groupId)).filter((p) => p.imageUrl && !(p.extendedData || []).some((d) => /^(number|rarity)$/i.test(d.name)) && !/ - \d+\/\d+/.test(p.name));
+  const fromClaims = sets.some((x) => x.claim >= 0);
+  const pool = sets.filter((x) => (fromClaims ? x.claim : x.full) >= 0).map((x) => ({ ...x, at: fromClaims ? x.claim : x.full }))
+    .sort((a, b) => a.at - b.at || b.key.length - a.key.length);
+  if (!pool.length) return null;
+  const distinct = pool.filter((x) => !pool.some((o) => o !== x && o.key.includes(x.key)));
+  const best = pool[0];
+  const raw = String(text || "");
+  const sealed = (await productsOf(best.g.groupId)).filter((x) => x.imageUrl && !(x.extendedData || []).some((d) => /^(number|rarity)$/i.test(d.name)) && !/ - \d+\/\d+/.test(x.name));
   const asked = KINDS.map(([ask, pick]) => ({ at: raw.search(ask), pick })).filter((k) => k.at >= 0).sort((a, b) => a.at - b.at);
-  const product = asked.map((k) => sealed.find((p) => k.pick.test(p.name))).find(Boolean)
-    || sealed.find((p) => /elite trainer box/i.test(p.name)) || sealed.find((p) => /booster/i.test(p.name));
-  return product ? { url: product.imageUrl, name: fontSafe(product.name).replace(/^Pok\u00e9mon TCG:?\s*/i, "") } : null;
+  const product = asked.map((k) => sealed.find((x) => k.pick.test(x.name))).find(Boolean)
+    || sealed.find((x) => /elite trainer box/i.test(x.name)) || sealed.find((x) => /booster/i.test(x.name));
+  if (!product) return null;
+  return {
+    url: product.imageUrl, name: fontSafe(product.name).replace(/^Pok\u00e9mon TCG:?\s*/i, ""),
+    multi: distinct.length > 1, sets: fromClaims ? distinct.map((x) => x.name) : [],
+    known: asked.length > 0 && distinct.length <= 1 // the post named a product type, not just a set
+  };
 }
 
 // ---------- one alert post -> one raffle event ----------
@@ -232,17 +253,19 @@ export async function buildEvent(source, url, html, now = Date.now()) {
   const named = storeIn(title) || storeIn(claims);
   const entry = pickEntry(links, named);
   const store = named || entry?.store || "";
-  const image = await imageFor(`${title}. ${summary}. ${body.slice(0, 900)}`);
-  const query = image?.name || fontSafe(title).replace(/\b(drawings?|raffles?|invites?|queue|live|open|now|closes?|just|started|still)\b/gi, "").replace(/\s+/g, " ").trim().slice(0, 60);
+  const image = await imageFor(`${title}. ${summary}. ${body.slice(0, 500)}`, `${title}. ${summary}`);
+  const listing = (names) => (names.length > 1 ? `${names.slice(0, -1).join(", ")} and ${names.at(-1)}` : names[0] || "");
+  const prize = image?.known ? image.name : image?.sets?.length ? `${listing(image.sets)} products` : fontSafe(summary).slice(0, 140);
+  const query = image?.known ? image.name : image?.sets?.[0] ? `${image.sets[0]} pokemon tcg` : fontSafe(title).replace(/\b(drawings?|raffles?|invites?|queue|live|open|now|closes?|just|started|still)\b/gi, "").replace(/\s+/g, " ").trim().slice(0, 60);
   const shop = STORES.find((s) => s[0] === store);
   const event = {
     origin: "drop-feed", id: `drop-${url.replace(/\/+$/, "").split("/").pop()}`,
-    title: fontSafe(title), date, url, sourceUrl: url, source: source.name, siteName: source.name, siteUrl: url, store, retailer: store,
-    summary: fontSafe(summary), prize: image?.name || fontSafe(summary).slice(0, 140),
+    title: fontSafe(title), baseTitle: fontSafe(title), date, url, sourceUrl: url, source: source.name, siteName: source.name, siteUrl: url, store, retailer: store,
+    summary: fontSafe(summary), prize,
     startDate: window.startDate || "", endDate: window.endDate || "", hint,
     entryUrl: entry?.url || "", entryLinkLabel: entry ? fontSafe(entry.label) || "Entry link" : "", entryLookupStatus: "alert-feed",
     entrySearchUrl: !entry && shop ? shop[3](query) : "",
-    productUrl: entry?.product ? entry.url : "", productRetailer: store, productName: image?.name || "",
+    productUrl: entry?.product ? entry.url : "", productRetailer: store, productName: image?.known ? image.name : "",
     productSearchUrl: shop ? shop[3](query) : "", productSearchRetailer: store,
     imageUrls: image ? [{ url: image.url, label: "PRODUCT IMAGE", kind: "product", alt: image.name }] : [], imageType: image ? "prize" : ""
   };
@@ -286,8 +309,18 @@ export async function publishDropEvents(previous = [], now = Date.now()) {
   for (const e of [...fresh, ...previous]) if (e?.id && !byId.has(e.id)) byId.set(e.id, e);
   const events = [...byId.values()].filter((e) => now - Date.parse(e.date) < KEEP_DAYS * 864e5).map((e) => refresh(e, now))
     .sort((a, b) => Date.parse(b.date) - Date.parse(a.date));
+  const baseOf = (e) => e.baseTitle || String(e.title).replace(/ \([A-Z][a-z]{2} \d{1,2}\)$/, "");
+  const titleCount = new Map();
+  for (const e of events) titleCount.set(baseOf(e).toLowerCase(), (titleCount.get(baseOf(e).toLowerCase()) || 0) + 1);
+  for (const e of events) {
+    const base = baseOf(e), day = new Date(e.date).toLocaleDateString("en-US", { timeZone: "America/New_York", month: "short", day: "numeric" });
+    e.baseTitle = base;
+    e.title = titleCount.get(base.toLowerCase()) > 1 ? `${base} (${day})` : base;
+  }
   // Keep only real entry opportunities: alert events, plus older leads whose entry link was verified.
-  const verified = readList("raffles.json").filter((r) => r && r.origin !== "drop-feed" && r.entryUrl);
+  const legacyAll = readList("raffles.json").filter((r) => r && r.origin !== "drop-feed");
+  const verified = legacyAll.filter((r) => r.entryUrl);
+  const removed = legacyAll.length - verified.length;
   writeFileSync("raffles.json", `${JSON.stringify([...events, ...verified], null, 1)}\n`);
   // Plain news stays in the news feed, and products without a picture get one when the set can be matched.
   const posts = readList("posts.json");
@@ -309,6 +342,12 @@ export async function publishDropEvents(previous = [], now = Date.now()) {
     const total = events.length + verified.length, found = events.filter((e) => e.entryUrl).length + verified.length;
     Object.assign(raffles, { savedLeads: total, directEntryLinksFound: found, directEntryLinksMissing: total - found });
     raffles.sources = [...(raffles.sources || []).filter((x) => !String(x.name).startsWith("Drop alerts:")), ...report];
+    const shown = [...events, ...verified], engine = (raffles.discoveryEngine ||= {});
+    Object.assign(engine, {
+      entryLinksValidated: shown.filter((r) => r.entryUrl).length, prizeDetailsFound: shown.filter((r) => r.prize).length,
+      startDatesFound: shown.filter((r) => r.startDate).length, endDatesFound: shown.filter((r) => r.endDate).length,
+      prizeImagesFound: shown.filter((r) => (r.imageUrls || []).length).length, rejectedFalsePositives: (engine.rejectedFalsePositives || 0) + removed
+    });
     writeFileSync("feed-status.json", `${JSON.stringify(status, null, 2)}\n`);
   } catch {}
   console.log(`Drop alerts: ${events.length} events (${fresh.length} new), ${events.filter((e) => e.entryUrl).length} with entry links; ${filled} news images added.`);
