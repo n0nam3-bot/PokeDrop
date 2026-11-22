@@ -1,6 +1,6 @@
 {
   "state": "ok",
-  "lastScanAt": "2026-11-22T03:25:24.636Z",
+  "lastScanAt": "2026-11-22T11:49:58.501Z",
   "retailersChecked": 10,
   "retailersReached": 10,
   "retailersWithProducts": 0,
@@ -16,7 +16,7 @@
       "productsFound": 0,
       "pagesChecked": 0,
       "method": "none",
-      "error": "Retailer search: HTTP 403 | bing-rss: response contained no matching product-detail links | bing-html: response contained no matching product-detail links | duckduckgo-html: The operation was aborted due to timeout"
+      "error": "Retailer search: HTTP 403 | bing-rss: response contained no matching product-detail links | bing-html: response contained no matching product-detail links | duckduckgo-html: response contained no matching product-detail links"
     },
     {
       "retailer": "Target",
@@ -25,7 +25,7 @@
       "productsFound": 0,
       "pagesChecked": 3,
       "method": "none",
-      "error": "Retailer search page loaded but did not expose matching product-detail links in its HTML | bing-rss: response contained no matching product-detail links | bing-html: response contained no matching product-detail links | duckduckgo-html: The"
+      "error": "Retailer search page loaded but did not expose matching product-detail links in its HTML | bing-rss: response contained no matching product-detail links | bing-html: response contained no matching product-detail links | duckduckgo-html: res"
     },
     {
       "retailer": "Walmart",
@@ -34,7 +34,7 @@
       "productsFound": 0,
       "pagesChecked": 0,
       "method": "none",
-      "error": "Retailer search page loaded but did not expose matching product-detail links in its HTML | bing-rss: response contained no matching product-detail links | bing-html: response contained no matching product-detail links | duckduckgo-html: The"
+      "error": "Retailer search page loaded but did not expose matching product-detail links in its HTML | bing-rss: response contained no matching product-detail links | bing-html: response contained no matching product-detail links | duckduckgo-html: res"
     },
     {
       "retailer": "Best Buy",
@@ -43,7 +43,7 @@
       "productsFound": 0,
       "pagesChecked": 0,
       "method": "none",
-      "error": "Retailer search: The operation was aborted due to timeout | bing-rss: response contained no matching product-detail links | bing-html: response contained no matching product-detail links | duckduckgo-html: The operation was aborted due to t"
+      "error": "Retailer search: The operation was aborted due to timeout | bing-rss: response contained no matching product-detail links | bing-html: response contained no matching product-detail links | duckduckgo-html: response contained no matching pro"
     },
     {
       "retailer": "GameStop",
@@ -52,7 +52,7 @@
       "productsFound": 0,
       "pagesChecked": 0,
       "method": "none",
-      "error": "Retailer search page loaded but did not expose matching product-detail links in its HTML | bing-rss: response contained no matching product-detail links | bing-html: response contained no matching product-detail links | duckduckgo-html: The"
+      "error": "Retailer search page loaded but did not expose matching product-detail links in its HTML | bing-rss: response contained no matching product-detail links | bing-html: response contained no matching product-detail links | duckduckgo-html: res"
     },
     {
       "retailer": "Amazon",
@@ -70,7 +70,7 @@
       "productsFound": 0,
       "pagesChecked": 1,
       "method": "none",
-      "error": "Retailer search page loaded but did not expose matching product-detail links in its HTML | bing-rss: response contained no matching product-detail links | bing-html: response contained no matching product-detail links | duckduckgo-html: The"
+      "error": "Retailer search page loaded but did not expose matching product-detail links in its HTML | bing-rss: response contained no matching product-detail links | bing-html: response contained no matching product-detail links | duckduckgo-html: res"
     },
     {
       "retailer": "TCGplayer",
@@ -79,7 +79,7 @@
       "productsFound": 0,
       "pagesChecked": 2,
       "method": "none",
-      "error": "Retailer search page loaded but did not expose matching product-detail links in its HTML | bing-rss: response contained no matching product-detail links | bing-html: response contained no matching product-detail links | duckduckgo-html: The"
+      "error": "Retailer search page loaded but did not expose matching product-detail links in its HTML | bing-rss: response contained no matching product-detail links | bing-html: response contained no matching product-detail links | duckduckgo-html: res"
     },
     {
       "retailer": "Barnes & Noble",
@@ -88,7 +88,7 @@
       "productsFound": 0,
       "pagesChecked": 0,
       "method": "none",
-      "error": "Retailer search: HTTP 404 | bing-rss: response contained no matching product-detail links | bing-html: response contained no matching product-detail links | duckduckgo-html: The operation was aborted due to timeout"
+      "error": "Retailer search: HTTP 404 | bing-rss: response contained no matching product-detail links | bing-html: response contained no matching product-detail links | duckduckgo-html: response contained no matching product-detail links"
     },
     {
       "retailer": "Meijer",
@@ -97,7 +97,7 @@
       "productsFound": 0,
       "pagesChecked": 0,
       "method": "none",
-      "error": "Retailer search: HTTP 403 | bing-rss: response contained no matching product-detail links | bing-html: response contained no matching product-detail links | duckduckgo-html: The operation was aborted due to timeout"
+      "error": "Retailer search: HTTP 403 | bing-rss: response contained no matching product-detail links | bing-html: response contained no matching product-detail links | duckduckgo-html: response contained no matching product-detail links"
     }
   ],
   "errors": [
@@ -112,7 +112,7 @@
     "successfulSearches": 0,
     "resultLinks": 0,
     "blockedResponses": 3,
-    "errors": 15
+    "errors": 5
   },
   "note": "Stock states come from validated product pages. A page that cannot be reached retains its last verified stock state and is marked with a failed check.",
   "discord": {
