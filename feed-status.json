@@ -35,19 +35,19 @@
   "itemImageDiscovery": {
    "version": 7,
    "pagesChecked": 20,
-   "itemsWithImages": 18,
+   "itemsWithImages": 29,
    "verifiedProductPages": 0,
-   "retailerSearchFallbacks": 59,
-   "productSearchLinksAvailable": 59,
-   "productPagesMissing": 61,
+   "retailerSearchFallbacks": 66,
+   "productSearchLinksAvailable": 66,
+   "productPagesMissing": 54,
    "productDetailPagesChecked": 13,
    "imageErrors": 0,
    "search": {
-    "requests": 85,
-    "successfulQueries": 85,
-    "resultLinks": 765,
+    "requests": 79,
+    "successfulQueries": 79,
+    "resultLinks": 690,
     "errors": 0,
-    "bingRequests": 85,
+    "bingRequests": 79,
     "duckDuckGoRequests": 0
    }
   }
@@ -60,7 +60,7 @@
   "savedLeads": 126,
   "directEntryLinksFound": 0,
   "directEntryLinksMissing": 32,
-  "entryLookupsThisRun": 2,
+  "entryLookupsThisRun": 1,
   "entryLookupErrors": 0,
   "historyDays": 365,
   "sources": [
@@ -155,7 +155,7 @@
   "rejectedLeads": 94,
   "discoveryEngine": {
    "version": 7,
-   "publisherPagesChecked": 2,
+   "publisherPagesChecked": 1,
    "prizeDetailsFound": 9,
    "startDatesFound": 1,
    "endDatesFound": 1,
@@ -163,11 +163,11 @@
    "rejectedFalsePositives": 94,
    "entryLinksValidated": 0,
    "search": {
-    "requests": 85,
-    "successfulQueries": 85,
-    "resultLinks": 765,
+    "requests": 79,
+    "successfulQueries": 79,
+    "resultLinks": 690,
     "errors": 0,
-    "bingRequests": 85,
+    "bingRequests": 79,
     "duckDuckGoRequests": 0
    }
   }
