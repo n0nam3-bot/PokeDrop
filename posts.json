@@ -1,6 +1,6 @@
 [
  {
-  "date": "2026-11-22T10:31:00.000Z",
+  "date": "2026-11-22T12:26:00.000Z",
   "cat": "Deals",
   "title": "[November 2026] Getting Pokémon Cards in Overseas McDonald's Happy Meals! Full Disclosure of Results, Costs, and Experiences [Australia/Cairns Trip]",
   "summary": "As the title suggests, I went and got Pokémon cards included with Happy Meals overseas in November 2026. To be precise, Happy Meals are called \"Happy Meals\" abroad. In this campaign running from 2026, ...",
@@ -51,12 +51,6 @@
   "url": "https://note.com/kensho_time/n/na593be52e7f9?hl=en",
   "thumbUrl": "https://www.bing.com/th?id=ONUT.rgVLr7yJI-7JYyLl1F0l-Q&pid=News&w=480&h=360&c=14",
   "siteUrl": "https://note.com",
-  "productUrl": "",
-  "productRetailer": "",
-  "productName": "",
-  "productPrice": "",
-  "productAvailability": "",
-  "productLinks": [],
   "productSearchLinks": [
    {
     "retailer": "Target",
@@ -75,9 +69,7 @@
   "productSearchRetailer": "Target",
   "productLookupStatus": "search-fallback",
   "productLookupAt": "2026-11-22T18:31:06.902Z",
-  "productLookupVersion": 7,
-  "productPageChecks": 0,
-  "productVerifiedAt": ""
+  "productLookupVersion": 7
  },
  {
   "date": "2026-11-22T08:09:28.000Z",
@@ -100,13 +92,6 @@
   "imageLookupVersion": 7,
   "url": "https://www.msn.com/en-au/news/other/crazyrussianhacker-makes-2000-selling-pok%C3%A9mon-cards-on-ebay-in-one-day/vi-AA2hYtd9",
   "thumbUrl": "https://www.bing.com/th?id=ONUT.h2u6AmIJgNQq0_PydKrVqA&pid=News&w=480&h=360&c=14",
-  "siteUrl": "",
-  "productUrl": "",
-  "productRetailer": "",
-  "productName": "",
-  "productPrice": "",
-  "productAvailability": "",
-  "productLinks": [],
   "productSearchLinks": [
    {
     "retailer": "TCGplayer",
@@ -125,9 +110,7 @@
   "productSearchRetailer": "TCGplayer",
   "productLookupStatus": "search-fallback",
   "productLookupAt": "2026-11-22T18:31:06.904Z",
-  "productLookupVersion": 7,
-  "productPageChecks": 0,
-  "productVerifiedAt": ""
+  "productLookupVersion": 7
  },
  {
   "date": "2026-11-22T07:36:00.000Z",
@@ -181,20 +164,9 @@
   "url": "https://gamerant.com/pokemon-movie-marathon-next-week/",
   "thumbUrl": "https://www.bing.com/th?id=ONUT.szRzv3dA1tlC8RtExsZwGg&pid=News&w=480&h=360&c=14",
   "siteUrl": "https://gamerant.com",
-  "productUrl": "",
-  "productRetailer": "",
-  "productName": "",
-  "productPrice": "",
-  "productAvailability": "",
-  "productLinks": [],
-  "productSearchLinks": [],
-  "productSearchUrl": "",
-  "productSearchRetailer": "",
   "productLookupStatus": "not-found",
   "productLookupAt": "2026-11-22T18:31:06.905Z",
-  "productLookupVersion": 7,
-  "productPageChecks": 0,
-  "productVerifiedAt": ""
+  "productLookupVersion": 7
  },
  {
   "date": "2026-11-22T06:14:00.000Z",
@@ -242,12 +214,6 @@
   "url": "https://www.si.com/collectibles/pokemon-tcg-market-keeps-soaring-with-all-time-record-blastoise-sale",
   "thumbUrl": "https://www.bing.com/th?id=ONUT.Y9vH2LMqx25HUfXc7oBJQQ&pid=News&w=480&h=360&c=14",
   "siteUrl": "https://www.si.com",
-  "productUrl": "",
-  "productRetailer": "",
-  "productName": "",
-  "productPrice": "",
-  "productAvailability": "",
-  "productLinks": [],
   "productSearchLinks": [
    {
     "retailer": "TCGplayer",
@@ -266,9 +232,7 @@
   "productSearchRetailer": "TCGplayer",
   "productLookupStatus": "search-fallback",
   "productLookupAt": "2026-11-22T18:31:06.905Z",
-  "productLookupVersion": 7,
-  "productPageChecks": 0,
-  "productVerifiedAt": ""
+  "productLookupVersion": 7
  },
  {
   "date": "2026-11-22T05:34:00.000Z",
@@ -291,7 +255,82 @@
   "imageLookupVersion": 7,
   "url": "https://www.casino.com/news/industry/pokemon-vs-blackjack-university-of-calgary-researcher-explores-gambling-like-behaviors-in-card-collecting/",
   "thumbUrl": "https://www.bing.com/th?id=ONUT.SVujhkmFqgghK2dut_cR1A&pid=News&w=480&h=360&c=14",
-  "siteUrl": "",
+  "productLookupStatus": "not-found",
+  "productLookupAt": "2026-11-22T18:31:07.659Z",
+  "productLookupVersion": 7
+ },
+ {
+  "date": "2026-11-22T05:28:00.000Z",
+  "cat": "Release",
+  "title": "Talking about the charm of vintage Pokémon cards 1",
+  "summary": "Are you familiar with the vintage back of Pokémon cards? The current back features a light navy blue background with a gold border, showing a Poke Ball facing almost directly forward as if it is about ...",
+  "source": "note",
+  "publisherUrl": "https://note.com",
+  "sourceUrl": "https://note.com/fine_camel644/n/n40167c250a62?hl=en",
+  "imageUrls": [
+   {
+    "url": "https://assets.st-note.com/img/1795353688-qbph7RMHzydDreQF1EjiNavW.jpg?width=1200",
+    "label": "ITEM IMAGE",
+    "kind": "product",
+    "alt": "Image"
+   }
+  ],
+  "imageLookupAt": "2026-11-22T20:26:09.730Z",
+  "imageLookupStatus": "found",
+  "imageLookupVersion": 7,
+  "url": "https://note.com/fine_camel644/n/n40167c250a62?hl=en",
+  "thumbUrl": "https://www.bing.com/th?id=ONUT.S86moirKclHPzmxhs83DQA&pid=News&w=480&h=360&c=14",
+  "siteUrl": "https://note.com",
+  "productUrl": "",
+  "productRetailer": "",
+  "productName": "",
+  "productPrice": "",
+  "productAvailability": "",
+  "productLinks": [],
+  "productSearchLinks": [
+   {
+    "retailer": "TCGplayer",
+    "url": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20talking%20about%20charm%20vintage%20familiar%20current%20features"
+   },
+   {
+    "retailer": "Amazon",
+    "url": "https://www.amazon.com/s?k=Pokemon%20TCG%20talking%20about%20charm%20vintage%20familiar%20current%20features"
+   },
+   {
+    "retailer": "Target",
+    "url": "https://www.target.com/s?searchTerm=Pokemon%20TCG%20talking%20about%20charm%20vintage%20familiar%20current%20features"
+   }
+  ],
+  "productSearchUrl": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20talking%20about%20charm%20vintage%20familiar%20current%20features",
+  "productSearchRetailer": "TCGplayer",
+  "productLookupStatus": "search-fallback",
+  "productLookupAt": "2026-11-22T20:26:09.730Z",
+  "productLookupVersion": 7,
+  "productPageChecks": 0,
+  "productVerifiedAt": ""
+ },
+ {
+  "date": "2026-11-22T05:12:00.000Z",
+  "cat": "Rare Drop",
+  "title": "Behind the Record Profits of Pokémon: Introducing 4 Related Stocks Beyond Just Nintendo",
+  "summary": "Pokémon is unstoppable. 2026 marks the 30th anniversary of the series. At the center of this, The Pokémon Company recorded record highs in all divisions for the fiscal year ending February 2026, with ...",
+  "source": "note",
+  "publisherUrl": "https://note.com",
+  "sourceUrl": "https://note.com/taku_wasabi/n/n87996005c092?hl=en",
+  "imageUrls": [
+   {
+    "url": "https://www.bing.com/th?id=ONUT.Pv8wiLtkkjPbSEbseyJM5g&pid=News&w=480&h=360&c=14",
+    "label": "ARTICLE IMAGE",
+    "kind": "article",
+    "alt": "Behind the Record Profits of Pokémon: Introducing 4 Related Stocks Beyond Just Nintendo"
+   }
+  ],
+  "imageLookupAt": "2026-11-22T20:26:09.731Z",
+  "imageLookupStatus": "not-found",
+  "imageLookupVersion": 7,
+  "url": "https://note.com/taku_wasabi/n/n87996005c092?hl=en",
+  "thumbUrl": "https://www.bing.com/th?id=ONUT.Pv8wiLtkkjPbSEbseyJM5g&pid=News&w=480&h=360&c=14",
+  "siteUrl": "https://note.com",
   "productUrl": "",
   "productRetailer": "",
   "productName": "",
@@ -302,7 +341,7 @@
   "productSearchUrl": "",
   "productSearchRetailer": "",
   "productLookupStatus": "not-found",
-  "productLookupAt": "2026-11-22T18:31:07.659Z",
+  "productLookupAt": "2026-11-22T20:26:09.731Z",
   "productLookupVersion": 7,
   "productPageChecks": 0,
   "productVerifiedAt": ""
@@ -395,11 +434,11 @@
  {
   "date": "2026-11-21T16:26:32.000Z",
   "cat": "Release",
-  "title": "Pokémon TCG Flowing Fists Set Leaks; All the Hits Revealed So Far",
+  "title": "Pokémon TCG Flowing Fists set leaks; all the hits revealed so far",
   "summary": "Recent Pokémon TCG leaks are revealed a plethora of stunning cards players will be able to pull from the upcoming Flowing Fists set.",
   "source": "Game Rant on MSN",
   "publisherUrl": "https://www.msn.com",
-  "sourceUrl": "https://www.msn.com/en-us/gaming/general/pokemon-tcg-flowing-fists-set-leaks-all-the-hits-revealed-so-far/ar-AA2hYaPf",
+  "sourceUrl": "https://www.msn.com/en-au/gaming/the-pokemon-company/pokemon-tcg-flowing-fists-set-leaks-all-the-hits-revealed-so-far/ar-AA2hXYjj",
   "imageUrls": [
    {
     "url": "https://static0.gamerantimages.com/wordpress/wp-content/uploads/wm/2026/11/pokemon-tcg-flowing-fists-set-leaks-all-the-hits-revealed-so-far-gamerant-feature.jpg?&fit=crop&w=1600&h=900",
@@ -429,7 +468,8 @@
   "imageLookupAt": "2026-11-22T04:49:46.668Z",
   "imageLookupStatus": "found",
   "imageLookupVersion": 7,
-  "url": "https://www.msn.com/en-us/gaming/general/pokemon-tcg-flowing-fists-set-leaks-all-the-hits-revealed-so-far/ar-AA2hYaPf",
+  "url": "https://www.msn.com/en-au/gaming/the-pokemon-company/pokemon-tcg-flowing-fists-set-leaks-all-the-hits-revealed-so-far/ar-AA2hXYjj",
+  "thumbUrl": "https://www.bing.com/th?id=ONUT.bXWhoknI4wTIgWXX_2sIgA&pid=News&w=480&h=360&c=14",
   "siteUrl": "https://gamerant.com",
   "productSearchLinks": [
    {
@@ -449,8 +489,7 @@
   "productSearchRetailer": "TCGplayer",
   "productLookupStatus": "search-fallback",
   "productLookupAt": "2026-11-22T04:49:46.668Z",
-  "productLookupVersion": 7,
-  "thumbUrl": "https://www.bing.com/th?id=ONUT.pbe7c0wByeixnoIrbgbcxg&pid=News&w=480&h=360&c=14"
+  "productLookupVersion": 7
  },
  {
   "date": "2026-11-21T15:59:00.000Z",
@@ -472,7 +511,6 @@
   "imageLookupStatus": "found",
   "imageLookupVersion": 7,
   "url": "https://opencritic.com/news/40141/new-pok-mon-day-2027-collection-unveiled-for-january",
-  "thumbUrl": "https://www.bing.com/th?id=ONUT.fpryZELTZG6Io8URdNzjaA&pid=News&w=480&h=360&c=14",
   "siteUrl": "https://opencritic.com",
   "productUrl": "",
   "productRetailer": "",
@@ -487,7 +525,8 @@
   "productLookupAt": "2026-11-22T18:31:07.893Z",
   "productLookupVersion": 7,
   "productPageChecks": 0,
-  "productVerifiedAt": ""
+  "productVerifiedAt": "",
+  "thumbUrl": "https://www.bing.com/th?id=ONUT.fpryZELTZG6Io8URdNzjaA&pid=News&w=480&h=360&c=14"
  },
  {
   "date": "2026-11-21T15:11:20.000Z",
@@ -675,7 +714,7 @@
   "summary": "Pokémon TCG's Sun & Moon Base Set was released in February 2017 and includes 16 sets. These are the top 10 chase cards of the era.",
   "source": "Comic Book Resources on MSN",
   "publisherUrl": "https://www.msn.com",
-  "sourceUrl": "https://www.msn.com/en-us/news/other/10-most-valuable-pok%C3%A9mon-cards-from-the-sun-moon-era-ranked-by-price/ar-AA2hX354",
+  "sourceUrl": "https://www.msn.com/en-us/gaming/general/10-most-valuable-pok%C3%A9mon-cards-from-the-sun-moon-era-ranked-by-price/ar-AA2hX354",
   "imageUrls": [
    {
     "url": "https://www.bing.com/th?id=ONUT.CMZjouare05bzmwYrfabAw&pid=News&w=480&h=360&c=14",
@@ -687,7 +726,7 @@
   "imageLookupAt": "2026-11-22T10:30:16.132Z",
   "imageLookupStatus": "not-found",
   "imageLookupVersion": 7,
-  "url": "https://www.msn.com/en-us/news/other/10-most-valuable-pok%C3%A9mon-cards-from-the-sun-moon-era-ranked-by-price/ar-AA2hX354",
+  "url": "https://www.msn.com/en-us/gaming/general/10-most-valuable-pok%C3%A9mon-cards-from-the-sun-moon-era-ranked-by-price/ar-AA2hX354",
   "thumbUrl": "https://www.bing.com/th?id=ONUT.CMZjouare05bzmwYrfabAw&pid=News&w=480&h=360&c=14",
   "productSearchLinks": [
    {
@@ -731,12 +770,6 @@
   "url": "https://note.com/mizu_sakai/n/n7ce4fab043fe?hl=en",
   "thumbUrl": "https://www.bing.com/th?id=ONUT.UWzwmBoGh-UDllFx9NJhSg&pid=News&w=480&h=360&c=14",
   "siteUrl": "https://note.com",
-  "productUrl": "",
-  "productRetailer": "",
-  "productName": "",
-  "productPrice": "",
-  "productAvailability": "",
-  "productLinks": [],
   "productSearchLinks": [
    {
     "retailer": "TCGplayer",
@@ -751,9 +784,7 @@
   "productSearchRetailer": "TCGplayer",
   "productLookupStatus": "search-fallback",
   "productLookupAt": "2026-11-22T18:31:08.018Z",
-  "productLookupVersion": 7,
-  "productPageChecks": 0,
-  "productVerifiedAt": ""
+  "productLookupVersion": 7
  },
  {
   "date": "2026-11-21T09:00:12.000Z",
@@ -851,11 +882,11 @@
   "imageLookupStatus": "not-found",
   "imageLookupVersion": 7,
   "url": "https://www.msn.com/en-us/gaming/the-pokemon-company/pok%C3%A9mon-reveals-3-new-releases-with-mimikyu-and-tyranitar-coming-may-2027/ar-AA2hWENZ",
-  "thumbUrl": "https://www.bing.com/th?id=ONUT._am8FObZDsEi4YY1p4iTHQ&pid=News&w=480&h=360&c=14",
   "productLookupStatus": "not-found",
   "productLookupAt": "2026-11-22T04:49:46.670Z",
   "productLookupVersion": 7,
-  "productPageChecks": 1
+  "productPageChecks": 1,
+  "thumbUrl": "https://www.bing.com/th?id=ONUT._am8FObZDsEi4YY1p4iTHQ&pid=News&w=480&h=360&c=14"
  },
  {
   "date": "2026-11-21T05:58:00.000Z",
@@ -877,7 +908,6 @@
   "imageLookupStatus": "not-found",
   "imageLookupVersion": 7,
   "url": "https://note.com/donkey427/n/n00609e4de30b?hl=en",
-  "thumbUrl": "https://www.bing.com/th?id=ONUT.Gi0NG7cTPDgiQwus9FXE6g&pid=News&w=480&h=360&c=14",
   "siteUrl": "https://note.com",
   "productUrl": "",
   "productRetailer": "",
@@ -905,7 +935,8 @@
   "productLookupAt": "2026-11-22T18:31:08.233Z",
   "productLookupVersion": 7,
   "productPageChecks": 0,
-  "productVerifiedAt": ""
+  "productVerifiedAt": "",
+  "thumbUrl": "https://www.bing.com/th?id=ONUT.Gi0NG7cTPDgiQwus9FXE6g&pid=News&w=480&h=360&c=14"
  },
  {
   "date": "2026-11-21T04:31:25.000Z",
@@ -959,12 +990,6 @@
   "url": "https://note.com/comres_note/n/n14794618d280?hl=en",
   "thumbUrl": "https://www.bing.com/th?id=ONUT.xv1AAe73i2biQtvc6TvehQ&pid=News&w=480&h=360&c=14",
   "siteUrl": "https://note.com",
-  "productUrl": "",
-  "productRetailer": "",
-  "productName": "",
-  "productPrice": "",
-  "productAvailability": "",
-  "productLinks": [],
   "productSearchLinks": [
    {
     "retailer": "TCGplayer",
@@ -983,9 +1008,7 @@
   "productSearchRetailer": "TCGplayer",
   "productLookupStatus": "search-fallback",
   "productLookupAt": "2026-11-22T18:31:08.658Z",
-  "productLookupVersion": 7,
-  "productPageChecks": 0,
-  "productVerifiedAt": ""
+  "productLookupVersion": 7
  },
  {
   "date": "2026-11-21T03:37:00.000Z",
@@ -1028,12 +1051,6 @@
   "url": "https://note.com/toreca_asset/n/n30b15f09f2b8?hl=en",
   "thumbUrl": "https://www.bing.com/th?id=ONUT.aaUvR37e_kCNfvOOUeJjKQ&pid=News&w=480&h=360&c=14",
   "siteUrl": "https://note.com",
-  "productUrl": "",
-  "productRetailer": "",
-  "productName": "",
-  "productPrice": "",
-  "productAvailability": "",
-  "productLinks": [],
   "productSearchLinks": [
    {
     "retailer": "TCGplayer",
@@ -1052,9 +1069,7 @@
   "productSearchRetailer": "TCGplayer",
   "productLookupStatus": "search-fallback",
   "productLookupAt": "2026-11-22T18:31:08.852Z",
-  "productLookupVersion": 7,
-  "productPageChecks": 0,
-  "productVerifiedAt": ""
+  "productLookupVersion": 7
  },
  {
   "date": "2026-11-21T02:02:15.000Z",
@@ -1399,10 +1414,10 @@
   "imageLookupStatus": "not-found",
   "imageLookupVersion": 7,
   "url": "https://www.msn.com/en-us/entertainment/general/pok%C3%A9mon-officially-recruits-tommy-lee-jones-for-new-ad/ar-AA2hVpmr",
+  "thumbUrl": "https://www.bing.com/th?id=ONUT.6uuCnbOAtXXm9zfoQIrsqA&pid=News&w=480&h=360&c=14",
   "productLookupStatus": "not-found",
   "productLookupAt": "2026-11-21T19:54:27.577Z",
-  "productLookupVersion": 7,
-  "thumbUrl": "https://www.bing.com/th?id=ONUT.6uuCnbOAtXXm9zfoQIrsqA&pid=News&w=480&h=360&c=14"
+  "productLookupVersion": 7
  },
  {
   "date": "2026-11-20T19:00:00.000Z",
@@ -3158,7 +3173,6 @@
   "imageLookupStatus": "found",
   "imageLookupVersion": 7,
   "url": "https://www.marca.com/en/lifestyle/us-news/2026/11/20/costco-pokemon-queue-what-is-the-new-system-from-the-wholesale-store-for-the-next-pokemon-30th-anniversary-drop.html",
-  "thumbUrl": "https://www.bing.com/th?id=ONUT.MQR7p_TZYQWGv43PC-btMA&pid=News&w=480&h=360&c=14",
   "siteUrl": "https://www.marca.com",
   "productSearchLinks": [
    {
@@ -3178,7 +3192,8 @@
   "productSearchRetailer": "Costco",
   "productLookupStatus": "search-fallback",
   "productLookupAt": "2026-11-22T04:49:49.984Z",
-  "productLookupVersion": 7
+  "productLookupVersion": 7,
+  "thumbUrl": "https://www.bing.com/th?id=ONUT.MQR7p_TZYQWGv43PC-btMA&pid=News&w=480&h=360&c=14"
  },
  {
   "date": "2026-11-20T02:39:00.000Z",
@@ -3489,7 +3504,6 @@
   "imageLookupStatus": "found",
   "imageLookupVersion": 7,
   "url": "https://cardlines.com/pokemon-delta-reign-build-battle-box/",
-  "thumbUrl": "https://www.bing.com/th?id=ONUT.axdLxbbrgWJzkxmJXKIFGg&pid=News&w=480&h=360&c=14",
   "siteUrl": "https://cardlines.com",
   "productSearchLinks": [
    {
@@ -3509,7 +3523,8 @@
   "productSearchRetailer": "TCGplayer",
   "productLookupStatus": "search-fallback",
   "productLookupAt": "2026-11-22T10:30:17.930Z",
-  "productLookupVersion": 7
+  "productLookupVersion": 7,
+  "thumbUrl": "https://www.bing.com/th?id=ONUT.axdLxbbrgWJzkxmJXKIFGg&pid=News&w=480&h=360&c=14"
  },
  {
   "date": "2026-11-19T20:27:08.000Z",
@@ -3531,10 +3546,10 @@
   "imageLookupStatus": "not-found",
   "imageLookupVersion": 7,
   "url": "https://www.msn.com/en-us/news/other/chicago-trading-card-shop-owner-says-thief-stole-6500-in-high-end-pok%C3%A9mon-cards/ar-AA2hOUDA",
-  "thumbUrl": "https://www.bing.com/th?id=ONUT.NkBR6s4d9aWpSf8E4zsMag&pid=News&w=480&h=360&c=14",
   "productLookupStatus": "not-found",
   "productLookupAt": "2026-11-22T10:30:18.108Z",
-  "productLookupVersion": 7
+  "productLookupVersion": 7,
+  "thumbUrl": "https://www.bing.com/th?id=ONUT.NkBR6s4d9aWpSf8E4zsMag&pid=News&w=480&h=360&c=14"
  },
  {
   "date": "2026-11-19T20:23:00.000Z",
@@ -4768,6 +4783,13 @@
   "imageLookupStatus": "not-found",
   "imageLookupVersion": 7,
   "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPbzNrS2tvYldtWGZkTl9QUzRtQzFpaThVa2lmOGFnT1VpU0gxZVZHZk44RDFyeFlIMDd0RVdMdVd5dGZoWnA0Ym05VDhfSUJCbmVPMk5YVjBsOFpyUElhSWc5TUVwQXQ5RE1JNDVmYUJ4bVBfZVFCTzFucnFDejdYZXZRY3J3RTNzakxTOA?oc=5",
+  "siteUrl": "",
+  "productUrl": "",
+  "productRetailer": "",
+  "productName": "",
+  "productPrice": "",
+  "productAvailability": "",
+  "productLinks": [],
   "productSearchLinks": [
    {
     "retailer": "Amazon",
@@ -4787,13 +4809,6 @@
   "productLookupStatus": "search-fallback",
   "productLookupAt": "2026-11-22T18:31:08.863Z",
   "productLookupVersion": 7,
-  "siteUrl": "",
-  "productUrl": "",
-  "productRetailer": "",
-  "productName": "",
-  "productPrice": "",
-  "productAvailability": "",
-  "productLinks": [],
   "productPageChecks": 0,
   "productVerifiedAt": ""
  },
@@ -4810,9 +4825,6 @@
   "imageLookupStatus": "not-found",
   "imageLookupVersion": 7,
   "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBxcld3NVRxSktOUllBclRYQ3JoejU3aktWWEFDbGwtMTNRR0U3YTZTbUdSVFJhUDVlcUxrQkNsOGE4WWt0RWxJaXdyRlZybGg1VzMwaUo1VkJVWHo0REhORTd5RUpadXJ3RkNlN05R?oc=5",
-  "productLookupStatus": "not-found",
-  "productLookupAt": "2026-11-22T18:31:08.986Z",
-  "productLookupVersion": 7,
   "siteUrl": "",
   "productUrl": "",
   "productRetailer": "",
@@ -4823,6 +4835,9 @@
   "productSearchLinks": [],
   "productSearchUrl": "",
   "productSearchRetailer": "",
+  "productLookupStatus": "not-found",
+  "productLookupAt": "2026-11-22T18:31:08.986Z",
+  "productLookupVersion": 7,
   "productPageChecks": 1,
   "productVerifiedAt": ""
  },
@@ -4897,9 +4912,6 @@
   "imageLookupStatus": "not-found",
   "imageLookupVersion": 7,
   "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPaGxnMTlNVHV1WmxNNF9PVFExTTh1RS1WTGJaSklwZWM4Tmh5OWFxbTZYYktSYUZhY1BxdWpES1h2aDVDUklfeWZad0ZUU0ZpSnRKTmNyQWdYVjJtdzBUcXF4U2lLNzktMkFnUWRmai02ZThOaUg3eGFPOGdFZnlSbWZCRm5EQldIQ1JvNFFWYkJVMFNMdU04RA?oc=5",
-  "productLookupStatus": "not-found",
-  "productLookupAt": "2026-11-22T18:31:10.498Z",
-  "productLookupVersion": 7,
   "siteUrl": "",
   "productUrl": "",
   "productRetailer": "",
@@ -4910,6 +4922,9 @@
   "productSearchLinks": [],
   "productSearchUrl": "",
   "productSearchRetailer": "",
+  "productLookupStatus": "not-found",
+  "productLookupAt": "2026-11-22T18:31:10.498Z",
+  "productLookupVersion": 7,
   "productPageChecks": 0,
   "productVerifiedAt": ""
  },
@@ -4955,6 +4970,13 @@
   "imageLookupStatus": "not-found",
   "imageLookupVersion": 7,
   "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOR2dhb1B3VDNldTFJdWxtWGJUU3RMT2l4b09zUm5HbjF1dGE5UUFNWmJWeW9MYmFxMXJQMGk3OGlKdTNGRElJSEt2RF8yZGNRZzJ1NWVobER6UTZfNndENEtlLUV2ZEZtQ2I3VWNOLW9pSFF4WElzVWpjdE5YOWZFNXFINGNUNlE?oc=5",
+  "siteUrl": "",
+  "productUrl": "",
+  "productRetailer": "",
+  "productName": "",
+  "productPrice": "",
+  "productAvailability": "",
+  "productLinks": [],
   "productSearchLinks": [
    {
     "retailer": "TCGplayer",
@@ -4974,13 +4996,6 @@
   "productLookupStatus": "search-fallback",
   "productLookupAt": "2026-11-22T18:31:11.241Z",
   "productLookupVersion": 7,
-  "siteUrl": "",
-  "productUrl": "",
-  "productRetailer": "",
-  "productName": "",
-  "productPrice": "",
-  "productAvailability": "",
-  "productLinks": [],
   "productPageChecks": 0,
   "productVerifiedAt": ""
  },
@@ -4997,6 +5012,13 @@
   "imageLookupStatus": "not-found",
   "imageLookupVersion": 7,
   "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPUHBaa2hObllDWUxDM0t3cENMczhfY1ItWERhSkVSTE15ZWQyQkRLcGRPRk0zQXJ2dFBxa0pRS1lhSHBEeHdKVUZOSGNlT1dDQi1JVE96c1d3V3BqNXRVZ0tCV2VwbHJVNUNlbVA5WkNhVHUxX25BUmtfLVNKSm9NME5NQWRuXzFIb19HQzhmYUhmUHJ6OTVB?oc=5",
+  "siteUrl": "",
+  "productUrl": "",
+  "productRetailer": "",
+  "productName": "",
+  "productPrice": "",
+  "productAvailability": "",
+  "productLinks": [],
   "productSearchLinks": [
    {
     "retailer": "Target",
@@ -5016,98 +5038,7 @@
   "productLookupStatus": "search-fallback",
   "productLookupAt": "2026-11-22T18:31:11.674Z",
   "productLookupVersion": 7,
-  "siteUrl": "",
-  "productUrl": "",
-  "productRetailer": "",
-  "productName": "",
-  "productPrice": "",
-  "productAvailability": "",
-  "productLinks": [],
   "productPageChecks": 0,
-  "productVerifiedAt": ""
- },
- {
-  "date": "2026-11-17T20:30:00.000Z",
-  "cat": "Promo",
-  "title": "Police Say a South Carolina Dad Left His Sleeping 6-Year-Old Alone in a Target Line After 1 a.m. to Hold His Spot for Pokémon Cards",
-  "summary": "",
-  "source": "AOL.com",
-  "publisherUrl": "",
-  "sourceUrl": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9IMWNJNC1PWjNBT3IxNW04bThlSk9UMVg5X3d4TWpMRTczUTZoRXRpSzhBTVdyWndIb2VWM0h2LXhGdVVZRUtYVXRUeDEzMGNJQ1ZFTF95M2g4U0lqNmRzOHF3Z1A3eklEYVFLWm5rTHRCYkc5b3BFampIWWRzX0E?oc=5",
-  "imageUrls": [],
-  "imageLookupAt": "2026-11-22T18:31:11.699Z",
-  "imageLookupStatus": "not-found",
-  "imageLookupVersion": 7,
-  "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9IMWNJNC1PWjNBT3IxNW04bThlSk9UMVg5X3d4TWpMRTczUTZoRXRpSzhBTVdyWndIb2VWM0h2LXhGdVVZRUtYVXRUeDEzMGNJQ1ZFTF95M2g4U0lqNmRzOHF3Z1A3eklEYVFLWm5rTHRCYkc5b3BFampIWWRzX0E?oc=5",
-  "siteUrl": "",
-  "productUrl": "",
-  "productRetailer": "",
-  "productName": "",
-  "productPrice": "",
-  "productAvailability": "",
-  "productLinks": [],
-  "productSearchLinks": [
-   {
-    "retailer": "Target",
-    "url": "https://www.target.com/s?searchTerm=Pokemon%20TCG%20police%20south%20carolina%20left%20sleeping%20year%20alone"
-   },
-   {
-    "retailer": "TCGplayer",
-    "url": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20police%20south%20carolina%20left%20sleeping%20year%20alone"
-   },
-   {
-    "retailer": "Amazon",
-    "url": "https://www.amazon.com/s?k=Pokemon%20TCG%20police%20south%20carolina%20left%20sleeping%20year%20alone"
-   }
-  ],
-  "productSearchUrl": "https://www.target.com/s?searchTerm=Pokemon%20TCG%20police%20south%20carolina%20left%20sleeping%20year%20alone",
-  "productSearchRetailer": "Target",
-  "productLookupStatus": "search-fallback",
-  "productLookupAt": "2026-11-22T18:31:11.699Z",
-  "productLookupVersion": 7,
-  "productPageChecks": 0,
-  "productVerifiedAt": ""
- },
- {
-  "date": "2026-11-17T19:19:43.000Z",
-  "cat": "Rare Drop",
-  "title": "TCG Pocket Promo Pack C Series Vol.1: Mega Mewtwo Y ex, Exclusive Cards & Missions",
-  "summary": "TCG Pocket Promo Pack C Series Vol.1: Mega Mewtwo Y ex, Exclusive Cards & Missions Pokémon GO Hub",
-  "source": "Pokémon GO Hub",
-  "publisherUrl": "https://pokemongohub.net",
-  "sourceUrl": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNRzBSRXl2RjlFQ1hHbG9WTUJNUmxKNmRoZUxpdTdTMXV2Rm5kbkJ6SzR2WHNaQXVmTzliR3dvb1lyTUhVd01ZdjhaTVI2Qlo2WEFvYkRrVXo0T0k5Nlg0eW5NZ25fTFBaX1hiU3ZsWG54ekxfQndrZ3F4elVhemRkSUUyUVg4TGJXM1VRZXBkaDJCNjVVS0ZxbHZ4ZFJTNFYyakJZc0I3U0FuYjVpdEZ3cHNlWGFxRk12Vmd4NQ?oc=5",
-  "imageUrls": [],
-  "imageLookupAt": "2026-11-22T18:31:12.005Z",
-  "imageLookupStatus": "not-found",
-  "imageLookupVersion": 7,
-  "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNRzBSRXl2RjlFQ1hHbG9WTUJNUmxKNmRoZUxpdTdTMXV2Rm5kbkJ6SzR2WHNaQXVmTzliR3dvb1lyTUhVd01ZdjhaTVI2Qlo2WEFvYkRrVXo0T0k5Nlg0eW5NZ25fTFBaX1hiU3ZsWG54ekxfQndrZ3F4elVhemRkSUUyUVg4TGJXM1VRZXBkaDJCNjVVS0ZxbHZ4ZFJTNFYyakJZc0I3U0FuYjVpdEZ3cHNlWGFxRk12Vmd4NQ?oc=5",
-  "productSearchLinks": [
-   {
-    "retailer": "TCGplayer",
-    "url": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20pocket%20series%20mega%20mewtwo%20exclusive%20missions"
-   },
-   {
-    "retailer": "Amazon",
-    "url": "https://www.amazon.com/s?k=Pokemon%20TCG%20pocket%20series%20mega%20mewtwo%20exclusive%20missions"
-   },
-   {
-    "retailer": "Target",
-    "url": "https://www.target.com/s?searchTerm=Pokemon%20TCG%20pocket%20series%20mega%20mewtwo%20exclusive%20missions"
-   }
-  ],
-  "productSearchUrl": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20pocket%20series%20mega%20mewtwo%20exclusive%20missions",
-  "productSearchRetailer": "TCGplayer",
-  "productLookupStatus": "search-fallback",
-  "productLookupAt": "2026-11-22T18:31:12.005Z",
-  "productLookupVersion": 7,
-  "productPageChecks": 1,
-  "siteUrl": "",
-  "productUrl": "",
-  "productRetailer": "",
-  "productName": "",
-  "productPrice": "",
-  "productAvailability": "",
-  "productLinks": [],
   "productVerifiedAt": ""
  }
 ]
