@@ -4,7 +4,7 @@
   "news": {
     "sourceCount": 5,
     "sourcesResponded": 5,
-    "searchResults": 56,
+    "searchResults": 105,
     "sources": [
       {
         "name": "Restock",
@@ -14,12 +14,12 @@
       {
         "name": "Deals",
         "ok": true,
-        "results": 10
+        "results": 12
       },
       {
         "name": "Rare Drop",
         "ok": true,
-        "results": 11
+        "results": 12
       },
       {
         "name": "Release",
@@ -29,25 +29,25 @@
       {
         "name": "Promo",
         "ok": true,
-        "results": 12
+        "results": 58
       }
     ],
     "itemImageDiscovery": {
       "version": 7,
       "pagesChecked": 20,
-      "itemsWithImages": 71,
+      "itemsWithImages": 62,
       "verifiedProductPages": 0,
-      "retailerSearchFallbacks": 75,
-      "productSearchLinksAvailable": 75,
-      "productPagesMissing": 24,
-      "productDetailPagesChecked": 6,
+      "retailerSearchFallbacks": 68,
+      "productSearchLinksAvailable": 68,
+      "productPagesMissing": 52,
+      "productDetailPagesChecked": 13,
       "imageErrors": 0,
       "search": {
-        "requests": 79,
-        "successfulQueries": 79,
-        "resultLinks": 695,
+        "requests": 96,
+        "successfulQueries": 96,
+        "resultLinks": 914,
         "errors": 0,
-        "bingRequests": 79,
+        "bingRequests": 96,
         "duckDuckGoRequests": 0
       }
     }
@@ -55,8 +55,8 @@
   "raffles": {
     "sourceCount": 17,
     "sourcesResponded": 17,
-    "searchResults": 142,
-    "uniqueLeads": 90,
+    "searchResults": 176,
+    "uniqueLeads": 118,
     "savedLeads": 9,
     "directEntryLinksFound": 9,
     "directEntryLinksMissing": 0,
@@ -67,7 +67,7 @@
       {
         "name": "TCG giveaways",
         "ok": true,
-        "results": 11
+        "results": 14
       },
       {
         "name": "TCG raffles",
@@ -77,12 +77,12 @@
       {
         "name": "Pokémon card giveaways",
         "ok": true,
-        "results": 10
+        "results": 11
       },
       {
         "name": "Pokémon card raffles",
         "ok": true,
-        "results": 8
+        "results": 9
       },
       {
         "name": "Booster box prizes",
@@ -97,27 +97,27 @@
       {
         "name": "TCG sweepstakes",
         "ok": true,
-        "results": 11
+        "results": 12
       },
       {
         "name": "Card shop giveaways",
         "ok": true,
-        "results": 9
+        "results": 12
       },
       {
         "name": "Card shop raffles",
         "ok": true,
-        "results": 8
+        "results": 12
       },
       {
         "name": "Target giveaways",
         "ok": true,
-        "results": 10
+        "results": 11
       },
       {
         "name": "Walmart giveaways",
         "ok": true,
-        "results": 10
+        "results": 11
       },
       {
         "name": "GameStop giveaways",
@@ -127,27 +127,27 @@
       {
         "name": "Best Buy giveaways",
         "ok": true,
-        "results": 10
+        "results": 11
       },
       {
         "name": "Costco giveaways",
         "ok": true,
-        "results": 6
+        "results": 9
       },
       {
         "name": "Pokémon Center lotteries",
         "ok": true,
-        "results": 5
+        "results": 12
       },
       {
         "name": "Local card shop contests",
         "ok": true,
-        "results": 7
+        "results": 11
       },
       {
         "name": "Community card giveaways",
         "ok": true,
-        "results": 7
+        "results": 11
       },
       {
         "name": "Drop alerts: TCG Drop Radar",
@@ -157,29 +157,29 @@
     ],
     "entrySearchFallbacks": 18,
     "qualifiedLeads": 18,
-    "rejectedLeads": 72,
+    "rejectedLeads": 100,
     "discoveryEngine": {
       "version": 7,
       "publisherPagesChecked": 18,
       "prizeDetailsFound": 9,
-      "startDatesFound": 2,
-      "endDatesFound": 7,
-      "prizeImagesFound": 9,
-      "rejectedFalsePositives": 90,
-      "entryLinksValidated": 9,
+      "startDatesFound": 1,
+      "endDatesFound": 1,
+      "prizeImagesFound": 6,
+      "rejectedFalsePositives": 100,
+      "entryLinksValidated": 0,
       "search": {
-        "requests": 83,
-        "successfulQueries": 83,
-        "resultLinks": 719,
+        "requests": 108,
+        "successfulQueries": 108,
+        "resultLinks": 1030,
         "errors": 0,
-        "bingRequests": 83,
+        "bingRequests": 108,
         "duckDuckGoRequests": 0
       }
     }
   },
   "failures": [],
   "dropFeeds": {
-    "checkedAt": "2026-11-22T18:20:42.630Z",
+    "checkedAt": "2026-11-22T13:02:22.553Z",
     "sources": [
       "TCG Drop Radar"
     ],
@@ -190,6 +190,6 @@
     "upcoming": 0,
     "withEntryLink": 9,
     "withImage": 9,
-    "newsImagesAdded": 2
+    "newsImagesAdded": 9
   }
 }
