@@ -1,22 +1,22 @@
 {
   "state": "ok",
-  "lastScanAt": "2026-11-22T18:42:40.065Z",
+  "lastScanAt": "2026-11-22T23:52:45.346Z",
   "retailersChecked": 10,
   "retailersReached": 10,
-  "retailersWithProducts": 3,
-  "productsFound": 10,
-  "productsChecked": 12,
-  "productsVerified": 3,
+  "retailersWithProducts": 6,
+  "productsFound": 14,
+  "productsChecked": 16,
+  "productsVerified": 5,
   "alertsSent": 0,
   "sources": [
     {
       "retailer": "Pokémon Center",
       "ok": true,
       "responded": true,
-      "productsFound": 0,
-      "pagesChecked": 0,
-      "method": "none",
-      "error": "Retailer search: HTTP 403 | bing-rss: response contained no matching product-detail links | bing-html: response contained no matching product-detail links | duckduckgo-html: response contained no matching product-detail links"
+      "productsFound": 1,
+      "pagesChecked": 1,
+      "method": "duckduckgo-html",
+      "error": "HTTP 403"
     },
     {
       "retailer": "Target",
@@ -34,7 +34,7 @@
       "productsFound": 1,
       "pagesChecked": 1,
       "method": "bing-rss",
-      "error": "Final destination is not a retailer product-detail page"
+      "error": ""
     },
     {
       "retailer": "Best Buy",
@@ -67,19 +67,19 @@
       "retailer": "Costco",
       "ok": true,
       "responded": true,
-      "productsFound": 0,
-      "pagesChecked": 1,
-      "method": "none",
+      "productsFound": 2,
+      "pagesChecked": 2,
+      "method": "duckduckgo-html",
       "error": "HTTP 429"
     },
     {
       "retailer": "TCGplayer",
       "ok": true,
       "responded": true,
-      "productsFound": 0,
-      "pagesChecked": 2,
-      "method": "none",
-      "error": "Retailer search page loaded but did not expose matching product-detail links in its HTML | bing-rss: response contained no matching product-detail links | bing-html: response contained no matching product-detail links | duckduckgo-html: res"
+      "productsFound": 5,
+      "pagesChecked": 4,
+      "method": "duckduckgo-html",
+      "error": ""
     },
     {
       "retailer": "Barnes & Noble",
@@ -102,7 +102,7 @@
   ],
   "errors": [
     "Amazon: HTTP 503",
-    "Walmart: Final destination is not a retailer product-detail page",
+    "Pokémon Center: HTTP 403",
     "Costco: HTTP 429"
   ],
   "search": {
@@ -111,8 +111,8 @@
     "bingRssRequests": 10,
     "bingHtmlRequests": 7,
     "duckduckgoRequests": 7,
-    "successfulSearches": 3,
-    "resultLinks": 3,
+    "successfulSearches": 6,
+    "resultLinks": 11,
     "blockedResponses": 3,
     "errors": 5
   },
