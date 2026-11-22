@@ -1,12 +1,12 @@
 {
   "state": "ok",
-  "lastScanAt": "2026-11-22T11:49:58.501Z",
+  "lastScanAt": "2026-11-22T18:29:57.032Z",
   "retailersChecked": 10,
   "retailersReached": 10,
-  "retailersWithProducts": 0,
-  "productsFound": 8,
-  "productsChecked": 8,
-  "productsVerified": 5,
+  "retailersWithProducts": 1,
+  "productsFound": 10,
+  "productsChecked": 11,
+  "productsVerified": 7,
   "alertsSent": 0,
   "sources": [
     {
@@ -16,7 +16,7 @@
       "productsFound": 0,
       "pagesChecked": 0,
       "method": "none",
-      "error": "Retailer search: HTTP 403 | bing-rss: response contained no matching product-detail links | bing-html: response contained no matching product-detail links | duckduckgo-html: response contained no matching product-detail links"
+      "error": "Retailer search: HTTP 403 | bing-rss: response contained no matching product-detail links | bing-html: response contained no matching product-detail links | duckduckgo-html: The operation was aborted due to timeout"
     },
     {
       "retailer": "Target",
@@ -25,7 +25,7 @@
       "productsFound": 0,
       "pagesChecked": 3,
       "method": "none",
-      "error": "Retailer search page loaded but did not expose matching product-detail links in its HTML | bing-rss: response contained no matching product-detail links | bing-html: response contained no matching product-detail links | duckduckgo-html: res"
+      "error": "Retailer search page loaded but did not expose matching product-detail links in its HTML | bing-rss: response contained no matching product-detail links | bing-html: response contained no matching product-detail links | duckduckgo-html: The"
     },
     {
       "retailer": "Walmart",
@@ -34,7 +34,7 @@
       "productsFound": 0,
       "pagesChecked": 0,
       "method": "none",
-      "error": "Retailer search page loaded but did not expose matching product-detail links in its HTML | bing-rss: response contained no matching product-detail links | bing-html: response contained no matching product-detail links | duckduckgo-html: res"
+      "error": "Retailer search page loaded but did not expose matching product-detail links in its HTML | bing-rss: response contained no matching product-detail links | bing-html: response contained no matching product-detail links | duckduckgo-html: The"
     },
     {
       "retailer": "Best Buy",
@@ -43,7 +43,7 @@
       "productsFound": 0,
       "pagesChecked": 0,
       "method": "none",
-      "error": "Retailer search: The operation was aborted due to timeout | bing-rss: response contained no matching product-detail links | bing-html: response contained no matching product-detail links | duckduckgo-html: response contained no matching pro"
+      "error": "Retailer search: The operation was aborted due to timeout | bing-rss: response contained no matching product-detail links | bing-html: response contained no matching product-detail links | duckduckgo-html: The operation was aborted due to t"
     },
     {
       "retailer": "GameStop",
@@ -52,16 +52,16 @@
       "productsFound": 0,
       "pagesChecked": 0,
       "method": "none",
-      "error": "Retailer search page loaded but did not expose matching product-detail links in its HTML | bing-rss: response contained no matching product-detail links | bing-html: response contained no matching product-detail links | duckduckgo-html: res"
+      "error": "Retailer search page loaded but did not expose matching product-detail links in its HTML | bing-rss: response contained no matching product-detail links | bing-html: response contained no matching product-detail links | duckduckgo-html: The"
     },
     {
       "retailer": "Amazon",
       "ok": true,
       "responded": true,
-      "productsFound": 0,
-      "pagesChecked": 2,
-      "method": "none",
-      "error": "HTTP 503"
+      "productsFound": 12,
+      "pagesChecked": 5,
+      "method": "retailer-search",
+      "error": "Product detail page did not confirm a Pokémon TCG item"
     },
     {
       "retailer": "Costco",
@@ -70,7 +70,7 @@
       "productsFound": 0,
       "pagesChecked": 1,
       "method": "none",
-      "error": "Retailer search page loaded but did not expose matching product-detail links in its HTML | bing-rss: response contained no matching product-detail links | bing-html: response contained no matching product-detail links | duckduckgo-html: res"
+      "error": "HTTP 429"
     },
     {
       "retailer": "TCGplayer",
@@ -79,7 +79,7 @@
       "productsFound": 0,
       "pagesChecked": 2,
       "method": "none",
-      "error": "Retailer search page loaded but did not expose matching product-detail links in its HTML | bing-rss: response contained no matching product-detail links | bing-html: response contained no matching product-detail links | duckduckgo-html: res"
+      "error": "Retailer search page loaded but did not expose matching product-detail links in its HTML | bing-rss: response contained no matching product-detail links | bing-html: response contained no matching product-detail links | duckduckgo-html: The"
     },
     {
       "retailer": "Barnes & Noble",
@@ -88,7 +88,7 @@
       "productsFound": 0,
       "pagesChecked": 0,
       "method": "none",
-      "error": "Retailer search: HTTP 404 | bing-rss: response contained no matching product-detail links | bing-html: response contained no matching product-detail links | duckduckgo-html: response contained no matching product-detail links"
+      "error": "Retailer search: HTTP 404 | bing-rss: response contained no matching product-detail links | bing-html: response contained no matching product-detail links | duckduckgo-html: The operation was aborted due to timeout"
     },
     {
       "retailer": "Meijer",
@@ -97,22 +97,23 @@
       "productsFound": 0,
       "pagesChecked": 0,
       "method": "none",
-      "error": "Retailer search: HTTP 403 | bing-rss: response contained no matching product-detail links | bing-html: response contained no matching product-detail links | duckduckgo-html: response contained no matching product-detail links"
+      "error": "Retailer search: HTTP 403 | bing-rss: response contained no matching product-detail links | bing-html: response contained no matching product-detail links | duckduckgo-html: The operation was aborted due to timeout"
     }
   ],
   "errors": [
-    "Amazon: HTTP 503"
+    "Amazon: Product detail page did not confirm a Pokémon TCG item",
+    "Costco: HTTP 429"
   ],
   "search": {
-    "requests": 40,
+    "requests": 37,
     "retailerSearchPages": 10,
-    "bingRssRequests": 10,
-    "bingHtmlRequests": 10,
-    "duckduckgoRequests": 10,
-    "successfulSearches": 0,
-    "resultLinks": 0,
-    "blockedResponses": 3,
-    "errors": 5
+    "bingRssRequests": 9,
+    "bingHtmlRequests": 9,
+    "duckduckgoRequests": 9,
+    "successfulSearches": 1,
+    "resultLinks": 12,
+    "blockedResponses": 2,
+    "errors": 13
   },
   "note": "Stock states come from validated product pages. A page that cannot be reached retains its last verified stock state and is marked with a failed check.",
   "discord": {
