@@ -37,8 +37,7 @@
   "status": "Verify",
   "statusNote": "Reported open when posted. No deadline was published, so check the entry page.",
   "statusDate": "2026-11-18T17:00:00.000Z",
-  "lastVerifiedAt": "2026-11-22T18:20:42.630Z",
-  "baseTitle": "Target drawings still open: 30th Celebration UPCs and Ditto"
+  "lastVerifiedAt": "2026-11-22T13:02:22.553Z"
  },
  {
   "origin": "drop-feed",
@@ -78,13 +77,12 @@
   "status": "Closed",
   "statusNote": "Closed Thu, Nov 12, 6:00 PM ET.",
   "statusDate": "2026-11-12T23:00:00.000Z",
-  "lastVerifiedAt": "2026-11-22T18:20:42.630Z",
-  "baseTitle": "Walmart Pokémon drawing today 5-6pm ET - 30th Celebration UPCs and more"
+  "lastVerifiedAt": "2026-11-22T13:02:22.553Z"
  },
  {
   "origin": "drop-feed",
   "id": "drop-walmart-pokemon-drawing-is-open-now-closes-6pm-et-9154",
-  "title": "Walmart Pokémon drawing is open now - closes 6pm ET (Nov 4)",
+  "title": "Walmart Pokémon drawing is open now - closes 6pm ET",
   "date": "2026-11-04T17:00:00.000Z",
   "url": "https://buttondown.com/tcgdropradar/archive/walmart-pokemon-drawing-is-open-now-closes-6pm-et-9154/",
   "sourceUrl": "https://buttondown.com/tcgdropradar/archive/walmart-pokemon-drawing-is-open-now-closes-6pm-et-9154/",
@@ -119,8 +117,7 @@
   "status": "Closed",
   "statusNote": "Closed Wed, Nov 4, 6:00 PM ET.",
   "statusDate": "2026-11-04T23:00:00.000Z",
-  "lastVerifiedAt": "2026-11-22T18:20:42.630Z",
-  "baseTitle": "Walmart Pokémon drawing is open now - closes 6pm ET"
+  "lastVerifiedAt": "2026-11-22T13:02:22.553Z"
  },
  {
   "origin": "drop-feed",
@@ -160,8 +157,7 @@
   "status": "Closed",
   "statusNote": "Closed Wed, Nov 4, 6:00 PM ET.",
   "statusDate": "2026-11-04T23:00:00.000Z",
-  "lastVerifiedAt": "2026-11-22T18:20:42.630Z",
-  "baseTitle": "Walmart Pokémon drawing Wednesday 5-6pm ET - Delta Reign and 30th Celebration"
+  "lastVerifiedAt": "2026-11-22T13:02:22.553Z"
  },
  {
   "origin": "drop-feed",
@@ -201,8 +197,7 @@
   "status": "Closed",
   "statusNote": "Closed Wed, Nov 4, 11:00 AM ET.",
   "statusDate": "2026-11-04T16:00:00.000Z",
-  "lastVerifiedAt": "2026-11-22T18:20:42.630Z",
-  "baseTitle": "Target just started Pokémon drawings - entries close Wed 11am"
+  "lastVerifiedAt": "2026-11-22T13:02:22.553Z"
  },
  {
   "origin": "drop-feed",
@@ -242,13 +237,12 @@
   "status": "Closed",
   "statusNote": "Closed Sun, Nov 1, 10:00 AM ET.",
   "statusDate": "2026-11-01T15:00:00.000Z",
-  "lastVerifiedAt": "2026-11-22T18:20:42.630Z",
-  "baseTitle": "Best Buy Prismatic Evolutions ETB invites are live - check your account"
+  "lastVerifiedAt": "2026-11-22T13:02:22.553Z"
  },
  {
   "origin": "drop-feed",
   "id": "drop-walmart-pokemon-drawing-is-open-now-closes-6pm-et-9687",
-  "title": "Walmart Pokémon drawing is open now - closes 6pm ET (Oct 28)",
+  "title": "Walmart Pokémon drawing is open now - closes 6pm ET",
   "date": "2026-10-28T16:00:00.000Z",
   "url": "https://buttondown.com/tcgdropradar/archive/walmart-pokemon-drawing-is-open-now-closes-6pm-et-9687/",
   "sourceUrl": "https://buttondown.com/tcgdropradar/archive/walmart-pokemon-drawing-is-open-now-closes-6pm-et-9687/",
@@ -283,13 +277,12 @@
   "status": "Closed",
   "statusNote": "Closed Wed, Oct 28, 6:00 PM ET.",
   "statusDate": "2026-10-28T22:00:00.000Z",
-  "lastVerifiedAt": "2026-11-22T18:20:42.630Z",
-  "baseTitle": "Walmart Pokémon drawing is open now - closes 6pm ET"
+  "lastVerifiedAt": "2026-11-22T13:02:22.553Z"
  },
  {
   "origin": "drop-feed",
   "id": "drop-walmart-pokemon-drawing-is-open-now-closes-6pm-et",
-  "title": "Walmart Pokémon drawing is open now - closes 6pm ET (Oct 21)",
+  "title": "Walmart Pokémon drawing is open now - closes 6pm ET",
   "date": "2026-10-21T16:00:00.000Z",
   "url": "https://buttondown.com/tcgdropradar/archive/walmart-pokemon-drawing-is-open-now-closes-6pm-et/",
   "sourceUrl": "https://buttondown.com/tcgdropradar/archive/walmart-pokemon-drawing-is-open-now-closes-6pm-et/",
@@ -324,8 +317,7 @@
   "status": "Closed",
   "statusNote": "Closed Wed, Oct 21, 6:00 PM ET.",
   "statusDate": "2026-10-21T22:00:00.000Z",
-  "lastVerifiedAt": "2026-11-22T18:20:42.630Z",
-  "baseTitle": "Walmart Pokémon drawing is open now - closes 6pm ET"
+  "lastVerifiedAt": "2026-11-22T13:02:22.553Z"
  },
  {
   "origin": "drop-feed",
@@ -365,7 +357,6 @@
   "status": "Closed",
   "statusNote": "Reported live on the day it was posted.",
   "statusDate": "2026-10-15T16:00:00.000Z",
-  "lastVerifiedAt": "2026-11-22T18:20:42.630Z",
-  "baseTitle": "Pokémon Center queue is live right now"
+  "lastVerifiedAt": "2026-11-22T13:02:22.553Z"
  }
 ]
