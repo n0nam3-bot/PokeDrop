@@ -1,6 +1,7 @@
 // Free Pokémon TCG headlines and dedicated raffle/giveaway discovery.
 // The raffle enrichment stage runs after the feed refresh and uses only public pages/RSS.
 import { readFileSync, writeFileSync } from "node:fs";
+import { stashDropEvents, publishDropEvents } from "./drop-feeds.mjs";
 
 const FEEDS = [
   ["Restock", 'pokemon (tcg OR cards OR "trading cards") (restock OR "back in stock" OR "in stock" OR "stock alert" OR "available now") when:14d'],
@@ -75,6 +76,8 @@ function clean(value) {
     .replace(/%/g, " PERCENT")
     .replace(/\+/g, " PLUS ")
     .replace(/#/g, "")
+    .replace(/\|/g, " - ")
+    .replace(/[*<>=\\^`{}@]/g, "")
     .replace(/[^\x20-\x7E\u00e9]/g, "")
     .replace(/\s+/g, " ")
     .trim();
@@ -312,9 +315,10 @@ function raffleStore(post) {
 }
 
 const previousPostsRaw = (() => { try { return readFileSync("posts.json", "utf8"); } catch { return ""; } })();
+const stashedDropEvents = stashDropEvents();
 const previousPosts = loadPrevious("posts.json");
 const previousRafflesRaw = (() => { try { return readFileSync("raffles.json", "utf8"); } catch { return ""; } })();
-const previousRaffles = loadPrevious("raffles.json");
+const previousRaffles = loadPrevious("raffles.json").filter((item) => item?.origin !== "drop-feed");
 const previousByIdentity = new Map(previousRaffles.map((item) => [raffleIdentity(item), item]).filter(([key]) => key));
 
 const collected = [];
@@ -524,3 +528,4 @@ console.log(`Raffle searches: ${raffleSucceeded}/${raffleDiagnostics.length} sou
 // Run the strict, versioned giveaway validator and product-image carousel enrichment after feeds are saved.
 // This helper owns its version so new validation rules can invalidate stale entry links and page-icon images.
 await import("./raffle-discovery.mjs");
+await publishDropEvents(stashedDropEvents);
