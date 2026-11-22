@@ -1,5 +1,65 @@
 [
  {
+  "date": "2026-11-22T00:00:00.000Z",
+  "cat": "Deals",
+  "title": "Is Pokémon card trading 'a crazy stupid hobby where you can make stupid money'?",
+  "summary": "One Friday evening late last month, about a dozen people - children included - sat quietly in a hotel function room, some with bid paddles in hand. They were joined by an unknown number of online ...",
+  "source": "AsiaOne",
+  "publisherUrl": "https://www.asiaone.com",
+  "sourceUrl": "https://www.asiaone.com/lifestyle/pokemon-card-trading-crazy-stupid-hobby-where-you-can-make-stupid-money",
+  "imageUrls": [
+   {
+    "url": "https://www.asiaone.com/sites/default/files/styles/article_top_image/public/original_images/Nov2026/pokemon%20tcg.jpg?itok=7o9V5xzw",
+    "label": "ITEM IMAGE",
+    "kind": "product",
+    "alt": "Is Pokemon card trading ‘a crazy stupid hobby where you can make stupid money’?"
+   },
+   {
+    "url": "https://media.asiaone.com/sites/default/files/inline-images/image_2069.png",
+    "label": "ITEM IMAGE",
+    "kind": "product",
+    "alt": "Stanley Gibbons' first Asia-based trading card auction, Pokemon of Lion City. PHOTO: The Business Times"
+   },
+   {
+    "url": "https://media.asiaone.com/sites/default/files/inline-images/image_2081.png",
+    "label": "ITEM IMAGE",
+    "kind": "product",
+    "alt": "Kingsroad Vault is positioned as a premium home for TCG collectibles, with Pokemon cards at its heart. PHOTO: Kingsroad Vault"
+   },
+   {
+    "url": "https://media.asiaone.com/sites/default/files/inline-images/image_2082.png",
+    "label": "ITEM IMAGE",
+    "kind": "product",
+    "alt": "The private lounge where collectors can discreetly explore collections and connect with other enthusiasts. PHOTO: Kingsroad Vault"
+   }
+  ],
+  "imageLookupAt": "2026-11-22T04:49:46.669Z",
+  "imageLookupStatus": "found",
+  "imageLookupVersion": 7,
+  "url": "https://www.asiaone.com/lifestyle/pokemon-card-trading-crazy-stupid-hobby-where-you-can-make-stupid-money",
+  "thumbUrl": "https://www.bing.com/th?id=ONUT.qn1XluByNZS3HXoKJ0iJyQ&pid=News&w=480&h=360&c=14",
+  "siteUrl": "https://www.asiaone.com",
+  "productSearchLinks": [
+   {
+    "retailer": "TCGplayer",
+    "url": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20crazy%20stupid%20hobby%20make%20money%20friday%20evening"
+   },
+   {
+    "retailer": "Amazon",
+    "url": "https://www.amazon.com/s?k=Pokemon%20TCG%20crazy%20stupid%20hobby%20make%20money%20friday%20evening"
+   },
+   {
+    "retailer": "Target",
+    "url": "https://www.target.com/s?searchTerm=Pokemon%20TCG%20crazy%20stupid%20hobby%20make%20money%20friday%20evening"
+   }
+  ],
+  "productSearchUrl": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20crazy%20stupid%20hobby%20make%20money%20friday%20evening",
+  "productSearchRetailer": "TCGplayer",
+  "productLookupStatus": "search-fallback",
+  "productLookupAt": "2026-11-22T04:49:46.669Z",
+  "productLookupVersion": 7
+ },
+ {
   "date": "2026-11-21T15:59:00.000Z",
   "cat": "Release",
   "title": "Pokémon TCG Flowing Fists Set Leaks; All the Hits Revealed So Far",
@@ -39,12 +99,6 @@
   "url": "https://gamerant.com/pokemon-tcg-flowing-fists-leaks-lucario/",
   "thumbUrl": "https://www.bing.com/th?id=ONUT.SSF1-Tu3lU72NhZLzGvgqQ&pid=News&w=480&h=360&c=14",
   "siteUrl": "https://gamerant.com",
-  "productUrl": "",
-  "productRetailer": "",
-  "productName": "",
-  "productPrice": "",
-  "productAvailability": "",
-  "productLinks": [],
   "productSearchLinks": [
    {
     "retailer": "TCGplayer",
@@ -63,9 +117,7 @@
   "productSearchRetailer": "TCGplayer",
   "productLookupStatus": "search-fallback",
   "productLookupAt": "2026-11-22T04:49:46.668Z",
-  "productLookupVersion": 7,
-  "productPageChecks": 0,
-  "productVerifiedAt": ""
+  "productLookupVersion": 7
  },
  {
   "date": "2026-11-21T15:11:20.000Z",
@@ -225,7 +277,6 @@
   "imageLookupStatus": "not-found",
   "imageLookupVersion": 7,
   "url": "https://www.msn.com/en-au/news/other/taras-tcg-surpasses-5000-subscribers-as-crazyrussianhacker-shows-pokemon-hits/vi-AA2hVN0i",
-  "thumbUrl": "https://www.bing.com/th?id=ONUT.IZQAmM6pHPT-Lri5JzPQJw&pid=News&w=480&h=360&c=14",
   "productSearchLinks": [
    {
     "retailer": "TCGplayer",
@@ -244,48 +295,31 @@
   "productSearchRetailer": "TCGplayer",
   "productLookupStatus": "search-fallback",
   "productLookupAt": "2026-11-21T23:41:52.536Z",
-  "productLookupVersion": 7
+  "productLookupVersion": 7,
+  "thumbUrl": "https://www.bing.com/th?id=ONUT.IZQAmM6pHPT-Lri5JzPQJw&pid=News&w=480&h=360&c=14"
  },
  {
-  "date": "2026-11-21T10:01:00.000Z",
-  "cat": "Deals",
-  "title": "Is Pokémon card trading 'a crazy stupid hobby where you can make stupid money'?",
-  "summary": "One Friday evening late last month, about a dozen people - children included - sat quietly in a hotel function room, some with bid paddles in hand. They were joined by an unknown number of online ...",
-  "source": "AsiaOne",
-  "publisherUrl": "https://www.asiaone.com",
-  "sourceUrl": "https://www.asiaone.com/lifestyle/pokemon-card-trading-crazy-stupid-hobby-where-you-can-make-stupid-money",
+  "date": "2026-11-21T10:15:12.000Z",
+  "cat": "Release",
+  "title": "10 most valuable Pokémon cards from the Sun & Moon era, ranked by price",
+  "summary": "Pokémon TCG's Sun & Moon Base Set was released in February 2017 and includes 16 sets. These are the top 10 chase cards of the era.",
+  "source": "Comic Book Resources on MSN",
+  "publisherUrl": "https://www.msn.com",
+  "sourceUrl": "https://www.msn.com/en-us/gaming/general/10-most-valuable-pok%C3%A9mon-cards-from-the-sun-moon-era-ranked-by-price/ar-AA2hX354",
   "imageUrls": [
    {
-    "url": "https://www.asiaone.com/sites/default/files/styles/article_top_image/public/original_images/Nov2026/pokemon%20tcg.jpg?itok=7o9V5xzw",
-    "label": "ITEM IMAGE",
-    "kind": "product",
-    "alt": "Is Pokemon card trading ‘a crazy stupid hobby where you can make stupid money’?"
-   },
-   {
-    "url": "https://media.asiaone.com/sites/default/files/inline-images/image_2069.png",
-    "label": "ITEM IMAGE",
-    "kind": "product",
-    "alt": "Stanley Gibbons' first Asia-based trading card auction, Pokemon of Lion City. PHOTO: The Business Times"
-   },
-   {
-    "url": "https://media.asiaone.com/sites/default/files/inline-images/image_2081.png",
-    "label": "ITEM IMAGE",
-    "kind": "product",
-    "alt": "Kingsroad Vault is positioned as a premium home for TCG collectibles, with Pokemon cards at its heart. PHOTO: Kingsroad Vault"
-   },
-   {
-    "url": "https://media.asiaone.com/sites/default/files/inline-images/image_2082.png",
-    "label": "ITEM IMAGE",
-    "kind": "product",
-    "alt": "The private lounge where collectors can discreetly explore collections and connect with other enthusiasts. PHOTO: Kingsroad Vault"
+    "url": "https://www.bing.com/th?id=ONUT.CMZjouare05bzmwYrfabAw&pid=News&w=480&h=360&c=14",
+    "label": "ARTICLE IMAGE",
+    "kind": "article",
+    "alt": "10 most valuable Pokémon cards from the Sun & Moon era, ranked by price"
    }
   ],
-  "imageLookupAt": "2026-11-22T04:49:46.669Z",
-  "imageLookupStatus": "found",
+  "imageLookupAt": "2026-11-22T10:30:16.132Z",
+  "imageLookupStatus": "not-found",
   "imageLookupVersion": 7,
-  "url": "https://www.asiaone.com/lifestyle/pokemon-card-trading-crazy-stupid-hobby-where-you-can-make-stupid-money",
-  "thumbUrl": "https://www.bing.com/th?id=ONUT.qn1XluByNZS3HXoKJ0iJyQ&pid=News&w=480&h=360&c=14",
-  "siteUrl": "https://www.asiaone.com",
+  "url": "https://www.msn.com/en-us/gaming/general/10-most-valuable-pok%C3%A9mon-cards-from-the-sun-moon-era-ranked-by-price/ar-AA2hX354",
+  "thumbUrl": "https://www.bing.com/th?id=ONUT.CMZjouare05bzmwYrfabAw&pid=News&w=480&h=360&c=14",
+  "siteUrl": "",
   "productUrl": "",
   "productRetailer": "",
   "productName": "",
@@ -295,21 +329,58 @@
   "productSearchLinks": [
    {
     "retailer": "TCGplayer",
-    "url": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20crazy%20stupid%20hobby%20make%20money%20friday%20evening"
+    "url": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20most%20valuable%20moon%20ranked%20base%20includes%20sets"
    },
    {
     "retailer": "Amazon",
-    "url": "https://www.amazon.com/s?k=Pokemon%20TCG%20crazy%20stupid%20hobby%20make%20money%20friday%20evening"
+    "url": "https://www.amazon.com/s?k=Pokemon%20TCG%20most%20valuable%20moon%20ranked%20base%20includes%20sets"
    },
    {
     "retailer": "Target",
-    "url": "https://www.target.com/s?searchTerm=Pokemon%20TCG%20crazy%20stupid%20hobby%20make%20money%20friday%20evening"
+    "url": "https://www.target.com/s?searchTerm=Pokemon%20TCG%20most%20valuable%20moon%20ranked%20base%20includes%20sets"
    }
   ],
-  "productSearchUrl": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20crazy%20stupid%20hobby%20make%20money%20friday%20evening",
+  "productSearchUrl": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20most%20valuable%20moon%20ranked%20base%20includes%20sets",
   "productSearchRetailer": "TCGplayer",
   "productLookupStatus": "search-fallback",
-  "productLookupAt": "2026-11-22T04:49:46.669Z",
+  "productLookupAt": "2026-11-22T10:30:16.132Z",
+  "productLookupVersion": 7,
+  "productPageChecks": 0,
+  "productVerifiedAt": ""
+ },
+ {
+  "date": "2026-11-21T09:00:12.000Z",
+  "cat": "Rare Drop",
+  "title": "Pokémon officially returns to Baskin-Robbins with new limited-time ice cream collection",
+  "summary": "The Pokémon franchise is giving fans a sweet treat through Baskin-Robbins, with 30 years nearly matching all 31 of the restaurant's flavors.",
+  "source": "Comic Book Resources on MSN",
+  "publisherUrl": "https://www.msn.com",
+  "sourceUrl": "https://www.msn.com/en-us/food-and-drink/general/pok%C3%A9mon-officially-returns-to-baskin-robbins-with-new-limited-time-ice-cream-collection/ar-AA2hWXt7",
+  "imageUrls": [
+   {
+    "url": "https://www.bing.com/th?id=ONUT.Y0xHr2hFxNgYtio9VyqK3A&pid=News&w=480&h=360&c=14",
+    "label": "ARTICLE IMAGE",
+    "kind": "article",
+    "alt": "Pokémon officially returns to Baskin-Robbins with new limited-time ice cream collection"
+   }
+  ],
+  "imageLookupAt": "2026-11-22T10:30:16.133Z",
+  "imageLookupStatus": "not-found",
+  "imageLookupVersion": 7,
+  "url": "https://www.msn.com/en-us/food-and-drink/general/pok%C3%A9mon-officially-returns-to-baskin-robbins-with-new-limited-time-ice-cream-collection/ar-AA2hWXt7",
+  "thumbUrl": "https://www.bing.com/th?id=ONUT.Y0xHr2hFxNgYtio9VyqK3A&pid=News&w=480&h=360&c=14",
+  "siteUrl": "",
+  "productUrl": "",
+  "productRetailer": "",
+  "productName": "",
+  "productPrice": "",
+  "productAvailability": "",
+  "productLinks": [],
+  "productSearchLinks": [],
+  "productSearchUrl": "",
+  "productSearchRetailer": "",
+  "productLookupStatus": "not-found",
+  "productLookupAt": "2026-11-22T10:30:16.133Z",
   "productLookupVersion": 7,
   "productPageChecks": 0,
   "productVerifiedAt": ""
@@ -386,21 +457,10 @@
   "imageLookupVersion": 7,
   "url": "https://www.msn.com/en-us/gaming/the-pokemon-company/pok%C3%A9mon-reveals-3-new-releases-with-mimikyu-and-tyranitar-coming-may-2027/ar-AA2hWENZ",
   "thumbUrl": "https://www.bing.com/th?id=ONUT._am8FObZDsEi4YY1p4iTHQ&pid=News&w=480&h=360&c=14",
-  "siteUrl": "",
-  "productUrl": "",
-  "productRetailer": "",
-  "productName": "",
-  "productPrice": "",
-  "productAvailability": "",
-  "productLinks": [],
-  "productSearchLinks": [],
-  "productSearchUrl": "",
-  "productSearchRetailer": "",
   "productLookupStatus": "not-found",
   "productLookupAt": "2026-11-22T04:49:46.670Z",
   "productLookupVersion": 7,
-  "productPageChecks": 1,
-  "productVerifiedAt": ""
+  "productPageChecks": 1
  },
  {
   "date": "2026-11-21T04:31:25.000Z",
@@ -433,20 +493,20 @@
   "productVerifiedAt": ""
  },
  {
-  "date": "2026-11-21T02:18:53.000Z",
+  "date": "2026-11-21T03:37:00.000Z",
   "cat": "Deals",
-  "title": "The best early Black Friday Pokémon deals: Shop live deals on 30th Celebration, Delta Reign, and more",
-  "summary": "The best early Black Friday Pokémon deals: Shop live deals on 30th Celebration, Delta Reign, and more Mashable",
-  "source": "Mashable",
-  "publisherUrl": "https://mashable.com",
-  "sourceUrl": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1KZjhJVl9tMmFELWdXV2xPZ1E0a1VYLUpsTFRwMzgtS1liMHk3TjJZT1ROS280NERaZmp3WGowbFB3VEtCbmY4UzdXN2tlcUZCQ3V5TGRDUE1NRkI0Q3RBQUpKYjFfbFlEcE9fNGJ5V0ZKU1lNa08wbUhlMDNCQQ?oc=5",
+  "title": "Are individual cards profitable? I investigated the yields of Pokémon cards, Yu-Gi-Oh, and Aikatsu",
+  "summary": "Since I previously calculated estimates for boxes and bulk sales, this time I looked into \"what about individual cards?\" I narrowed it down to a price range that can be purchased with a capital of 20, ...",
+  "source": "note",
+  "publisherUrl": "https://note.com",
+  "sourceUrl": "https://note.com/wise_toucan2102/n/naf2d32d2ed33?hl=en",
   "imageUrls": [],
-  "imageLookupAt": "2026-11-21T19:54:24.624Z",
+  "imageLookupAt": "2026-11-22T10:30:16.134Z",
   "imageLookupStatus": "not-found",
   "imageLookupVersion": 7,
-  "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1KZjhJVl9tMmFELWdXV2xPZ1E0a1VYLUpsTFRwMzgtS1liMHk3TjJZT1ROS280NERaZmp3WGowbFB3VEtCbmY4UzdXN2tlcUZCQ3V5TGRDUE1NRkI0Q3RBQUpKYjFfbFlEcE9fNGJ5V0ZKU1lNa08wbUhlMDNCQQ?oc=5",
-  "siteUrl": "",
-  "imageLookupError": "Google News did not expose the publisher article destination.",
+  "url": "https://note.com/wise_toucan2102/n/naf2d32d2ed33?hl=en",
+  "thumbUrl": "",
+  "siteUrl": "https://note.com",
   "productUrl": "",
   "productRetailer": "",
   "productName": "",
@@ -457,7 +517,7 @@
   "productSearchUrl": "",
   "productSearchRetailer": "",
   "productLookupStatus": "not-found",
-  "productLookupAt": "2026-11-21T19:54:24.624Z",
+  "productLookupAt": "2026-11-22T10:30:16.134Z",
   "productLookupVersion": 7,
   "productPageChecks": 0,
   "productVerifiedAt": ""
@@ -671,7 +731,14 @@
   "source": "Joseph Writer Anderson",
   "publisherUrl": "https://www.josephwriteranderson.com",
   "sourceUrl": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPUy1EX0xaZ3R0Y1ZMQm9Uc2x3X3lmUVlZRjlyUjlZbTA1U0E0VnJhdlVRelNxUm9yOGFSRlQ5YjVvRHo4YkQwSXU0aTVqT2s4SjZzSWVXZjhMT0gxTFpOWElmaHBmRGxOWVRTVDFLQ3BTS01GMFYwdV96MlljWUNlQUdKTEJneUJpeFBXQlNfSWJxcjd1TDZHNDhKUlZKalZPWTZWRlVsUHU?oc=5",
-  "imageUrls": [],
+  "imageUrls": [
+   {
+    "url": "https://tcgplayer-cdn.tcgplayer.com/product/735049_200w.jpg",
+    "label": "PRODUCT IMAGE",
+    "kind": "product",
+    "alt": "Flowing Fists Pokémon Center Elite Trainer Box (Exclusive)"
+   }
+  ],
   "imageLookupAt": "2026-11-21T19:54:26.552Z",
   "imageLookupStatus": "not-found",
   "imageLookupVersion": 7,
@@ -798,10 +865,10 @@
   "imageLookupStatus": "not-found",
   "imageLookupVersion": 7,
   "url": "https://www.msn.com/en-us/entertainment/general/pok%C3%A9mon-officially-recruits-tommy-lee-jones-for-new-ad/ar-AA2hVpmr",
-  "thumbUrl": "https://www.bing.com/th?id=ONUT.6uuCnbOAtXXm9zfoQIrsqA&pid=News&w=480&h=360&c=14",
   "productLookupStatus": "not-found",
   "productLookupAt": "2026-11-21T19:54:27.577Z",
-  "productLookupVersion": 7
+  "productLookupVersion": 7,
+  "thumbUrl": "https://www.bing.com/th?id=ONUT.6uuCnbOAtXXm9zfoQIrsqA&pid=News&w=480&h=360&c=14"
  },
  {
   "date": "2026-11-20T19:00:00.000Z",
@@ -853,7 +920,7 @@
   "imageLookupStatus": "found",
   "imageLookupVersion": 7,
   "url": "https://mashable.com/life/pokemon-30th-celebration-ultra-premium-collection-retailer-restock-where",
-  "thumbUrl": "https://www.bing.com/th?id=ONUT.yPO3Y7sKKo8MGkRzaD8CXg&pid=News&w=480&h=360&c=14",
+  "thumbUrl": "https://www.bing.com/th?id=ONUT.nAauhIardeZPK7kzcGCLYg&pid=News&w=480&h=360&c=14",
   "siteUrl": "https://mashable.com",
   "productSearchLinks": [
    {
@@ -883,7 +950,14 @@
   "source": "Mashable",
   "publisherUrl": "https://mashable.com",
   "sourceUrl": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQYU11OVZHQXFqWFdESG95MnUta1Q1MS1JOG1fZ05Jd0FBNkl1dGxESTJ5MG8tWU9hUTVoa1hVX2NTaU56Y1Bnc2lJZzdJUTNZUlc2RWJxc0JzY2lMSkJNQTNCNnp5UjVtaFp0Ni1LVGNsSkxrV3ZHMERHekx6ZDhjZEU2bC1YQ3ZiODFpNlVLWVVEdw?oc=5",
-  "imageUrls": [],
+  "imageUrls": [
+   {
+    "url": "https://tcgplayer-cdn.tcgplayer.com/product/704145_200w.jpg",
+    "label": "PRODUCT IMAGE",
+    "kind": "product",
+    "alt": "30th Celebration Tech Sticker Collection [Alolan Exeggutor]"
+   }
+  ],
   "imageLookupAt": "2026-11-21T19:54:28.551Z",
   "imageLookupStatus": "not-found",
   "imageLookupVersion": 7,
@@ -926,7 +1000,14 @@
   "source": "Mashable",
   "publisherUrl": "https://mashable.com",
   "sourceUrl": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPb2lfVktqa0JuQWlxYXhBS0VvNTZtbklaR254am5oSkJVeFc3Q2VSUV9Zc3FOUUs0VFZNdlZfV3RfcG9XTGJ2ZjFVSzVtc1AyUGZaZE04UC1LN3NESzRyR183V2tZMGpOd1FSSm5HdVZ5NGpwaGJ0dkJpR2VWaDEzRDY0b1RoUy14M3c?oc=5",
-  "imageUrls": [],
+  "imageUrls": [
+   {
+    "url": "https://tcgplayer-cdn.tcgplayer.com/product/593324_200w.jpg",
+    "label": "PRODUCT IMAGE",
+    "kind": "product",
+    "alt": "Prismatic Evolutions Pokémon Center Elite Trainer Box (Exclusive)"
+   }
+  ],
   "imageLookupAt": "2026-11-21T19:54:28.774Z",
   "imageLookupStatus": "not-found",
   "imageLookupVersion": 7,
@@ -1011,7 +1092,7 @@
   "imageLookupStatus": "found",
   "imageLookupVersion": 7,
   "url": "https://www.polygon.com/pokemon-movie-collection-amazon-blu-ray-november-2026/",
-  "thumbUrl": "https://www.bing.com/th?id=ONUT.rkxWxZ98Kr1jFGqptgTDAA&pid=News&w=480&h=360&c=14",
+  "thumbUrl": "https://www.bing.com/th?id=ONUT.oslIl7PSPb_pB05-96Af4A&pid=News&w=480&h=360&c=14",
   "siteUrl": "https://www.polygon.com",
   "productLookupStatus": "not-found",
   "productLookupAt": "2026-11-21T19:54:28.994Z",
@@ -1037,7 +1118,7 @@
   "imageLookupStatus": "not-found",
   "imageLookupVersion": 7,
   "url": "https://fox2now.com/news/pokemon-card-theft-investigated-at-madison-county-antique-mall/",
-  "thumbUrl": "https://www.bing.com/th?id=ONUT.SqbJwClGKZgMYDQUevaQ8A&pid=News&w=480&h=360&c=14",
+  "thumbUrl": "https://www.bing.com/th?id=ONUT.TyVNL44ugeKZVsvMwKwA3A&pid=News&w=480&h=360&c=14",
   "siteUrl": "https://fox2now.com",
   "productLookupStatus": "not-found",
   "productLookupAt": "2026-11-21T23:41:52.538Z",
@@ -1081,7 +1162,14 @@
   "source": "GGRecon",
   "publisherUrl": "https://www.ggrecon.com",
   "sourceUrl": "https://news.google.com/rss/articles/CBMifEFVX3lxTE94bUxYdkk2OGp5VEFtaVA4ODVtaE55WFF1RzFGalhZQmlwWlVmXzd6QmVCR3I5bzhFWmhSQTdTSXVidlB4S21aWXRfOXl2UFdLa2t3RUFmN1J1X3FRaUFlUkdaOWl4NGhvTU40VzN2WU15b0l5Yk5xcUlkdWI?oc=5",
-  "imageUrls": [],
+  "imageUrls": [
+   {
+    "url": "https://tcgplayer-cdn.tcgplayer.com/product/735049_200w.jpg",
+    "label": "PRODUCT IMAGE",
+    "kind": "product",
+    "alt": "Flowing Fists Pokémon Center Elite Trainer Box (Exclusive)"
+   }
+  ],
   "imageLookupAt": "2026-11-21T23:41:52.917Z",
   "imageLookupStatus": "not-found",
   "imageLookupVersion": 7,
@@ -1196,7 +1284,7 @@
   "imageLookupStatus": "found",
   "imageLookupVersion": 7,
   "url": "https://cbs6albany.com/news/local/pokemon-card-burglary-under-investigation-at-flipside-gaming",
-  "thumbUrl": "https://www.bing.com/th?id=ONUT.ww6cvbSgjMxwzP7kKHkDqA&pid=News&w=480&h=360&c=14",
+  "thumbUrl": "https://www.bing.com/th?id=ONUT.qdU_W2rVUficmJb6es1wnQ&pid=News&w=480&h=360&c=14",
   "siteUrl": "https://cbs6albany.com",
   "productLookupStatus": "not-found",
   "productLookupAt": "2026-11-21T23:41:53.511Z",
@@ -1210,7 +1298,14 @@
   "source": "Pokémon.com",
   "publisherUrl": "https://www.pokemon.com",
   "sourceUrl": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQV01NU0JISVNvTGo2MGU0R3RhRlEzcjh0ZDZ5YldvMWdPa1FSa3E3cndyNWlNMEJKUU1PU1N0Rkdlek9JdUlnZFB5WEdsVVlRZFVpUzQwb2xLdDdZU3Ewc05YU0dzVTBjaGpvck0tbHRFRldNQmFOZnBjMGpwS3QwT3ZHWHdPUGQwTXpUQzY0ZlV2Vjc4QXZ5dVBIZw?oc=5",
-  "imageUrls": [],
+  "imageUrls": [
+   {
+    "url": "https://tcgplayer-cdn.tcgplayer.com/product/644279_200w.jpg",
+    "label": "PRODUCT IMAGE",
+    "kind": "product",
+    "alt": "Mega Evolution Elite Trainer Box [Mega Gardevoir]"
+   }
+  ],
   "imageLookupAt": "2026-11-21T23:41:53.527Z",
   "imageLookupStatus": "not-found",
   "imageLookupVersion": 7,
@@ -1328,7 +1423,14 @@
   "source": "Mashable",
   "publisherUrl": "https://mashable.com",
   "sourceUrl": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5hVWFGbzJ3VW9oMXZfZ054S1lmM3ZGZDB0d3VQc1VqVmdSMjV1RkFzLUh0aVhFclVXX2hOZGV4Qk5LU0Y2blZEamRTYW1paXNYUml6NklHdW1jUk9oY2pJaFR2QkV0RVg2ejFTT0lZc1FVR0RobE9QMkpDQk1oQQ?oc=5",
-  "imageUrls": [],
+  "imageUrls": [
+   {
+    "url": "https://tcgplayer-cdn.tcgplayer.com/product/735049_200w.jpg",
+    "label": "PRODUCT IMAGE",
+    "kind": "product",
+    "alt": "Flowing Fists Pokémon Center Elite Trainer Box (Exclusive)"
+   }
+  ],
   "imageLookupAt": "2026-11-21T23:41:54.305Z",
   "imageLookupStatus": "not-found",
   "imageLookupVersion": 7,
@@ -1371,7 +1473,14 @@
   "source": "Mashable",
   "publisherUrl": "https://mashable.com",
   "sourceUrl": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQRzZyal9LeldYUG9ySlh5ZGozNms3SHVJbUJORTJPd2REaWhCSUxjTUw0UXA2RTJZLUhncDVNVmZUYzJrR09lMWhSYXFzMHM1QlFlZjA4cHRFVFAzekZCTlNMWHFZNGlYSmVMeVNkUm92NzNxT0M5dWV2NHNEWEFHNTZSbVNOcDVraTZIblFQcjJqazQ?oc=5",
-  "imageUrls": [],
+  "imageUrls": [
+   {
+    "url": "https://tcgplayer-cdn.tcgplayer.com/product/644279_200w.jpg",
+    "label": "PRODUCT IMAGE",
+    "kind": "product",
+    "alt": "Mega Evolution Elite Trainer Box [Mega Gardevoir]"
+   }
+  ],
   "imageLookupAt": "2026-11-21T23:41:54.432Z",
   "imageLookupStatus": "not-found",
   "imageLookupVersion": 7,
@@ -1486,7 +1595,14 @@
   "source": "IGN Southeast Asia",
   "publisherUrl": "https://sea.ign.com",
   "sourceUrl": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxQR1RuUFY4bm1xdVI3dG1tdVdGZWpCcFpNTWgzb1dMby1PWWRnM3l3Z0IzcHNzTWptbXFZQmRQMWpNX2VpUVFQS0FrVlJSbGczdThVcFVGU0FVWG80VmYwVzBnXzBOblpmZUZCOWphWlpmOWZsQ3RuakM5Wk9tMUM3YnZvenI3MnBqSmpMc2liZllVblIxMk5zaTgxVU5KTHNQX3AzR3pROGdVRG1FS3h5Si10c0hLanhud3lXNlFNaDhkVFVUM0tfQjUwU3B3a1pNRVk4cFBPUmtNa01hZEkwTkVONDFBUmdDRHM3TFQ0ZkNkcThJ?oc=5",
-  "imageUrls": [],
+  "imageUrls": [
+   {
+    "url": "https://tcgplayer-cdn.tcgplayer.com/product/704171_200w.jpg",
+    "label": "PRODUCT IMAGE",
+    "kind": "product",
+    "alt": "30th Celebration Booster Bundle"
+   }
+  ],
   "imageLookupAt": "2026-11-21T23:41:54.536Z",
   "imageLookupStatus": "not-found",
   "imageLookupVersion": 7,
@@ -1637,7 +1753,14 @@
   "source": "Wargamer",
   "publisherUrl": "https://www.wargamer.com",
   "sourceUrl": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5UVXZkWTAxbmU3dDhmbHpfdXpKTUkySDRLRlhldHktUFlHemY3MThFMWdXRElvX2FETDltRU5NamFPbjBCNXIyM1hOa2luYzMzdS1hMWdURWJQamtlY0pCZDF2MS1rc0xFWHZFOXJYU21UZ2dl?oc=5",
-  "imageUrls": [],
+  "imageUrls": [
+   {
+    "url": "https://tcgplayer-cdn.tcgplayer.com/product/735049_200w.jpg",
+    "label": "PRODUCT IMAGE",
+    "kind": "product",
+    "alt": "Flowing Fists Pokémon Center Elite Trainer Box (Exclusive)"
+   }
+  ],
   "imageLookupAt": "2026-11-21T23:41:55.314Z",
   "imageLookupStatus": "not-found",
   "imageLookupVersion": 7,
@@ -1751,11 +1874,25 @@
   "source": "PokeGuardian",
   "publisherUrl": "https://www.pokeguardian.com",
   "sourceUrl": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNTkxBU1JBQmZqaExlaWtOR0JSV2cwbHBFZ2dZcUlSbmhLUHlYZFpXQUIyWm9WZERUNHFJYWFBb25kU0M1RFRXUEE0R2lFRDhQRTZ3RU5tcDZUcnBrNDNhTlVvcEJPSlJ1djc2ZjM2U1BnaG1oNVBHVHVST25qNy11aVRXcUV2Y25IdEdmZlZEN3JtNzdlX284VEJ4UnVtY1dOeFltcDlhYXI1WVJCZlR5QjZDSTNkeFk?oc=5",
-  "imageUrls": [],
+  "imageUrls": [
+   {
+    "url": "https://tcgplayer-cdn.tcgplayer.com/product/704145_200w.jpg",
+    "label": "PRODUCT IMAGE",
+    "kind": "product",
+    "alt": "30th Celebration Tech Sticker Collection [Alolan Exeggutor]"
+   }
+  ],
   "imageLookupAt": "2026-11-22T04:49:46.671Z",
   "imageLookupStatus": "not-found",
   "imageLookupVersion": 7,
   "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNTkxBU1JBQmZqaExlaWtOR0JSV2cwbHBFZ2dZcUlSbmhLUHlYZFpXQUIyWm9WZERUNHFJYWFBb25kU0M1RFRXUEE0R2lFRDhQRTZ3RU5tcDZUcnBrNDNhTlVvcEJPSlJ1djc2ZjM2U1BnaG1oNVBHVHVST25qNy11aVRXcUV2Y25IdEdmZlZEN3JtNzdlX284VEJ4UnVtY1dOeFltcDlhYXI1WVJCZlR5QjZDSTNkeFk?oc=5",
+  "siteUrl": "",
+  "productUrl": "",
+  "productRetailer": "",
+  "productName": "",
+  "productPrice": "",
+  "productAvailability": "",
+  "productLinks": [],
   "productSearchLinks": [
    {
     "retailer": "TCGplayer",
@@ -1775,13 +1912,6 @@
   "productLookupStatus": "search-fallback",
   "productLookupAt": "2026-11-22T04:49:46.671Z",
   "productLookupVersion": 7,
-  "siteUrl": "",
-  "productUrl": "",
-  "productRetailer": "",
-  "productName": "",
-  "productPrice": "",
-  "productAvailability": "",
-  "productLinks": [],
   "productPageChecks": 0,
   "productVerifiedAt": ""
  },
@@ -1798,6 +1928,13 @@
   "imageLookupStatus": "not-found",
   "imageLookupVersion": 7,
   "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPcEJvdVhvcjlJZ2F6bm8tSk9ENDhUb3hadEFHMHNjZVlmZkctYzk3T3NDU1oyeG1XS1NCMlNBV2VqTjZ0Vk5NZDVTNmszTkxUVEI4QnA2dWNzZTBGbkhZRHYwMlFNZnk3YkhTcEtibVBVYnN3WWtYa0VJalJZX250U2JMYV9EUlY4czlULWRxQmdsT0U?oc=5",
+  "siteUrl": "",
+  "productUrl": "",
+  "productRetailer": "",
+  "productName": "",
+  "productPrice": "",
+  "productAvailability": "",
+  "productLinks": [],
   "productSearchLinks": [
    {
     "retailer": "TCGplayer",
@@ -1817,13 +1954,6 @@
   "productLookupStatus": "search-fallback",
   "productLookupAt": "2026-11-22T04:49:47.147Z",
   "productLookupVersion": 7,
-  "siteUrl": "",
-  "productUrl": "",
-  "productRetailer": "",
-  "productName": "",
-  "productPrice": "",
-  "productAvailability": "",
-  "productLinks": [],
   "productPageChecks": 0,
   "productVerifiedAt": ""
  },
@@ -1847,7 +1977,6 @@
   "imageLookupStatus": "not-found",
   "imageLookupVersion": 7,
   "url": "https://www.msn.com/en-us/news/other/walmart-is-dropping-needoh-and-pokemon-boxes-on-4-black-friday-dates/ar-AA2hSbBV",
-  "thumbUrl": "https://www.bing.com/th?id=ONUT.iNKG0ELzTH0iwgRaRoEi-g&pid=News&w=480&h=360&c=14",
   "siteUrl": "",
   "productUrl": "",
   "productRetailer": "",
@@ -1875,7 +2004,8 @@
   "productLookupAt": "2026-11-22T04:49:47.438Z",
   "productLookupVersion": 7,
   "productPageChecks": 0,
-  "productVerifiedAt": ""
+  "productVerifiedAt": "",
+  "thumbUrl": "https://www.bing.com/th?id=ONUT.iNKG0ELzTH0iwgRaRoEi-g&pid=News&w=480&h=360&c=14"
  },
  {
   "date": "2026-11-20T10:44:50.000Z",
@@ -1914,11 +2044,25 @@
   "source": "IGN",
   "publisherUrl": "https://www.ign.com",
   "sourceUrl": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNUEg0cHZzSlVhdkN4SDdRdnRhaXZHRjBkYzdDM0Etb2syS295V0VJZXA2YTNPQjRGR3FuSm5sZFNVbjBVcWRvc1daUHQ0eFBRQXBKY1hobTJHc1VVSTYyTk95WFBrS3VHb2UtVG5sV3lHdzlWVkpYOE9CLVZOc3NTbi1BRlVPbHVxNm1IUWo2b3R0N0ZnR1dvLXBNZGhXY2FSamx6UmhCOFJoMEY3?oc=5",
-  "imageUrls": [],
+  "imageUrls": [
+   {
+    "url": "https://tcgplayer-cdn.tcgplayer.com/product/704145_200w.jpg",
+    "label": "PRODUCT IMAGE",
+    "kind": "product",
+    "alt": "30th Celebration Tech Sticker Collection [Alolan Exeggutor]"
+   }
+  ],
   "imageLookupAt": "2026-11-22T04:49:47.829Z",
   "imageLookupStatus": "not-found",
   "imageLookupVersion": 7,
   "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNUEg0cHZzSlVhdkN4SDdRdnRhaXZHRjBkYzdDM0Etb2syS295V0VJZXA2YTNPQjRGR3FuSm5sZFNVbjBVcWRvc1daUHQ0eFBRQXBKY1hobTJHc1VVSTYyTk95WFBrS3VHb2UtVG5sV3lHdzlWVkpYOE9CLVZOc3NTbi1BRlVPbHVxNm1IUWo2b3R0N0ZnR1dvLXBNZGhXY2FSamx6UmhCOFJoMEY3?oc=5",
+  "siteUrl": "",
+  "productUrl": "",
+  "productRetailer": "",
+  "productName": "",
+  "productPrice": "",
+  "productAvailability": "",
+  "productLinks": [],
   "productSearchLinks": [
    {
     "retailer": "TCGplayer",
@@ -1938,13 +2082,6 @@
   "productLookupStatus": "search-fallback",
   "productLookupAt": "2026-11-22T04:49:47.829Z",
   "productLookupVersion": 7,
-  "siteUrl": "",
-  "productUrl": "",
-  "productRetailer": "",
-  "productName": "",
-  "productPrice": "",
-  "productAvailability": "",
-  "productLinks": [],
   "productPageChecks": 0,
   "productVerifiedAt": ""
  },
@@ -1955,7 +2092,7 @@
   "summary": "A man who sold cards to a Chicago card shop allegedly pocketed four of the store's Pokémon cards worth about $6,500, according to CBS. Owner Nick Bruni blames himself, as the cards were in a box of ...",
   "source": "Yahoo",
   "publisherUrl": "https://www.yahoo.com",
-  "sourceUrl": "https://www.themarysue.com/chicago-card-shop-owner-says-a-man-sold-him-cards-then-pocketed-4-pokemon-cards-worth-6500-from-a-box-by-the-register/",
+  "sourceUrl": "https://www.yahoo.com/news/articles/chicago-card-shop-owner-says-180000253.html",
   "imageUrls": [],
   "imageLookupAt": "2026-11-22T04:49:47.914Z",
   "imageLookupStatus": "not-found",
@@ -1963,12 +2100,6 @@
   "url": "https://www.yahoo.com/news/articles/chicago-card-shop-owner-says-180000253.html",
   "thumbUrl": "",
   "siteUrl": "https://www.themarysue.com",
-  "productUrl": "",
-  "productRetailer": "",
-  "productName": "",
-  "productPrice": "",
-  "productAvailability": "",
-  "productLinks": [],
   "productSearchLinks": [
    {
     "retailer": "TCGplayer",
@@ -1983,9 +2114,7 @@
   "productSearchRetailer": "TCGplayer",
   "productLookupStatus": "search-fallback",
   "productLookupAt": "2026-11-22T04:49:47.914Z",
-  "productLookupVersion": 7,
-  "productPageChecks": 0,
-  "productVerifiedAt": ""
+  "productLookupVersion": 7
  },
  {
   "date": "2026-11-20T08:11:33.000Z",
@@ -2000,6 +2129,13 @@
   "imageLookupStatus": "not-found",
   "imageLookupVersion": 7,
   "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQdndFNUtYa0ZlZDcwOUFhdk40THJzcnRpYTBtTDhYYUJWTWZ4MjNRbXNDWDJnTjNrMUs1b0F6U2RVajdZN3dWa3hPa1VGbnROYjJHVjdrWGZYd3FxbnRKLVFybzU4SmVxYjlfdGdXZmpOVjk5dW9KUlNHTXY0QUMycWJUUERFYVdiOS14NGNHbUZUMUw5T2tDcV9sTHNGYUNhV0VZcFR3Yw?oc=5",
+  "siteUrl": "",
+  "productUrl": "",
+  "productRetailer": "",
+  "productName": "",
+  "productPrice": "",
+  "productAvailability": "",
+  "productLinks": [],
   "productSearchLinks": [
    {
     "retailer": "TCGplayer",
@@ -2019,13 +2155,6 @@
   "productLookupStatus": "search-fallback",
   "productLookupAt": "2026-11-22T04:49:48.211Z",
   "productLookupVersion": 7,
-  "siteUrl": "",
-  "productUrl": "",
-  "productRetailer": "",
-  "productName": "",
-  "productPrice": "",
-  "productAvailability": "",
-  "productLinks": [],
   "productPageChecks": 0,
   "productVerifiedAt": ""
  },
@@ -2042,9 +2171,6 @@
   "imageLookupStatus": "not-found",
   "imageLookupVersion": 7,
   "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPdFVnY01jQW13RUJGa2xkNlRXYlBzZlBlZnlhcTg5djc4dEthdEc3anI3RmhhWVllRmVraWYxZ3AtcmpfU2pjWmk1b1hUOU9pOVZGOTdGU2lVRWtiVE84UkoybkVzSWlJcld3WmZxN1lmWWl1eHY5Z2g0d2F1RkVUTXh3?oc=5",
-  "productLookupStatus": "not-found",
-  "productLookupAt": "2026-11-22T04:49:48.294Z",
-  "productLookupVersion": 7,
   "siteUrl": "",
   "productUrl": "",
   "productRetailer": "",
@@ -2055,8 +2181,37 @@
   "productSearchLinks": [],
   "productSearchUrl": "",
   "productSearchRetailer": "",
+  "productLookupStatus": "not-found",
+  "productLookupAt": "2026-11-22T04:49:48.294Z",
+  "productLookupVersion": 7,
   "productPageChecks": 0,
   "productVerifiedAt": ""
+ },
+ {
+  "date": "2026-11-20T07:59:00.000Z",
+  "cat": "Deals",
+  "title": "The best early Black Friday Pokémon deals: Shop live deals on 30th Celebration, Delta Reign, and more",
+  "summary": "With Black Friday officially less than two weeks away, Pokémon fans still have plenty of trading card deals worth jumping on before the big event kicks off. Whether it's the incredibly popular 30th ...",
+  "source": "Mashable",
+  "publisherUrl": "https://mashable.com",
+  "sourceUrl": "https://mashable.com/life/best-early-black-friday-pokemon-live-deals-2026",
+  "imageUrls": [
+   {
+    "url": "https://tcgplayer-cdn.tcgplayer.com/product/704143_200w.jpg",
+    "label": "PRODUCT IMAGE",
+    "kind": "product",
+    "alt": "30th Celebration Elite Trainer Box"
+   }
+  ],
+  "imageLookupAt": "2026-11-21T19:54:24.624Z",
+  "imageLookupStatus": "not-found",
+  "imageLookupVersion": 7,
+  "url": "https://mashable.com/life/best-early-black-friday-pokemon-live-deals-2026",
+  "thumbUrl": "https://www.bing.com/th?id=ONUT.6xSIDvjNQEgsbgCuo9XPqw&pid=News&w=480&h=360&c=14",
+  "imageLookupError": "Google News did not expose the publisher article destination.",
+  "productLookupStatus": "not-found",
+  "productLookupAt": "2026-11-21T19:54:24.624Z",
+  "productLookupVersion": 7
  },
  {
   "date": "2026-11-20T06:41:00.000Z",
@@ -2110,25 +2265,14 @@
   "url": "https://gamerant.com/pokemon-winds-and-waves-battles-legends-arceus-in-game-screen/",
   "thumbUrl": "https://www.bing.com/th?id=ONUT.0sk2CIYvECS_oZ_EuT2j3g&pid=News&w=480&h=360&c=14",
   "siteUrl": "https://gamerant.com",
-  "productUrl": "",
-  "productRetailer": "",
-  "productName": "",
-  "productPrice": "",
-  "productAvailability": "",
-  "productLinks": [],
-  "productSearchLinks": [],
-  "productSearchUrl": "",
-  "productSearchRetailer": "",
   "productLookupStatus": "not-found",
   "productLookupAt": "2026-11-22T04:49:48.496Z",
-  "productLookupVersion": 7,
-  "productPageChecks": 0,
-  "productVerifiedAt": ""
+  "productLookupVersion": 7
  },
  {
   "date": "2026-11-20T05:10:00.000Z",
   "cat": "Release",
-  "title": "Trainer Popularity vs. Pokémon Popularity | Looking at Market Data to See Which Will Retain Demand",
+  "title": "Trainer Popularity vs. Pokémon Popularity - Looking at Market Data to See Which Will Retain Demand",
   "summary": "Note: This article contains promotions (affiliate links).\"Is the era of female support cards over?\"\"If I'm buying now, which is better: trainers or Pokémon?\"I will answer this question using market ...",
   "source": "note",
   "publisherUrl": "https://note.com",
@@ -2145,7 +2289,6 @@
   "imageLookupStatus": "not-found",
   "imageLookupVersion": 7,
   "url": "https://note.com/rosesbloom/n/n51e4ef57bee4?hl=en",
-  "thumbUrl": "https://www.bing.com/th?id=ONUT.smnrGEOxYK9sX0GMWEKQMA&pid=News&w=480&h=360&c=14",
   "siteUrl": "https://note.com",
   "productUrl": "",
   "productRetailer": "",
@@ -2160,7 +2303,8 @@
   "productLookupAt": "2026-11-22T04:49:48.562Z",
   "productLookupVersion": 7,
   "productPageChecks": 0,
-  "productVerifiedAt": ""
+  "productVerifiedAt": "",
+  "thumbUrl": "https://www.bing.com/th?id=ONUT.smnrGEOxYK9sX0GMWEKQMA&pid=News&w=480&h=360&c=14"
  },
  {
   "date": "2026-11-20T04:46:00.000Z",
@@ -2170,7 +2314,14 @@
   "source": "Cardlines",
   "publisherUrl": "",
   "sourceUrl": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1GY2w5YWJRU19oVmFQVHJTbkNmZG5yeW9Uc0lYUlJkaEJqdl9TbHVlMWVPRjAzeEtqTk1FZ3ZXalNhTEQxT3ZxalRIMlQzVlozZkNCYWxfd0R0b3FySmU0VkIwZGNzMnJWWFNn?oc=5",
-  "imageUrls": [],
+  "imageUrls": [
+   {
+    "url": "https://tcgplayer-cdn.tcgplayer.com/product/712101_200w.jpg",
+    "label": "PRODUCT IMAGE",
+    "kind": "product",
+    "alt": "Delta Reign Build & Battle Box"
+   }
+  ],
   "imageLookupAt": "2026-11-22T04:49:48.952Z",
   "imageLookupStatus": "not-found",
   "imageLookupVersion": 7,
@@ -2205,13 +2356,6 @@
   "imageLookupVersion": 7,
   "url": "https://finance.yahoo.com/markets/stocks/articles/pok-mon-card-just-sold-124345438.html",
   "thumbUrl": "",
-  "siteUrl": "",
-  "productUrl": "",
-  "productRetailer": "",
-  "productName": "",
-  "productPrice": "",
-  "productAvailability": "",
-  "productLinks": [],
   "productSearchLinks": [
    {
     "retailer": "TCGplayer",
@@ -2230,9 +2374,7 @@
   "productSearchRetailer": "TCGplayer",
   "productLookupStatus": "search-fallback",
   "productLookupAt": "2026-11-22T04:49:48.995Z",
-  "productLookupVersion": 7,
-  "productPageChecks": 0,
-  "productVerifiedAt": ""
+  "productLookupVersion": 7
  },
  {
   "date": "2026-11-20T04:06:00.000Z",
@@ -2254,14 +2396,8 @@
   "imageLookupStatus": "not-found",
   "imageLookupVersion": 7,
   "url": "https://note.com/hyouga_2000/n/n9bf217eea620?hl=en",
-  "thumbUrl": "https://www.bing.com/th?id=ONUT.l7cKttpcHsnstImbFiSOQg&pid=News&w=480&h=360&c=14",
+  "thumbUrl": "https://www.bing.com/th?id=ONUT.ZZD2WFrOYuCLALIss_F1tw&pid=News&w=480&h=360&c=14",
   "siteUrl": "https://note.com",
-  "productUrl": "",
-  "productRetailer": "",
-  "productName": "",
-  "productPrice": "",
-  "productAvailability": "",
-  "productLinks": [],
   "productSearchLinks": [
    {
     "retailer": "Pokémon Center",
@@ -2280,9 +2416,7 @@
   "productSearchRetailer": "Pokémon Center",
   "productLookupStatus": "search-fallback",
   "productLookupAt": "2026-11-22T04:49:49.222Z",
-  "productLookupVersion": 7,
-  "productPageChecks": 0,
-  "productVerifiedAt": ""
+  "productLookupVersion": 7
  },
  {
   "date": "2026-11-20T03:51:14.000Z",
@@ -2304,7 +2438,14 @@
   "imageLookupStatus": "not-found",
   "imageLookupVersion": 7,
   "url": "https://www.msn.com/en-us/news/other/the-pok%C3%A9mon-tcg-chaos-rising-booster-display-box-is-back-under-210-on-amazon/ar-AA2hTiGn",
+  "siteUrl": "",
   "imageLookupError": "Google News did not expose the publisher article destination.",
+  "productUrl": "",
+  "productRetailer": "",
+  "productName": "",
+  "productPrice": "",
+  "productAvailability": "",
+  "productLinks": [],
   "productSearchLinks": [
    {
     "retailer": "Amazon",
@@ -2324,16 +2465,9 @@
   "productLookupStatus": "search-fallback",
   "productLookupAt": "2026-11-22T04:49:49.412Z",
   "productLookupVersion": 7,
-  "thumbUrl": "https://www.bing.com/th?id=ONUT.H9ajErujaDM8zdg8kR2Drg&pid=News&w=480&h=360&c=14",
-  "siteUrl": "",
-  "productUrl": "",
-  "productRetailer": "",
-  "productName": "",
-  "productPrice": "",
-  "productAvailability": "",
-  "productLinks": [],
   "productPageChecks": 0,
-  "productVerifiedAt": ""
+  "productVerifiedAt": "",
+  "thumbUrl": "https://www.bing.com/th?id=ONUT.H9ajErujaDM8zdg8kR2Drg&pid=News&w=480&h=360&c=14"
  },
  {
   "date": "2026-11-20T03:43:00.000Z",
@@ -2386,6 +2520,7 @@
   "imageLookupVersion": 7,
   "url": "https://mashable.com/life/pokemon-tcg-flowing-fist-preorders-where-to-buy",
   "thumbUrl": "https://www.bing.com/th?id=ONUT.igOU3eMrBCprUWIQ0f0dYg&pid=News&w=480&h=360&c=14",
+  "siteUrl": "https://mashable.com",
   "productSearchLinks": [
    {
     "retailer": "TCGplayer",
@@ -2404,16 +2539,7 @@
   "productSearchRetailer": "TCGplayer",
   "productLookupStatus": "search-fallback",
   "productLookupAt": "2026-11-22T04:49:49.656Z",
-  "productLookupVersion": 7,
-  "siteUrl": "https://mashable.com",
-  "productUrl": "",
-  "productRetailer": "",
-  "productName": "",
-  "productPrice": "",
-  "productAvailability": "",
-  "productLinks": [],
-  "productPageChecks": 0,
-  "productVerifiedAt": ""
+  "productLookupVersion": 7
  },
  {
   "date": "2026-11-20T03:31:00.000Z",
@@ -2467,12 +2593,6 @@
   "url": "https://www.polygon.com/pokemon-tcg-delta-reign-most-valuable-cards/",
   "thumbUrl": "https://www.bing.com/th?id=ONUT.SzmVht5P1nPXwdVIx2Gc_A&pid=News&w=480&h=360&c=14",
   "siteUrl": "https://www.polygon.com",
-  "productUrl": "",
-  "productRetailer": "",
-  "productName": "",
-  "productPrice": "",
-  "productAvailability": "",
-  "productLinks": [],
   "productSearchLinks": [
    {
     "retailer": "Pokémon Center",
@@ -2491,9 +2611,7 @@
   "productSearchRetailer": "Pokémon Center",
   "productLookupStatus": "search-fallback",
   "productLookupAt": "2026-11-22T04:49:49.944Z",
-  "productLookupVersion": 7,
-  "productPageChecks": 0,
-  "productVerifiedAt": ""
+  "productLookupVersion": 7
  },
  {
   "date": "2026-11-20T03:27:00.000Z",
@@ -2515,17 +2633,8 @@
   "imageLookupStatus": "found",
   "imageLookupVersion": 7,
   "url": "https://www.marca.com/en/lifestyle/us-news/2026/11/20/costco-pokemon-queue-what-is-the-new-system-from-the-wholesale-store-for-the-next-pokemon-30th-anniversary-drop.html",
-  "thumbUrl": "https://www.bing.com/th?id=ONUT.MQR7p_TZYQWGv43PC-btMA&pid=News&w=480&h=360&c=14",
-  "productLookupStatus": "search-fallback",
-  "productLookupAt": "2026-11-22T04:49:49.984Z",
-  "productLookupVersion": 7,
+  "thumbUrl": "https://www.bing.com/th?id=ONUT.FU1iiUVLTpVPcFPfcxR7dg&pid=News&w=480&h=360&c=14",
   "siteUrl": "https://www.marca.com",
-  "productUrl": "",
-  "productRetailer": "",
-  "productName": "",
-  "productPrice": "",
-  "productAvailability": "",
-  "productLinks": [],
   "productSearchLinks": [
    {
     "retailer": "Costco",
@@ -2542,8 +2651,9 @@
   ],
   "productSearchUrl": "https://www.costco.com/CatalogSearch?keyword=Pokemon%20TCG%20queue%20system%20wholesale%20next%2030th%20anniversary%20stop",
   "productSearchRetailer": "Costco",
-  "productPageChecks": 0,
-  "productVerifiedAt": ""
+  "productLookupStatus": "search-fallback",
+  "productLookupAt": "2026-11-22T04:49:49.984Z",
+  "productLookupVersion": 7
  },
  {
   "date": "2026-11-20T02:39:00.000Z",
@@ -2553,12 +2663,53 @@
   "source": "IGN",
   "publisherUrl": "https://www.ign.com",
   "sourceUrl": "https://www.ign.com/articles/pokemon-tcg-30th-celebration-knock-out-collection-is-back-in-stock-black-friday",
-  "imageUrls": [],
-  "imageLookupAt": "",
-  "imageLookupStatus": "",
-  "imageLookupVersion": 0,
+  "imageUrls": [
+   {
+    "url": "https://assets-prd.ignimgs.com/2026/11/17/screenshot-2026-11-17-at-20-51-43-1794948726415.png",
+    "label": "PRODUCT IMAGE",
+    "kind": "product",
+    "alt": "Pokémon TCG: 30th Celebration Knock Out Collection"
+   },
+   {
+    "url": "https://assets-prd.ignimgs.com/2026/09/17/hisuian-zoroark-me-30th-celebration-30c-1789678284351.jpg?width=220&dpr=2&format=jpg&auto=webp&quality=80",
+    "label": "ITEM IMAGE",
+    "kind": "product",
+    "alt": "Hisuian Zoroark - ME: 30th Celebration (30C)"
+   }
+  ],
+  "imageLookupAt": "2026-11-22T10:30:16.135Z",
+  "imageLookupStatus": "found",
+  "imageLookupVersion": 7,
   "url": "https://www.ign.com/articles/pokemon-tcg-30th-celebration-knock-out-collection-is-back-in-stock-black-friday",
-  "thumbUrl": "https://www.bing.com/th?id=ONUT.BxuHCxX03vL4_Keb6_xx-g&pid=News&w=480&h=360&c=14"
+  "thumbUrl": "https://www.bing.com/th?id=ONUT.EHzfnxRTVYs_8pGOATDhDw&pid=News&w=480&h=360&c=14",
+  "siteUrl": "https://www.ign.com",
+  "productUrl": "",
+  "productRetailer": "",
+  "productName": "",
+  "productPrice": "",
+  "productAvailability": "",
+  "productLinks": [],
+  "productSearchLinks": [
+   {
+    "retailer": "Amazon",
+    "url": "https://www.amazon.com/s?k=Pokemon%20TCG%2030th%20celebration%20knock%20first%20down%20percent%20typical"
+   },
+   {
+    "retailer": "TCGplayer",
+    "url": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%2030th%20celebration%20knock%20first%20down%20percent%20typical"
+   },
+   {
+    "retailer": "Target",
+    "url": "https://www.target.com/s?searchTerm=Pokemon%20TCG%2030th%20celebration%20knock%20first%20down%20percent%20typical"
+   }
+  ],
+  "productSearchUrl": "https://www.amazon.com/s?k=Pokemon%20TCG%2030th%20celebration%20knock%20first%20down%20percent%20typical",
+  "productSearchRetailer": "Amazon",
+  "productLookupStatus": "search-fallback",
+  "productLookupAt": "2026-11-22T10:30:16.135Z",
+  "productLookupVersion": 7,
+  "productPageChecks": 0,
+  "productVerifiedAt": ""
  },
  {
   "date": "2026-11-20T02:33:00.000Z",
@@ -2567,13 +2718,48 @@
   "summary": "A family discovered a rare sheet of Pokémon trading cards when clearing out their loft - which could fetch up to 10,000.",
   "source": "Yahoo News UK",
   "publisherUrl": "https://uk.news.yahoo.com",
-  "sourceUrl": "https://uk.news.yahoo.com/rare-pok-mon-cards-found-103300355.html",
-  "imageUrls": [],
-  "imageLookupAt": "",
-  "imageLookupStatus": "",
-  "imageLookupVersion": 0,
+  "sourceUrl": "https://www.yourlocalguardian.co.uk/news/26744862.pok-mon-cards-fossil-sheet-found-surrey-family-worth-10-000/?ref=yahoo",
+  "imageUrls": [
+   {
+    "url": "https://s.yimg.com/lo/mysterio/api/fb6dbd714293b7fb8deca3887727219d66f7e3a84d50ca73f094704cbf029b2a/lightyear_networkapi/resizefill_w1200%3Bquality_80%3Bformat_webp/https%3A%2F%2Fmedia.zenfs.com%2Fen%2Fsutton_and_croydon_guardian_814%2F803c884cfd9fea91850df1da8772351a.jpg_up.jpg",
+    "label": "ITEM IMAGE",
+    "kind": "product",
+    "alt": "The cards were discovered in the loft (Image: Daniel Boberg / Unsplash)"
+   }
+  ],
+  "imageLookupAt": "2026-11-22T10:30:17.040Z",
+  "imageLookupStatus": "found",
+  "imageLookupVersion": 7,
   "url": "https://uk.news.yahoo.com/rare-pok-mon-cards-found-103300355.html",
-  "thumbUrl": "https://www.bing.com/th?id=ONUT.FbIqQ6DmJPDXG8CkMurgjA&pid=News&w=480&h=360&c=14"
+  "thumbUrl": "https://www.bing.com/th?id=ONUT.6FJQ-DP9YqJpjSO_FP6bQw&pid=News&w=480&h=360&c=14",
+  "siteUrl": "https://www.yourlocalguardian.co.uk",
+  "productUrl": "",
+  "productRetailer": "",
+  "productName": "",
+  "productPrice": "",
+  "productAvailability": "",
+  "productLinks": [],
+  "productSearchLinks": [
+   {
+    "retailer": "TCGplayer",
+    "url": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20found%20family%20loft%20could%20fetch%20thousands%20auction"
+   },
+   {
+    "retailer": "Amazon",
+    "url": "https://www.amazon.com/s?k=Pokemon%20TCG%20found%20family%20loft%20could%20fetch%20thousands%20auction"
+   },
+   {
+    "retailer": "Target",
+    "url": "https://www.target.com/s?searchTerm=Pokemon%20TCG%20found%20family%20loft%20could%20fetch%20thousands%20auction"
+   }
+  ],
+  "productSearchUrl": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20found%20family%20loft%20could%20fetch%20thousands%20auction",
+  "productSearchRetailer": "TCGplayer",
+  "productLookupStatus": "search-fallback",
+  "productLookupAt": "2026-11-22T10:30:17.040Z",
+  "productLookupVersion": 7,
+  "productPageChecks": 0,
+  "productVerifiedAt": ""
  },
  {
   "date": "2026-11-20T01:00:59.000Z",
@@ -2584,13 +2770,25 @@
   "publisherUrl": "https://mashable.com",
   "sourceUrl": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9nd3dDR3cyOEpTOGhob2RzV29HOGFaaDNTc0ZDTDlTQmNmSXJGTnpLWHVPd2ZIcEFWVXNYbXJCX3NCY0xvVEJ3NEQ5aDliV1RYRGcwLTFWWjlfeTh3Y09KSGtsXzVUbTFnTmlDa1lwUmVZUGNxZlBvUXo1Tm4?oc=5",
   "imageUrls": [],
-  "imageLookupAt": "2026-11-21T03:20:24.919Z",
+  "imageLookupAt": "2026-11-22T10:30:17.141Z",
   "imageLookupStatus": "not-found",
-  "imageLookupVersion": 6,
+  "imageLookupVersion": 7,
   "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9nd3dDR3cyOEpTOGhob2RzV29HOGFaaDNTc0ZDTDlTQmNmSXJGTnpLWHVPd2ZIcEFWVXNYbXJCX3NCY0xvVEJ3NEQ5aDliV1RYRGcwLTFWWjlfeTh3Y09KSGtsXzVUbTFnTmlDa1lwUmVZUGNxZlBvUXo1Tm4?oc=5",
   "productLookupStatus": "not-found",
-  "productLookupAt": "2026-11-21T03:20:24.919Z",
-  "productLookupVersion": 6
+  "productLookupAt": "2026-11-22T10:30:17.141Z",
+  "productLookupVersion": 7,
+  "siteUrl": "",
+  "productUrl": "",
+  "productRetailer": "",
+  "productName": "",
+  "productPrice": "",
+  "productAvailability": "",
+  "productLinks": [],
+  "productSearchLinks": [],
+  "productSearchUrl": "",
+  "productSearchRetailer": "",
+  "productPageChecks": 0,
+  "productVerifiedAt": ""
  },
  {
   "date": "2026-11-19T22:37:33.000Z",
@@ -2601,9 +2799,9 @@
   "publisherUrl": "https://shopping.yahoo.com",
   "sourceUrl": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5pdTg1TzM3TnFmZUZ2TVlySGFwdlVMZ0xPYjcyeHdrLUNRVE5yaFBhbExTSUJhd1BkSzJQWkZwQTVuZnRRRkdlNnhrZVZoaWY0STU4anNVRTdyLVo1RDRmQ0pJRlg1WndmaG9mcUxjZjRKSDV1Q1VZ?oc=5",
   "imageUrls": [],
-  "imageLookupAt": "2026-11-21T03:20:25.122Z",
+  "imageLookupAt": "2026-11-22T10:30:17.309Z",
   "imageLookupStatus": "not-found",
-  "imageLookupVersion": 6,
+  "imageLookupVersion": 7,
   "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5pdTg1TzM3TnFmZUZ2TVlySGFwdlVMZ0xPYjcyeHdrLUNRVE5yaFBhbExTSUJhd1BkSzJQWkZwQTVuZnRRRkdlNnhrZVZoaWY0STU4anNVRTdyLVo1RDRmQ0pJRlg1WndmaG9mcUxjZjRKSDV1Q1VZ?oc=5",
   "siteUrl": "",
   "productUrl": "",
@@ -2615,22 +2813,22 @@
   "productSearchLinks": [
    {
     "retailer": "TCGplayer",
-    "url": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20zacian%20percent%20coupon%20code%20close%20market%20mashable"
+    "url": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20zacian%20percent%20coupon%20code%20market%20mashable"
    },
    {
     "retailer": "Amazon",
-    "url": "https://www.amazon.com/s?k=Pokemon%20TCG%20zacian%20percent%20coupon%20code%20close%20market%20mashable"
+    "url": "https://www.amazon.com/s?k=Pokemon%20TCG%20zacian%20percent%20coupon%20code%20market%20mashable"
    },
    {
     "retailer": "Target",
-    "url": "https://www.target.com/s?searchTerm=Pokemon%20TCG%20zacian%20percent%20coupon%20code%20close%20market%20mashable"
+    "url": "https://www.target.com/s?searchTerm=Pokemon%20TCG%20zacian%20percent%20coupon%20code%20market%20mashable"
    }
   ],
-  "productSearchUrl": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20zacian%20percent%20coupon%20code%20close%20market%20mashable",
+  "productSearchUrl": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20zacian%20percent%20coupon%20code%20market%20mashable",
   "productSearchRetailer": "TCGplayer",
   "productLookupStatus": "search-fallback",
-  "productLookupAt": "2026-11-21T03:20:25.122Z",
-  "productLookupVersion": 6,
+  "productLookupAt": "2026-11-22T10:30:17.309Z",
+  "productLookupVersion": 7,
   "productPageChecks": 0,
   "productVerifiedAt": ""
  },
@@ -2642,30 +2840,46 @@
   "source": "Comic Book Resources",
   "publisherUrl": "https://www.cbr.com",
   "sourceUrl": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQQWlFT3R2RFlyT3o5RDRJU0N5VG52RUdBa1pHbjRGdDdkb0M5VmVTNXR3b2c2RlQ3dGJDcXlOM1hBNm1KZXc0Z2NpdlhJOThqdTVVTGR3NXduV0Jmcnk5eUdUREZDZ0NTY19kNklNdlNzU1dUT1hOWmxCa0o5bzBwQmVKbHZRQWZuczBqeDB5SHlCM3c?oc=5",
-  "imageUrls": [],
-  "imageLookupAt": "2026-11-21T03:20:25.504Z",
+  "imageUrls": [
+   {
+    "url": "https://tcgplayer-cdn.tcgplayer.com/product/644279_200w.jpg",
+    "label": "PRODUCT IMAGE",
+    "kind": "product",
+    "alt": "Mega Evolution Elite Trainer Box [Mega Gardevoir]"
+   }
+  ],
+  "imageLookupAt": "2026-11-22T10:30:17.869Z",
   "imageLookupStatus": "not-found",
-  "imageLookupVersion": 6,
+  "imageLookupVersion": 7,
   "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQQWlFT3R2RFlyT3o5RDRJU0N5VG52RUdBa1pHbjRGdDdkb0M5VmVTNXR3b2c2RlQ3dGJDcXlOM1hBNm1KZXc0Z2NpdlhJOThqdTVVTGR3NXduV0Jmcnk5eUdUREZDZ0NTY19kNklNdlNzU1dUT1hOWmxCa0o5bzBwQmVKbHZRQWZuczBqeDB5SHlCM3c?oc=5",
   "productSearchLinks": [
    {
     "retailer": "TCGplayer",
-    "url": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20officially%20reveals%20first%20mega%20evolution%20coming%20comic"
+    "url": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20officially%20first%20mega%20evolution%20coming%20comic%20book"
    },
    {
     "retailer": "Amazon",
-    "url": "https://www.amazon.com/s?k=Pokemon%20TCG%20officially%20reveals%20first%20mega%20evolution%20coming%20comic"
+    "url": "https://www.amazon.com/s?k=Pokemon%20TCG%20officially%20first%20mega%20evolution%20coming%20comic%20book"
    },
    {
     "retailer": "Target",
-    "url": "https://www.target.com/s?searchTerm=Pokemon%20TCG%20officially%20reveals%20first%20mega%20evolution%20coming%20comic"
+    "url": "https://www.target.com/s?searchTerm=Pokemon%20TCG%20officially%20first%20mega%20evolution%20coming%20comic%20book"
    }
   ],
-  "productSearchUrl": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20officially%20reveals%20first%20mega%20evolution%20coming%20comic",
+  "productSearchUrl": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20officially%20first%20mega%20evolution%20coming%20comic%20book",
   "productSearchRetailer": "TCGplayer",
   "productLookupStatus": "search-fallback",
-  "productLookupAt": "2026-11-21T03:20:25.504Z",
-  "productLookupVersion": 6
+  "productLookupAt": "2026-11-22T10:30:17.869Z",
+  "productLookupVersion": 7,
+  "siteUrl": "",
+  "productUrl": "",
+  "productRetailer": "",
+  "productName": "",
+  "productPrice": "",
+  "productAvailability": "",
+  "productLinks": [],
+  "productPageChecks": 0,
+  "productVerifiedAt": ""
  },
  {
   "date": "2026-11-19T21:02:13.000Z",
@@ -2675,10 +2889,17 @@
   "source": "Nintendo Insider",
   "publisherUrl": "https://www.nintendo-insider.com",
   "sourceUrl": "https://news.google.com/rss/articles/CBMikAFBVV95cUxObklBX3ZoZWE5VC04TDdxUm1XcHJfakZKdHBuLXU2ZkVETURlSmhkamhUbTZEbjdmaXhYUlZJTVUtUlB3ZFJCbHNWNUNZVEIxd3pYV0JDNVFMVXFjS1R1bTYzNVkxVjNnMXVzZC1tb3JWOHJjLUZNM2oyV1ZjSTE5cGxSWk5DU2hwaUNLX2JMYmg?oc=5",
-  "imageUrls": [],
-  "imageLookupAt": "2026-11-21T03:20:25.575Z",
+  "imageUrls": [
+   {
+    "url": "https://tcgplayer-cdn.tcgplayer.com/product/644279_200w.jpg",
+    "label": "PRODUCT IMAGE",
+    "kind": "product",
+    "alt": "Mega Evolution Elite Trainer Box [Mega Gardevoir]"
+   }
+  ],
+  "imageLookupAt": "2026-11-22T10:30:17.889Z",
   "imageLookupStatus": "not-found",
-  "imageLookupVersion": 6,
+  "imageLookupVersion": 7,
   "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxObklBX3ZoZWE5VC04TDdxUm1XcHJfakZKdHBuLXU2ZkVETURlSmhkamhUbTZEbjdmaXhYUlZJTVUtUlB3ZFJCbHNWNUNZVEIxd3pYV0JDNVFMVXFjS1R1bTYzNVkxVjNnMXVzZC1tb3JWOHJjLUZNM2oyV1ZjSTE5cGxSWk5DU2hwaUNLX2JMYmg?oc=5",
   "productSearchLinks": [
    {
@@ -2697,8 +2918,17 @@
   "productSearchUrl": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20mega%20evolution%20flowing%20fists%20date%20nintendo%20insider",
   "productSearchRetailer": "TCGplayer",
   "productLookupStatus": "search-fallback",
-  "productLookupAt": "2026-11-21T03:20:25.575Z",
-  "productLookupVersion": 6
+  "productLookupAt": "2026-11-22T10:30:17.889Z",
+  "productLookupVersion": 7,
+  "siteUrl": "",
+  "productUrl": "",
+  "productRetailer": "",
+  "productName": "",
+  "productPrice": "",
+  "productAvailability": "",
+  "productLinks": [],
+  "productPageChecks": 0,
+  "productVerifiedAt": ""
  },
  {
   "date": "2026-11-19T20:45:00.000Z",
@@ -2708,12 +2938,77 @@
   "source": "cardlines",
   "publisherUrl": "https://cardlines.com",
   "sourceUrl": "https://cardlines.com/pokemon-delta-reign-build-battle-box/",
-  "imageUrls": [],
-  "imageLookupAt": "",
-  "imageLookupStatus": "",
-  "imageLookupVersion": 0,
+  "imageUrls": [
+   {
+    "url": "https://cardlines.com/wp-content/uploads/2026/11/pokemon-delta-reign-build-and-battle-box.jpg",
+    "label": "ITEM IMAGE",
+    "kind": "product",
+    "alt": "Pokémon Mega Evolution Delta Reign Build & Battle Box featuring Mega Rayquaza artwork against a green and yellow background."
+   },
+   {
+    "url": "https://cardlines.com/wp-content/uploads/2026/11/pokemon-delta-reign-build-battle-box.jpg",
+    "label": "ITEM IMAGE",
+    "kind": "product",
+    "alt": "pokémon delta reign build & battle box"
+   },
+   {
+    "url": "https://cardlines.com/wp-content/uploads/2026/11/pokemon-delta-reign-build-battle-box-promo-cards.jpg",
+    "label": "ITEM IMAGE",
+    "kind": "product",
+    "alt": "pokémon delta reign build & battle box promo cards"
+   },
+   {
+    "url": "https://cardlines.com/wp-content/uploads/2026/08/cardlines-club-rewards-program.png",
+    "label": "ITEM IMAGE",
+    "kind": "product",
+    "alt": "Cardlines Club Rewards Program"
+   },
+   {
+    "url": "https://cardlines.com/wp-content/uploads/2026/10/26-fb-onit-gravity-mega-box-mockup-300x225.png",
+    "label": "ITEM IMAGE",
+    "kind": "product",
+    "alt": "2026 ONIT Athlete GRAVITY College Football Sealed MEGA Box (60 Cards Per Box)"
+   },
+   {
+    "url": "https://cardlines.com/wp-content/uploads/2026/10/ole-miss-blaster-1-300x225.webp",
+    "label": "ITEM IMAGE",
+    "kind": "product",
+    "alt": "Ole Miss 2026 Signature Series Collegiate Football Trading Cards by ONIT Value Blaster Box."
+   }
+  ],
+  "imageLookupAt": "2026-11-22T10:30:17.930Z",
+  "imageLookupStatus": "found",
+  "imageLookupVersion": 7,
   "url": "https://cardlines.com/pokemon-delta-reign-build-battle-box/",
-  "thumbUrl": "https://www.bing.com/th?id=ONUT.axdLxbbrgWJzkxmJXKIFGg&pid=News&w=480&h=360&c=14"
+  "thumbUrl": "https://www.bing.com/th?id=ONUT.axdLxbbrgWJzkxmJXKIFGg&pid=News&w=480&h=360&c=14",
+  "siteUrl": "https://cardlines.com",
+  "productUrl": "",
+  "productRetailer": "",
+  "productName": "",
+  "productPrice": "",
+  "productAvailability": "",
+  "productLinks": [],
+  "productSearchLinks": [
+   {
+    "retailer": "TCGplayer",
+    "url": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20delta%20reign%20build%20battle%20contents%20worth%20buying"
+   },
+   {
+    "retailer": "Amazon",
+    "url": "https://www.amazon.com/s?k=Pokemon%20TCG%20delta%20reign%20build%20battle%20contents%20worth%20buying"
+   },
+   {
+    "retailer": "Target",
+    "url": "https://www.target.com/s?searchTerm=Pokemon%20TCG%20delta%20reign%20build%20battle%20contents%20worth%20buying"
+   }
+  ],
+  "productSearchUrl": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20delta%20reign%20build%20battle%20contents%20worth%20buying",
+  "productSearchRetailer": "TCGplayer",
+  "productLookupStatus": "search-fallback",
+  "productLookupAt": "2026-11-22T10:30:17.930Z",
+  "productLookupVersion": 7,
+  "productPageChecks": 0,
+  "productVerifiedAt": ""
  },
  {
   "date": "2026-11-19T20:27:08.000Z",
@@ -2723,46 +3018,84 @@
   "source": "CBS News on MSN",
   "publisherUrl": "https://www.msn.com",
   "sourceUrl": "https://www.msn.com/en-us/news/other/chicago-trading-card-shop-owner-says-thief-stole-6500-in-high-end-pok%C3%A9mon-cards/ar-AA2hOUDA",
-  "imageUrls": [],
-  "imageLookupAt": "",
-  "imageLookupStatus": "",
-  "imageLookupVersion": 0,
+  "imageUrls": [
+   {
+    "url": "https://www.bing.com/th?id=ONUT.NkBR6s4d9aWpSf8E4zsMag&pid=News&w=480&h=360&c=14",
+    "label": "ARTICLE IMAGE",
+    "kind": "article",
+    "alt": "Chicago trading card shop owner says thief stole $6,500 in high-end Pokémon cards"
+   }
+  ],
+  "imageLookupAt": "2026-11-22T10:30:18.108Z",
+  "imageLookupStatus": "not-found",
+  "imageLookupVersion": 7,
   "url": "https://www.msn.com/en-us/news/other/chicago-trading-card-shop-owner-says-thief-stole-6500-in-high-end-pok%C3%A9mon-cards/ar-AA2hOUDA",
-  "thumbUrl": "https://www.bing.com/th?id=ONUT.NkBR6s4d9aWpSf8E4zsMag&pid=News&w=480&h=360&c=14"
+  "thumbUrl": "https://www.bing.com/th?id=ONUT.NkBR6s4d9aWpSf8E4zsMag&pid=News&w=480&h=360&c=14",
+  "siteUrl": "",
+  "productUrl": "",
+  "productRetailer": "",
+  "productName": "",
+  "productPrice": "",
+  "productAvailability": "",
+  "productLinks": [],
+  "productSearchLinks": [],
+  "productSearchUrl": "",
+  "productSearchRetailer": "",
+  "productLookupStatus": "not-found",
+  "productLookupAt": "2026-11-22T10:30:18.108Z",
+  "productLookupVersion": 7,
+  "productPageChecks": 0,
+  "productVerifiedAt": ""
  },
  {
   "date": "2026-11-19T20:23:00.000Z",
-  "cat": "Raffle",
+  "cat": "Rare Drop",
   "title": "Target's Black Friday sales event includes Pokémon trading card drop",
   "summary": "Target's Black Friday sales event include discounts, giveaways, deals and collectible trading cards drops from brands like Pokémon and Topps.",
   "source": "The Sacramento Bee",
   "publisherUrl": "https://www.sacbee.com",
   "sourceUrl": "https://www.sacbee.com/news/california/article318171823.html",
-  "imageUrls": [],
-  "imageLookupAt": "2026-11-21T03:20:22.285Z",
+  "imageUrls": [
+   {
+    "url": "https://www.bing.com/th?id=ONUT.7L0_WSYqUrh1CXBe-QLW_w&pid=News&w=480&h=360&c=14",
+    "label": "ARTICLE IMAGE",
+    "kind": "article",
+    "alt": "Target's Black Friday sales event includes Pokémon trading card drop"
+   }
+  ],
+  "imageLookupAt": "2026-11-22T10:30:18.493Z",
   "imageLookupStatus": "not-found",
-  "imageLookupVersion": 6,
+  "imageLookupVersion": 7,
   "url": "https://www.sacbee.com/news/california/article318171823.html",
   "thumbUrl": "https://www.bing.com/th?id=ONUT.7L0_WSYqUrh1CXBe-QLW_w&pid=News&w=480&h=360&c=14",
   "productSearchLinks": [
    {
     "retailer": "Target",
-    "url": "https://www.target.com/s?searchTerm=Pokemon%20TCG%20black%20friday%20event%20includes%20victorville%20daily%20press"
+    "url": "https://www.target.com/s?searchTerm=Pokemon%20TCG%20black%20friday%20event%20includes%20include%20discounts%20giveaways"
    },
    {
     "retailer": "TCGplayer",
-    "url": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20black%20friday%20event%20includes%20victorville%20daily%20press"
+    "url": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20black%20friday%20event%20includes%20include%20discounts%20giveaways"
    },
    {
     "retailer": "Amazon",
-    "url": "https://www.amazon.com/s?k=Pokemon%20TCG%20black%20friday%20event%20includes%20victorville%20daily%20press"
+    "url": "https://www.amazon.com/s?k=Pokemon%20TCG%20black%20friday%20event%20includes%20include%20discounts%20giveaways"
    }
   ],
-  "productSearchUrl": "https://www.target.com/s?searchTerm=Pokemon%20TCG%20black%20friday%20event%20includes%20victorville%20daily%20press",
+  "productSearchUrl": "https://www.target.com/s?searchTerm=Pokemon%20TCG%20black%20friday%20event%20includes%20include%20discounts%20giveaways",
   "productSearchRetailer": "Target",
   "productLookupStatus": "search-fallback",
-  "productLookupAt": "2026-11-21T03:20:22.285Z",
-  "productLookupVersion": 6
+  "productLookupAt": "2026-11-22T10:30:18.493Z",
+  "productLookupVersion": 7,
+  "siteUrl": "",
+  "productUrl": "",
+  "productRetailer": "",
+  "productName": "",
+  "productPrice": "",
+  "productAvailability": "",
+  "productLinks": [],
+  "productPageChecks": 0,
+  "productVerifiedAt": ""
  },
  {
   "date": "2026-11-19T19:27:58.000Z",
@@ -2772,14 +3105,33 @@
   "source": "ICv2",
   "publisherUrl": "https://icv2.com",
   "sourceUrl": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOcmxUNk9uYjNuaXMtNGlUWWF5X1h4Q0ZmQ1B2NjhVV01WUDgwajRIZnVPWHZ2MGRQWnoyc2hCNk9CbE01UDcyNkJOdGx2R3JHNWpqM2xaTGhrVFdkbWNEbC1GdFRFU0tGdUM1ajkwbnk0STd2OHBiT21rcF9mT2pmTzNnWG02SkgxUzEwNTdnTmljVWpMTTFwc3B5RENfQ2ZHQVE?oc=5",
-  "imageUrls": [],
-  "imageLookupAt": "2026-11-21T03:20:25.961Z",
+  "imageUrls": [
+   {
+    "url": "https://tcgplayer-cdn.tcgplayer.com/product/644279_200w.jpg",
+    "label": "PRODUCT IMAGE",
+    "kind": "product",
+    "alt": "Mega Evolution Elite Trainer Box [Mega Gardevoir]"
+   }
+  ],
+  "imageLookupAt": "2026-11-22T10:30:18.638Z",
   "imageLookupStatus": "not-found",
-  "imageLookupVersion": 6,
+  "imageLookupVersion": 7,
   "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOcmxUNk9uYjNuaXMtNGlUWWF5X1h4Q0ZmQ1B2NjhVV01WUDgwajRIZnVPWHZ2MGRQWnoyc2hCNk9CbE01UDcyNkJOdGx2R3JHNWpqM2xaTGhrVFdkbWNEbC1GdFRFU0tGdUM1ajkwbnk0STd2OHBiT21rcF9mT2pmTzNnWG02SkgxUzEwNTdnTmljVWpMTTFwc3B5RENfQ2ZHQVE?oc=5",
   "productLookupStatus": "not-found",
-  "productLookupAt": "2026-11-21T03:20:25.961Z",
-  "productLookupVersion": 6
+  "productLookupAt": "2026-11-22T10:30:18.638Z",
+  "productLookupVersion": 7,
+  "siteUrl": "",
+  "productUrl": "",
+  "productRetailer": "",
+  "productName": "",
+  "productPrice": "",
+  "productAvailability": "",
+  "productLinks": [],
+  "productSearchLinks": [],
+  "productSearchUrl": "",
+  "productSearchRetailer": "",
+  "productPageChecks": 0,
+  "productVerifiedAt": ""
  },
  {
   "date": "2026-11-19T19:16:00.000Z",
@@ -2789,12 +3141,64 @@
   "source": "ABC7 Chicago",
   "publisherUrl": "https://abc7chicago.com",
   "sourceUrl": "https://abc7chicago.com/post/chicago-crime-4-pokemon-cards-worth-10000-stolen-old-skool-tcg-trading-card-shop-lawndale-milwaukee-avenue/20057796/",
-  "imageUrls": [],
-  "imageLookupAt": "",
-  "imageLookupStatus": "",
-  "imageLookupVersion": 0,
+  "imageUrls": [
+   {
+    "url": "https://cdn.abcotvs.com/dip/images/20057786_111926-wls-pokemon-theft-5p-vo-vid.jpg",
+    "label": "ITEM IMAGE",
+    "kind": "product",
+    "alt": "4 Pokémon cards worth $10,000 stolen from Chicago trading card shop"
+   },
+   {
+    "url": "https://cdn.abcotvs.net/abcotv/static/common/origins/origin-wls.png",
+    "label": "ITEM IMAGE",
+    "kind": "product",
+    "alt": "WLS logo"
+   },
+   {
+    "url": "https://cdn.abcotvs.com/dip/images/20057212_111926-wls-motorcycle-crash-clean-img.jpg?w=992",
+    "label": "ITEM IMAGE",
+    "kind": "product",
+    "alt": "hicago-motorcycle-crash-motorcyclist-dies-south-racine-avenue-auburn-gresham-police-say/20057199/\" aria-label=\"Motorcyclist dies after crash"
+   },
+   {
+    "url": "https://cdn.abcotvs.com/dip/images/20024913_110826-ktrk-AP-target-store-exterior-img.jpg?w=992",
+    "label": "ITEM IMAGE",
+    "kind": "product",
+    "alt": "allegedly-leaving-daughter-line-pokmon-cards-police/20024907/\" aria-label=\"South Carolina dad arrested after allegedly leaving daughter in l"
+   },
+   {
+    "url": "https://cdn.abcotvs.com/dip/images/19960832_102026-kabc-md-psa-cards-stolen-vid.jpg?w=992",
+    "label": "ITEM IMAGE",
+    "kind": "product",
+    "alt": "rth-rare-pokemon-sports-cards-stolen-fedex-truck-california-heist-police-say/19961094/\" aria-label=\"Nearly $1 million worth of Pokémon, spor"
+   },
+   {
+    "url": "https://cdn.abcotvs.com/dip/images/19259554_060826-kgo-cardlab-img.jpg?w=992",
+    "label": "ITEM IMAGE",
+    "kind": "product",
+    "alt": "tory/video-thieves-take-39-seconds-steal-15k-worth-pokmon-cards-brentwoods-card-lab/19263195/\" aria-label=\"VIDEO: Thieves steal $15K worth o"
+   }
+  ],
+  "imageLookupAt": "2026-11-22T10:30:18.677Z",
+  "imageLookupStatus": "found",
+  "imageLookupVersion": 7,
   "url": "https://abc7chicago.com/post/chicago-crime-4-pokemon-cards-worth-10000-stolen-old-skool-tcg-trading-card-shop-lawndale-milwaukee-avenue/20057796/",
-  "thumbUrl": "https://www.bing.com/th?id=ONUT.eB52w0zO82kS45dhdk6OMA&pid=News&w=480&h=360&c=14"
+  "thumbUrl": "https://www.bing.com/th?id=ONUT.eB52w0zO82kS45dhdk6OMA&pid=News&w=480&h=360&c=14",
+  "siteUrl": "https://abc7chicago.com",
+  "productUrl": "",
+  "productRetailer": "",
+  "productName": "",
+  "productPrice": "",
+  "productAvailability": "",
+  "productLinks": [],
+  "productSearchLinks": [],
+  "productSearchUrl": "",
+  "productSearchRetailer": "",
+  "productLookupStatus": "not-found",
+  "productLookupAt": "2026-11-22T10:30:18.677Z",
+  "productLookupVersion": 7,
+  "productPageChecks": 0,
+  "productVerifiedAt": ""
  },
  {
   "date": "2026-11-19T18:30:55.000Z",
@@ -2804,30 +3208,46 @@
   "source": "ComicBook.com",
   "publisherUrl": "https://comicbook.com",
   "sourceUrl": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5OSFNrV1BpdmJGQmdoQzJLUGhRWWpEc21jeWlHaFhrSGZuOE5QQjNpcUNYd08zRWhXamZqZ1hDazExb1pER1lRNlA0NmlnMXExSVVPTDJxM2h1V3U3NXhLWGZrZHpZX20yUzhCdU9laE5WT2szXzcw?oc=5",
-  "imageUrls": [],
-  "imageLookupAt": "2026-11-21T03:20:26.085Z",
+  "imageUrls": [
+   {
+    "url": "https://tcgplayer-cdn.tcgplayer.com/product/735049_200w.jpg",
+    "label": "PRODUCT IMAGE",
+    "kind": "product",
+    "alt": "Flowing Fists Pokémon Center Elite Trainer Box (Exclusive)"
+   }
+  ],
+  "imageLookupAt": "2026-11-22T10:30:18.808Z",
   "imageLookupStatus": "not-found",
-  "imageLookupVersion": 6,
+  "imageLookupVersion": 7,
   "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5OSFNrV1BpdmJGQmdoQzJLUGhRWWpEc21jeWlHaFhrSGZuOE5QQjNpcUNYd08zRWhXamZqZ1hDazExb1pER1lRNlA0NmlnMXExSVVPTDJxM2h1V3U3NXhLWGZrZHpZX20yUzhCdU9laE5WT2szXzcw?oc=5",
   "productSearchLinks": [
    {
     "retailer": "TCGplayer",
-    "url": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20reveals%20first%20look%20flowing%20fists%20date%20comicbook"
+    "url": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20first%20look%20flowing%20fists%20date%20comicbook"
    },
    {
     "retailer": "Amazon",
-    "url": "https://www.amazon.com/s?k=Pokemon%20TCG%20reveals%20first%20look%20flowing%20fists%20date%20comicbook"
+    "url": "https://www.amazon.com/s?k=Pokemon%20TCG%20first%20look%20flowing%20fists%20date%20comicbook"
    },
    {
     "retailer": "Target",
-    "url": "https://www.target.com/s?searchTerm=Pokemon%20TCG%20reveals%20first%20look%20flowing%20fists%20date%20comicbook"
+    "url": "https://www.target.com/s?searchTerm=Pokemon%20TCG%20first%20look%20flowing%20fists%20date%20comicbook"
    }
   ],
-  "productSearchUrl": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20reveals%20first%20look%20flowing%20fists%20date%20comicbook",
+  "productSearchUrl": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20first%20look%20flowing%20fists%20date%20comicbook",
   "productSearchRetailer": "TCGplayer",
   "productLookupStatus": "search-fallback",
-  "productLookupAt": "2026-11-21T03:20:26.085Z",
-  "productLookupVersion": 6
+  "productLookupAt": "2026-11-22T10:30:18.808Z",
+  "productLookupVersion": 7,
+  "siteUrl": "",
+  "productUrl": "",
+  "productRetailer": "",
+  "productName": "",
+  "productPrice": "",
+  "productAvailability": "",
+  "productLinks": [],
+  "productPageChecks": 0,
+  "productVerifiedAt": ""
  },
  {
   "date": "2026-11-19T18:22:17.000Z",
@@ -2837,10 +3257,17 @@
   "source": "Bleeding Cool News",
   "publisherUrl": "https://bleedingcool.com",
   "sourceUrl": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPVkNwNzFkWHlEX3JLRWNncm93bzNiUUlqX1gtcXpXT1ZqeDJoaXVMZ3V6RUtybjRudDNfRktpdmtMWG10T2JIalZfRFlyQTNEMmdEWjBfSXB6SG1VeFpVVTdZTlZUQmtGeFZIbXQ0eU9qSDZmTUI4bnhEUElmVzd4ZTdxbWhpenFGWC1TdFoyTXI5ZXJCeGhV?oc=5",
-  "imageUrls": [],
-  "imageLookupAt": "2026-11-21T03:20:50.050Z",
+  "imageUrls": [
+   {
+    "url": "https://tcgplayer-cdn.tcgplayer.com/product/644279_200w.jpg",
+    "label": "PRODUCT IMAGE",
+    "kind": "product",
+    "alt": "Mega Evolution Elite Trainer Box [Mega Gardevoir]"
+   }
+  ],
+  "imageLookupAt": "2026-11-22T10:30:19.185Z",
   "imageLookupStatus": "not-found",
-  "imageLookupVersion": 6,
+  "imageLookupVersion": 7,
   "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPVkNwNzFkWHlEX3JLRWNncm93bzNiUUlqX1gtcXpXT1ZqeDJoaXVMZ3V6RUtybjRudDNfRktpdmtMWG10T2JIalZfRFlyQTNEMmdEWjBfSXB6SG1VeFpVVTdZTlZUQmtGeFZIbXQ0eU9qSDZmTUI4bnhEUElmVzd4ZTdxbWhpenFGWC1TdFoyTXI5ZXJCeGhV?oc=5",
   "productSearchLinks": [
    {
@@ -2859,8 +3286,17 @@
   "productSearchUrl": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20mega%20evolution%20flowing%20fists%20expansion%20bleeding%20cool",
   "productSearchRetailer": "TCGplayer",
   "productLookupStatus": "search-fallback",
-  "productLookupAt": "2026-11-21T03:20:50.050Z",
-  "productLookupVersion": 6
+  "productLookupAt": "2026-11-22T10:30:19.185Z",
+  "productLookupVersion": 7,
+  "siteUrl": "",
+  "productUrl": "",
+  "productRetailer": "",
+  "productName": "",
+  "productPrice": "",
+  "productAvailability": "",
+  "productLinks": [],
+  "productPageChecks": 0,
+  "productVerifiedAt": ""
  },
  {
   "date": "2026-11-19T17:40:37.000Z",
@@ -2870,10 +3306,17 @@
   "source": "IGN",
   "publisherUrl": "https://www.ign.com",
   "sourceUrl": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOZ1I4VFZhbFhoODlZeW1KNzFqT05vM1pCQ2dKWE1JZkxzNVlsMDhWSHhscGJtcUdGTlpnb3dDRkdISTM0YjY2bFFpSW5GRHh6azg3eXVhaFFmcW9vdFMwbmZfc0RuemZ2ZHFTSndudXFlTmJZMDdMYkY1cmJLZEhBY3hmcw?oc=5",
-  "imageUrls": [],
-  "imageLookupAt": "2026-11-21T03:20:50.051Z",
+  "imageUrls": [
+   {
+    "url": "https://tcgplayer-cdn.tcgplayer.com/product/704143_200w.jpg",
+    "label": "PRODUCT IMAGE",
+    "kind": "product",
+    "alt": "30th Celebration Elite Trainer Box"
+   }
+  ],
+  "imageLookupAt": "2026-11-22T10:30:19.449Z",
   "imageLookupStatus": "not-found",
-  "imageLookupVersion": 6,
+  "imageLookupVersion": 7,
   "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOZ1I4VFZhbFhoODlZeW1KNzFqT05vM1pCQ2dKWE1JZkxzNVlsMDhWSHhscGJtcUdGTlpnb3dDRkdISTM0YjY2bFFpSW5GRHh6azg3eXVhaFFmcW9vdFMwbmZfc0RuemZ2ZHFTSndudXFlTmJZMDdMYkY1cmJLZEhBY3hmcw?oc=5",
   "productSearchLinks": [
    {
@@ -2892,8 +3335,17 @@
   "productSearchUrl": "https://www.walmart.com/search?q=Pokemon%20TCG%20just%20dropped%2030th%20celebration%20record%20nearly%20matching",
   "productSearchRetailer": "Walmart",
   "productLookupStatus": "search-fallback",
-  "productLookupAt": "2026-11-21T03:20:50.051Z",
-  "productLookupVersion": 6
+  "productLookupAt": "2026-11-22T10:30:19.449Z",
+  "productLookupVersion": 7,
+  "siteUrl": "",
+  "productUrl": "",
+  "productRetailer": "",
+  "productName": "",
+  "productPrice": "",
+  "productAvailability": "",
+  "productLinks": [],
+  "productPageChecks": 0,
+  "productVerifiedAt": ""
  },
  {
   "date": "2026-11-19T17:32:01.000Z",
@@ -2911,9 +3363,9 @@
     "alt": "Pokemon Database logo"
    }
   ],
-  "imageLookupAt": "2026-11-21T03:20:50.052Z",
+  "imageLookupAt": "2026-11-22T10:30:19.612Z",
   "imageLookupStatus": "found",
-  "imageLookupVersion": 6,
+  "imageLookupVersion": 7,
   "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPUy1EX0xaZ3R0Y1ZMQm9Uc2x3X3lmUVlZRjlyUjlZbTA1U0E0VnJhdlVRelNxUm9yOGFSRlQ5YjVvRHo4YkQwSXU0aTVqT2s4SjZzSWVXZjhMT0gxTFpOWElmaHBmRGxOWVRTVDFLQ3BTS01GMFYwdV96MlljWUNlQUdKTEJneUJpeFBXQlNfSWJxcjd1TDZHNDhKUlZKalZPWTZWRlVsUHU?oc=5",
   "siteUrl": "https://pokemondb.net",
   "productUrl": "",
@@ -2925,22 +3377,22 @@
   "productSearchLinks": [
    {
     "retailer": "TCGplayer",
-    "url": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20flowing%20fists%20list%20details%20products%20more%20joseph"
+    "url": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20flowing%20fists%20list%20products%20more%20joseph%20writer"
    },
    {
     "retailer": "Amazon",
-    "url": "https://www.amazon.com/s?k=Pokemon%20TCG%20flowing%20fists%20list%20details%20products%20more%20joseph"
+    "url": "https://www.amazon.com/s?k=Pokemon%20TCG%20flowing%20fists%20list%20products%20more%20joseph%20writer"
    },
    {
     "retailer": "Target",
-    "url": "https://www.target.com/s?searchTerm=Pokemon%20TCG%20flowing%20fists%20list%20details%20products%20more%20joseph"
+    "url": "https://www.target.com/s?searchTerm=Pokemon%20TCG%20flowing%20fists%20list%20products%20more%20joseph%20writer"
    }
   ],
-  "productSearchUrl": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20flowing%20fists%20list%20details%20products%20more%20joseph",
+  "productSearchUrl": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20flowing%20fists%20list%20products%20more%20joseph%20writer",
   "productSearchRetailer": "TCGplayer",
   "productLookupStatus": "search-fallback",
-  "productLookupAt": "2026-11-21T03:20:50.052Z",
-  "productLookupVersion": 6,
+  "productLookupAt": "2026-11-22T10:30:19.612Z",
+  "productLookupVersion": 7,
   "productPageChecks": 0,
   "productVerifiedAt": ""
  },
@@ -2952,10 +3404,17 @@
   "source": "Diario AS",
   "publisherUrl": "https://en.as.com",
   "sourceUrl": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQbVhrLXNjRlgxQUxxT01TemRaanVvLVVzcHJXX2wxakFKczZGTndrTmpWZ0ZTVTFiVHZ2UVVUdW5hUURmVGVxMTgzOXJHMTJlRHphLVA5bVk2YVJPM3VwcEY2Qk1pZUpNNVpCWFB6ZnhHOERvZFNtWTJSSnRDVGlaMmxERzVjRG5lN1pibkhzdEN6OVJXUVBxY1hhcldjZllEWWg3RmQ1QWlBaHZpaGxnSkd6T2JNdTNRS3hZYWRBS2RPck5TWXd5TkZINWNZNkdzQWJMQVAwTEpPUdIB7gFBVV95cUxObGtpbUdvOWl4S0VzNGx0c3ZXamVRYTBYQm1XZURCQ0dDM1dXUXZUODV1U2UxNVpYWEtLTl9FMkdaWVNIYm0xRXp5QVpmelFseW95V2g3QVNjUlFkcG9LMDhWSjBJSFpkeFBTdlhBQjVkNzBCTXR3ai1fZlMyVHdDVTd6b3VfejJCdV96aUpXVy03TnkxYTZjRHVZanRqX2Rkd1hMYUE0Rks1cXNaR3FUR1NsT3NUSEZIeE8ybGM3MVhiNl9uRFVhOUoyMHIwTUhOS2lOR2FjZDd1Vlg1QUxiSTZreXJJT2hPS2stYXR3?oc=5",
-  "imageUrls": [],
-  "imageLookupAt": "2026-11-21T03:20:50.053Z",
+  "imageUrls": [
+   {
+    "url": "https://tcgplayer-cdn.tcgplayer.com/product/644279_200w.jpg",
+    "label": "PRODUCT IMAGE",
+    "kind": "product",
+    "alt": "Mega Evolution Elite Trainer Box [Mega Gardevoir]"
+   }
+  ],
+  "imageLookupAt": "2026-11-22T10:30:19.939Z",
   "imageLookupStatus": "not-found",
-  "imageLookupVersion": 6,
+  "imageLookupVersion": 7,
   "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQbVhrLXNjRlgxQUxxT01TemRaanVvLVVzcHJXX2wxakFKczZGTndrTmpWZ0ZTVTFiVHZ2UVVUdW5hUURmVGVxMTgzOXJHMTJlRHphLVA5bVk2YVJPM3VwcEY2Qk1pZUpNNVpCWFB6ZnhHOERvZFNtWTJSSnRDVGlaMmxERzVjRG5lN1pibkhzdEN6OVJXUVBxY1hhcldjZllEWWg3RmQ1QWlBaHZpaGxnSkd6T2JNdTNRS3hZYWRBS2RPck5TWXd5TkZINWNZNkdzQWJMQVAwTEpPUdIB7gFBVV95cUxObGtpbUdvOWl4S0VzNGx0c3ZXamVRYTBYQm1XZURCQ0dDM1dXUXZUODV1U2UxNVpYWEtLTl9FMkdaWVNIYm0xRXp5QVpmelFseW95V2g3QVNjUlFkcG9LMDhWSjBJSFpkeFBTdlhBQjVkNzBCTXR3ai1fZlMyVHdDVTd6b3VfejJCdV96aUpXVy03TnkxYTZjRHVZanRqX2Rkd1hMYUE0Rks1cXNaR3FUR1NsT3NUSEZIeE8ybGM3MVhiNl9uRFVhOUoyMHIwTUhOS2lOR2FjZDd1Vlg1QUxiSTZreXJJT2hPS2stYXR3?oc=5",
   "productSearchLinks": [
    {
@@ -2974,8 +3433,17 @@
   "productSearchUrl": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20mega%20lucario%20heads%20type%20evolution%20expansion%20flowing",
   "productSearchRetailer": "TCGplayer",
   "productLookupStatus": "search-fallback",
-  "productLookupAt": "2026-11-21T03:20:50.053Z",
-  "productLookupVersion": 6
+  "productLookupAt": "2026-11-22T10:30:19.939Z",
+  "productLookupVersion": 7,
+  "siteUrl": "",
+  "productUrl": "",
+  "productRetailer": "",
+  "productName": "",
+  "productPrice": "",
+  "productAvailability": "",
+  "productLinks": [],
+  "productPageChecks": 0,
+  "productVerifiedAt": ""
  },
  {
   "date": "2026-11-19T17:11:12.000Z",
@@ -2986,9 +3454,9 @@
   "publisherUrl": "",
   "sourceUrl": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9IZXlhcjhhRUpsR2RNWUVQX2tfS29HR3R5a3djVzhCdkdxY1FfWXMwd0F4Sk9udXZvYXVjMllodDFGYVQ0NWdqOHFuLWpTdkRYZFVUR2xXTlFudV9yRGdyalk0OFJoWHNuWG5UalB3cVctY1lpY0w4RFNNb3NGQQ?oc=5",
   "imageUrls": [],
-  "imageLookupAt": "2026-11-21T03:20:50.884Z",
+  "imageLookupAt": "2026-11-22T10:30:20.189Z",
   "imageLookupStatus": "not-found",
-  "imageLookupVersion": 6,
+  "imageLookupVersion": 7,
   "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9IZXlhcjhhRUpsR2RNWUVQX2tfS29HR3R5a3djVzhCdkdxY1FfWXMwd0F4Sk9udXZvYXVjMllodDFGYVQ0NWdqOHFuLWpTdkRYZFVUR2xXTlFudV9yRGdyalk0OFJoWHNuWG5UalB3cVctY1lpY0w4RFNNb3NGQQ?oc=5",
   "siteUrl": "",
   "productUrl": "",
@@ -3000,22 +3468,22 @@
   "productSearchLinks": [
    {
     "retailer": "TCGplayer",
-    "url": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20reveals%20hint%20theme"
+    "url": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20hint%20theme"
    },
    {
     "retailer": "Amazon",
-    "url": "https://www.amazon.com/s?k=Pokemon%20TCG%20reveals%20hint%20theme"
+    "url": "https://www.amazon.com/s?k=Pokemon%20TCG%20hint%20theme"
    },
    {
     "retailer": "Target",
-    "url": "https://www.target.com/s?searchTerm=Pokemon%20TCG%20reveals%20hint%20theme"
+    "url": "https://www.target.com/s?searchTerm=Pokemon%20TCG%20hint%20theme"
    }
   ],
-  "productSearchUrl": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20reveals%20hint%20theme",
+  "productSearchUrl": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20hint%20theme",
   "productSearchRetailer": "TCGplayer",
   "productLookupStatus": "search-fallback",
-  "productLookupAt": "2026-11-21T03:20:50.884Z",
-  "productLookupVersion": 6,
+  "productLookupAt": "2026-11-22T10:30:20.189Z",
+  "productLookupVersion": 7,
   "productPageChecks": 0,
   "productVerifiedAt": ""
  },
@@ -3027,7 +3495,14 @@
   "source": "PokeBeach",
   "publisherUrl": "https://www.pokebeach.com",
   "sourceUrl": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPZW5BTUhJcTM0blR5ZThSbFJ6aFB6XzNkdkU1QjV5TndHbklLRERkNE5od09fS2NjalZrZ1k1QnlndmNfaDFaMEt1S0d3eFVNTWRhU2RBdV9sLVhSMnNtLXdKRGgyWXd4VkpFLThQWmtFWURCb2hYTnVMS1RxVkx4T0hFYVRJeDhyVnZCTzIyZUxFR1NJeXA0WTdoYTBPUVpCZFlFLVJsQzBJeFNXakh4RkhzS3BwVDVU?oc=5",
-  "imageUrls": [],
+  "imageUrls": [
+   {
+    "url": "https://tcgplayer-cdn.tcgplayer.com/product/735049_200w.jpg",
+    "label": "PRODUCT IMAGE",
+    "kind": "product",
+    "alt": "Flowing Fists Pokémon Center Elite Trainer Box (Exclusive)"
+   }
+  ],
   "imageLookupAt": "2026-11-21T03:20:50.886Z",
   "imageLookupStatus": "not-found",
   "imageLookupVersion": 6,
@@ -3059,7 +3534,14 @@
   "source": "Comics Gaming Magazine",
   "publisherUrl": "https://www.cgmagonline.com",
   "sourceUrl": "https://news.google.com/rss/articles/CBMickFVX3lxTE9VM3gzZUxHalVRd1pMeTJCeVdHeWE0WEpHZGJDQnh0S3NZbThBNElRVk1vVDNRWFZ6dG0tOEF3Um9Ra1FXUm1jNElVQVl2Ti1WNDc1MVVOaFJRTkRyYUlTcy1HRWlZejhoaWVaeDdiVnM1Zw?oc=5",
-  "imageUrls": [],
+  "imageUrls": [
+   {
+    "url": "https://tcgplayer-cdn.tcgplayer.com/product/644279_200w.jpg",
+    "label": "PRODUCT IMAGE",
+    "kind": "product",
+    "alt": "Mega Evolution Elite Trainer Box [Mega Gardevoir]"
+   }
+  ],
   "imageLookupAt": "2026-11-21T03:20:51.139Z",
   "imageLookupStatus": "not-found",
   "imageLookupVersion": 6,
@@ -3167,7 +3649,14 @@
   "source": "GamesRadar PLUS",
   "publisherUrl": "https://www.gamesradar.com",
   "sourceUrl": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPZTVic0R4d3lmeF9qN0RzMWtocjNQVGNUZGNESTJmSFp2c3o1VHNUdWpZcmk5cEtmSi1aNDhscGtJS1BaczA3cnJTeWdsUEpDUl9fbHI1bUZDWDk4bVUxTVRaSGpkdjlMa2lrMmYwNE5SQklqT1dVNEhPMlZWWGRnU3lqNzVUeU1pRUhRQjRtVl9ZbkhqSUxLOVZfNUo4WHRnTDBTLUphY1hfLU1Bb1hScGN3aw?oc=5",
-  "imageUrls": [],
+  "imageUrls": [
+   {
+    "url": "https://tcgplayer-cdn.tcgplayer.com/product/735049_200w.jpg",
+    "label": "PRODUCT IMAGE",
+    "kind": "product",
+    "alt": "Flowing Fists Pokémon Center Elite Trainer Box (Exclusive)"
+   }
+  ],
   "imageLookupAt": "2026-11-21T03:20:51.750Z",
   "imageLookupStatus": "not-found",
   "imageLookupVersion": 6,
@@ -3229,7 +3718,14 @@
   "source": "PokeGuardian",
   "publisherUrl": "https://www.pokeguardian.com",
   "sourceUrl": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPQThLTjc3M0Nucm9yaGVDaVp1Y0lIbDEwVzl3amdSN3JwLVJqekNIOHJXcVY0WWNWRENRWGppcXY3ZkVJTVJzeGowLVljLWRiUDF0M3lleERyanJ6WklGb0VFQk1IZXppZUpIMk5lXy15MWVIZEVUWHdZZXFXczV3YU1BTlBsc0taaV9oQ3NOaw?oc=5",
-  "imageUrls": [],
+  "imageUrls": [
+   {
+    "url": "https://tcgplayer-cdn.tcgplayer.com/product/644279_200w.jpg",
+    "label": "PRODUCT IMAGE",
+    "kind": "product",
+    "alt": "Mega Evolution Elite Trainer Box [Mega Gardevoir]"
+   }
+  ],
   "imageLookupAt": "2026-11-21T03:20:51.976Z",
   "imageLookupStatus": "not-found",
   "imageLookupVersion": 6,
@@ -3262,7 +3758,14 @@
   "source": "Yahoo",
   "publisherUrl": "https://www.yahoo.com",
   "sourceUrl": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQbWJ1dFBfY1BEMVZRMTltem1RVDBwX1F5N25QTDdFbkdqNWJZb1FDbkU2WVdKOXdibEhUaS1Vc2hqOWRvdmN4dW1lNThzdndyS2Q2X1lsc19xVy10Vm1sd0dJTHYxZVVsSVFBdnoxeDF5RjdrTUVSRnduRERxZi1XRnl4UHVBQkZLSEt2aVNuWQ?oc=5",
-  "imageUrls": [],
+  "imageUrls": [
+   {
+    "url": "https://tcgplayer-cdn.tcgplayer.com/product/644279_200w.jpg",
+    "label": "PRODUCT IMAGE",
+    "kind": "product",
+    "alt": "Mega Evolution Elite Trainer Box [Mega Gardevoir]"
+   }
+  ],
   "imageLookupAt": "2026-11-21T03:20:52.326Z",
   "imageLookupStatus": "not-found",
   "imageLookupVersion": 6,
@@ -3295,7 +3798,14 @@
   "source": "Pokémon.com",
   "publisherUrl": "https://www.pokemon.com",
   "sourceUrl": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQbzhrSHZCelR1MUN6RkxoRHMyNXZsWXh4c2pyVHdxVjQwR2VFUmxqejJYNFZYS3NScmtmcmg3djFTN2YyZ0RRSzlNRmZfVjdBbzlhMVc3Z3RrWGZHZm1UMWY5N1FBTVlra1BXLTIzdGZTMHJJdldmOUp6VmlRMkR6M1N0dWdrdnJ5eG9HSzBlMmdBR2h6eng1MWd2STdpXzVEM01JSHNEdFZOQWFVdENj?oc=5",
-  "imageUrls": [],
+  "imageUrls": [
+   {
+    "url": "https://tcgplayer-cdn.tcgplayer.com/product/644279_200w.jpg",
+    "label": "PRODUCT IMAGE",
+    "kind": "product",
+    "alt": "Mega Evolution Elite Trainer Box [Mega Gardevoir]"
+   }
+  ],
   "imageLookupAt": "2026-11-21T03:20:52.528Z",
   "imageLookupStatus": "not-found",
   "imageLookupVersion": 6,
@@ -3328,7 +3838,14 @@
   "source": "Pokémon.com",
   "publisherUrl": "https://press.pokemon.com",
   "sourceUrl": "https://news.google.com/rss/articles/CBMirAFBVV95cUxORlo1b05CclJMdm8tdERuOXFNWnBSeVFMdkk1UE9CbkEtb1NIVS03RUdubjNvQWl3Z2tLU0s4UVZqcmhOaUNpR2pIRUVHLWpqZFFUNjg4cDl5TUVBcm9hanJYUjgyMXpaeG0xQzJjRW1LTklvcWxwZVRlMGszdUNnenhsWktJZWhYSUJad3VyUVlGbEV1am4yTExiV0E3Mzc3anZubWJjbFl5WHdT?oc=5",
-  "imageUrls": [],
+  "imageUrls": [
+   {
+    "url": "https://tcgplayer-cdn.tcgplayer.com/product/644279_200w.jpg",
+    "label": "PRODUCT IMAGE",
+    "kind": "product",
+    "alt": "Mega Evolution Elite Trainer Box [Mega Gardevoir]"
+   }
+  ],
   "imageLookupAt": "2026-11-21T03:20:52.630Z",
   "imageLookupStatus": "not-found",
   "imageLookupVersion": 6,
@@ -3590,7 +4107,14 @@
   "source": "Mashable",
   "publisherUrl": "https://mashable.com",
   "sourceUrl": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPbzNrS2tvYldtWGZkTl9QUzRtQzFpaThVa2lmOGFnT1VpU0gxZVZHZk44RDFyeFlIMDd0RVdMdVd5dGZoWnA0Ym05VDhfSUJCbmVPMk5YVjBsOFpyUElhSWc5TUVwQXQ5RE1JNDVmYUJ4bVBfZVFCTzFucnFDejdYZXZRY3J3RTNzakxTOA?oc=5",
-  "imageUrls": [],
+  "imageUrls": [
+   {
+    "url": "https://tcgplayer-cdn.tcgplayer.com/product/704171_200w.jpg",
+    "label": "PRODUCT IMAGE",
+    "kind": "product",
+    "alt": "30th Celebration Booster Bundle"
+   }
+  ],
   "imageLookupAt": "2026-11-21T11:33:36.186Z",
   "imageLookupStatus": "not-found",
   "imageLookupVersion": 6,
@@ -3955,7 +4479,7 @@
  },
  {
   "date": "2026-11-17T17:15:21.000Z",
-  "cat": "Raffle",
+  "cat": "Rare Drop",
   "title": "Target's Black Friday sale includes in-store gift card giveaway",
   "summary": "",
   "source": "Retail Dive",
@@ -4003,7 +4527,7 @@
  },
  {
   "date": "2026-11-17T15:52:00.000Z",
-  "cat": "Raffle",
+  "cat": "Rare Drop",
   "title": "Target reveals 2026 Black Friday sale: $1,000 gift card giveaways, hours, dates and more",
   "summary": "",
   "source": "Cleveland.com",
@@ -4069,7 +4593,7 @@
  },
  {
   "date": "2026-11-17T15:42:24.000Z",
-  "cat": "Raffle",
+  "cat": "Rare Drop",
   "title": "Target Black Friday deals include $1,000 gift card giveaways, Pokémon trading card drop",
   "summary": "",
   "source": "Chain Store Age",
@@ -4151,7 +4675,14 @@
   "source": "Mashable",
   "publisherUrl": "https://mashable.com",
   "sourceUrl": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPR0l5SW1kdGdGYW5QXzVIWWdLOUFsS29Belptbmc5emdYMGdNSExiTENIM2o1MUp1d2hQeUtxVDlRTWItMWt5MGl5MS1OVU4ydnJLWEFNNzQ1TWxCbzJvOFAtQURuYjhWUjFqRjFoVG14eTFkNEM2eFNBQk1MNDVfN3ZwRFlNbVVMMFF5c0xWT2JTZXhUSmpqOFA1XzJ0MGpVdFE?oc=5",
-  "imageUrls": [],
+  "imageUrls": [
+   {
+    "url": "https://tcgplayer-cdn.tcgplayer.com/product/712094_200w.jpg",
+    "label": "PRODUCT IMAGE",
+    "kind": "product",
+    "alt": "Delta Reign Booster Box"
+   }
+  ],
   "imageLookupAt": "2026-11-21T11:33:39.941Z",
   "imageLookupStatus": "not-found",
   "imageLookupVersion": 6,
@@ -4184,7 +4715,14 @@
   "source": "Yahoo",
   "publisherUrl": "https://shopping.yahoo.com",
   "sourceUrl": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQeHNxUGJYeGJXa1RpNDVURWtucmhENFViV3JkTHpFSEFWU0VsNFFfMXVsbmtqcmoyVXFSS3dUUkhORUFWLThncFZ0SHpBSVR4ZVlnU1JpQ2RHQ3liZkFXYUpBWnpSLVNqWDdETDk3UEFQY3BjUzV1a3FCSWRzYndURHBiZ25GeDA?oc=5",
-  "imageUrls": [],
+  "imageUrls": [
+   {
+    "url": "https://tcgplayer-cdn.tcgplayer.com/product/712094_200w.jpg",
+    "label": "PRODUCT IMAGE",
+    "kind": "product",
+    "alt": "Delta Reign Booster Box"
+   }
+  ],
   "imageLookupAt": "2026-11-21T11:33:39.943Z",
   "imageLookupStatus": "not-found",
   "imageLookupVersion": 6,
@@ -4327,119 +4865,6 @@
   "productSearchRetailer": "",
   "productLookupStatus": "not-found",
   "productLookupAt": "2026-11-21T18:38:10.501Z",
-  "productLookupVersion": 6,
-  "productPageChecks": 0,
-  "productVerifiedAt": ""
- },
- {
-  "date": "2026-11-17T07:52:25.000Z",
-  "cat": "Release",
-  "title": "Pokémon Ex Series Will Mark A TCG First When It Replaces Mega Evolution",
-  "summary": "Pokémon Ex Series Will Mark A TCG First When It Replaces Mega Evolution TheGamer",
-  "source": "TheGamer",
-  "publisherUrl": "https://www.thegamer.com",
-  "sourceUrl": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNMGQxU1oyTWFCSnpEYjNyTXlOcDhqQ3J3RTVxN0Jic1ZiVWRwcmFhdV9aWVRqdjNkV2NPMzhOZEdueVNyNlVPcktVUkZqZ2pWLU1HbTUxR1NLSEEzU3VHUmlGNVRXUWJXWEt0LUFub0JSZjlUbmpzb2RobE1vNmJwcXpwZUVGSzFJclpkSw?oc=5",
-  "imageUrls": [],
-  "imageLookupAt": "2026-11-21T18:38:10.600Z",
-  "imageLookupStatus": "not-found",
-  "imageLookupVersion": 6,
-  "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNMGQxU1oyTWFCSnpEYjNyTXlOcDhqQ3J3RTVxN0Jic1ZiVWRwcmFhdV9aWVRqdjNkV2NPMzhOZEdueVNyNlVPcktVUkZqZ2pWLU1HbTUxR1NLSEEzU3VHUmlGNVRXUWJXWEt0LUFub0JSZjlUbmpzb2RobE1vNmJwcXpwZUVGSzFJclpkSw?oc=5",
-  "siteUrl": "",
-  "productUrl": "",
-  "productRetailer": "",
-  "productName": "",
-  "productPrice": "",
-  "productAvailability": "",
-  "productLinks": [],
-  "productSearchLinks": [
-   {
-    "retailer": "TCGplayer",
-    "url": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20series%20will%20mark%20first%20replaces%20mega%20evolution"
-   },
-   {
-    "retailer": "Amazon",
-    "url": "https://www.amazon.com/s?k=Pokemon%20TCG%20series%20will%20mark%20first%20replaces%20mega%20evolution"
-   },
-   {
-    "retailer": "Target",
-    "url": "https://www.target.com/s?searchTerm=Pokemon%20TCG%20series%20will%20mark%20first%20replaces%20mega%20evolution"
-   }
-  ],
-  "productSearchUrl": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20series%20will%20mark%20first%20replaces%20mega%20evolution",
-  "productSearchRetailer": "TCGplayer",
-  "productLookupStatus": "search-fallback",
-  "productLookupAt": "2026-11-21T18:38:10.600Z",
-  "productLookupVersion": 6,
-  "productPageChecks": 0,
-  "productVerifiedAt": ""
- },
- {
-  "date": "2026-11-17T05:41:50.000Z",
-  "cat": "Release",
-  "title": "McDonald's Pokémon Cards 2026: Full List & 7 Holos",
-  "summary": "McDonald's Pokémon Cards 2026: Full List & 7 Holos Cardlines",
-  "source": "Cardlines",
-  "publisherUrl": "https://cardlines.com",
-  "sourceUrl": "https://news.google.com/rss/articles/CBMieEFVX3lxTE03ejF1TVBCTF9lamc5blFOa2xzcnBNSVF6UTNobnF6QTRHbTE0U09lT1ZqMmJLMXNBWlpvZmkxT0dQMGlyT0daVDJRdjhZZmMyak9SSElKYnVRZERtVUJxaWFSQW5WajVMNVlhX2VaNEtITWNRbVFUWQ?oc=5",
-  "imageUrls": [],
-  "imageLookupAt": "2026-11-21T18:38:10.742Z",
-  "imageLookupStatus": "not-found",
-  "imageLookupVersion": 6,
-  "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE03ejF1TVBCTF9lamc5blFOa2xzcnBNSVF6UTNobnF6QTRHbTE0U09lT1ZqMmJLMXNBWlpvZmkxT0dQMGlyT0daVDJRdjhZZmMyak9SSElKYnVRZERtVUJxaWFSQW5WajVMNVlhX2VaNEtITWNRbVFUWQ?oc=5",
-  "siteUrl": "",
-  "productUrl": "",
-  "productRetailer": "",
-  "productName": "",
-  "productPrice": "",
-  "productAvailability": "",
-  "productLinks": [],
-  "productSearchLinks": [
-   {
-    "retailer": "TCGplayer",
-    "url": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20mcdonald%202026%20full%20list%20holos%20cardlines"
-   },
-   {
-    "retailer": "Amazon",
-    "url": "https://www.amazon.com/s?k=Pokemon%20TCG%20mcdonald%202026%20full%20list%20holos%20cardlines"
-   },
-   {
-    "retailer": "Target",
-    "url": "https://www.target.com/s?searchTerm=Pokemon%20TCG%20mcdonald%202026%20full%20list%20holos%20cardlines"
-   }
-  ],
-  "productSearchUrl": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20mcdonald%202026%20full%20list%20holos%20cardlines",
-  "productSearchRetailer": "TCGplayer",
-  "productLookupStatus": "search-fallback",
-  "productLookupAt": "2026-11-21T18:38:10.742Z",
-  "productLookupVersion": 6,
-  "productPageChecks": 0,
-  "productVerifiedAt": ""
- },
- {
-  "date": "2026-11-17T01:04:16.000Z",
-  "cat": "Promo",
-  "title": "Get All the Details About the Pokémon Duolingo Collaboration",
-  "summary": "Get All the Details About the Pokémon Duolingo Collaboration Pokémon.com",
-  "source": "Pokémon.com",
-  "publisherUrl": "https://www.pokemon.com",
-  "sourceUrl": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQMUFST2hYOWkyMDNsSDNEbUNXTmtrZDlVUGduc0hPSkQzQzBFZDRFVHBRd3F3aGd0cHJoRjFxdnZjVEhONFR4YUdfdmtzaHNhTmF3WFFFMDNzNEpqTGdlUjBJRExzZ01zMU5GRF9vcUZKUS1FM0tyMkdUZmlxT09RaV9CcXkybDU1amU4emlMWm1sbEhNanZj?oc=5",
-  "imageUrls": [],
-  "imageLookupAt": "2026-11-21T18:38:11.084Z",
-  "imageLookupStatus": "not-found",
-  "imageLookupVersion": 6,
-  "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQMUFST2hYOWkyMDNsSDNEbUNXTmtrZDlVUGduc0hPSkQzQzBFZDRFVHBRd3F3aGd0cHJoRjFxdnZjVEhONFR4YUdfdmtzaHNhTmF3WFFFMDNzNEpqTGdlUjBJRExzZ01zMU5GRF9vcUZKUS1FM0tyMkdUZmlxT09RaV9CcXkybDU1amU4emlMWm1sbEhNanZj?oc=5",
-  "siteUrl": "",
-  "productUrl": "",
-  "productRetailer": "",
-  "productName": "",
-  "productPrice": "",
-  "productAvailability": "",
-  "productLinks": [],
-  "productSearchLinks": [],
-  "productSearchUrl": "",
-  "productSearchRetailer": "",
-  "productLookupStatus": "not-found",
-  "productLookupAt": "2026-11-21T18:38:11.084Z",
   "productLookupVersion": 6,
   "productPageChecks": 0,
   "productVerifiedAt": ""

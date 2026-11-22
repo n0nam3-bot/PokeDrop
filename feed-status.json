@@ -1,176 +1,195 @@
 {
- "schemaVersion": 1,
- "state": "ok",
- "news": {
-  "sourceCount": 5,
-  "sourcesResponded": 5,
-  "searchResults": 60,
-  "sources": [
-   {
-    "name": "Restock",
-    "ok": true,
-    "results": 12
-   },
-   {
-    "name": "Deals",
-    "ok": true,
-    "results": 12
-   },
-   {
-    "name": "Rare Drop",
-    "ok": true,
-    "results": 12
-   },
-   {
-    "name": "Release",
-    "ok": true,
-    "results": 12
-   },
-   {
-    "name": "Promo",
-    "ok": true,
-    "results": 12
-   }
-  ],
-  "itemImageDiscovery": {
-   "version": 7,
-   "pagesChecked": 20,
-   "itemsWithImages": 29,
-   "verifiedProductPages": 0,
-   "retailerSearchFallbacks": 66,
-   "productSearchLinksAvailable": 66,
-   "productPagesMissing": 54,
-   "productDetailPagesChecked": 13,
-   "imageErrors": 0,
-   "search": {
-    "requests": 79,
-    "successfulQueries": 79,
-    "resultLinks": 690,
-    "errors": 0,
-    "bingRequests": 79,
-    "duckDuckGoRequests": 0
-   }
+  "schemaVersion": 1,
+  "state": "ok",
+  "news": {
+    "sourceCount": 5,
+    "sourcesResponded": 5,
+    "searchResults": 60,
+    "sources": [
+      {
+        "name": "Restock",
+        "ok": true,
+        "results": 12
+      },
+      {
+        "name": "Deals",
+        "ok": true,
+        "results": 12
+      },
+      {
+        "name": "Rare Drop",
+        "ok": true,
+        "results": 12
+      },
+      {
+        "name": "Release",
+        "ok": true,
+        "results": 12
+      },
+      {
+        "name": "Promo",
+        "ok": true,
+        "results": 12
+      }
+    ],
+    "itemImageDiscovery": {
+      "version": 7,
+      "pagesChecked": 20,
+      "itemsWithImages": 37,
+      "verifiedProductPages": 0,
+      "retailerSearchFallbacks": 68,
+      "productSearchLinksAvailable": 68,
+      "productPagesMissing": 52,
+      "productDetailPagesChecked": 13,
+      "imageErrors": 0,
+      "search": {
+        "requests": 85,
+        "successfulQueries": 85,
+        "resultLinks": 775,
+        "errors": 0,
+        "bingRequests": 85,
+        "duckDuckGoRequests": 0
+      }
+    }
+  },
+  "raffles": {
+    "sourceCount": 17,
+    "sourcesResponded": 17,
+    "searchResults": 174,
+    "uniqueLeads": 127,
+    "savedLeads": 9,
+    "directEntryLinksFound": 9,
+    "directEntryLinksMissing": 0,
+    "entryLookupsThisRun": 1,
+    "entryLookupErrors": 0,
+    "historyDays": 365,
+    "sources": [
+      {
+        "name": "TCG giveaways",
+        "ok": true,
+        "results": 12
+      },
+      {
+        "name": "TCG raffles",
+        "ok": true,
+        "results": 12
+      },
+      {
+        "name": "Pokémon card giveaways",
+        "ok": true,
+        "results": 11
+      },
+      {
+        "name": "Pokémon card raffles",
+        "ok": true,
+        "results": 9
+      },
+      {
+        "name": "Booster box prizes",
+        "ok": true,
+        "results": 4
+      },
+      {
+        "name": "Elite Trainer Box prizes",
+        "ok": true,
+        "results": 3
+      },
+      {
+        "name": "TCG sweepstakes",
+        "ok": true,
+        "results": 12
+      },
+      {
+        "name": "Card shop giveaways",
+        "ok": true,
+        "results": 12
+      },
+      {
+        "name": "Card shop raffles",
+        "ok": true,
+        "results": 12
+      },
+      {
+        "name": "Target giveaways",
+        "ok": true,
+        "results": 11
+      },
+      {
+        "name": "Walmart giveaways",
+        "ok": true,
+        "results": 11
+      },
+      {
+        "name": "GameStop giveaways",
+        "ok": true,
+        "results": 11
+      },
+      {
+        "name": "Best Buy giveaways",
+        "ok": true,
+        "results": 11
+      },
+      {
+        "name": "Costco giveaways",
+        "ok": true,
+        "results": 9
+      },
+      {
+        "name": "Pokémon Center lotteries",
+        "ok": true,
+        "results": 12
+      },
+      {
+        "name": "Local card shop contests",
+        "ok": true,
+        "results": 11
+      },
+      {
+        "name": "Community card giveaways",
+        "ok": true,
+        "results": 11
+      },
+      {
+        "name": "Drop alerts: TCG Drop Radar",
+        "ok": true,
+        "results": 13
+      }
+    ],
+    "entrySearchFallbacks": 33,
+    "qualifiedLeads": 33,
+    "rejectedLeads": 94,
+    "discoveryEngine": {
+      "version": 7,
+      "publisherPagesChecked": 1,
+      "prizeDetailsFound": 9,
+      "startDatesFound": 1,
+      "endDatesFound": 1,
+      "prizeImagesFound": 9,
+      "rejectedFalsePositives": 94,
+      "entryLinksValidated": 0,
+      "search": {
+        "requests": 85,
+        "successfulQueries": 85,
+        "resultLinks": 775,
+        "errors": 0,
+        "bingRequests": 85,
+        "duckDuckGoRequests": 0
+      }
+    }
+  },
+  "failures": [],
+  "dropFeeds": {
+    "checkedAt": "2026-11-22T10:30:35.464Z",
+    "sources": [
+      "TCG Drop Radar"
+    ],
+    "alertPostsSeen": 13,
+    "newEvents": 9,
+    "events": 9,
+    "open": 0,
+    "upcoming": 0,
+    "withEntryLink": 9,
+    "withImage": 9,
+    "newsImagesAdded": 30
   }
- },
- "raffles": {
-  "sourceCount": 17,
-  "sourcesResponded": 17,
-  "searchResults": 174,
-  "uniqueLeads": 126,
-  "savedLeads": 126,
-  "directEntryLinksFound": 0,
-  "directEntryLinksMissing": 32,
-  "entryLookupsThisRun": 1,
-  "entryLookupErrors": 0,
-  "historyDays": 365,
-  "sources": [
-   {
-    "name": "TCG giveaways",
-    "ok": true,
-    "results": 12
-   },
-   {
-    "name": "TCG raffles",
-    "ok": true,
-    "results": 12
-   },
-   {
-    "name": "Pokémon card giveaways",
-    "ok": true,
-    "results": 11
-   },
-   {
-    "name": "Pokémon card raffles",
-    "ok": true,
-    "results": 9
-   },
-   {
-    "name": "Booster box prizes",
-    "ok": true,
-    "results": 4
-   },
-   {
-    "name": "Elite Trainer Box prizes",
-    "ok": true,
-    "results": 3
-   },
-   {
-    "name": "TCG sweepstakes",
-    "ok": true,
-    "results": 12
-   },
-   {
-    "name": "Card shop giveaways",
-    "ok": true,
-    "results": 12
-   },
-   {
-    "name": "Card shop raffles",
-    "ok": true,
-    "results": 12
-   },
-   {
-    "name": "Target giveaways",
-    "ok": true,
-    "results": 11
-   },
-   {
-    "name": "Walmart giveaways",
-    "ok": true,
-    "results": 11
-   },
-   {
-    "name": "GameStop giveaways",
-    "ok": true,
-    "results": 11
-   },
-   {
-    "name": "Best Buy giveaways",
-    "ok": true,
-    "results": 11
-   },
-   {
-    "name": "Costco giveaways",
-    "ok": true,
-    "results": 9
-   },
-   {
-    "name": "Pokémon Center lotteries",
-    "ok": true,
-    "results": 12
-   },
-   {
-    "name": "Local card shop contests",
-    "ok": true,
-    "results": 11
-   },
-   {
-    "name": "Community card giveaways",
-    "ok": true,
-    "results": 11
-   }
-  ],
-  "entrySearchFallbacks": 32,
-  "qualifiedLeads": 32,
-  "rejectedLeads": 94,
-  "discoveryEngine": {
-   "version": 7,
-   "publisherPagesChecked": 1,
-   "prizeDetailsFound": 9,
-   "startDatesFound": 1,
-   "endDatesFound": 1,
-   "prizeImagesFound": 8,
-   "rejectedFalsePositives": 94,
-   "entryLinksValidated": 0,
-   "search": {
-    "requests": 79,
-    "successfulQueries": 79,
-    "resultLinks": 690,
-    "errors": 0,
-    "bingRequests": 79,
-    "duckDuckGoRequests": 0
-   }
-  }
- },
- "failures": []
 }
