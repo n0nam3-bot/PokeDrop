@@ -34,20 +34,20 @@
     ],
     "itemImageDiscovery": {
       "version": 7,
-      "pagesChecked": 2,
-      "itemsWithImages": 77,
+      "pagesChecked": 4,
+      "itemsWithImages": 81,
       "verifiedProductPages": 0,
-      "retailerSearchFallbacks": 66,
-      "productSearchLinksAvailable": 66,
-      "productPagesMissing": 54,
+      "retailerSearchFallbacks": 67,
+      "productSearchLinksAvailable": 67,
+      "productPagesMissing": 53,
       "productDetailPagesChecked": 12,
       "imageErrors": 0,
       "search": {
-        "requests": 6,
-        "successfulQueries": 6,
-        "resultLinks": 48,
+        "requests": 16,
+        "successfulQueries": 16,
+        "resultLinks": 157,
         "errors": 0,
-        "bingRequests": 6,
+        "bingRequests": 16,
         "duckDuckGoRequests": 0
       }
     }
@@ -55,8 +55,8 @@
   "raffles": {
     "sourceCount": 17,
     "sourcesResponded": 17,
-    "searchResults": 174,
-    "uniqueLeads": 117,
+    "searchResults": 176,
+    "uniqueLeads": 119,
     "savedLeads": 9,
     "directEntryLinksFound": 9,
     "directEntryLinksMissing": 0,
@@ -112,7 +112,7 @@
       {
         "name": "Target giveaways",
         "ok": true,
-        "results": 11
+        "results": 12
       },
       {
         "name": "Walmart giveaways",
@@ -137,7 +137,7 @@
       {
         "name": "Pokémon Center lotteries",
         "ok": true,
-        "results": 11
+        "results": 12
       },
       {
         "name": "Local card shop contests",
@@ -157,7 +157,7 @@
     ],
     "entrySearchFallbacks": 18,
     "qualifiedLeads": 18,
-    "rejectedLeads": 99,
+    "rejectedLeads": 101,
     "discoveryEngine": {
       "version": 7,
       "publisherPagesChecked": 18,
@@ -165,21 +165,21 @@
       "startDatesFound": 1,
       "endDatesFound": 1,
       "prizeImagesFound": 8,
-      "rejectedFalsePositives": 99,
+      "rejectedFalsePositives": 101,
       "entryLinksValidated": 0,
       "search": {
-        "requests": 10,
-        "successfulQueries": 10,
-        "resultLinks": 88,
+        "requests": 20,
+        "successfulQueries": 20,
+        "resultLinks": 197,
         "errors": 0,
-        "bingRequests": 10,
+        "bingRequests": 20,
         "duckDuckGoRequests": 0
       }
     }
   },
   "failures": [],
   "dropFeeds": {
-    "checkedAt": "2026-11-22T20:26:24.471Z",
+    "checkedAt": "2026-11-23T01:02:48.598Z",
     "sources": [
       "TCG Drop Radar"
     ],

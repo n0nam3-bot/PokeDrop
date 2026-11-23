@@ -1,5 +1,105 @@
 [
  {
+  "date": "2026-11-22T13:19:01.000Z",
+  "cat": "Deals",
+  "title": "$990K Charizard leads another big week for Pokémon and TCG sales",
+  "summary": "A rare first-edition Charizard sold for $990,000, leading a strong week of Pokémon and Magic: The Gathering sales.",
+  "source": "Sports Illustrated on MSN",
+  "publisherUrl": "https://www.msn.com",
+  "sourceUrl": "https://www.msn.com/en-us/news/other/990k-charizard-leads-another-big-week-for-pok%C3%A9mon-and-tcg-sales/ar-AA2hYzaW",
+  "imageUrls": [
+   {
+    "url": "https://www.bing.com/th?id=ONUT.RMx9r4WbJEeqUrKiPFwLbw&pid=News&w=480&h=360&c=14",
+    "label": "ARTICLE IMAGE",
+    "kind": "article",
+    "alt": "$990K Charizard leads another big week for Pokémon and TCG sales"
+   }
+  ],
+  "imageLookupAt": "2026-11-23T01:02:33.910Z",
+  "imageLookupStatus": "not-found",
+  "imageLookupVersion": 7,
+  "url": "https://www.msn.com/en-us/news/other/990k-charizard-leads-another-big-week-for-pok%C3%A9mon-and-tcg-sales/ar-AA2hYzaW",
+  "thumbUrl": "https://www.bing.com/th?id=ONUT.RMx9r4WbJEeqUrKiPFwLbw&pid=News&w=480&h=360&c=14",
+  "siteUrl": "",
+  "productUrl": "",
+  "productRetailer": "",
+  "productName": "",
+  "productPrice": "",
+  "productAvailability": "",
+  "productLinks": [],
+  "productSearchLinks": [
+   {
+    "retailer": "TCGplayer",
+    "url": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20990k%20charizard%20leads%20another%20week%20first%20edition"
+   },
+   {
+    "retailer": "Amazon",
+    "url": "https://www.amazon.com/s?k=Pokemon%20TCG%20990k%20charizard%20leads%20another%20week%20first%20edition"
+   },
+   {
+    "retailer": "Target",
+    "url": "https://www.target.com/s?searchTerm=Pokemon%20TCG%20990k%20charizard%20leads%20another%20week%20first%20edition"
+   }
+  ],
+  "productSearchUrl": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20990k%20charizard%20leads%20another%20week%20first%20edition",
+  "productSearchRetailer": "TCGplayer",
+  "productLookupStatus": "search-fallback",
+  "productLookupAt": "2026-11-23T01:02:33.910Z",
+  "productLookupVersion": 7,
+  "productPageChecks": 0,
+  "productVerifiedAt": ""
+ },
+ {
+  "date": "2026-11-22T12:26:00.000Z",
+  "cat": "Release",
+  "title": "Meet the 2027 Pokémon Latin America International Championships (LAIC) Winners",
+  "summary": "The 2027 Latin America International Championships marked not just the largest Pokémon Trading Card Game (TCG) event in Latin America with 3,185 competing across all age divisions, but also the most ...",
+  "source": "The Official Pokémon Website",
+  "publisherUrl": "https://www.pokemon.com",
+  "sourceUrl": "https://www.pokemon.com/us/news/meet-the-2027-pokemon-latin-america-international-championships-laic-winners",
+  "imageUrls": [
+   {
+    "url": "https://www.bing.com/th?id=ONUT._1uiK_5sfWsuNSRVrbWUqA&pid=News&w=480&h=360&c=14",
+    "label": "ARTICLE IMAGE",
+    "kind": "article",
+    "alt": "Meet the 2027 Pokémon Latin America International Championships (LAIC) Winners"
+   }
+  ],
+  "imageLookupAt": "2026-11-23T01:02:33.911Z",
+  "imageLookupStatus": "not-found",
+  "imageLookupVersion": 7,
+  "url": "https://www.pokemon.com/us/news/meet-the-2027-pokemon-latin-america-international-championships-laic-winners",
+  "thumbUrl": "https://www.bing.com/th?id=ONUT._1uiK_5sfWsuNSRVrbWUqA&pid=News&w=480&h=360&c=14",
+  "siteUrl": "https://www.pokemon.com",
+  "productUrl": "",
+  "productRetailer": "",
+  "productName": "",
+  "productPrice": "",
+  "productAvailability": "",
+  "productLinks": [],
+  "productSearchLinks": [
+   {
+    "retailer": "TCGplayer",
+    "url": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20meet%20latin%20america%20international%20championships%20laic%20marked"
+   },
+   {
+    "retailer": "Amazon",
+    "url": "https://www.amazon.com/s?k=Pokemon%20TCG%20meet%20latin%20america%20international%20championships%20laic%20marked"
+   },
+   {
+    "retailer": "Target",
+    "url": "https://www.target.com/s?searchTerm=Pokemon%20TCG%20meet%20latin%20america%20international%20championships%20laic%20marked"
+   }
+  ],
+  "productSearchUrl": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20meet%20latin%20america%20international%20championships%20laic%20marked",
+  "productSearchRetailer": "TCGplayer",
+  "productLookupStatus": "search-fallback",
+  "productLookupAt": "2026-11-23T01:02:33.911Z",
+  "productLookupVersion": 7,
+  "productPageChecks": 0,
+  "productVerifiedAt": ""
+ },
+ {
   "date": "2026-11-22T12:26:00.000Z",
   "cat": "Deals",
   "title": "[November 2026] Getting Pokémon Cards in Overseas McDonald's Happy Meals! Full Disclosure of Results, Costs, and Experiences [Australia/Cairns Trip]",
@@ -49,7 +149,6 @@
   "imageLookupStatus": "found",
   "imageLookupVersion": 7,
   "url": "https://note.com/kensho_time/n/na593be52e7f9?hl=en",
-  "thumbUrl": "https://www.bing.com/th?id=ONUT.rgVLr7yJI-7JYyLl1F0l-Q&pid=News&w=480&h=360&c=14",
   "siteUrl": "https://note.com",
   "productSearchLinks": [
    {
@@ -69,7 +168,8 @@
   "productSearchRetailer": "Target",
   "productLookupStatus": "search-fallback",
   "productLookupAt": "2026-11-22T18:31:06.902Z",
-  "productLookupVersion": 7
+  "productLookupVersion": 7,
+  "thumbUrl": "https://www.bing.com/th?id=ONUT.rgVLr7yJI-7JYyLl1F0l-Q&pid=News&w=480&h=360&c=14"
  },
  {
   "date": "2026-11-22T08:09:28.000Z",
@@ -279,7 +379,6 @@
   "imageLookupStatus": "found",
   "imageLookupVersion": 7,
   "url": "https://note.com/fine_camel644/n/n40167c250a62?hl=en",
-  "thumbUrl": "https://www.bing.com/th?id=ONUT.S86moirKclHPzmxhs83DQA&pid=News&w=480&h=360&c=14",
   "siteUrl": "https://note.com",
   "productUrl": "",
   "productRetailer": "",
@@ -307,7 +406,8 @@
   "productLookupAt": "2026-11-22T20:26:09.730Z",
   "productLookupVersion": 7,
   "productPageChecks": 0,
-  "productVerifiedAt": ""
+  "productVerifiedAt": "",
+  "thumbUrl": "https://www.bing.com/th?id=ONUT.S86moirKclHPzmxhs83DQA&pid=News&w=480&h=360&c=14"
  },
  {
   "date": "2026-11-22T05:12:00.000Z",
@@ -331,6 +431,112 @@
   "url": "https://note.com/taku_wasabi/n/n87996005c092?hl=en",
   "thumbUrl": "https://www.bing.com/th?id=ONUT.Pv8wiLtkkjPbSEbseyJM5g&pid=News&w=480&h=360&c=14",
   "siteUrl": "https://note.com",
+  "productLookupStatus": "not-found",
+  "productLookupAt": "2026-11-22T20:26:09.731Z",
+  "productLookupVersion": 7
+ },
+ {
+  "date": "2026-11-22T03:29:00.000Z",
+  "cat": "Release",
+  "title": "The Pokémon Company Officially Confirms Pokémon TCG Releases Are Changing",
+  "summary": "The Pokémon Company officially reveals major changes coming to its new set releases, rolling out with the launch of Flowing Fists.",
+  "source": "Game Rant",
+  "publisherUrl": "https://gamerant.com",
+  "sourceUrl": "https://gamerant.com/pokemon-tcg-release-flowing-fists-saturday/",
+  "imageUrls": [
+   {
+    "url": "https://static0.gamerantimages.com/wordpress/wp-content/uploads/2026/11/pokemon-tcg-set-release-change-saturday.jpg?&fit=crop&w=1600&h=900",
+    "label": "ITEM IMAGE",
+    "kind": "product",
+    "alt": "Mega Garchomp Z ex in the Pokemon TCG"
+   },
+   {
+    "url": "https://static0.gamerantimages.com/wordpress/wp-content/uploads/wm/2026/11/pokemon-tcg-bg-ditto.jpg?q=49&fit=crop&w=220&h=124&dpr=2",
+    "label": "ITEM IMAGE",
+    "kind": "product",
+    "alt": "pokemon-tcg-bg-ditto"
+   },
+   {
+    "url": "https://static0.gamerantimages.com/wordpress/wp-content/uploads/2026/11/pokemon-tcg-live-delta-reign-free-packs.jpg?q=49&fit=crop&w=528&h=374&dpr=2",
+    "label": "ITEM IMAGE",
+    "kind": "product",
+    "alt": "Mega Rayquaza ex from the Pokemon TCG's Delta Reign expansion"
+   },
+   {
+    "url": "https://static0.gamerantimages.com/wordpress/wp-content/uploads/2026/10/pokemon-tcg-valentines-day-set-2027.jpg?q=49&fit=crop&w=252&h=183&dpr=2",
+    "label": "ITEM IMAGE",
+    "kind": "product",
+    "alt": "Pikachu from the Pokemon TCG's 30th celebration set"
+   },
+   {
+    "url": "https://static0.gamerantimages.com/wordpress/wp-content/uploads/2026/10/pokemon-tcg-live-30th-celebration-promo-code.jpg?q=49&fit=crop&w=252&h=183&dpr=2",
+    "label": "ITEM IMAGE",
+    "kind": "product",
+    "alt": "The promo visual for the Pokemon TCG's 30th Celebration set"
+   },
+   {
+    "url": "https://static0.gamerantimages.com/wordpress/wp-content/uploads/2026/08/pokemon-legends-z-a-season-15-august-6-ruleset-rewards-water-pokemon-winds-waves-teaser-flying-new-t.jpg?q=49&fit=crop&w=100&h=67&dpr=2",
+    "label": "ITEM IMAGE",
+    "kind": "product",
+    "alt": "A Pokemon Legends: Z-A image showing Froakie with an overlay of the Pokemon Winds and Waves protagonists"
+   }
+  ],
+  "imageLookupAt": "2026-11-23T01:02:33.912Z",
+  "imageLookupStatus": "found",
+  "imageLookupVersion": 7,
+  "url": "https://gamerant.com/pokemon-tcg-release-flowing-fists-saturday/",
+  "thumbUrl": "https://www.bing.com/th?id=ONUT.zb96f-7-gdJ-9B5_ClB4ew&pid=News&w=480&h=360&c=14",
+  "siteUrl": "https://gamerant.com",
+  "productUrl": "",
+  "productRetailer": "",
+  "productName": "",
+  "productPrice": "",
+  "productAvailability": "",
+  "productLinks": [],
+  "productSearchLinks": [
+   {
+    "retailer": "TCGplayer",
+    "url": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20company%20officially%20confirms%20changing%20major%20changes%20coming"
+   },
+   {
+    "retailer": "Amazon",
+    "url": "https://www.amazon.com/s?k=Pokemon%20TCG%20company%20officially%20confirms%20changing%20major%20changes%20coming"
+   },
+   {
+    "retailer": "Target",
+    "url": "https://www.target.com/s?searchTerm=Pokemon%20TCG%20company%20officially%20confirms%20changing%20major%20changes%20coming"
+   }
+  ],
+  "productSearchUrl": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20company%20officially%20confirms%20changing%20major%20changes%20coming",
+  "productSearchRetailer": "TCGplayer",
+  "productLookupStatus": "search-fallback",
+  "productLookupAt": "2026-11-23T01:02:33.912Z",
+  "productLookupVersion": 7,
+  "productPageChecks": 0,
+  "productVerifiedAt": ""
+ },
+ {
+  "date": "2026-11-22T02:30:18.000Z",
+  "cat": "Release",
+  "title": "Pokémon Winds & Waves box legendaries designs leaked",
+  "summary": "Discover leaked designs for Pokémon Winds & Waves box legendaries set for 2027 in an exciting new tropical region.",
+  "source": "Screen Rant on MSN",
+  "publisherUrl": "https://www.msn.com",
+  "sourceUrl": "https://www.msn.com/en-us/gaming/the-pokemon-company/pok%C3%A9mon-winds-waves-box-legendaries-designs-leaked/ar-AA2hZIcg",
+  "imageUrls": [
+   {
+    "url": "https://www.bing.com/th?id=ONUT.SCU1LAL_uHrCP27nLZwxkQ&pid=News&w=480&h=360&c=14",
+    "label": "ARTICLE IMAGE",
+    "kind": "article",
+    "alt": "Pokémon Winds & Waves box legendaries designs leaked"
+   }
+  ],
+  "imageLookupAt": "2026-11-23T01:02:33.912Z",
+  "imageLookupStatus": "not-found",
+  "imageLookupVersion": 7,
+  "url": "https://www.msn.com/en-us/gaming/the-pokemon-company/pok%C3%A9mon-winds-waves-box-legendaries-designs-leaked/ar-AA2hZIcg",
+  "thumbUrl": "https://www.bing.com/th?id=ONUT.SCU1LAL_uHrCP27nLZwxkQ&pid=News&w=480&h=360&c=14",
+  "siteUrl": "",
   "productUrl": "",
   "productRetailer": "",
   "productName": "",
@@ -341,7 +547,7 @@
   "productSearchUrl": "",
   "productSearchRetailer": "",
   "productLookupStatus": "not-found",
-  "productLookupAt": "2026-11-22T20:26:09.731Z",
+  "productLookupAt": "2026-11-23T01:02:33.912Z",
   "productLookupVersion": 7,
   "productPageChecks": 0,
   "productVerifiedAt": ""
@@ -426,10 +632,10 @@
   "imageLookupStatus": "not-found",
   "imageLookupVersion": 7,
   "url": "https://www.msn.com/en-us/news/other/thief-steals-12-year-old-s-valuable-pok%C3%A9mon-card-at-mira-mesa-event/vi-AA2hWV6x",
-  "thumbUrl": "https://www.bing.com/th?id=ONUT.dE_5-ztDukCgTIPPadh4BA&pid=News&w=480&h=360&c=14",
   "productLookupStatus": "not-found",
   "productLookupAt": "2026-11-22T13:02:02.958Z",
-  "productLookupVersion": 7
+  "productLookupVersion": 7,
+  "thumbUrl": "https://www.bing.com/th?id=ONUT.dE_5-ztDukCgTIPPadh4BA&pid=News&w=480&h=360&c=14"
  },
  {
   "date": "2026-11-21T16:26:32.000Z",
@@ -469,7 +675,6 @@
   "imageLookupStatus": "found",
   "imageLookupVersion": 7,
   "url": "https://www.msn.com/en-au/gaming/the-pokemon-company/pokemon-tcg-flowing-fists-set-leaks-all-the-hits-revealed-so-far/ar-AA2hXYjj",
-  "thumbUrl": "https://www.bing.com/th?id=ONUT.bXWhoknI4wTIgWXX_2sIgA&pid=News&w=480&h=360&c=14",
   "siteUrl": "https://gamerant.com",
   "productSearchLinks": [
    {
@@ -489,7 +694,8 @@
   "productSearchRetailer": "TCGplayer",
   "productLookupStatus": "search-fallback",
   "productLookupAt": "2026-11-22T04:49:46.668Z",
-  "productLookupVersion": 7
+  "productLookupVersion": 7,
+  "thumbUrl": "https://www.bing.com/th?id=ONUT.bXWhoknI4wTIgWXX_2sIgA&pid=News&w=480&h=360&c=14"
  },
  {
   "date": "2026-11-21T15:59:00.000Z",
@@ -727,7 +933,6 @@
   "imageLookupStatus": "not-found",
   "imageLookupVersion": 7,
   "url": "https://www.msn.com/en-us/gaming/general/10-most-valuable-pok%C3%A9mon-cards-from-the-sun-moon-era-ranked-by-price/ar-AA2hX354",
-  "thumbUrl": "https://www.bing.com/th?id=ONUT.CMZjouare05bzmwYrfabAw&pid=News&w=480&h=360&c=14",
   "productSearchLinks": [
    {
     "retailer": "TCGplayer",
@@ -746,7 +951,8 @@
   "productSearchRetailer": "TCGplayer",
   "productLookupStatus": "search-fallback",
   "productLookupAt": "2026-11-22T10:30:16.132Z",
-  "productLookupVersion": 7
+  "productLookupVersion": 7,
+  "thumbUrl": "https://www.bing.com/th?id=ONUT.CMZjouare05bzmwYrfabAw&pid=News&w=480&h=360&c=14"
  },
  {
   "date": "2026-11-21T09:06:00.000Z",
@@ -793,7 +999,7 @@
   "summary": "The Pokémon franchise is giving fans a sweet treat through Baskin-Robbins, with 30 years nearly matching all 31 of the restaurant's flavors.",
   "source": "Comic Book Resources on MSN",
   "publisherUrl": "https://www.msn.com",
-  "sourceUrl": "https://www.msn.com/en-us/news/other/pok%C3%A9mon-officially-returns-to-baskin-robbins-with-new-limited-time-ice-cream-collection/ar-AA2hWXt7",
+  "sourceUrl": "https://www.msn.com/en-us/food-and-drink/general/pok%C3%A9mon-officially-returns-to-baskin-robbins-with-new-limited-time-ice-cream-collection/ar-AA2hWXt7",
   "imageUrls": [
    {
     "url": "https://www.bing.com/th?id=ONUT.Y0xHr2hFxNgYtio9VyqK3A&pid=News&w=480&h=360&c=14",
@@ -805,7 +1011,7 @@
   "imageLookupAt": "2026-11-22T10:30:16.133Z",
   "imageLookupStatus": "not-found",
   "imageLookupVersion": 7,
-  "url": "https://www.msn.com/en-us/news/other/pok%C3%A9mon-officially-returns-to-baskin-robbins-with-new-limited-time-ice-cream-collection/ar-AA2hWXt7",
+  "url": "https://www.msn.com/en-us/food-and-drink/general/pok%C3%A9mon-officially-returns-to-baskin-robbins-with-new-limited-time-ice-cream-collection/ar-AA2hWXt7",
   "thumbUrl": "https://www.bing.com/th?id=ONUT.Y0xHr2hFxNgYtio9VyqK3A&pid=News&w=480&h=360&c=14",
   "productLookupStatus": "not-found",
   "productLookupAt": "2026-11-22T10:30:16.133Z",
@@ -890,7 +1096,7 @@
  },
  {
   "date": "2026-11-21T05:58:00.000Z",
-  "cat": "Release",
+  "cat": "Deals",
   "title": "[November 2026] Is Now the Time to Buy the Dip? 5 Carefully Selected Released Pokémon Card Unopened Boxes Expected to Rise in Value (Including Price Differences Between Japan ...",
   "summary": "The Pokémon card market in late November 2026 has calmed down from the high price range seen in the spring, and the market for boxes as a whole is in a phase of gradual adjustment. That is precisely w ...",
   "source": "note",
@@ -908,13 +1114,8 @@
   "imageLookupStatus": "not-found",
   "imageLookupVersion": 7,
   "url": "https://note.com/donkey427/n/n00609e4de30b?hl=en",
+  "thumbUrl": "https://www.bing.com/th?id=ONUT.Gi0NG7cTPDgiQwus9FXE6g&pid=News&w=480&h=360&c=14",
   "siteUrl": "https://note.com",
-  "productUrl": "",
-  "productRetailer": "",
-  "productName": "",
-  "productPrice": "",
-  "productAvailability": "",
-  "productLinks": [],
   "productSearchLinks": [
    {
     "retailer": "TCGplayer",
@@ -933,10 +1134,7 @@
   "productSearchRetailer": "TCGplayer",
   "productLookupStatus": "search-fallback",
   "productLookupAt": "2026-11-22T18:31:08.233Z",
-  "productLookupVersion": 7,
-  "productPageChecks": 0,
-  "productVerifiedAt": "",
-  "thumbUrl": "https://www.bing.com/th?id=ONUT.Gi0NG7cTPDgiQwus9FXE6g&pid=News&w=480&h=360&c=14"
+  "productLookupVersion": 7
  },
  {
   "date": "2026-11-21T04:31:25.000Z",
@@ -988,7 +1186,6 @@
   "imageLookupStatus": "not-found",
   "imageLookupVersion": 7,
   "url": "https://note.com/comres_note/n/n14794618d280?hl=en",
-  "thumbUrl": "https://www.bing.com/th?id=ONUT.xv1AAe73i2biQtvc6TvehQ&pid=News&w=480&h=360&c=14",
   "siteUrl": "https://note.com",
   "productSearchLinks": [
    {
@@ -1008,7 +1205,8 @@
   "productSearchRetailer": "TCGplayer",
   "productLookupStatus": "search-fallback",
   "productLookupAt": "2026-11-22T18:31:08.658Z",
-  "productLookupVersion": 7
+  "productLookupVersion": 7,
+  "thumbUrl": "https://www.bing.com/th?id=ONUT.xv1AAe73i2biQtvc6TvehQ&pid=News&w=480&h=360&c=14"
  },
  {
   "date": "2026-11-21T03:37:00.000Z",
@@ -1049,7 +1247,6 @@
   "imageLookupStatus": "not-found",
   "imageLookupVersion": 7,
   "url": "https://note.com/toreca_asset/n/n30b15f09f2b8?hl=en",
-  "thumbUrl": "https://www.bing.com/th?id=ONUT.aaUvR37e_kCNfvOOUeJjKQ&pid=News&w=480&h=360&c=14",
   "siteUrl": "https://note.com",
   "productSearchLinks": [
    {
@@ -1069,6 +1266,79 @@
   "productSearchRetailer": "TCGplayer",
   "productLookupStatus": "search-fallback",
   "productLookupAt": "2026-11-22T18:31:08.852Z",
+  "productLookupVersion": 7,
+  "thumbUrl": "https://www.bing.com/th?id=ONUT.aaUvR37e_kCNfvOOUeJjKQ&pid=News&w=480&h=360&c=14"
+ },
+ {
+  "date": "2026-11-21T02:33:00.000Z",
+  "cat": "Restock",
+  "title": "Pokémon TCG 30th Celebration Ultra-Premium Collections: Live restock updates at Amazon, Walmart, and Target (Nov. 21)",
+  "summary": "The Pokémon TCG's 30th Celebration Ultra-Premium Collections have finally arrived, but getting hold of either the Espeon (Day) or Umbreon (Night) edition at a reasonable price has been proving ...",
+  "source": "Mashable",
+  "publisherUrl": "https://mashable.com",
+  "sourceUrl": "https://mashable.com/life/pokemon-30th-celebration-ultra-premium-collection-retailer-restock-where",
+  "imageUrls": [
+   {
+    "url": "https://helios-i.mashable.com/imagery/defaults/fallback-thumbnail.fill.size_1600x900.1.png",
+    "label": "ITEM IMAGE",
+    "kind": "product",
+    "alt": "Mashable Image"
+   },
+   {
+    "url": "https://helios-i.mashable.com/imagery/articles/0249PCZblvBw59Be24eXSLJ/hero-image.fill.size_1248x702.v1795184719.jpg",
+    "label": "ITEM IMAGE",
+    "kind": "product",
+    "alt": "Pokémon UPC collections on composite background"
+   },
+   {
+    "url": "https://helios-i.mashable.com/imagery/articles/0249PCZblvBw59Be24eXSLJ/images-1.fit_lim.size_196x133.v1795183998.png",
+    "label": "ITEM IMAGE",
+    "kind": "product",
+    "alt": "The Pok&eacute;mon TCG: 30th Celebration Ultra-Premium Collection (Day/Espeon edition) on a white background"
+   },
+   {
+    "url": "https://helios-i.mashable.com/imagery/articles/0249PCZblvBw59Be24eXSLJ/images-2.fit_lim.size_198x133.v1795183998.png",
+    "label": "ITEM IMAGE",
+    "kind": "product",
+    "alt": "The Pok&eacute;mon TCG: 30th Celebration Ultra-Premium Collection (Night/Umbreon) on a white background"
+   },
+   {
+    "url": "https://helios-i.mashable.com/imagery/defaults/fallback-thumbnail.fill.size_100x100.1.png",
+    "label": "ITEM IMAGE",
+    "kind": "product",
+    "alt": "Mashable Image"
+   },
+   {
+    "url": "https://mashable.com/images/seamless-keep-scrolling.png",
+    "label": "ITEM IMAGE",
+    "kind": "product",
+    "alt": "Mashable Potato"
+   }
+  ],
+  "imageLookupAt": "2026-11-21T19:54:28.088Z",
+  "imageLookupStatus": "found",
+  "imageLookupVersion": 7,
+  "url": "https://mashable.com/life/pokemon-30th-celebration-ultra-premium-collection-retailer-restock-where",
+  "thumbUrl": "https://www.bing.com/th?id=ONUT.nAauhIardeZPK7kzcGCLYg&pid=News&w=480&h=360&c=14",
+  "siteUrl": "https://mashable.com",
+  "productSearchLinks": [
+   {
+    "retailer": "Target",
+    "url": "https://www.target.com/s?searchTerm=Pokemon%20TCG%2030th%20celebration%20ultra%20premium%20collections%20have%20finally"
+   },
+   {
+    "retailer": "TCGplayer",
+    "url": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%2030th%20celebration%20ultra%20premium%20collections%20have%20finally"
+   },
+   {
+    "retailer": "Amazon",
+    "url": "https://www.amazon.com/s?k=Pokemon%20TCG%2030th%20celebration%20ultra%20premium%20collections%20have%20finally"
+   }
+  ],
+  "productSearchUrl": "https://www.target.com/s?searchTerm=Pokemon%20TCG%2030th%20celebration%20ultra%20premium%20collections%20have%20finally",
+  "productSearchRetailer": "Target",
+  "productLookupStatus": "search-fallback",
+  "productLookupAt": "2026-11-21T19:54:28.088Z",
   "productLookupVersion": 7
  },
  {
@@ -1420,78 +1690,6 @@
   "productLookupVersion": 7
  },
  {
-  "date": "2026-11-20T19:00:00.000Z",
-  "cat": "Restock",
-  "title": "Pokémon TCG 30th Celebration Ultra-Premium Collections: Live restock updates at Amazon, Walmart, and Target (Nov. 21)",
-  "summary": "The Pokémon TCG's 30th Celebration Ultra-Premium Collections have finally arrived, but getting hold of either the Espeon (Day) or Umbreon (Night) edition at a reasonable price has been proving ...",
-  "source": "Mashable",
-  "publisherUrl": "https://mashable.com",
-  "sourceUrl": "https://mashable.com/life/pokemon-30th-celebration-ultra-premium-collection-retailer-restock-where",
-  "imageUrls": [
-   {
-    "url": "https://helios-i.mashable.com/imagery/defaults/fallback-thumbnail.fill.size_1600x900.1.png",
-    "label": "ITEM IMAGE",
-    "kind": "product",
-    "alt": "Mashable Image"
-   },
-   {
-    "url": "https://helios-i.mashable.com/imagery/articles/0249PCZblvBw59Be24eXSLJ/hero-image.fill.size_1248x702.v1795184719.jpg",
-    "label": "ITEM IMAGE",
-    "kind": "product",
-    "alt": "Pokémon UPC collections on composite background"
-   },
-   {
-    "url": "https://helios-i.mashable.com/imagery/articles/0249PCZblvBw59Be24eXSLJ/images-1.fit_lim.size_196x133.v1795183998.png",
-    "label": "ITEM IMAGE",
-    "kind": "product",
-    "alt": "The Pok&eacute;mon TCG: 30th Celebration Ultra-Premium Collection (Day/Espeon edition) on a white background"
-   },
-   {
-    "url": "https://helios-i.mashable.com/imagery/articles/0249PCZblvBw59Be24eXSLJ/images-2.fit_lim.size_198x133.v1795183998.png",
-    "label": "ITEM IMAGE",
-    "kind": "product",
-    "alt": "The Pok&eacute;mon TCG: 30th Celebration Ultra-Premium Collection (Night/Umbreon) on a white background"
-   },
-   {
-    "url": "https://helios-i.mashable.com/imagery/defaults/fallback-thumbnail.fill.size_100x100.1.png",
-    "label": "ITEM IMAGE",
-    "kind": "product",
-    "alt": "Mashable Image"
-   },
-   {
-    "url": "https://mashable.com/images/seamless-keep-scrolling.png",
-    "label": "ITEM IMAGE",
-    "kind": "product",
-    "alt": "Mashable Potato"
-   }
-  ],
-  "imageLookupAt": "2026-11-21T19:54:28.088Z",
-  "imageLookupStatus": "found",
-  "imageLookupVersion": 7,
-  "url": "https://mashable.com/life/pokemon-30th-celebration-ultra-premium-collection-retailer-restock-where",
-  "thumbUrl": "https://www.bing.com/th?id=ONUT.yPO3Y7sKKo8MGkRzaD8CXg&pid=News&w=480&h=360&c=14",
-  "siteUrl": "https://mashable.com",
-  "productSearchLinks": [
-   {
-    "retailer": "Target",
-    "url": "https://www.target.com/s?searchTerm=Pokemon%20TCG%2030th%20celebration%20ultra%20premium%20collections%20have%20finally"
-   },
-   {
-    "retailer": "TCGplayer",
-    "url": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%2030th%20celebration%20ultra%20premium%20collections%20have%20finally"
-   },
-   {
-    "retailer": "Amazon",
-    "url": "https://www.amazon.com/s?k=Pokemon%20TCG%2030th%20celebration%20ultra%20premium%20collections%20have%20finally"
-   }
-  ],
-  "productSearchUrl": "https://www.target.com/s?searchTerm=Pokemon%20TCG%2030th%20celebration%20ultra%20premium%20collections%20have%20finally",
-  "productSearchRetailer": "Target",
-  "productLookupStatus": "search-fallback",
-  "productLookupAt": "2026-11-21T19:54:28.088Z",
-  "productLookupVersion": 7
- },
- {
   "date": "2026-11-20T18:27:16.000Z",
   "cat": "Deals",
   "title": "Best Pokémon TCG deal: 30th Celebration Tech Sticker Collection is up to 20 PERCENT off",
@@ -1641,7 +1839,7 @@
   "imageLookupStatus": "found",
   "imageLookupVersion": 7,
   "url": "https://www.polygon.com/pokemon-movie-collection-amazon-blu-ray-november-2026/",
-  "thumbUrl": "https://www.bing.com/th?id=ONUT.rkxWxZ98Kr1jFGqptgTDAA&pid=News&w=480&h=360&c=14",
+  "thumbUrl": "https://www.bing.com/th?id=ONUT.oslIl7PSPb_pB05-96Af4A&pid=News&w=480&h=360&c=14",
   "siteUrl": "https://www.polygon.com",
   "productLookupStatus": "not-found",
   "productLookupAt": "2026-11-21T19:54:28.994Z",
@@ -1667,7 +1865,7 @@
   "imageLookupStatus": "not-found",
   "imageLookupVersion": 7,
   "url": "https://fox2now.com/news/pokemon-card-theft-investigated-at-madison-county-antique-mall/",
-  "thumbUrl": "https://www.bing.com/th?id=ONUT.SqbJwClGKZgMYDQUevaQ8A&pid=News&w=480&h=360&c=14",
+  "thumbUrl": "https://www.bing.com/th?id=ONUT.TyVNL44ugeKZVsvMwKwA3A&pid=News&w=480&h=360&c=14",
   "siteUrl": "https://fox2now.com",
   "productLookupStatus": "not-found",
   "productLookupAt": "2026-11-21T23:41:52.538Z",
@@ -1833,7 +2031,7 @@
   "imageLookupStatus": "found",
   "imageLookupVersion": 7,
   "url": "https://cbs6albany.com/news/local/pokemon-card-burglary-under-investigation-at-flipside-gaming",
-  "thumbUrl": "https://www.bing.com/th?id=ONUT.ww6cvbSgjMxwzP7kKHkDqA&pid=News&w=480&h=360&c=14",
+  "thumbUrl": "https://www.bing.com/th?id=ONUT.qdU_W2rVUficmJb6es1wnQ&pid=News&w=480&h=360&c=14",
   "siteUrl": "https://cbs6albany.com",
   "productLookupStatus": "not-found",
   "productLookupAt": "2026-11-21T23:41:53.511Z",
@@ -2363,6 +2561,7 @@
   "imageLookupStatus": "found",
   "imageLookupVersion": 7,
   "url": "https://gonintendo.com/contents/67457-get-a-closer-look-at-the-art-of-the-pokemon-tcg-mega-evolution-delta-reign-expansion",
+  "thumbUrl": "https://www.bing.com/th?id=ONUT.JPW-wXGDeJxOiUukxplA9g&pid=News&w=480&h=360&c=14",
   "siteUrl": "https://gonintendo.com",
   "imageLookupError": "Google News did not expose the publisher article destination.",
   "productSearchLinks": [
@@ -2383,8 +2582,7 @@
   "productSearchRetailer": "Pokémon Center",
   "productLookupStatus": "search-fallback",
   "productLookupAt": "2026-11-21T23:41:55.769Z",
-  "productLookupVersion": 7,
-  "thumbUrl": "https://www.bing.com/th?id=ONUT.JPW-wXGDeJxOiUukxplA9g&pid=News&w=480&h=360&c=14"
+  "productLookupVersion": 7
  },
  {
   "date": "2026-11-20T11:48:26.000Z",
@@ -2936,7 +3134,7 @@
   "imageLookupStatus": "not-found",
   "imageLookupVersion": 7,
   "url": "https://note.com/hyouga_2000/n/n9bf217eea620?hl=en",
-  "thumbUrl": "https://www.bing.com/th?id=ONUT.l7cKttpcHsnstImbFiSOQg&pid=News&w=480&h=360&c=14",
+  "thumbUrl": "https://www.bing.com/th?id=ONUT.ZZD2WFrOYuCLALIss_F1tw&pid=News&w=480&h=360&c=14",
   "siteUrl": "https://note.com",
   "productSearchLinks": [
    {
@@ -3504,6 +3702,7 @@
   "imageLookupStatus": "found",
   "imageLookupVersion": 7,
   "url": "https://cardlines.com/pokemon-delta-reign-build-battle-box/",
+  "thumbUrl": "https://www.bing.com/th?id=ONUT.axdLxbbrgWJzkxmJXKIFGg&pid=News&w=480&h=360&c=14",
   "siteUrl": "https://cardlines.com",
   "productSearchLinks": [
    {
@@ -3523,8 +3722,7 @@
   "productSearchRetailer": "TCGplayer",
   "productLookupStatus": "search-fallback",
   "productLookupAt": "2026-11-22T10:30:17.930Z",
-  "productLookupVersion": 7,
-  "thumbUrl": "https://www.bing.com/th?id=ONUT.axdLxbbrgWJzkxmJXKIFGg&pid=News&w=480&h=360&c=14"
+  "productLookupVersion": 7
  },
  {
   "date": "2026-11-19T20:27:08.000Z",
@@ -3678,22 +3876,11 @@
   "imageLookupStatus": "found",
   "imageLookupVersion": 7,
   "url": "https://abc7chicago.com/post/chicago-crime-4-pokemon-cards-worth-10000-stolen-old-skool-tcg-trading-card-shop-lawndale-milwaukee-avenue/20057796/",
+  "thumbUrl": "https://www.bing.com/th?id=ONUT.eB52w0zO82kS45dhdk6OMA&pid=News&w=480&h=360&c=14",
   "siteUrl": "https://abc7chicago.com",
-  "productUrl": "",
-  "productRetailer": "",
-  "productName": "",
-  "productPrice": "",
-  "productAvailability": "",
-  "productLinks": [],
-  "productSearchLinks": [],
-  "productSearchUrl": "",
-  "productSearchRetailer": "",
   "productLookupStatus": "not-found",
   "productLookupAt": "2026-11-22T10:30:18.677Z",
-  "productLookupVersion": 7,
-  "productPageChecks": 0,
-  "productVerifiedAt": "",
-  "thumbUrl": "https://www.bing.com/th?id=ONUT.eB52w0zO82kS45dhdk6OMA&pid=News&w=480&h=360&c=14"
+  "productLookupVersion": 7
  },
  {
   "date": "2026-11-19T18:30:55.000Z",
@@ -4897,148 +5084,6 @@
   "productLookupAt": "2026-11-22T18:31:09.768Z",
   "productLookupVersion": 7,
   "productPageChecks": 2,
-  "productVerifiedAt": ""
- },
- {
-  "date": "2026-11-18T04:46:11.000Z",
-  "cat": "Restock",
-  "title": "Sega Genesis Gets Brand-New Physical Release 37 Years Later, Preorders Available Now",
-  "summary": "Sega Genesis Gets Brand-New Physical Release 37 Years Later, Preorders Available Now Comic Book Resources",
-  "source": "Comic Book Resources",
-  "publisherUrl": "https://www.cbr.com",
-  "sourceUrl": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPaGxnMTlNVHV1WmxNNF9PVFExTTh1RS1WTGJaSklwZWM4Tmh5OWFxbTZYYktSYUZhY1BxdWpES1h2aDVDUklfeWZad0ZUU0ZpSnRKTmNyQWdYVjJtdzBUcXF4U2lLNzktMkFnUWRmai02ZThOaUg3eGFPOGdFZnlSbWZCRm5EQldIQ1JvNFFWYkJVMFNMdU04RA?oc=5",
-  "imageUrls": [],
-  "imageLookupAt": "2026-11-22T18:31:10.498Z",
-  "imageLookupStatus": "not-found",
-  "imageLookupVersion": 7,
-  "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPaGxnMTlNVHV1WmxNNF9PVFExTTh1RS1WTGJaSklwZWM4Tmh5OWFxbTZYYktSYUZhY1BxdWpES1h2aDVDUklfeWZad0ZUU0ZpSnRKTmNyQWdYVjJtdzBUcXF4U2lLNzktMkFnUWRmai02ZThOaUg3eGFPOGdFZnlSbWZCRm5EQldIQ1JvNFFWYkJVMFNMdU04RA?oc=5",
-  "siteUrl": "",
-  "productUrl": "",
-  "productRetailer": "",
-  "productName": "",
-  "productPrice": "",
-  "productAvailability": "",
-  "productLinks": [],
-  "productSearchLinks": [],
-  "productSearchUrl": "",
-  "productSearchRetailer": "",
-  "productLookupStatus": "not-found",
-  "productLookupAt": "2026-11-22T18:31:10.498Z",
-  "productLookupVersion": 7,
-  "productPageChecks": 0,
-  "productVerifiedAt": ""
- },
- {
-  "date": "2026-11-18T00:03:17.000Z",
-  "cat": "Deals",
-  "title": "Target Reveals Its Black Friday Sale Ad for 2026 and a Free Gift Card Promotion for Shopping in Stores",
-  "summary": "Target Reveals Its Black Friday Sale Ad for 2026 and a Free Gift Card Promotion for Shopping in Stores IGN",
-  "source": "IGN",
-  "publisherUrl": "https://www.ign.com",
-  "sourceUrl": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5GTWtIQkVhU3NSTlY4S3VaNDdWZ2pjVXlCU0twbXNzM1IzR3lMT0hMX2hPOWFDcFpjU18tVUxoejZMOFN3cUV2TUJnT0ZGY2d4VGlqUGpvLTM4aDlZYWFoS2RlZ2taSldEYklnYldITGFLX0Zxa09seW1lLTFudw?oc=5",
-  "imageUrls": [],
-  "imageLookupAt": "2026-11-22T18:31:10.529Z",
-  "imageLookupStatus": "not-found",
-  "imageLookupVersion": 7,
-  "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5GTWtIQkVhU3NSTlY4S3VaNDdWZ2pjVXlCU0twbXNzM1IzR3lMT0hMX2hPOWFDcFpjU18tVUxoejZMOFN3cUV2TUJnT0ZGY2d4VGlqUGpvLTM4aDlZYWFoS2RlZ2taSldEYklnYldITGFLX0Zxa09seW1lLTFudw?oc=5",
-  "siteUrl": "",
-  "productUrl": "",
-  "productRetailer": "",
-  "productName": "",
-  "productPrice": "",
-  "productAvailability": "",
-  "productLinks": [],
-  "productSearchLinks": [],
-  "productSearchUrl": "",
-  "productSearchRetailer": "",
-  "productLookupStatus": "not-found",
-  "productLookupAt": "2026-11-22T18:31:10.529Z",
-  "productLookupVersion": 7,
-  "productPageChecks": 0,
-  "productVerifiedAt": ""
- },
- {
-  "date": "2026-11-17T22:13:35.000Z",
-  "cat": "Rare Drop",
-  "title": "Ultimate Pokémon TCG Christmas Gift Guide 2026",
-  "summary": "Ultimate Pokémon TCG Christmas Gift Guide 2026 Joseph Writer Anderson",
-  "source": "Joseph Writer Anderson",
-  "publisherUrl": "https://www.josephwriteranderson.com",
-  "sourceUrl": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOR2dhb1B3VDNldTFJdWxtWGJUU3RMT2l4b09zUm5HbjF1dGE5UUFNWmJWeW9MYmFxMXJQMGk3OGlKdTNGRElJSEt2RF8yZGNRZzJ1NWVobER6UTZfNndENEtlLUV2ZEZtQ2I3VWNOLW9pSFF4WElzVWpjdE5YOWZFNXFINGNUNlE?oc=5",
-  "imageUrls": [],
-  "imageLookupAt": "2026-11-22T18:31:11.241Z",
-  "imageLookupStatus": "not-found",
-  "imageLookupVersion": 7,
-  "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOR2dhb1B3VDNldTFJdWxtWGJUU3RMT2l4b09zUm5HbjF1dGE5UUFNWmJWeW9MYmFxMXJQMGk3OGlKdTNGRElJSEt2RF8yZGNRZzJ1NWVobER6UTZfNndENEtlLUV2ZEZtQ2I3VWNOLW9pSFF4WElzVWpjdE5YOWZFNXFINGNUNlE?oc=5",
-  "siteUrl": "",
-  "productUrl": "",
-  "productRetailer": "",
-  "productName": "",
-  "productPrice": "",
-  "productAvailability": "",
-  "productLinks": [],
-  "productSearchLinks": [
-   {
-    "retailer": "TCGplayer",
-    "url": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20ultimate%20christmas%20gift%20joseph%20writer%20anderson"
-   },
-   {
-    "retailer": "Amazon",
-    "url": "https://www.amazon.com/s?k=Pokemon%20TCG%20ultimate%20christmas%20gift%20joseph%20writer%20anderson"
-   },
-   {
-    "retailer": "Target",
-    "url": "https://www.target.com/s?searchTerm=Pokemon%20TCG%20ultimate%20christmas%20gift%20joseph%20writer%20anderson"
-   }
-  ],
-  "productSearchUrl": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20ultimate%20christmas%20gift%20joseph%20writer%20anderson",
-  "productSearchRetailer": "TCGplayer",
-  "productLookupStatus": "search-fallback",
-  "productLookupAt": "2026-11-22T18:31:11.241Z",
-  "productLookupVersion": 7,
-  "productPageChecks": 0,
-  "productVerifiedAt": ""
- },
- {
-  "date": "2026-11-17T20:47:30.000Z",
-  "cat": "Deals",
-  "title": "Target Officially Reveals Big Pokémon TCG Deals On Black Friday",
-  "summary": "Target Officially Reveals Big Pokémon TCG Deals On Black Friday Polygon.com",
-  "source": "Polygon.com",
-  "publisherUrl": "https://www.polygon.com",
-  "sourceUrl": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPUHBaa2hObllDWUxDM0t3cENMczhfY1ItWERhSkVSTE15ZWQyQkRLcGRPRk0zQXJ2dFBxa0pRS1lhSHBEeHdKVUZOSGNlT1dDQi1JVE96c1d3V3BqNXRVZ0tCV2VwbHJVNUNlbVA5WkNhVHUxX25BUmtfLVNKSm9NME5NQWRuXzFIb19HQzhmYUhmUHJ6OTVB?oc=5",
-  "imageUrls": [],
-  "imageLookupAt": "2026-11-22T18:31:11.674Z",
-  "imageLookupStatus": "not-found",
-  "imageLookupVersion": 7,
-  "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPUHBaa2hObllDWUxDM0t3cENMczhfY1ItWERhSkVSTE15ZWQyQkRLcGRPRk0zQXJ2dFBxa0pRS1lhSHBEeHdKVUZOSGNlT1dDQi1JVE96c1d3V3BqNXRVZ0tCV2VwbHJVNUNlbVA5WkNhVHUxX25BUmtfLVNKSm9NME5NQWRuXzFIb19HQzhmYUhmUHJ6OTVB?oc=5",
-  "siteUrl": "",
-  "productUrl": "",
-  "productRetailer": "",
-  "productName": "",
-  "productPrice": "",
-  "productAvailability": "",
-  "productLinks": [],
-  "productSearchLinks": [
-   {
-    "retailer": "Target",
-    "url": "https://www.target.com/s?searchTerm=Pokemon%20TCG%20officially%20black%20friday%20polygon"
-   },
-   {
-    "retailer": "TCGplayer",
-    "url": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20officially%20black%20friday%20polygon"
-   },
-   {
-    "retailer": "Amazon",
-    "url": "https://www.amazon.com/s?k=Pokemon%20TCG%20officially%20black%20friday%20polygon"
-   }
-  ],
-  "productSearchUrl": "https://www.target.com/s?searchTerm=Pokemon%20TCG%20officially%20black%20friday%20polygon",
-  "productSearchRetailer": "Target",
-  "productLookupStatus": "search-fallback",
-  "productLookupAt": "2026-11-22T18:31:11.674Z",
-  "productLookupVersion": 7,
-  "productPageChecks": 0,
   "productVerifiedAt": ""
  }
 ]
