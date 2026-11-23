@@ -34,20 +34,20 @@
     ],
     "itemImageDiscovery": {
       "version": 7,
-      "pagesChecked": 4,
-      "itemsWithImages": 81,
+      "pagesChecked": 3,
+      "itemsWithImages": 84,
       "verifiedProductPages": 0,
-      "retailerSearchFallbacks": 67,
-      "productSearchLinksAvailable": 67,
-      "productPagesMissing": 53,
-      "productDetailPagesChecked": 12,
+      "retailerSearchFallbacks": 69,
+      "productSearchLinksAvailable": 69,
+      "productPagesMissing": 51,
+      "productDetailPagesChecked": 10,
       "imageErrors": 0,
       "search": {
-        "requests": 16,
-        "successfulQueries": 16,
-        "resultLinks": 157,
+        "requests": 9,
+        "successfulQueries": 9,
+        "resultLinks": 87,
         "errors": 0,
-        "bingRequests": 16,
+        "bingRequests": 9,
         "duckDuckGoRequests": 0
       }
     }
@@ -55,12 +55,12 @@
   "raffles": {
     "sourceCount": 17,
     "sourcesResponded": 17,
-    "searchResults": 176,
-    "uniqueLeads": 119,
+    "searchResults": 172,
+    "uniqueLeads": 117,
     "savedLeads": 9,
     "directEntryLinksFound": 9,
     "directEntryLinksMissing": 0,
-    "entryLookupsThisRun": 18,
+    "entryLookupsThisRun": 17,
     "entryLookupErrors": 0,
     "historyDays": 365,
     "sources": [
@@ -72,7 +72,7 @@
       {
         "name": "TCG raffles",
         "ok": true,
-        "results": 12
+        "results": 11
       },
       {
         "name": "Pokémon card giveaways",
@@ -112,7 +112,7 @@
       {
         "name": "Target giveaways",
         "ok": true,
-        "results": 12
+        "results": 11
       },
       {
         "name": "Walmart giveaways",
@@ -122,7 +122,7 @@
       {
         "name": "GameStop giveaways",
         "ok": true,
-        "results": 11
+        "results": 10
       },
       {
         "name": "Best Buy giveaways",
@@ -147,7 +147,7 @@
       {
         "name": "Community card giveaways",
         "ok": true,
-        "results": 12
+        "results": 11
       },
       {
         "name": "Drop alerts: TCG Drop Radar",
@@ -155,31 +155,31 @@
         "results": 13
       }
     ],
-    "entrySearchFallbacks": 18,
-    "qualifiedLeads": 18,
+    "entrySearchFallbacks": 16,
+    "qualifiedLeads": 16,
     "rejectedLeads": 101,
     "discoveryEngine": {
       "version": 7,
-      "publisherPagesChecked": 18,
-      "prizeDetailsFound": 9,
+      "publisherPagesChecked": 17,
+      "prizeDetailsFound": 8,
       "startDatesFound": 1,
       "endDatesFound": 1,
-      "prizeImagesFound": 8,
+      "prizeImagesFound": 6,
       "rejectedFalsePositives": 101,
       "entryLinksValidated": 0,
       "search": {
-        "requests": 20,
-        "successfulQueries": 20,
-        "resultLinks": 197,
+        "requests": 17,
+        "successfulQueries": 17,
+        "resultLinks": 155,
         "errors": 0,
-        "bingRequests": 20,
+        "bingRequests": 17,
         "duckDuckGoRequests": 0
       }
     }
   },
   "failures": [],
   "dropFeeds": {
-    "checkedAt": "2026-11-23T01:02:48.598Z",
+    "checkedAt": "2026-11-23T09:27:19.309Z",
     "sources": [
       "TCG Drop Radar"
     ],
