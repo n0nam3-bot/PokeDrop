@@ -1,12 +1,12 @@
 {
   "state": "ok",
-  "lastScanAt": "2026-11-23T05:11:54.459Z",
+  "lastScanAt": "2026-11-23T16:01:59.529Z",
   "retailersChecked": 10,
   "retailersReached": 10,
   "retailersWithProducts": 0,
   "productsFound": 14,
   "productsChecked": 14,
-  "productsVerified": 5,
+  "productsVerified": 9,
   "alertsSent": 0,
   "sources": [
     {
@@ -61,7 +61,7 @@
       "productsFound": 0,
       "pagesChecked": 4,
       "method": "none",
-      "error": "HTTP 503"
+      "error": "Retailer search page loaded but did not expose matching product-detail links in its HTML | bing-rss: response contained no matching product-detail links | bing-html: response contained no matching product-detail links | duckduckgo-html: res"
     },
     {
       "retailer": "Costco",
@@ -101,7 +101,6 @@
     }
   ],
   "errors": [
-    "Amazon: HTTP 503",
     "Walmart: Final destination is not a retailer product-detail page"
   ],
   "search": {
