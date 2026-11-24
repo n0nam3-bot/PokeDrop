@@ -1,11 +1,11 @@
 {
   "state": "ok",
-  "lastScanAt": "2026-11-23T16:01:59.529Z",
+  "lastScanAt": "2026-11-24T02:52:25.511Z",
   "retailersChecked": 10,
   "retailersReached": 10,
-  "retailersWithProducts": 0,
+  "retailersWithProducts": 1,
   "productsFound": 14,
-  "productsChecked": 14,
+  "productsChecked": 17,
   "productsVerified": 9,
   "alertsSent": 0,
   "sources": [
@@ -58,10 +58,10 @@
       "retailer": "Amazon",
       "ok": true,
       "responded": true,
-      "productsFound": 0,
-      "pagesChecked": 4,
-      "method": "none",
-      "error": "Retailer search page loaded but did not expose matching product-detail links in its HTML | bing-rss: response contained no matching product-detail links | bing-html: response contained no matching product-detail links | duckduckgo-html: res"
+      "productsFound": 12,
+      "pagesChecked": 7,
+      "method": "retailer-search",
+      "error": "Product detail page did not confirm a Pokémon TCG item"
     },
     {
       "retailer": "Costco",
@@ -101,16 +101,17 @@
     }
   ],
   "errors": [
+    "Amazon: Product detail page did not confirm a Pokémon TCG item",
     "Walmart: Final destination is not a retailer product-detail page"
   ],
   "search": {
-    "requests": 40,
+    "requests": 37,
     "retailerSearchPages": 10,
-    "bingRssRequests": 10,
-    "bingHtmlRequests": 10,
-    "duckduckgoRequests": 10,
-    "successfulSearches": 0,
-    "resultLinks": 0,
+    "bingRssRequests": 9,
+    "bingHtmlRequests": 9,
+    "duckduckgoRequests": 9,
+    "successfulSearches": 1,
+    "resultLinks": 12,
     "blockedResponses": 2,
     "errors": 4
   },
