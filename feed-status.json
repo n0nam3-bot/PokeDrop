@@ -4,12 +4,12 @@
   "news": {
     "sourceCount": 5,
     "sourcesResponded": 5,
-    "searchResults": 59,
+    "searchResults": 60,
     "sources": [
       {
         "name": "Restock",
         "ok": true,
-        "results": 11
+        "results": 12
       },
       {
         "name": "Deals",
@@ -34,20 +34,20 @@
     ],
     "itemImageDiscovery": {
       "version": 7,
-      "pagesChecked": 11,
-      "itemsWithImages": 95,
+      "pagesChecked": 4,
+      "itemsWithImages": 96,
       "verifiedProductPages": 0,
-      "retailerSearchFallbacks": 69,
-      "productSearchLinksAvailable": 69,
-      "productPagesMissing": 51,
+      "retailerSearchFallbacks": 68,
+      "productSearchLinksAvailable": 68,
+      "productPagesMissing": 52,
       "productDetailPagesChecked": 12,
       "imageErrors": 0,
       "search": {
-        "requests": 41,
-        "successfulQueries": 41,
-        "resultLinks": 326,
+        "requests": 14,
+        "successfulQueries": 14,
+        "resultLinks": 128,
         "errors": 0,
-        "bingRequests": 41,
+        "bingRequests": 14,
         "duckDuckGoRequests": 0
       }
     }
@@ -55,12 +55,12 @@
   "raffles": {
     "sourceCount": 17,
     "sourcesResponded": 17,
-    "searchResults": 175,
-    "uniqueLeads": 116,
+    "searchResults": 173,
+    "uniqueLeads": 118,
     "savedLeads": 9,
     "directEntryLinksFound": 9,
     "directEntryLinksMissing": 0,
-    "entryLookupsThisRun": 17,
+    "entryLookupsThisRun": 19,
     "entryLookupErrors": 0,
     "historyDays": 365,
     "sources": [
@@ -72,7 +72,7 @@
       {
         "name": "TCG raffles",
         "ok": true,
-        "results": 12
+        "results": 11
       },
       {
         "name": "Pokémon card giveaways",
@@ -112,7 +112,7 @@
       {
         "name": "Target giveaways",
         "ok": true,
-        "results": 12
+        "results": 11
       },
       {
         "name": "Walmart giveaways",
@@ -155,31 +155,31 @@
         "results": 13
       }
     ],
-    "entrySearchFallbacks": 17,
-    "qualifiedLeads": 17,
-    "rejectedLeads": 99,
+    "entrySearchFallbacks": 18,
+    "qualifiedLeads": 18,
+    "rejectedLeads": 100,
     "discoveryEngine": {
       "version": 7,
-      "publisherPagesChecked": 17,
-      "prizeDetailsFound": 7,
+      "publisherPagesChecked": 19,
+      "prizeDetailsFound": 8,
       "startDatesFound": 1,
       "endDatesFound": 0,
-      "prizeImagesFound": 7,
-      "rejectedFalsePositives": 99,
+      "prizeImagesFound": 6,
+      "rejectedFalsePositives": 100,
       "entryLinksValidated": 0,
       "search": {
-        "requests": 45,
-        "successfulQueries": 45,
-        "resultLinks": 366,
+        "requests": 22,
+        "successfulQueries": 22,
+        "resultLinks": 208,
         "errors": 0,
-        "bingRequests": 45,
+        "bingRequests": 22,
         "duckDuckGoRequests": 0
       }
     }
   },
   "failures": [],
   "dropFeeds": {
-    "checkedAt": "2026-11-24T05:44:13.627Z",
+    "checkedAt": "2026-11-24T16:54:14.806Z",
     "sources": [
       "TCG Drop Radar"
     ],
@@ -190,6 +190,6 @@
     "upcoming": 0,
     "withEntryLink": 9,
     "withImage": 9,
-    "newsImagesAdded": 1
+    "newsImagesAdded": 0
   }
 }
