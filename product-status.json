@@ -1,10 +1,10 @@
 {
   "state": "ok",
-  "lastScanAt": "2026-11-24T02:52:25.511Z",
+  "lastScanAt": "2026-11-24T13:09:27.070Z",
   "retailersChecked": 10,
   "retailersReached": 10,
   "retailersWithProducts": 1,
-  "productsFound": 14,
+  "productsFound": 15,
   "productsChecked": 17,
   "productsVerified": 9,
   "alertsSent": 0,
@@ -70,7 +70,7 @@
       "productsFound": 0,
       "pagesChecked": 2,
       "method": "none",
-      "error": "Retailer search page loaded but did not expose matching product-detail links in its HTML | bing-rss: response contained no matching product-detail links | bing-html: response contained no matching product-detail links | duckduckgo-html: res"
+      "error": "HTTP 429"
     },
     {
       "retailer": "TCGplayer",
@@ -102,6 +102,7 @@
   ],
   "errors": [
     "Amazon: Product detail page did not confirm a Pokémon TCG item",
+    "Costco: HTTP 429",
     "Walmart: Final destination is not a retailer product-detail page"
   ],
   "search": {
