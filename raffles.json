@@ -37,7 +37,7 @@
   "status": "Upcoming",
   "statusNote": "Opens Wed, Nov 25, 5:00 PM ET.",
   "statusDate": "2026-11-25T23:00:00.000Z",
-  "lastVerifiedAt": "2026-11-25T10:06:52.203Z"
+  "lastVerifiedAt": "2026-11-25T20:02:22.089Z"
  },
  {
   "origin": "drop-feed",
@@ -74,10 +74,10 @@
    }
   ],
   "imageType": "prize",
-  "status": "Verify",
-  "statusNote": "Reported open when posted. No deadline was published, so check the entry page.",
+  "status": "Closed",
+  "statusNote": "Reported open over a week ago with no deadline.",
   "statusDate": "2026-11-18T17:00:00.000Z",
-  "lastVerifiedAt": "2026-11-25T10:06:52.203Z"
+  "lastVerifiedAt": "2026-11-25T20:02:22.089Z"
  },
  {
   "origin": "drop-feed",
@@ -117,7 +117,7 @@
   "status": "Closed",
   "statusNote": "Closed Thu, Nov 12, 6:00 PM ET.",
   "statusDate": "2026-11-12T23:00:00.000Z",
-  "lastVerifiedAt": "2026-11-25T10:06:52.203Z"
+  "lastVerifiedAt": "2026-11-25T20:02:22.089Z"
  },
  {
   "origin": "drop-feed",
@@ -157,7 +157,7 @@
   "status": "Closed",
   "statusNote": "Closed Wed, Nov 4, 6:00 PM ET.",
   "statusDate": "2026-11-04T23:00:00.000Z",
-  "lastVerifiedAt": "2026-11-25T10:06:52.203Z"
+  "lastVerifiedAt": "2026-11-25T20:02:22.089Z"
  },
  {
   "origin": "drop-feed",
@@ -197,7 +197,7 @@
   "status": "Closed",
   "statusNote": "Closed Wed, Nov 4, 6:00 PM ET.",
   "statusDate": "2026-11-04T23:00:00.000Z",
-  "lastVerifiedAt": "2026-11-25T10:06:52.203Z"
+  "lastVerifiedAt": "2026-11-25T20:02:22.089Z"
  },
  {
   "origin": "drop-feed",
@@ -237,7 +237,7 @@
   "status": "Closed",
   "statusNote": "Closed Wed, Nov 4, 11:00 AM ET.",
   "statusDate": "2026-11-04T16:00:00.000Z",
-  "lastVerifiedAt": "2026-11-25T10:06:52.203Z"
+  "lastVerifiedAt": "2026-11-25T20:02:22.089Z"
  },
  {
   "origin": "drop-feed",
@@ -277,7 +277,7 @@
   "status": "Closed",
   "statusNote": "Closed Sun, Nov 1, 10:00 AM ET.",
   "statusDate": "2026-11-01T15:00:00.000Z",
-  "lastVerifiedAt": "2026-11-25T10:06:52.203Z"
+  "lastVerifiedAt": "2026-11-25T20:02:22.089Z"
  },
  {
   "origin": "drop-feed",
@@ -317,7 +317,7 @@
   "status": "Closed",
   "statusNote": "Closed Wed, Oct 28, 6:00 PM ET.",
   "statusDate": "2026-10-28T22:00:00.000Z",
-  "lastVerifiedAt": "2026-11-25T10:06:52.203Z"
+  "lastVerifiedAt": "2026-11-25T20:02:22.089Z"
  },
  {
   "origin": "drop-feed",
@@ -357,7 +357,7 @@
   "status": "Closed",
   "statusNote": "Closed Wed, Oct 21, 6:00 PM ET.",
   "statusDate": "2026-10-21T22:00:00.000Z",
-  "lastVerifiedAt": "2026-11-25T10:06:52.203Z"
+  "lastVerifiedAt": "2026-11-25T20:02:22.089Z"
  },
  {
   "origin": "drop-feed",
@@ -397,6 +397,6 @@
   "status": "Closed",
   "statusNote": "Reported live on the day it was posted.",
   "statusDate": "2026-10-15T16:00:00.000Z",
-  "lastVerifiedAt": "2026-11-25T10:06:52.203Z"
+  "lastVerifiedAt": "2026-11-25T20:02:22.089Z"
  }
 ]
