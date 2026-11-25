@@ -9,37 +9,37 @@
     "stockState": "IN_STOCK",
     "availabilitySource": "page-text",
     "firstSeenAt": "2026-11-21T19:58:52.458Z",
-    "lastCheckedAt": "2026-11-24T23:01:57.686Z",
+    "lastCheckedAt": "2026-11-25T05:24:03.624Z",
     "lastCheckStatus": "OK",
     "lastError": "",
     "history": []
   },
   {
-    "id": "https://www.amazon.com/pokemon-tcg-violet-prismatic-evolutions-super-premium/dp/b0dyr8d7yc",
-    "name": "Amazon.com: Pokemon TCG: Scarlet & Violet—Prismatic Evolutions Super-Premium Collection - 15 Booster Packs, 65 Card Sleeves, Full Art Foil Promo Card, Deck Box, Playmat & Code Card",
+    "id": "https://www.amazon.com/pokemon-tcg-authentic-expansion-holofoils/dp/b001dij48c",
+    "name": "Amazon.com: Pokémon TCG 3 Booster Packs, 30 Cards Total, 100% Authentic, Random Rares & Holofoils, 3 Blister Packs : Toys & Games",
     "retailer": "Amazon",
-    "productUrl": "https://www.amazon.com/Pokemon-TCG-Violet-Prismatic-Evolutions-Super-Premium/dp/B0DYR8D7YC",
+    "productUrl": "https://www.amazon.com/Pokemon-TCG-Authentic-Expansion-Holofoils/dp/B001DIJ48C",
     "imageUrl": "",
     "price": "",
     "stockState": "IN_STOCK",
     "availabilitySource": "page-text",
-    "firstSeenAt": "2026-11-24T23:01:57.686Z",
-    "lastCheckedAt": "2026-11-24T23:01:57.686Z",
+    "firstSeenAt": "2026-11-25T05:24:03.624Z",
+    "lastCheckedAt": "2026-11-25T05:24:03.624Z",
     "lastCheckStatus": "OK",
     "lastError": "",
     "history": []
   },
   {
-    "id": "https://www.amazon.com/pok%c3%a9mon-tcg-celebration-booster-bundle/dp/b0h783fy5z",
-    "name": "Amazon.com: Pokémon TCG: 30th Celebration Booster Bundle : Toys & Games",
+    "id": "https://www.amazon.com/pokemon-tcg-charizard-special-collection/dp/b0dty5228w",
+    "name": "Amazon.com: Pokemon TCG: Charizard ex Special Collection - 5 Packs, Promos : Toys & Games",
     "retailer": "Amazon",
-    "productUrl": "https://www.amazon.com/Pok%C3%A9mon-TCG-Celebration-Booster-Bundle/dp/B0H783FY5Z",
+    "productUrl": "https://www.amazon.com/Pokemon-TCG-Charizard-Special-Collection/dp/B0DTY5228W",
     "imageUrl": "",
     "price": "",
     "stockState": "IN_STOCK",
     "availabilitySource": "page-text",
-    "firstSeenAt": "2026-11-24T23:01:57.686Z",
-    "lastCheckedAt": "2026-11-24T23:01:57.686Z",
+    "firstSeenAt": "2026-11-25T05:24:03.624Z",
+    "lastCheckedAt": "2026-11-25T05:24:03.624Z",
     "lastCheckStatus": "OK",
     "lastError": "",
     "history": []
@@ -54,7 +54,7 @@
     "stockState": "IN_STOCK",
     "availabilitySource": "page-text",
     "firstSeenAt": "2026-11-21T23:28:33.174Z",
-    "lastCheckedAt": "2026-11-24T23:01:57.686Z",
+    "lastCheckedAt": "2026-11-25T05:24:03.624Z",
     "lastCheckStatus": "OK",
     "lastError": "",
     "history": []
@@ -69,7 +69,7 @@
     "stockState": "IN_STOCK",
     "availabilitySource": "page-text",
     "firstSeenAt": "2026-11-21T23:28:33.174Z",
-    "lastCheckedAt": "2026-11-24T23:01:57.686Z",
+    "lastCheckedAt": "2026-11-25T05:24:03.624Z",
     "lastCheckStatus": "OK",
     "lastError": "",
     "history": []
@@ -84,7 +84,22 @@
     "stockState": "IN_STOCK",
     "availabilitySource": "page-text",
     "firstSeenAt": "2026-11-21T23:28:33.174Z",
-    "lastCheckedAt": "2026-11-24T23:01:57.686Z",
+    "lastCheckedAt": "2026-11-25T05:24:03.624Z",
+    "lastCheckStatus": "OK",
+    "lastError": "",
+    "history": []
+  },
+  {
+    "id": "https://www.amazon.com/pokemon-tcg-violet-prismatic-evolutions-super-premium/dp/b0dyr8d7yc",
+    "name": "Amazon.com: Pokemon TCG: Scarlet & Violet—Prismatic Evolutions Super-Premium Collection - 15 Booster Packs, 65 Card Sleeves, Full Art Foil Promo Card, Deck Box, Playmat & Code Card",
+    "retailer": "Amazon",
+    "productUrl": "https://www.amazon.com/Pokemon-TCG-Violet-Prismatic-Evolutions-Super-Premium/dp/B0DYR8D7YC",
+    "imageUrl": "",
+    "price": "",
+    "stockState": "IN_STOCK",
+    "availabilitySource": "page-text",
+    "firstSeenAt": "2026-11-24T23:01:57.686Z",
+    "lastCheckedAt": "2026-11-25T05:24:03.624Z",
     "lastCheckStatus": "OK",
     "lastError": "",
     "history": []
@@ -99,7 +114,7 @@
     "stockState": "IN_STOCK",
     "availabilitySource": "page-text",
     "firstSeenAt": "2026-11-24T13:09:36.468Z",
-    "lastCheckedAt": "2026-11-24T23:01:57.686Z",
+    "lastCheckedAt": "2026-11-25T05:24:03.624Z",
     "lastCheckStatus": "OK",
     "lastError": "",
     "history": []
@@ -114,7 +129,7 @@
     "stockState": "IN_STOCK",
     "availabilitySource": "page-text",
     "firstSeenAt": "2026-11-22T18:30:15.412Z",
-    "lastCheckedAt": "2026-11-24T23:01:57.686Z",
+    "lastCheckedAt": "2026-11-25T05:24:03.624Z",
     "lastCheckStatus": "OK",
     "lastError": "",
     "history": []
@@ -129,10 +144,31 @@
     "stockState": "IN_STOCK",
     "availabilitySource": "page-text",
     "firstSeenAt": "2026-11-22T18:30:15.412Z",
-    "lastCheckedAt": "2026-11-24T23:01:57.686Z",
+    "lastCheckedAt": "2026-11-25T05:24:03.624Z",
     "lastCheckStatus": "OK",
     "lastError": "",
     "history": []
+  },
+  {
+    "id": "https://www.amazon.com/pok%c3%a9mon-tcg-celebration-booster-bundle/dp/b0h783fy5z",
+    "name": "Amazon.com: Pokémon TCG: 30th Celebration Booster Bundle : Toys & Games",
+    "retailer": "Amazon",
+    "productUrl": "https://www.amazon.com/Pok%C3%A9mon-TCG-Celebration-Booster-Bundle/dp/B0H783FY5Z",
+    "imageUrl": "",
+    "price": "",
+    "stockState": "OUT_OF_STOCK",
+    "availabilitySource": "page-text",
+    "firstSeenAt": "2026-11-24T23:01:57.686Z",
+    "lastCheckedAt": "2026-11-25T05:24:03.624Z",
+    "lastCheckStatus": "OK",
+    "lastError": "",
+    "history": [
+      {
+        "from": "IN_STOCK",
+        "to": "OUT_OF_STOCK",
+        "at": "2026-11-25T05:24:03.624Z"
+      }
+    ]
   },
   {
     "id": "https://www.costco.com/p/-/pokmon-elite-trainer-box-crown-zenith-koraidon-ex-tin-miraidon-window-tin/4000283872",
@@ -144,7 +180,7 @@
     "stockState": "OUT_OF_STOCK",
     "availabilitySource": "structured-data",
     "firstSeenAt": "2026-11-22T23:52:54.890Z",
-    "lastCheckedAt": "2026-11-24T23:01:57.686Z",
+    "lastCheckedAt": "2026-11-25T05:24:03.624Z",
     "lastCheckStatus": "OK",
     "lastError": "",
     "history": []
@@ -159,7 +195,7 @@
     "stockState": "OUT_OF_STOCK",
     "availabilitySource": "structured-data",
     "firstSeenAt": "2026-11-21T23:28:33.174Z",
-    "lastCheckedAt": "2026-11-24T23:01:57.686Z",
+    "lastCheckedAt": "2026-11-25T05:24:03.624Z",
     "lastCheckStatus": "OK",
     "lastError": "",
     "history": []
@@ -174,7 +210,7 @@
     "stockState": "OUT_OF_STOCK",
     "availabilitySource": "page-text",
     "firstSeenAt": "2026-11-22T23:52:54.890Z",
-    "lastCheckedAt": "2026-11-24T23:01:57.686Z",
+    "lastCheckedAt": "2026-11-25T05:24:03.624Z",
     "lastCheckStatus": "ERROR",
     "lastError": "Final destination is not a retailer product-detail page",
     "history": []
@@ -189,7 +225,7 @@
     "stockState": "OUT_OF_STOCK",
     "availabilitySource": "page-text",
     "firstSeenAt": "2026-11-21T23:28:33.174Z",
-    "lastCheckedAt": "2026-11-24T23:01:57.686Z",
+    "lastCheckedAt": "2026-11-25T05:24:03.624Z",
     "lastCheckStatus": "OK",
     "lastError": "",
     "history": [
@@ -210,7 +246,7 @@
     "stockState": "UNKNOWN",
     "availabilitySource": "none",
     "firstSeenAt": "2026-11-21T23:28:33.174Z",
-    "lastCheckedAt": "2026-11-24T23:01:57.686Z",
+    "lastCheckedAt": "2026-11-25T05:24:03.624Z",
     "lastCheckStatus": "OK",
     "lastError": "",
     "history": []
@@ -225,7 +261,7 @@
     "stockState": "UNKNOWN",
     "availabilitySource": "none",
     "firstSeenAt": "2026-11-21T23:28:33.174Z",
-    "lastCheckedAt": "2026-11-24T23:01:57.686Z",
+    "lastCheckedAt": "2026-11-25T05:24:03.624Z",
     "lastCheckStatus": "OK",
     "lastError": "",
     "history": []
@@ -240,7 +276,7 @@
     "stockState": "UNKNOWN",
     "availabilitySource": "none",
     "firstSeenAt": "2026-11-22T23:52:54.890Z",
-    "lastCheckedAt": "2026-11-24T23:01:57.686Z",
+    "lastCheckedAt": "2026-11-25T05:24:03.624Z",
     "lastCheckStatus": "OK",
     "lastError": "",
     "history": []
@@ -255,7 +291,7 @@
     "stockState": "UNKNOWN",
     "availabilitySource": "none",
     "firstSeenAt": "2026-11-22T23:52:54.890Z",
-    "lastCheckedAt": "2026-11-24T23:01:57.686Z",
+    "lastCheckedAt": "2026-11-25T05:24:03.624Z",
     "lastCheckStatus": "OK",
     "lastError": "",
     "history": []

@@ -1,12 +1,12 @@
 {
   "state": "ok",
-  "lastScanAt": "2026-11-24T23:01:48.120Z",
+  "lastScanAt": "2026-11-25T05:23:54.169Z",
   "retailersChecked": 10,
   "retailersReached": 10,
   "retailersWithProducts": 1,
-  "productsFound": 17,
-  "productsChecked": 18,
-  "productsVerified": 12,
+  "productsFound": 19,
+  "productsChecked": 20,
+  "productsVerified": 14,
   "alertsSent": 0,
   "sources": [
     {
@@ -59,7 +59,7 @@
       "ok": true,
       "responded": true,
       "productsFound": 12,
-      "pagesChecked": 8,
+      "pagesChecked": 10,
       "method": "retailer-search",
       "error": "Product detail page did not confirm a Pokémon TCG item"
     },
