@@ -1,6 +1,46 @@
 [
  {
   "origin": "drop-feed",
+  "id": "drop-walmart-pokemon-drawing-wednesday-5-6pm-et-30th",
+  "title": "Walmart Pokémon drawing Wednesday 5-6pm ET - 30th Celebration and Delta Reign",
+  "date": "2026-11-24T17:00:00.000Z",
+  "url": "https://buttondown.com/tcgdropradar/archive/walmart-pokemon-drawing-wednesday-5-6pm-et-30th/",
+  "sourceUrl": "https://buttondown.com/tcgdropradar/archive/walmart-pokemon-drawing-wednesday-5-6pm-et-30th/",
+  "source": "TCG Drop Radar",
+  "siteName": "TCG Drop Radar",
+  "siteUrl": "https://buttondown.com/tcgdropradar/archive/walmart-pokemon-drawing-wednesday-5-6pm-et-30th/",
+  "store": "Walmart",
+  "retailer": "Walmart",
+  "summary": "Nine TCG items, including the 30th Celebration ETB. Free to enter for one hour. Check the seller on each listing.",
+  "prize": "30th Celebration Elite Trainer Box",
+  "startDate": "2026-11-25T22:00:00.000Z",
+  "endDate": "2026-11-25T23:00:00.000Z",
+  "hint": "",
+  "entryUrl": "https://www.walmart.com/shop/collectibles/draw",
+  "entryLinkLabel": "Open the Walmart drawing page",
+  "entryLookupStatus": "alert-feed",
+  "entrySearchUrl": "",
+  "productUrl": "",
+  "productRetailer": "Walmart",
+  "productName": "30th Celebration Elite Trainer Box",
+  "productSearchUrl": "https://www.walmart.com/search?q=30th%20Celebration%20Elite%20Trainer%20Box",
+  "productSearchRetailer": "Walmart",
+  "imageUrls": [
+   {
+    "url": "https://tcgplayer-cdn.tcgplayer.com/product/704143_200w.jpg",
+    "label": "PRODUCT IMAGE",
+    "kind": "product",
+    "alt": "30th Celebration Elite Trainer Box"
+   }
+  ],
+  "imageType": "prize",
+  "status": "Upcoming",
+  "statusNote": "Opens Wed, Nov 25, 5:00 PM ET.",
+  "statusDate": "2026-11-25T23:00:00.000Z",
+  "lastVerifiedAt": "2026-11-25T01:14:51.382Z"
+ },
+ {
+  "origin": "drop-feed",
   "id": "drop-target-drawings-still-open-30th-celebration-upcs",
   "title": "Target drawings still open: 30th Celebration UPCs and Ditto",
   "date": "2026-11-18T17:00:00.000Z",
@@ -37,7 +77,7 @@
   "status": "Verify",
   "statusNote": "Reported open when posted. No deadline was published, so check the entry page.",
   "statusDate": "2026-11-18T17:00:00.000Z",
-  "lastVerifiedAt": "2026-11-24T16:54:14.806Z"
+  "lastVerifiedAt": "2026-11-25T01:14:51.382Z"
  },
  {
   "origin": "drop-feed",
@@ -77,7 +117,7 @@
   "status": "Closed",
   "statusNote": "Closed Thu, Nov 12, 6:00 PM ET.",
   "statusDate": "2026-11-12T23:00:00.000Z",
-  "lastVerifiedAt": "2026-11-24T16:54:14.806Z"
+  "lastVerifiedAt": "2026-11-25T01:14:51.382Z"
  },
  {
   "origin": "drop-feed",
@@ -117,7 +157,7 @@
   "status": "Closed",
   "statusNote": "Closed Wed, Nov 4, 6:00 PM ET.",
   "statusDate": "2026-11-04T23:00:00.000Z",
-  "lastVerifiedAt": "2026-11-24T16:54:14.806Z"
+  "lastVerifiedAt": "2026-11-25T01:14:51.382Z"
  },
  {
   "origin": "drop-feed",
@@ -157,7 +197,7 @@
   "status": "Closed",
   "statusNote": "Closed Wed, Nov 4, 6:00 PM ET.",
   "statusDate": "2026-11-04T23:00:00.000Z",
-  "lastVerifiedAt": "2026-11-24T16:54:14.806Z"
+  "lastVerifiedAt": "2026-11-25T01:14:51.382Z"
  },
  {
   "origin": "drop-feed",
@@ -197,7 +237,7 @@
   "status": "Closed",
   "statusNote": "Closed Wed, Nov 4, 11:00 AM ET.",
   "statusDate": "2026-11-04T16:00:00.000Z",
-  "lastVerifiedAt": "2026-11-24T16:54:14.806Z"
+  "lastVerifiedAt": "2026-11-25T01:14:51.382Z"
  },
  {
   "origin": "drop-feed",
@@ -237,7 +277,7 @@
   "status": "Closed",
   "statusNote": "Closed Sun, Nov 1, 10:00 AM ET.",
   "statusDate": "2026-11-01T15:00:00.000Z",
-  "lastVerifiedAt": "2026-11-24T16:54:14.806Z"
+  "lastVerifiedAt": "2026-11-25T01:14:51.382Z"
  },
  {
   "origin": "drop-feed",
@@ -277,7 +317,7 @@
   "status": "Closed",
   "statusNote": "Closed Wed, Oct 28, 6:00 PM ET.",
   "statusDate": "2026-10-28T22:00:00.000Z",
-  "lastVerifiedAt": "2026-11-24T16:54:14.806Z"
+  "lastVerifiedAt": "2026-11-25T01:14:51.382Z"
  },
  {
   "origin": "drop-feed",
@@ -317,7 +357,7 @@
   "status": "Closed",
   "statusNote": "Closed Wed, Oct 21, 6:00 PM ET.",
   "statusDate": "2026-10-21T22:00:00.000Z",
-  "lastVerifiedAt": "2026-11-24T16:54:14.806Z"
+  "lastVerifiedAt": "2026-11-25T01:14:51.382Z"
  },
  {
   "origin": "drop-feed",
@@ -357,6 +397,6 @@
   "status": "Closed",
   "statusNote": "Reported live on the day it was posted.",
   "statusDate": "2026-10-15T16:00:00.000Z",
-  "lastVerifiedAt": "2026-11-24T16:54:14.806Z"
+  "lastVerifiedAt": "2026-11-25T01:14:51.382Z"
  }
 ]
