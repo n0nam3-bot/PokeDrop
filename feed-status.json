@@ -4,7 +4,7 @@
   "news": {
     "sourceCount": 5,
     "sourcesResponded": 5,
-    "searchResults": 60,
+    "searchResults": 59,
     "sources": [
       {
         "name": "Restock",
@@ -29,25 +29,25 @@
       {
         "name": "Promo",
         "ok": true,
-        "results": 12
+        "results": 11
       }
     ],
     "itemImageDiscovery": {
       "version": 7,
-      "pagesChecked": 12,
-      "itemsWithImages": 101,
+      "pagesChecked": 5,
+      "itemsWithImages": 103,
       "verifiedProductPages": 1,
-      "retailerSearchFallbacks": 70,
-      "productSearchLinksAvailable": 70,
-      "productPagesMissing": 49,
+      "retailerSearchFallbacks": 71,
+      "productSearchLinksAvailable": 71,
+      "productPagesMissing": 48,
       "productDetailPagesChecked": 17,
       "imageErrors": 0,
       "search": {
-        "requests": 40,
-        "successfulQueries": 40,
-        "resultLinks": 361,
+        "requests": 15,
+        "successfulQueries": 15,
+        "resultLinks": 129,
         "errors": 0,
-        "bingRequests": 40,
+        "bingRequests": 15,
         "duckDuckGoRequests": 0
       }
     }
@@ -55,12 +55,12 @@
   "raffles": {
     "sourceCount": 17,
     "sourcesResponded": 17,
-    "searchResults": 172,
-    "uniqueLeads": 114,
+    "searchResults": 173,
+    "uniqueLeads": 117,
     "savedLeads": 10,
     "directEntryLinksFound": 10,
     "directEntryLinksMissing": 0,
-    "entryLookupsThisRun": 20,
+    "entryLookupsThisRun": 19,
     "entryLookupErrors": 0,
     "historyDays": 365,
     "sources": [
@@ -72,7 +72,7 @@
       {
         "name": "TCG raffles",
         "ok": true,
-        "results": 12
+        "results": 11
       },
       {
         "name": "Pokémon card giveaways",
@@ -117,7 +117,7 @@
       {
         "name": "Walmart giveaways",
         "ok": true,
-        "results": 11
+        "results": 12
       },
       {
         "name": "GameStop giveaways",
@@ -142,7 +142,7 @@
       {
         "name": "Local card shop contests",
         "ok": true,
-        "results": 11
+        "results": 12
       },
       {
         "name": "Community card giveaways",
@@ -155,31 +155,31 @@
         "results": 14
       }
     ],
-    "entrySearchFallbacks": 19,
-    "qualifiedLeads": 19,
-    "rejectedLeads": 95,
+    "entrySearchFallbacks": 18,
+    "qualifiedLeads": 18,
+    "rejectedLeads": 99,
     "discoveryEngine": {
       "version": 7,
-      "publisherPagesChecked": 20,
+      "publisherPagesChecked": 19,
       "prizeDetailsFound": 6,
       "startDatesFound": 1,
       "endDatesFound": 0,
       "prizeImagesFound": 8,
-      "rejectedFalsePositives": 95,
+      "rejectedFalsePositives": 99,
       "entryLinksValidated": 0,
       "search": {
-        "requests": 52,
-        "successfulQueries": 52,
-        "resultLinks": 469,
+        "requests": 27,
+        "successfulQueries": 27,
+        "resultLinks": 237,
         "errors": 0,
-        "bingRequests": 52,
+        "bingRequests": 27,
         "duckDuckGoRequests": 0
       }
     }
   },
   "failures": [],
   "dropFeeds": {
-    "checkedAt": "2026-11-26T02:58:36.621Z",
+    "checkedAt": "2026-11-26T12:04:20.217Z",
     "sources": [
       "TCG Drop Radar"
     ],
@@ -190,6 +190,6 @@
     "upcoming": 0,
     "withEntryLink": 10,
     "withImage": 10,
-    "newsImagesAdded": 1
+    "newsImagesAdded": 0
   }
 }
