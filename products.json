@@ -1,5 +1,20 @@
 [
   {
+    "id": "https://www.amazon.com/pok%c3%a9mon-tcg-evolution-delta-booster-bundle/dp/b0hg3rvzlw",
+    "name": "Amazon.com: Pokémon TCG: Mega Evolution—Delta Reign Booster Bundle : Toys & Games",
+    "retailer": "Amazon",
+    "productUrl": "https://www.amazon.com/Pok%C3%A9mon-TCG-Evolution-Delta-Booster-Bundle/dp/B0HG3RVZLW",
+    "imageUrl": "",
+    "price": "",
+    "stockState": "IN_STOCK",
+    "availabilitySource": "page-text",
+    "firstSeenAt": "2026-11-24T13:09:36.468Z",
+    "lastCheckedAt": "2026-11-26T18:22:26.222Z",
+    "lastCheckStatus": "OK",
+    "lastError": "",
+    "history": []
+  },
+  {
     "id": "https://www.amazon.com/pokemon-tcg-violet-prismatic-evolutions-super-premium/dp/b0dyr8d7yc",
     "name": "Amazon.com: Pokemon TCG: Scarlet & Violet—Prismatic Evolutions Super-Premium Collection - 15 Booster Packs, 65 Card Sleeves, Full Art Foil Promo Card, Deck Box, Playmat & Code Card",
     "retailer": "Amazon",
@@ -9,24 +24,9 @@
     "stockState": "IN_STOCK",
     "availabilitySource": "page-text",
     "firstSeenAt": "2026-11-24T23:01:57.686Z",
-    "lastCheckedAt": "2026-11-26T08:02:21.186Z",
-    "lastCheckStatus": "BLOCKED",
-    "lastError": "HTTP 503",
-    "history": []
-  },
-  {
-    "id": "https://www.amazon.com/pokemon-tcg-charizard-special-collection/dp/b0dty5228w",
-    "name": "Amazon.com: Pokemon TCG: Charizard ex Special Collection - 5 Packs, Promos : Toys & Games",
-    "retailer": "Amazon",
-    "productUrl": "https://www.amazon.com/Pokemon-TCG-Charizard-Special-Collection/dp/B0DTY5228W",
-    "imageUrl": "",
-    "price": "",
-    "stockState": "IN_STOCK",
-    "availabilitySource": "page-text",
-    "firstSeenAt": "2026-11-25T05:24:03.624Z",
-    "lastCheckedAt": "2026-11-26T08:02:21.186Z",
-    "lastCheckStatus": "BLOCKED",
-    "lastError": "HTTP 503",
+    "lastCheckedAt": "2026-11-26T18:22:26.222Z",
+    "lastCheckStatus": "OK",
+    "lastError": "",
     "history": []
   },
   {
@@ -39,24 +39,24 @@
     "stockState": "IN_STOCK",
     "availabilitySource": "page-text",
     "firstSeenAt": "2026-11-25T05:24:03.624Z",
-    "lastCheckedAt": "2026-11-26T08:02:21.186Z",
-    "lastCheckStatus": "BLOCKED",
-    "lastError": "HTTP 503",
+    "lastCheckedAt": "2026-11-26T18:22:26.222Z",
+    "lastCheckStatus": "OK",
+    "lastError": "",
     "history": []
   },
   {
-    "id": "https://www.amazon.com/pok%c3%a9mon-tcg-evolution-delta-booster-bundle/dp/b0hg3rvzlw",
-    "name": "Amazon.com: Pokémon TCG: Mega Evolution—Delta Reign Booster Bundle : Toys & Games",
+    "id": "https://www.amazon.com/pokemon-tcg-charizard-special-collection/dp/b0dty5228w",
+    "name": "Amazon.com: Pokemon TCG: Charizard ex Special Collection - 5 Packs, Promos : Toys & Games",
     "retailer": "Amazon",
-    "productUrl": "https://www.amazon.com/Pok%C3%A9mon-TCG-Evolution-Delta-Booster-Bundle/dp/B0HG3RVZLW",
+    "productUrl": "https://www.amazon.com/Pokemon-TCG-Charizard-Special-Collection/dp/B0DTY5228W",
     "imageUrl": "",
     "price": "",
     "stockState": "IN_STOCK",
     "availabilitySource": "page-text",
-    "firstSeenAt": "2026-11-24T13:09:36.468Z",
-    "lastCheckedAt": "2026-11-26T08:02:21.186Z",
-    "lastCheckStatus": "BLOCKED",
-    "lastError": "HTTP 503",
+    "firstSeenAt": "2026-11-25T05:24:03.624Z",
+    "lastCheckedAt": "2026-11-26T18:22:26.222Z",
+    "lastCheckStatus": "OK",
+    "lastError": "",
     "history": []
   },
   {
@@ -69,24 +69,9 @@
     "stockState": "IN_STOCK",
     "availabilitySource": "page-text",
     "firstSeenAt": "2026-11-21T23:28:33.174Z",
-    "lastCheckedAt": "2026-11-26T08:02:21.186Z",
+    "lastCheckedAt": "2026-11-26T18:22:26.222Z",
     "lastCheckStatus": "OK",
     "lastError": "",
-    "history": []
-  },
-  {
-    "id": "https://www.amazon.com/pokemon-tcg-evolutions-perfect-chikorita/dp/b0ggcclcjm",
-    "name": "Amazon.com: Pokemon TCG: Mega Evolutions - Perfect Order 3 Pack Blister (Chikorita) : Toys & Games",
-    "retailer": "Amazon",
-    "productUrl": "https://www.amazon.com/Pokemon-TCG-Evolutions-Perfect-Chikorita/dp/B0GGCCLCJM",
-    "imageUrl": "",
-    "price": "",
-    "stockState": "IN_STOCK",
-    "availabilitySource": "page-text",
-    "firstSeenAt": "2026-11-22T18:30:15.412Z",
-    "lastCheckedAt": "2026-11-26T08:02:21.186Z",
-    "lastCheckStatus": "BLOCKED",
-    "lastError": "HTTP 503",
     "history": []
   },
   {
@@ -99,24 +84,9 @@
     "stockState": "IN_STOCK",
     "availabilitySource": "page-text",
     "firstSeenAt": "2026-11-21T23:28:33.174Z",
-    "lastCheckedAt": "2026-11-26T08:02:21.186Z",
+    "lastCheckedAt": "2026-11-26T18:22:26.222Z",
     "lastCheckStatus": "OK",
     "lastError": "",
-    "history": []
-  },
-  {
-    "id": "https://www.amazon.com/pok%c3%a9mon-tcg-evolution-delta-reign-trainer/dp/b0hg3mqdwp",
-    "name": "Amazon.com: Pokémon TCG: Mega Evolution—Delta Reign Elite Trainer Box : Toys & Games",
-    "retailer": "Amazon",
-    "productUrl": "https://www.amazon.com/Pok%C3%A9mon-TCG-Evolution-Delta-Reign-Trainer/dp/B0HG3MQDWP",
-    "imageUrl": "",
-    "price": "",
-    "stockState": "IN_STOCK",
-    "availabilitySource": "page-text",
-    "firstSeenAt": "2026-11-21T19:58:52.458Z",
-    "lastCheckedAt": "2026-11-26T08:02:21.186Z",
-    "lastCheckStatus": "BLOCKED",
-    "lastError": "HTTP 503",
     "history": []
   },
   {
@@ -129,7 +99,7 @@
     "stockState": "IN_STOCK",
     "availabilitySource": "page-text",
     "firstSeenAt": "2026-11-21T23:28:33.174Z",
-    "lastCheckedAt": "2026-11-26T08:02:21.186Z",
+    "lastCheckedAt": "2026-11-26T18:22:26.222Z",
     "lastCheckStatus": "OK",
     "lastError": "",
     "history": []
@@ -144,7 +114,7 @@
     "stockState": "IN_STOCK",
     "availabilitySource": "page-text",
     "firstSeenAt": "2026-11-22T23:52:54.890Z",
-    "lastCheckedAt": "2026-11-26T08:02:21.186Z",
+    "lastCheckedAt": "2026-11-26T18:22:26.222Z",
     "lastCheckStatus": "ERROR",
     "lastError": "Final destination is not a retailer product-detail page",
     "history": [
@@ -156,6 +126,36 @@
     ]
   },
   {
+    "id": "https://www.amazon.com/pokemon-tcg-evolutions-perfect-chikorita/dp/b0ggcclcjm",
+    "name": "Amazon.com: Pokemon TCG: Mega Evolutions - Perfect Order 3 Pack Blister (Chikorita) : Toys & Games",
+    "retailer": "Amazon",
+    "productUrl": "https://www.amazon.com/Pokemon-TCG-Evolutions-Perfect-Chikorita/dp/B0GGCCLCJM",
+    "imageUrl": "",
+    "price": "",
+    "stockState": "IN_STOCK",
+    "availabilitySource": "page-text",
+    "firstSeenAt": "2026-11-22T18:30:15.412Z",
+    "lastCheckedAt": "2026-11-26T18:22:26.222Z",
+    "lastCheckStatus": "OK",
+    "lastError": "",
+    "history": []
+  },
+  {
+    "id": "https://www.amazon.com/pok%c3%a9mon-tcg-evolution-delta-reign-trainer/dp/b0hg3mqdwp",
+    "name": "Amazon.com: Pokémon TCG: Mega Evolution—Delta Reign Elite Trainer Box : Toys & Games",
+    "retailer": "Amazon",
+    "productUrl": "https://www.amazon.com/Pok%C3%A9mon-TCG-Evolution-Delta-Reign-Trainer/dp/B0HG3MQDWP",
+    "imageUrl": "",
+    "price": "",
+    "stockState": "IN_STOCK",
+    "availabilitySource": "page-text",
+    "firstSeenAt": "2026-11-21T19:58:52.458Z",
+    "lastCheckedAt": "2026-11-26T18:22:26.222Z",
+    "lastCheckStatus": "OK",
+    "lastError": "",
+    "history": []
+  },
+  {
     "id": "https://www.amazon.com/official-collection-combination-charizard-detective/dp/b0829ft44s",
     "name": "Amazon.com: 50+ Official Pokemon Cards Collection with 5 Foils in Any Combination and at Least 1 Rarity, GX, EX, FA, Tag Team, Or Secret Rare : Toys & Games",
     "retailer": "Amazon",
@@ -165,9 +165,39 @@
     "stockState": "IN_STOCK",
     "availabilitySource": "page-text",
     "firstSeenAt": "2026-11-22T18:30:15.412Z",
-    "lastCheckedAt": "2026-11-26T08:02:21.186Z",
+    "lastCheckedAt": "2026-11-26T18:22:26.222Z",
     "lastCheckStatus": "OK",
     "lastError": "",
+    "history": []
+  },
+  {
+    "id": "https://www.costco.com/p/-/pokmon-evolving-skies-elite-trainer-box-vaporeon-window-tin/100983804",
+    "name": "Pokémon Evolving Skies Elite Trainer Box + Vaporeon Window Tin",
+    "retailer": "Costco",
+    "productUrl": "https://www.costco.com/p/-/pokmon-evolving-skies-elite-trainer-box-vaporeon-window-tin/100983804",
+    "imageUrl": "https://gdx-assets.costco.com/adobe/assets/urn:aaid:aem:922c6672-4d97-47d0-bb10-59e7c4dbbb3d/as/2351667-847__1.avif",
+    "price": "$47.99",
+    "stockState": "OUT_OF_STOCK",
+    "availabilitySource": "structured-data",
+    "firstSeenAt": "2026-11-21T23:28:33.174Z",
+    "lastCheckedAt": "2026-11-26T18:22:26.222Z",
+    "lastCheckStatus": "BLOCKED",
+    "lastError": "HTTP 429",
+    "history": []
+  },
+  {
+    "id": "https://www.costco.com/p/-/pokmon-elite-trainer-box-crown-zenith-koraidon-ex-tin-miraidon-window-tin/4000283872",
+    "name": "Pokémon Elite Trainer Box: Crown Zenith + Koraidon ex Tin + Miraidon Window Tin",
+    "retailer": "Costco",
+    "productUrl": "https://www.costco.com/p/-/pokmon-elite-trainer-box-crown-zenith-koraidon-ex-tin-miraidon-window-tin/4000283872",
+    "imageUrl": "https://gdx-assets.costco.com/adobe/assets/urn:aaid:aem:51764070-ab75-410e-ad67-029d0852a659/as/twsk7ksskth75fbt9k3qr98t__1828995-847__1.avif",
+    "price": "$79.99",
+    "stockState": "OUT_OF_STOCK",
+    "availabilitySource": "structured-data",
+    "firstSeenAt": "2026-11-22T23:52:54.890Z",
+    "lastCheckedAt": "2026-11-26T18:22:26.222Z",
+    "lastCheckStatus": "BLOCKED",
+    "lastError": "HTTP 429",
     "history": []
   },
   {
@@ -180,9 +210,9 @@
     "stockState": "OUT_OF_STOCK",
     "availabilitySource": "page-text",
     "firstSeenAt": "2026-11-24T23:01:57.686Z",
-    "lastCheckedAt": "2026-11-26T08:02:21.186Z",
-    "lastCheckStatus": "BLOCKED",
-    "lastError": "HTTP 503",
+    "lastCheckedAt": "2026-11-26T18:22:26.222Z",
+    "lastCheckStatus": "OK",
+    "lastError": "",
     "history": [
       {
         "from": "IN_STOCK",
@@ -190,21 +220,6 @@
         "at": "2026-11-25T05:24:03.624Z"
       }
     ]
-  },
-  {
-    "id": "https://www.costco.com/p/-/pokmon-evolving-skies-elite-trainer-box-vaporeon-window-tin/100983804",
-    "name": "Pokémon Evolving Skies Elite Trainer Box + Vaporeon Window Tin",
-    "retailer": "Costco",
-    "productUrl": "https://www.costco.com/p/-/pokmon-evolving-skies-elite-trainer-box-vaporeon-window-tin/100983804",
-    "imageUrl": "https://gdx-assets.costco.com/adobe/assets/urn:aaid:aem:922c6672-4d97-47d0-bb10-59e7c4dbbb3d/as/2351667-847__1.avif",
-    "price": "$47.99",
-    "stockState": "OUT_OF_STOCK",
-    "availabilitySource": "structured-data",
-    "firstSeenAt": "2026-11-21T23:28:33.174Z",
-    "lastCheckedAt": "2026-11-26T08:02:21.186Z",
-    "lastCheckStatus": "OK",
-    "lastError": "",
-    "history": []
   },
   {
     "id": "https://www.amazon.com/pok%c3%a9mon-tcg-scarlet-surging-trainer/dp/b0ddyxqcz4",
@@ -216,9 +231,9 @@
     "stockState": "OUT_OF_STOCK",
     "availabilitySource": "page-text",
     "firstSeenAt": "2026-11-21T23:28:33.174Z",
-    "lastCheckedAt": "2026-11-26T08:02:21.186Z",
-    "lastCheckStatus": "BLOCKED",
-    "lastError": "HTTP 503",
+    "lastCheckedAt": "2026-11-26T18:22:26.222Z",
+    "lastCheckStatus": "OK",
+    "lastError": "",
     "history": [
       {
         "from": "IN_STOCK",
@@ -226,21 +241,6 @@
         "at": "2026-11-23T16:02:09.180Z"
       }
     ]
-  },
-  {
-    "id": "https://www.costco.com/p/-/pokmon-elite-trainer-box-crown-zenith-koraidon-ex-tin-miraidon-window-tin/4000283872",
-    "name": "Pokémon Elite Trainer Box: Crown Zenith + Koraidon ex Tin + Miraidon Window Tin",
-    "retailer": "Costco",
-    "productUrl": "https://www.costco.com/p/-/pokmon-elite-trainer-box-crown-zenith-koraidon-ex-tin-miraidon-window-tin/4000283872",
-    "imageUrl": "https://gdx-assets.costco.com/adobe/assets/urn:aaid:aem:51764070-ab75-410e-ad67-029d0852a659/as/twsk7ksskth75fbt9k3qr98t__1828995-847__1.avif",
-    "price": "$79.99",
-    "stockState": "OUT_OF_STOCK",
-    "availabilitySource": "structured-data",
-    "firstSeenAt": "2026-11-22T23:52:54.890Z",
-    "lastCheckedAt": "2026-11-26T08:02:21.186Z",
-    "lastCheckStatus": "OK",
-    "lastError": "",
-    "history": []
   },
   {
     "id": "https://www.tcgplayer.com/product/503313/pokemon-sv-scarlet-and-violet-151-151-elite-trainer-box",
@@ -252,7 +252,7 @@
     "stockState": "UNKNOWN",
     "availabilitySource": "none",
     "firstSeenAt": "2026-11-22T23:52:54.890Z",
-    "lastCheckedAt": "2026-11-26T08:02:21.186Z",
+    "lastCheckedAt": "2026-11-26T18:22:26.222Z",
     "lastCheckStatus": "OK",
     "lastError": "",
     "history": []
@@ -267,7 +267,7 @@
     "stockState": "UNKNOWN",
     "availabilitySource": "none",
     "firstSeenAt": "2026-11-21T23:28:33.174Z",
-    "lastCheckedAt": "2026-11-26T08:02:21.186Z",
+    "lastCheckedAt": "2026-11-26T18:22:26.222Z",
     "lastCheckStatus": "OK",
     "lastError": "",
     "history": []
@@ -282,7 +282,7 @@
     "stockState": "UNKNOWN",
     "availabilitySource": "none",
     "firstSeenAt": "2026-11-21T23:28:33.174Z",
-    "lastCheckedAt": "2026-11-26T08:02:21.186Z",
+    "lastCheckedAt": "2026-11-26T18:22:26.222Z",
     "lastCheckStatus": "OK",
     "lastError": "",
     "history": []
@@ -297,7 +297,7 @@
     "stockState": "UNKNOWN",
     "availabilitySource": "none",
     "firstSeenAt": "2026-11-22T23:52:54.890Z",
-    "lastCheckedAt": "2026-11-26T08:02:21.186Z",
+    "lastCheckedAt": "2026-11-26T18:22:26.222Z",
     "lastCheckStatus": "OK",
     "lastError": "",
     "history": []
