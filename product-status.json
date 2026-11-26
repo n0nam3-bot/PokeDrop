@@ -1,12 +1,12 @@
 {
   "state": "ok",
-  "lastScanAt": "2026-11-26T00:00:23.848Z",
+  "lastScanAt": "2026-11-26T08:02:11.773Z",
   "retailersChecked": 10,
   "retailersReached": 10,
   "retailersWithProducts": 0,
   "productsFound": 19,
   "productsChecked": 19,
-  "productsVerified": 7,
+  "productsVerified": 6,
   "alertsSent": 0,
   "sources": [
     {
@@ -34,7 +34,7 @@
       "productsFound": 0,
       "pagesChecked": 1,
       "method": "none",
-      "error": "Retailer search page loaded but did not expose matching product-detail links in its HTML | bing-rss: response contained no matching product-detail links | bing-html: response contained no matching product-detail links | duckduckgo-html: res"
+      "error": "Final destination is not a retailer product-detail page"
     },
     {
       "retailer": "Best Buy",
@@ -101,7 +101,8 @@
     }
   ],
   "errors": [
-    "Amazon: HTTP 503"
+    "Amazon: HTTP 503",
+    "Walmart: Final destination is not a retailer product-detail page"
   ],
   "search": {
     "requests": 40,
