@@ -1,12 +1,12 @@
 {
   "state": "ok",
-  "lastScanAt": "2026-11-27T10:18:32.339Z",
+  "lastScanAt": "2026-11-27T19:31:59.437Z",
   "retailersChecked": 10,
   "retailersReached": 10,
   "retailersWithProducts": 0,
   "productsFound": 19,
   "productsChecked": 19,
-  "productsVerified": 7,
+  "productsVerified": 5,
   "alertsSent": 0,
   "sources": [
     {
@@ -70,7 +70,7 @@
       "productsFound": 0,
       "pagesChecked": 2,
       "method": "none",
-      "error": "Retailer search page loaded but did not expose matching product-detail links in its HTML | bing-rss: response contained no matching product-detail links | bing-html: response contained no matching product-detail links | duckduckgo-html: res"
+      "error": "HTTP 429"
     },
     {
       "retailer": "TCGplayer",
@@ -102,7 +102,8 @@
   ],
   "errors": [
     "Amazon: HTTP 503",
-    "Walmart: Final destination is not a retailer product-detail page"
+    "Walmart: Final destination is not a retailer product-detail page",
+    "Costco: HTTP 429"
   ],
   "search": {
     "requests": 40,
