@@ -1,12 +1,12 @@
 {
   "state": "ok",
-  "lastScanAt": "2026-11-26T18:22:16.775Z",
+  "lastScanAt": "2026-11-27T01:51:34.224Z",
   "retailersChecked": 10,
   "retailersReached": 10,
   "retailersWithProducts": 0,
   "productsFound": 19,
   "productsChecked": 19,
-  "productsVerified": 12,
+  "productsVerified": 4,
   "alertsSent": 0,
   "sources": [
     {
@@ -61,7 +61,7 @@
       "productsFound": 0,
       "pagesChecked": 9,
       "method": "none",
-      "error": "Retailer search page loaded but did not expose matching product-detail links in its HTML | bing-rss: response contained no matching product-detail links | bing-html: response contained no matching product-detail links | duckduckgo-html: res"
+      "error": "HTTP 503"
     },
     {
       "retailer": "Costco",
@@ -101,6 +101,7 @@
     }
   ],
   "errors": [
+    "Amazon: HTTP 503",
     "Walmart: Final destination is not a retailer product-detail page",
     "Costco: HTTP 429"
   ],
@@ -112,8 +113,8 @@
     "duckduckgoRequests": 10,
     "successfulSearches": 0,
     "resultLinks": 0,
-    "blockedResponses": 2,
-    "errors": 4
+    "blockedResponses": 3,
+    "errors": 5
   },
   "note": "Stock states come from validated product pages. A page that cannot be reached retains its last verified stock state and is marked with a failed check.",
   "discord": {
