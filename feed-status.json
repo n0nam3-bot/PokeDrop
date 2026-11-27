@@ -34,33 +34,33 @@
     ],
     "itemImageDiscovery": {
       "version": 7,
-      "pagesChecked": 8,
-      "itemsWithImages": 104,
+      "pagesChecked": 7,
+      "itemsWithImages": 106,
       "verifiedProductPages": 1,
-      "retailerSearchFallbacks": 73,
-      "productSearchLinksAvailable": 73,
-      "productPagesMissing": 46,
-      "productDetailPagesChecked": 15,
+      "retailerSearchFallbacks": 74,
+      "productSearchLinksAvailable": 74,
+      "productPagesMissing": 45,
+      "productDetailPagesChecked": 13,
       "imageErrors": 0,
       "search": {
-        "requests": 24,
-        "successfulQueries": 18,
-        "resultLinks": 153,
+        "requests": 22,
+        "successfulQueries": 22,
+        "resultLinks": 200,
         "errors": 0,
-        "bingRequests": 21,
-        "duckDuckGoRequests": 3
+        "bingRequests": 22,
+        "duckDuckGoRequests": 0
       }
     }
   },
   "raffles": {
     "sourceCount": 17,
     "sourcesResponded": 17,
-    "searchResults": 175,
-    "uniqueLeads": 114,
+    "searchResults": 179,
+    "uniqueLeads": 120,
     "savedLeads": 10,
     "directEntryLinksFound": 10,
     "directEntryLinksMissing": 0,
-    "entryLookupsThisRun": 18,
+    "entryLookupsThisRun": 19,
     "entryLookupErrors": 0,
     "historyDays": 365,
     "sources": [
@@ -72,7 +72,7 @@
       {
         "name": "TCG raffles",
         "ok": true,
-        "results": 12
+        "results": 11
       },
       {
         "name": "Pokémon card giveaways",
@@ -107,32 +107,32 @@
       {
         "name": "Card shop raffles",
         "ok": true,
-        "results": 11
+        "results": 12
       },
       {
         "name": "Target giveaways",
         "ok": true,
-        "results": 10
+        "results": 11
       },
       {
         "name": "Walmart giveaways",
         "ok": true,
-        "results": 11
+        "results": 12
       },
       {
         "name": "GameStop giveaways",
         "ok": true,
-        "results": 11
+        "results": 10
       },
       {
         "name": "Best Buy giveaways",
         "ok": true,
-        "results": 11
+        "results": 12
       },
       {
         "name": "Costco giveaways",
         "ok": true,
-        "results": 10
+        "results": 11
       },
       {
         "name": "Pokémon Center lotteries",
@@ -142,7 +142,7 @@
       {
         "name": "Local card shop contests",
         "ok": true,
-        "results": 11
+        "results": 12
       },
       {
         "name": "Community card giveaways",
@@ -155,31 +155,31 @@
         "results": 14
       }
     ],
-    "entrySearchFallbacks": 17,
-    "qualifiedLeads": 17,
-    "rejectedLeads": 97,
+    "entrySearchFallbacks": 18,
+    "qualifiedLeads": 18,
+    "rejectedLeads": 102,
     "discoveryEngine": {
       "version": 7,
-      "publisherPagesChecked": 18,
-      "prizeDetailsFound": 5,
-      "startDatesFound": 1,
-      "endDatesFound": 0,
+      "publisherPagesChecked": 19,
+      "prizeDetailsFound": 6,
+      "startDatesFound": 2,
+      "endDatesFound": 1,
       "prizeImagesFound": 8,
-      "rejectedFalsePositives": 97,
+      "rejectedFalsePositives": 102,
       "entryLinksValidated": 0,
       "search": {
-        "requests": 36,
-        "successfulQueries": 30,
-        "resultLinks": 261,
+        "requests": 34,
+        "successfulQueries": 34,
+        "resultLinks": 307,
         "errors": 0,
-        "bingRequests": 33,
-        "duckDuckGoRequests": 3
+        "bingRequests": 34,
+        "duckDuckGoRequests": 0
       }
     }
   },
   "failures": [],
   "dropFeeds": {
-    "checkedAt": "2026-11-26T21:48:49.924Z",
+    "checkedAt": "2026-11-27T03:55:02.751Z",
     "sources": [
       "TCG Drop Radar"
     ],
