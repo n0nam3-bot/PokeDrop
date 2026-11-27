@@ -4,7 +4,7 @@
   "news": {
     "sourceCount": 5,
     "sourcesResponded": 5,
-    "searchResults": 59,
+    "searchResults": 60,
     "sources": [
       {
         "name": "Restock",
@@ -29,25 +29,25 @@
       {
         "name": "Promo",
         "ok": true,
-        "results": 11
+        "results": 12
       }
     ],
     "itemImageDiscovery": {
       "version": 7,
-      "pagesChecked": 11,
-      "itemsWithImages": 105,
+      "pagesChecked": 17,
+      "itemsWithImages": 109,
       "verifiedProductPages": 1,
-      "retailerSearchFallbacks": 76,
-      "productSearchLinksAvailable": 76,
-      "productPagesMissing": 43,
-      "productDetailPagesChecked": 13,
+      "retailerSearchFallbacks": 69,
+      "productSearchLinksAvailable": 69,
+      "productPagesMissing": 50,
+      "productDetailPagesChecked": 14,
       "imageErrors": 0,
       "search": {
-        "requests": 34,
-        "successfulQueries": 34,
-        "resultLinks": 303,
+        "requests": 54,
+        "successfulQueries": 54,
+        "resultLinks": 508,
         "errors": 0,
-        "bingRequests": 34,
+        "bingRequests": 54,
         "duckDuckGoRequests": 0
       }
     }
@@ -55,12 +55,12 @@
   "raffles": {
     "sourceCount": 17,
     "sourcesResponded": 17,
-    "searchResults": 179,
-    "uniqueLeads": 115,
+    "searchResults": 173,
+    "uniqueLeads": 116,
     "savedLeads": 10,
     "directEntryLinksFound": 10,
     "directEntryLinksMissing": 0,
-    "entryLookupsThisRun": 19,
+    "entryLookupsThisRun": 20,
     "entryLookupErrors": 0,
     "historyDays": 365,
     "sources": [
@@ -72,7 +72,7 @@
       {
         "name": "TCG raffles",
         "ok": true,
-        "results": 11
+        "results": 12
       },
       {
         "name": "Pokémon card giveaways",
@@ -87,12 +87,12 @@
       {
         "name": "Booster box prizes",
         "ok": true,
-        "results": 5
+        "results": 0
       },
       {
         "name": "Elite Trainer Box prizes",
         "ok": true,
-        "results": 3
+        "results": 2
       },
       {
         "name": "TCG sweepstakes",
@@ -112,7 +112,7 @@
       {
         "name": "Target giveaways",
         "ok": true,
-        "results": 11
+        "results": 10
       },
       {
         "name": "Walmart giveaways",
@@ -132,7 +132,7 @@
       {
         "name": "Costco giveaways",
         "ok": true,
-        "results": 11
+        "results": 10
       },
       {
         "name": "Pokémon Center lotteries",
@@ -142,7 +142,7 @@
       {
         "name": "Local card shop contests",
         "ok": true,
-        "results": 11
+        "results": 12
       },
       {
         "name": "Community card giveaways",
@@ -155,31 +155,31 @@
         "results": 14
       }
     ],
-    "entrySearchFallbacks": 17,
-    "qualifiedLeads": 17,
-    "rejectedLeads": 98,
+    "entrySearchFallbacks": 20,
+    "qualifiedLeads": 20,
+    "rejectedLeads": 96,
     "discoveryEngine": {
       "version": 7,
-      "publisherPagesChecked": 19,
-      "prizeDetailsFound": 6,
+      "publisherPagesChecked": 20,
+      "prizeDetailsFound": 7,
       "startDatesFound": 2,
       "endDatesFound": 1,
       "prizeImagesFound": 7,
-      "rejectedFalsePositives": 98,
+      "rejectedFalsePositives": 96,
       "entryLinksValidated": 0,
       "search": {
-        "requests": 46,
-        "successfulQueries": 46,
-        "resultLinks": 415,
+        "requests": 74,
+        "successfulQueries": 74,
+        "resultLinks": 688,
         "errors": 0,
-        "bingRequests": 46,
+        "bingRequests": 74,
         "duckDuckGoRequests": 0
       }
     }
   },
   "failures": [],
   "dropFeeds": {
-    "checkedAt": "2026-11-27T13:26:43.252Z",
+    "checkedAt": "2026-11-27T22:14:32.559Z",
     "sources": [
       "TCG Drop Radar"
     ],
