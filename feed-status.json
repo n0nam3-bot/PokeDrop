@@ -34,20 +34,20 @@
     ],
     "itemImageDiscovery": {
       "version": 7,
-      "pagesChecked": 7,
-      "itemsWithImages": 106,
+      "pagesChecked": 11,
+      "itemsWithImages": 105,
       "verifiedProductPages": 1,
-      "retailerSearchFallbacks": 74,
-      "productSearchLinksAvailable": 74,
-      "productPagesMissing": 45,
+      "retailerSearchFallbacks": 76,
+      "productSearchLinksAvailable": 76,
+      "productPagesMissing": 43,
       "productDetailPagesChecked": 13,
       "imageErrors": 0,
       "search": {
-        "requests": 22,
-        "successfulQueries": 22,
-        "resultLinks": 200,
+        "requests": 34,
+        "successfulQueries": 34,
+        "resultLinks": 303,
         "errors": 0,
-        "bingRequests": 22,
+        "bingRequests": 34,
         "duckDuckGoRequests": 0
       }
     }
@@ -56,7 +56,7 @@
     "sourceCount": 17,
     "sourcesResponded": 17,
     "searchResults": 179,
-    "uniqueLeads": 120,
+    "uniqueLeads": 115,
     "savedLeads": 10,
     "directEntryLinksFound": 10,
     "directEntryLinksMissing": 0,
@@ -82,12 +82,12 @@
       {
         "name": "Pokémon card raffles",
         "ok": true,
-        "results": 10
+        "results": 11
       },
       {
         "name": "Booster box prizes",
         "ok": true,
-        "results": 4
+        "results": 5
       },
       {
         "name": "Elite Trainer Box prizes",
@@ -122,12 +122,12 @@
       {
         "name": "GameStop giveaways",
         "ok": true,
-        "results": 10
+        "results": 11
       },
       {
         "name": "Best Buy giveaways",
         "ok": true,
-        "results": 12
+        "results": 11
       },
       {
         "name": "Costco giveaways",
@@ -137,12 +137,12 @@
       {
         "name": "Pokémon Center lotteries",
         "ok": true,
-        "results": 12
+        "results": 11
       },
       {
         "name": "Local card shop contests",
         "ok": true,
-        "results": 12
+        "results": 11
       },
       {
         "name": "Community card giveaways",
@@ -155,31 +155,31 @@
         "results": 14
       }
     ],
-    "entrySearchFallbacks": 18,
-    "qualifiedLeads": 18,
-    "rejectedLeads": 102,
+    "entrySearchFallbacks": 17,
+    "qualifiedLeads": 17,
+    "rejectedLeads": 98,
     "discoveryEngine": {
       "version": 7,
       "publisherPagesChecked": 19,
       "prizeDetailsFound": 6,
       "startDatesFound": 2,
       "endDatesFound": 1,
-      "prizeImagesFound": 8,
-      "rejectedFalsePositives": 102,
+      "prizeImagesFound": 7,
+      "rejectedFalsePositives": 98,
       "entryLinksValidated": 0,
       "search": {
-        "requests": 34,
-        "successfulQueries": 34,
-        "resultLinks": 307,
+        "requests": 46,
+        "successfulQueries": 46,
+        "resultLinks": 415,
         "errors": 0,
-        "bingRequests": 34,
+        "bingRequests": 46,
         "duckDuckGoRequests": 0
       }
     }
   },
   "failures": [],
   "dropFeeds": {
-    "checkedAt": "2026-11-27T03:55:02.751Z",
+    "checkedAt": "2026-11-27T13:26:43.252Z",
     "sources": [
       "TCG Drop Radar"
     ],
