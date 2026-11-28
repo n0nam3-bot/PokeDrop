@@ -49,7 +49,6 @@
   "imageLookupStatus": "found",
   "imageLookupVersion": 7,
   "url": "https://www.ibtimes.co.uk/suspects-sought-whitby-game-shop-break-1835299",
-  "thumbUrl": "",
   "siteUrl": "https://www.ibtimes.co.uk",
   "productUrl": "",
   "productRetailer": "",
@@ -64,7 +63,8 @@
   "productLookupAt": "2026-11-27T22:14:19.940Z",
   "productLookupVersion": 7,
   "productPageChecks": 0,
-  "productVerifiedAt": ""
+  "productVerifiedAt": "",
+  "thumbUrl": ""
  },
  {
   "date": "2026-11-27T12:10:47.000Z",
@@ -86,7 +86,6 @@
   "imageLookupStatus": "not-found",
   "imageLookupVersion": 7,
   "url": "https://www.msn.com/en-in/news/other/crazyrussianhacker-opens-pok%C3%A9mon-tcg-classic-collection-and-finds-shiny-ex/vi-AA2inuht",
-  "thumbUrl": "https://www.bing.com/th?id=ONUT.qMt06bIwqyaWyYDIUg2npQ&pid=News&w=480&h=360&c=14",
   "siteUrl": "",
   "productUrl": "",
   "productRetailer": "",
@@ -114,7 +113,8 @@
   "productLookupAt": "2026-11-27T22:14:19.941Z",
   "productLookupVersion": 7,
   "productPageChecks": 0,
-  "productVerifiedAt": ""
+  "productVerifiedAt": "",
+  "thumbUrl": "https://www.bing.com/th?id=ONUT.qMt06bIwqyaWyYDIUg2npQ&pid=News&w=480&h=360&c=14"
  },
  {
   "date": "2026-11-27T12:00:00.000Z",
@@ -168,20 +168,9 @@
   "url": "https://www.sun-sentinel.com/2026/11/27/gift-certificates-deals-and-pokemon-draw-black-friday-shoppers-who-still-favor-stores-over-e-commerce/",
   "thumbUrl": "https://www.bing.com/th?id=ONUT.rUkWwmrtXLam7I2LS2kNCg&pid=News&w=480&h=360&c=14",
   "siteUrl": "https://www.sun-sentinel.com",
-  "productUrl": "",
-  "productRetailer": "",
-  "productName": "",
-  "productPrice": "",
-  "productAvailability": "",
-  "productLinks": [],
-  "productSearchLinks": [],
-  "productSearchUrl": "",
-  "productSearchRetailer": "",
   "productLookupStatus": "not-found",
   "productLookupAt": "2026-11-27T22:14:19.942Z",
-  "productLookupVersion": 7,
-  "productPageChecks": 0,
-  "productVerifiedAt": ""
+  "productLookupVersion": 7
  },
  {
   "date": "2026-11-27T11:22:00.000Z",
@@ -233,7 +222,6 @@
   "imageLookupStatus": "found",
   "imageLookupVersion": 7,
   "url": "https://albeu.com/english/two-pokemon-store-robberies-in-los-angeles-30000-worth-of-products-stolen/1117991/",
-  "thumbUrl": "",
   "siteUrl": "https://albeu.com",
   "productUrl": "",
   "productRetailer": "",
@@ -248,7 +236,8 @@
   "productLookupAt": "2026-11-27T22:14:19.942Z",
   "productLookupVersion": 7,
   "productPageChecks": 0,
-  "productVerifiedAt": ""
+  "productVerifiedAt": "",
+  "thumbUrl": ""
  },
  {
   "date": "2026-11-27T11:12:51.000Z",
@@ -270,7 +259,6 @@
   "imageLookupStatus": "not-found",
   "imageLookupVersion": 7,
   "url": "https://www.msn.com/en-in/news/other/crazyrussianhacker-opens-a-pok%C3%A9mon-battle-styles-booster-box/vi-AA2io0q5",
-  "thumbUrl": "https://www.bing.com/th?id=ONUT.1G87fKzKjZQ_8yLHVQY6Hw&pid=News&w=480&h=360&c=14",
   "siteUrl": "",
   "productUrl": "",
   "productRetailer": "",
@@ -298,7 +286,33 @@
   "productLookupAt": "2026-11-27T22:14:20.341Z",
   "productLookupVersion": 7,
   "productPageChecks": 0,
-  "productVerifiedAt": ""
+  "productVerifiedAt": "",
+  "thumbUrl": "https://www.bing.com/th?id=ONUT.1G87fKzKjZQ_8yLHVQY6Hw&pid=News&w=480&h=360&c=14"
+ },
+ {
+  "date": "2026-11-27T10:23:21.000Z",
+  "cat": "Restock",
+  "title": "Man punched, robbed of Pokémon cards in Camarillo parking lot",
+  "summary": "A man was arrested on suspicion of arson after a brush fire sparked in Topanga earlier this week, authorities said Friday. Deputies and the Los Angeles County Fire Department responded to the fire in ...",
+  "source": "NBC Los Angeles on MSN",
+  "publisherUrl": "https://www.msn.com",
+  "sourceUrl": "https://www.msn.com/en-us/news/other/man-punched-robbed-of-pok%C3%A9mon-cards-in-camarillo-parking-lot/ar-AA2i9OQC",
+  "imageUrls": [
+   {
+    "url": "https://www.bing.com/th?id=ONUT.l1tU51AQglaBts9YuYL76g&pid=News&w=480&h=360&c=14",
+    "label": "ARTICLE IMAGE",
+    "kind": "article",
+    "alt": "Man punched, robbed of Pokémon cards in Camarillo parking lot"
+   }
+  ],
+  "imageLookupAt": "2026-11-25T01:14:25.130Z",
+  "imageLookupStatus": "not-found",
+  "imageLookupVersion": 7,
+  "url": "https://www.msn.com/en-us/news/other/man-punched-robbed-of-pok%C3%A9mon-cards-in-camarillo-parking-lot/ar-AA2i9OQC",
+  "thumbUrl": "https://www.bing.com/th?id=ONUT.l1tU51AQglaBts9YuYL76g&pid=News&w=480&h=360&c=14",
+  "productLookupStatus": "not-found",
+  "productLookupAt": "2026-11-25T01:14:25.130Z",
+  "productLookupVersion": 7
  },
  {
   "date": "2026-11-27T09:59:00.000Z",
@@ -320,7 +334,6 @@
   "imageLookupStatus": "not-found",
   "imageLookupVersion": 7,
   "url": "https://finalweapon.net/2026/11/27/pokemon-anime-new-season-october-2027/",
-  "thumbUrl": "https://www.bing.com/th?id=ONUT.HniU5Y8M9Xkast_ZA1_xOQ&pid=News&w=480&h=360&c=14",
   "siteUrl": "",
   "productUrl": "",
   "productRetailer": "",
@@ -335,7 +348,8 @@
   "productLookupAt": "2026-11-27T22:14:21.083Z",
   "productLookupVersion": 7,
   "productPageChecks": 0,
-  "productVerifiedAt": ""
+  "productVerifiedAt": "",
+  "thumbUrl": "https://www.bing.com/th?id=ONUT.HniU5Y8M9Xkast_ZA1_xOQ&pid=News&w=480&h=360&c=14"
  },
  {
   "date": "2026-11-27T09:29:00.000Z",
@@ -389,20 +403,9 @@
   "url": "https://nintendowire.com/news/2026/11/27/pokemon-winds-and-waves-are-getting-plushies-before-the-game-releases/",
   "thumbUrl": "https://www.bing.com/th?id=ONUT.MFh_g3YzDbZeItsEG7Yriw&pid=News&w=480&h=360&c=14",
   "siteUrl": "https://nintendowire.com",
-  "productUrl": "",
-  "productRetailer": "",
-  "productName": "",
-  "productPrice": "",
-  "productAvailability": "",
-  "productLinks": [],
-  "productSearchLinks": [],
-  "productSearchUrl": "",
-  "productSearchRetailer": "",
   "productLookupStatus": "not-found",
   "productLookupAt": "2026-11-27T22:14:21.187Z",
-  "productLookupVersion": 7,
-  "productPageChecks": 0,
-  "productVerifiedAt": ""
+  "productLookupVersion": 7
  },
  {
   "date": "2026-11-27T08:21:00.000Z",
@@ -456,20 +459,9 @@
   "url": "https://www.polygon.com/new-pokemon-anime/",
   "thumbUrl": "https://www.bing.com/th?id=ONUT.L6hMMoLke-FFiB2-RLPHkQ&pid=News&w=480&h=360&c=14",
   "siteUrl": "https://www.polygon.com",
-  "productUrl": "",
-  "productRetailer": "",
-  "productName": "",
-  "productPrice": "",
-  "productAvailability": "",
-  "productLinks": [],
-  "productSearchLinks": [],
-  "productSearchUrl": "",
-  "productSearchRetailer": "",
   "productLookupStatus": "not-found",
   "productLookupAt": "2026-11-27T22:14:21.353Z",
-  "productLookupVersion": 7,
-  "productPageChecks": 0,
-  "productVerifiedAt": ""
+  "productLookupVersion": 7
  },
  {
   "date": "2026-11-27T07:48:00.000Z",
@@ -523,12 +515,6 @@
   "url": "https://www.ign.com/articles/black-friday-pokemon-tcg-amazon-restock-deals",
   "thumbUrl": "https://www.bing.com/th?id=ONUT.Sp3LmdWLYSOx7ZZJJSr6NA&pid=News&w=480&h=360&c=14",
   "siteUrl": "https://www.ign.com",
-  "productUrl": "",
-  "productRetailer": "",
-  "productName": "",
-  "productPrice": "",
-  "productAvailability": "",
-  "productLinks": [],
   "productSearchLinks": [
    {
     "retailer": "Amazon",
@@ -547,9 +533,7 @@
   "productSearchRetailer": "Amazon",
   "productLookupStatus": "search-fallback",
   "productLookupAt": "2026-11-27T22:14:21.781Z",
-  "productLookupVersion": 7,
-  "productPageChecks": 0,
-  "productVerifiedAt": ""
+  "productLookupVersion": 7
  },
  {
   "date": "2026-11-27T07:01:00.000Z",
@@ -603,20 +587,9 @@
   "url": "https://gamerant.com/pokemon-winds-waves-battle-gimmick-netsu-blastoise-weather/",
   "thumbUrl": "https://www.bing.com/th?id=ONUT.tjPkTEvM0w7mu-xAbsnqXA&pid=News&w=480&h=360&c=14",
   "siteUrl": "https://gamerant.com",
-  "productUrl": "",
-  "productRetailer": "",
-  "productName": "",
-  "productPrice": "",
-  "productAvailability": "",
-  "productLinks": [],
-  "productSearchLinks": [],
-  "productSearchUrl": "",
-  "productSearchRetailer": "",
   "productLookupStatus": "not-found",
   "productLookupAt": "2026-11-27T22:14:21.911Z",
-  "productLookupVersion": 7,
-  "productPageChecks": 0,
-  "productVerifiedAt": ""
+  "productLookupVersion": 7
  },
  {
   "date": "2026-11-27T06:56:00.000Z",
@@ -670,12 +643,6 @@
   "url": "https://www.wargamer.com/pokemon-trading-card-game/aura-seeker-sirs",
   "thumbUrl": "https://www.bing.com/th?id=ONUT.Bp8rL_4gsA9FLdf-purxnA&pid=News&w=480&h=360&c=14",
   "siteUrl": "https://www.wargamer.com",
-  "productUrl": "",
-  "productRetailer": "",
-  "productName": "",
-  "productPrice": "",
-  "productAvailability": "",
-  "productLinks": [],
   "productSearchLinks": [
    {
     "retailer": "Amazon",
@@ -694,9 +661,7 @@
   "productSearchRetailer": "Amazon",
   "productLookupStatus": "search-fallback",
   "productLookupAt": "2026-11-27T22:14:21.990Z",
-  "productLookupVersion": 7,
-  "productPageChecks": 0,
-  "productVerifiedAt": ""
+  "productLookupVersion": 7
  },
  {
   "date": "2026-11-27T06:55:00.000Z",
@@ -726,20 +691,35 @@
   "url": "https://www.denverpost.com/2026/11/27/colorado-walmart-theft-pokemon-cards/",
   "thumbUrl": "https://www.bing.com/th?id=ONUT.Dup6xj3Rw6VohVmQamLQAg&pid=News&w=480&h=360&c=14",
   "siteUrl": "https://www.denverpost.com",
-  "productUrl": "",
-  "productRetailer": "",
-  "productName": "",
-  "productPrice": "",
-  "productAvailability": "",
-  "productLinks": [],
-  "productSearchLinks": [],
-  "productSearchUrl": "",
-  "productSearchRetailer": "",
   "productLookupStatus": "not-found",
   "productLookupAt": "2026-11-27T22:14:22.156Z",
-  "productLookupVersion": 7,
-  "productPageChecks": 0,
-  "productVerifiedAt": ""
+  "productLookupVersion": 7
+ },
+ {
+  "date": "2026-11-27T06:53:22.000Z",
+  "cat": "Release",
+  "title": "Pokémon Anime Might Give Us A Clue Into Winds And Waves Release Date",
+  "summary": "There's even more evidence mounting that Pokémon Winds and Waves will launch in late 2027.",
+  "source": "TheGamer on MSN",
+  "publisherUrl": "https://www.msn.com",
+  "sourceUrl": "https://www.msn.com/en-ca/news/other/pokemon-anime-might-give-us-a-clue-into-winds-and-waves-release-date/ar-AA2ionhv",
+  "imageUrls": [
+   {
+    "url": "https://img.opencritic.com/article/W6yyWz1JegcuTN2oXM6PgUkZQkPoYtSME9dHEl6SIsfpqRdvNS3eWXOXJoJrrq.jpg",
+    "label": "ITEM IMAGE",
+    "kind": "product",
+    "alt": "Pokemon Anime Might Give Us A Clue Into Winds And Waves Release Date"
+   }
+  ],
+  "imageLookupAt": "2026-11-27T22:14:23.061Z",
+  "imageLookupStatus": "found",
+  "imageLookupVersion": 7,
+  "url": "https://www.msn.com/en-ca/news/other/pokemon-anime-might-give-us-a-clue-into-winds-and-waves-release-date/ar-AA2ionhv",
+  "thumbUrl": "https://www.bing.com/th?id=ONUT.EGcrYVgpi7yLiFJEyDCAfw&pid=News&w=480&h=360&c=14",
+  "siteUrl": "https://opencritic.com",
+  "productLookupStatus": "not-found",
+  "productLookupAt": "2026-11-27T22:14:23.061Z",
+  "productLookupVersion": 7
  },
  {
   "date": "2026-11-27T05:33:00.000Z",
@@ -748,7 +728,7 @@
   "summary": "Discover how interactive trading card workshops are bringing parents and children closer together through nostalgia and fun ...",
   "source": "InYourArea",
   "publisherUrl": "https://www.inyourarea.co.uk",
-  "sourceUrl": "https://www.inyourarea.co.uk/",
+  "sourceUrl": "https://www.inyourarea.co.uk/news/families-invited-to-connect-and-learn-together-at-special-pokemon-card-sessions",
   "imageUrls": [
    {
     "url": "https://images-cropper-prod.inyourarea.co.uk/unsafe/700x394/smart/harvester-img-35d21aa95f1552447ba4253691da8553.jpg",
@@ -775,12 +755,6 @@
   "url": "https://www.inyourarea.co.uk/news/families-invited-to-connect-and-learn-together-at-special-pokemon-card-sessions",
   "thumbUrl": "https://www.bing.com/th?id=ONUT.4-5H4UZwU5d9TjTr2BP9YA&pid=News&w=480&h=360&c=14",
   "siteUrl": "https://www.inyourarea.co.uk",
-  "productUrl": "",
-  "productRetailer": "",
-  "productName": "",
-  "productPrice": "",
-  "productAvailability": "",
-  "productLinks": [],
   "productSearchLinks": [
    {
     "retailer": "TCGplayer",
@@ -800,8 +774,7 @@
   "productLookupStatus": "search-fallback",
   "productLookupAt": "2026-11-27T22:14:22.333Z",
   "productLookupVersion": 7,
-  "productPageChecks": 1,
-  "productVerifiedAt": ""
+  "productPageChecks": 1
  },
  {
   "date": "2026-11-27T04:34:00.000Z",
@@ -825,12 +798,6 @@
   "url": "https://comicbook.com/collectibles/news/supremely-scarce-umbreon-pokemon-card-sells-for-216000-at-auction-nearly-22-times-its-2025-price/",
   "thumbUrl": "",
   "siteUrl": "https://comicbook.com",
-  "productUrl": "",
-  "productRetailer": "",
-  "productName": "",
-  "productPrice": "",
-  "productAvailability": "",
-  "productLinks": [],
   "productSearchLinks": [
    {
     "retailer": "Pokémon Center",
@@ -849,9 +816,7 @@
   "productSearchRetailer": "Pokémon Center",
   "productLookupStatus": "search-fallback",
   "productLookupAt": "2026-11-27T22:14:22.494Z",
-  "productLookupVersion": 7,
-  "productPageChecks": 0,
-  "productVerifiedAt": ""
+  "productLookupVersion": 7
  },
  {
   "date": "2026-11-27T04:08:00.000Z",
@@ -879,36 +844,11 @@
   "imageLookupStatus": "found",
   "imageLookupVersion": 7,
   "url": "https://www.iphoneincanada.ca/2026/11/27/casetify-celebrates-pokemons-30th-anniversary/",
-  "thumbUrl": "",
   "siteUrl": "https://www.iphoneincanada.ca",
   "productLookupStatus": "not-found",
   "productLookupAt": "2026-11-27T13:26:32.555Z",
-  "productLookupVersion": 7
- },
- {
-  "date": "2026-11-27T04:07:44.000Z",
-  "cat": "Restock",
-  "title": "Man punched, robbed of Pokémon cards in Camarillo parking lot",
-  "summary": "Overnight closures on the Pomona (60) Freeway were scheduled to get underway next week in Diamond Bar. Full overnight closures in both directions are schedule to take place next Friday and Saturday, ...",
-  "source": "NBC Los Angeles on MSN",
-  "publisherUrl": "https://www.msn.com",
-  "sourceUrl": "https://www.msn.com/en-us/news/other/man-punched-robbed-of-pok%C3%A9mon-cards-in-camarillo-parking-lot/ar-AA2i9OQC",
-  "imageUrls": [
-   {
-    "url": "https://www.bing.com/th?id=ONUT.l1tU51AQglaBts9YuYL76g&pid=News&w=480&h=360&c=14",
-    "label": "ARTICLE IMAGE",
-    "kind": "article",
-    "alt": "Man punched, robbed of Pokémon cards in Camarillo parking lot"
-   }
-  ],
-  "imageLookupAt": "2026-11-25T01:14:25.130Z",
-  "imageLookupStatus": "not-found",
-  "imageLookupVersion": 7,
-  "url": "https://www.msn.com/en-us/news/other/man-punched-robbed-of-pok%C3%A9mon-cards-in-camarillo-parking-lot/ar-AA2i9OQC",
-  "thumbUrl": "https://www.bing.com/th?id=ONUT.l1tU51AQglaBts9YuYL76g&pid=News&w=480&h=360&c=14",
-  "productLookupStatus": "not-found",
-  "productLookupAt": "2026-11-25T01:14:25.130Z",
-  "productLookupVersion": 7
+  "productLookupVersion": 7,
+  "thumbUrl": ""
  },
  {
   "date": "2026-11-27T03:29:00.000Z",
@@ -1097,6 +1037,43 @@
   "productLookupVersion": 7
  },
  {
+  "date": "2026-11-27T01:47:26.000Z",
+  "cat": "Release",
+  "title": "Browt, Pombon, And Gecqua Plushes Are Here Long Before Pokémon Winds And Waves",
+  "summary": "Even though Pokémon Winds & Waves doesn't have a release date, its starters - Browt, Pombon, and Gecqua - are getting plushes.",
+  "source": "TheGamer on MSN",
+  "publisherUrl": "https://www.msn.com",
+  "sourceUrl": "https://www.msn.com/en-ca/gaming/the-pokemon-company/browt-pombon-and-gecqua-plushes-are-here-long-before-pokemon-winds-and-waves/ar-AA2inuLz",
+  "imageUrls": [
+   {
+    "url": "https://www.bing.com/th?id=ONUT.MbJ6ahmqFrA2ivm8RF6A5g&pid=News&w=480&h=360&c=14",
+    "label": "ARTICLE IMAGE",
+    "kind": "article",
+    "alt": "Browt, Pombon, And Gecqua Plushes Are Here Long Before Pokémon Winds And Waves"
+   }
+  ],
+  "imageLookupAt": "2026-11-28T04:04:15.231Z",
+  "imageLookupStatus": "not-found",
+  "imageLookupVersion": 7,
+  "url": "https://www.msn.com/en-ca/gaming/the-pokemon-company/browt-pombon-and-gecqua-plushes-are-here-long-before-pokemon-winds-and-waves/ar-AA2inuLz",
+  "thumbUrl": "https://www.bing.com/th?id=ONUT.MbJ6ahmqFrA2ivm8RF6A5g&pid=News&w=480&h=360&c=14",
+  "siteUrl": "",
+  "productUrl": "",
+  "productRetailer": "",
+  "productName": "",
+  "productPrice": "",
+  "productAvailability": "",
+  "productLinks": [],
+  "productSearchLinks": [],
+  "productSearchUrl": "",
+  "productSearchRetailer": "",
+  "productLookupStatus": "not-found",
+  "productLookupAt": "2026-11-28T04:04:15.231Z",
+  "productLookupVersion": 7,
+  "productPageChecks": 0,
+  "productVerifiedAt": ""
+ },
+ {
   "date": "2026-11-27T01:47:00.000Z",
   "cat": "Deals",
   "title": "Armed Pokémon card robberies in Denmark sharpen the spotlight on a market edging into gambling",
@@ -1213,6 +1190,82 @@
   "productLookupStatus": "search-fallback",
   "productLookupAt": "2026-11-27T13:26:33.540Z",
   "productLookupVersion": 7
+ },
+ {
+  "date": "2026-11-26T22:05:00.000Z",
+  "cat": "Release",
+  "title": "'Not child's play anymore': Owner believes thieves who crashed SUV into his game store were after Pokémon cards",
+  "summary": "The owner of a Whitby game store that was broken into on Thursday night believes the culprits were after valuable Pokémon cards. Kamal Lalli, owner of We Got Gamez at 1910 Dundas Street East, told ...",
+  "source": "CityNews Toronto",
+  "publisherUrl": "https://toronto.citynews.ca",
+  "sourceUrl": "https://toronto.citynews.ca/2026/11/27/game-store-robbery-pokemon-cards-whitby/",
+  "imageUrls": [
+   {
+    "url": "https://toronto.citynews.ca/wp-content/blogs.dir/sites/10/2026/11/26/gamez1.png",
+    "label": "ITEM IMAGE",
+    "kind": "product",
+    "alt": "Damage after a vehicle crashed into a Whitby game store. Durham Regional Police."
+   },
+   {
+    "url": "https://toronto.citynews.ca/wp-content/blogs.dir/sites/10/2026/11/27/stabbingsuspect.jpg",
+    "label": "ITEM IMAGE",
+    "kind": "product",
+    "alt": "div> <a title=\"Toronto man, 40, charged with murder in deadly stabbing on TTC bus\" class=\"card-link card-text-link\" data-index=\"0\" href=\"htt"
+   },
+   {
+    "url": "https://toronto.citynews.ca/wp-content/blogs.dir/sites/10/2024/09/08/peel-paramedic-ems-4.jpg",
+    "label": "ITEM IMAGE",
+    "kind": "product",
+    "alt": "iv> <a title=\"2 children among 4 injured in serious Mississauga car crash\" class=\"card-link card-text-link\" data-index=\"0\" href=\"https://tor"
+   },
+   {
+    "url": "https://toronto.citynews.ca/wp-content/blogs.dir/sites/10/2026/11/96653fb74e36181dcc0ae880ee5373a9b36325500529b536dfacb368e03e0e31.jpg",
+    "label": "ITEM IMAGE",
+    "kind": "product",
+    "alt": "<a title=\"Employer denies allegation nurse contract not being renewed over Poilievre photo\" class=\"card-link card-text-link\" data-index=\"0\" "
+   },
+   {
+    "url": "https://cf-images.us-east-1.prod.boltdns.net/v1/static/593482582001/1c99f49c-f337-4b64-9613-1145b0093340/f1cda335-e27d-4871-8405-59d997004ca3/1920x1080/match/image.jpg",
+    "label": "ITEM IMAGE",
+    "kind": "product",
+    "alt": "quot;videoId\":\"6408969661112\",\"url\":\"https:\\/\\/toronto.citynews.ca\\/video\\/2026\\/11\\/27\\/victim-identified-in-fatal-stabbing-on-ttc-bus\\/\",\""
+   },
+   {
+    "url": "https://cf-images.us-east-1.prod.boltdns.net/v1/static/593482582001/117567c0-b5b9-430b-a338-5bacf5059ff5/40988e45-d2f2-4fae-8def-bc3dafe3663a/1920x1080/match/image.jpg",
+    "label": "ITEM IMAGE",
+    "kind": "product",
+    "alt": "uot;:\"https:\\/\\/toronto.citynews.ca\\/video\\/2026\\/11\\/27\\/community-groups-rally-after-teen-injured-on-ttc-during-police-interaction\\/\",\"yoa"
+   }
+  ],
+  "imageLookupAt": "2026-11-28T04:04:15.233Z",
+  "imageLookupStatus": "found",
+  "imageLookupVersion": 7,
+  "url": "https://toronto.citynews.ca/2026/11/27/game-store-robbery-pokemon-cards-whitby/",
+  "thumbUrl": "https://www.bing.com/th?id=ONUT.3Wcl7YewdRfR-M6UhI4qCw&pid=News&w=480&h=360&c=14",
+  "siteUrl": "https://toronto.citynews.ca",
+  "productUrl": "",
+  "productRetailer": "",
+  "productName": "",
+  "productPrice": "",
+  "productAvailability": "",
+  "productLinks": [],
+  "productSearchLinks": [
+   {
+    "retailer": "TCGplayer",
+    "url": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20child%20play%20anymore%20owner%20believes%20thieves%20crashed"
+   },
+   {
+    "retailer": "Amazon",
+    "url": "https://www.amazon.com/s?k=Pokemon%20TCG%20child%20play%20anymore%20owner%20believes%20thieves%20crashed"
+   }
+  ],
+  "productSearchUrl": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20child%20play%20anymore%20owner%20believes%20thieves%20crashed",
+  "productSearchRetailer": "TCGplayer",
+  "productLookupStatus": "search-fallback",
+  "productLookupAt": "2026-11-28T04:04:15.233Z",
+  "productLookupVersion": 7,
+  "productPageChecks": 0,
+  "productVerifiedAt": ""
  },
  {
   "date": "2026-11-26T19:53:00.000Z",
@@ -1475,7 +1528,6 @@
   "imageLookupStatus": "not-found",
   "imageLookupVersion": 7,
   "url": "https://note.com/biz_hack_master/n/n39c9882682c8?hl=en",
-  "thumbUrl": "https://www.bing.com/th?id=ONUT.zvbbU7SghaCMtci4frcqdA&pid=News&w=480&h=360&c=14",
   "siteUrl": "https://note.com",
   "productUrl": "",
   "productRetailer": "",
@@ -1503,29 +1555,68 @@
   "productLookupAt": "2026-11-27T22:14:22.697Z",
   "productLookupVersion": 7,
   "productPageChecks": 0,
-  "productVerifiedAt": ""
+  "productVerifiedAt": "",
+  "thumbUrl": "https://www.bing.com/th?id=ONUT.zvbbU7SghaCMtci4frcqdA&pid=News&w=480&h=360&c=14"
  },
  {
   "date": "2026-11-26T16:00:00.000Z",
-  "cat": "Release",
-  "title": "Pokémon Anime Might Give Us A Clue Into Winds And Waves Release Date",
-  "summary": "A new scheduling gap in the Pokémon anime might give us a clue to the Winds and Waves release date. Serebii founder Joe Merrick pointed out on Bluesky that for the entirety of his time running the fan ...",
-  "source": "opencritic",
-  "publisherUrl": "https://opencritic.com",
-  "sourceUrl": "https://opencritic.com/news/40432/pokemon-anime-might-give-us-a-clue-into-winds-and-waves-release-date",
+  "cat": "Restock",
+  "title": "New Official $360 Eeveelution Pokémon Release Available Now",
+  "summary": "A brand-new Pokémon release featuring Espeon and Umbreon is officially available now, with fans having to spend $360 to get both versions. The Pokémon franchise is celebrating its ...",
+  "source": "IMDb",
+  "publisherUrl": "https://www.imdb.com",
+  "sourceUrl": "https://www.imdb.com/news/ni66130867/",
   "imageUrls": [
    {
-    "url": "https://img.opencritic.com/article/W6yyWz1JegcuTN2oXM6PgUkZQkPoYtSME9dHEl6SIsfpqRdvNS3eWXOXJoJrrq.jpg",
+    "url": "https://static0.gamerantimages.com/wordpress/wp-content/uploads/2026/03/pokemon-heartgold-soulsilver-version-exclusive-differences.jpg?q=49&fit=crop&w=220&h=124&dpr=2",
     "label": "ITEM IMAGE",
     "kind": "product",
-    "alt": "Pokemon Anime Might Give Us A Clue Into Winds And Waves Release Date"
+    "alt": "pokemon heartgold soulsilver version exclusive  differences"
+   },
+   {
+    "url": "https://static0.gamerantimages.com/wordpress/wp-content/uploads/wm/2025/08/best-pokemon-rom-hacks-that-have-all-pokemon.jpg?q=49&fit=crop&w=100&h=67&dpr=2",
+    "label": "ITEM IMAGE",
+    "kind": "product",
+    "alt": "best-pokemon-rom-hacks-that-have-all-pokemon"
+   },
+   {
+    "url": "https://static0.gamerantimages.com/wordpress/wp-content/uploads/2026/11/new-ace-combat-8-content-officially-confirmed.jpg?q=49&fit=crop&w=292&h=384&dpr=2",
+    "label": "ITEM IMAGE",
+    "kind": "product",
+    "alt": "Ace Combat 8 Official Game Screenshot"
    }
   ],
-  "imageLookupAt": "2026-11-27T22:14:23.061Z",
+  "imageLookupAt": "2026-11-25T01:14:27.492Z",
   "imageLookupStatus": "found",
   "imageLookupVersion": 7,
-  "url": "https://opencritic.com/news/40432/pokemon-anime-might-give-us-a-clue-into-winds-and-waves-release-date",
-  "thumbUrl": "https://www.bing.com/th?id=ONUT.EGcrYVgpi7yLiFJEyDCAfw&pid=News&w=480&h=360&c=14",
+  "url": "https://www.imdb.com/news/ni66130867/",
+  "thumbUrl": "https://www.bing.com/th?id=ONUT.5ddmKJjzz1Rk_5CZNZY3vg&pid=News&w=480&h=360&c=14",
+  "siteUrl": "https://gamerant.com",
+  "productLookupStatus": "not-found",
+  "productLookupAt": "2026-11-25T01:14:27.492Z",
+  "productLookupVersion": 7
+ },
+ {
+  "date": "2026-11-26T16:00:00.000Z",
+  "cat": "Deals",
+  "title": "Pokémon TCG Trader Officially Banning Mega Hyper Rare Cards",
+  "summary": "One of the top Pokémon TCG authenticators has officially banned the authentication of a Mega Hyper Rare cards because of a manufacturing issue.",
+  "source": "opencritic",
+  "publisherUrl": "https://opencritic.com",
+  "sourceUrl": "https://opencritic.com/news/40464/pok-mon-tcg-trader-officially-banning-mega-hyper-rare-cards",
+  "imageUrls": [
+   {
+    "url": "https://img.opencritic.com/article/p7JYXtHg7hAP7BOiM0o3zwazEZQ3RKciJ59V9JceHR4dHH6alT6rJNCZLlWh2i.jpg",
+    "label": "ITEM IMAGE",
+    "kind": "product",
+    "alt": "Pokémon TCG Trader Officially Banning Mega Hyper Rare Cards"
+   }
+  ],
+  "imageLookupAt": "2026-11-28T04:04:15.233Z",
+  "imageLookupStatus": "found",
+  "imageLookupVersion": 7,
+  "url": "https://opencritic.com/news/40464/pok-mon-tcg-trader-officially-banning-mega-hyper-rare-cards",
+  "thumbUrl": "",
   "siteUrl": "https://opencritic.com",
   "productUrl": "",
   "productRetailer": "",
@@ -1533,11 +1624,24 @@
   "productPrice": "",
   "productAvailability": "",
   "productLinks": [],
-  "productSearchLinks": [],
-  "productSearchUrl": "",
-  "productSearchRetailer": "",
-  "productLookupStatus": "not-found",
-  "productLookupAt": "2026-11-27T22:14:23.061Z",
+  "productSearchLinks": [
+   {
+    "retailer": "TCGplayer",
+    "url": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20trader%20officially%20banning%20mega%20hyper%20authenticators%20banned"
+   },
+   {
+    "retailer": "Amazon",
+    "url": "https://www.amazon.com/s?k=Pokemon%20TCG%20trader%20officially%20banning%20mega%20hyper%20authenticators%20banned"
+   },
+   {
+    "retailer": "Target",
+    "url": "https://www.target.com/s?searchTerm=Pokemon%20TCG%20trader%20officially%20banning%20mega%20hyper%20authenticators%20banned"
+   }
+  ],
+  "productSearchUrl": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20trader%20officially%20banning%20mega%20hyper%20authenticators%20banned",
+  "productSearchRetailer": "TCGplayer",
+  "productLookupStatus": "search-fallback",
+  "productLookupAt": "2026-11-28T04:04:15.233Z",
   "productLookupVersion": 7,
   "productPageChecks": 0,
   "productVerifiedAt": ""
@@ -1564,20 +1668,9 @@
   "url": "https://www.imdb.com/news/ni66130787/",
   "thumbUrl": "https://www.bing.com/th?id=ONUT.rmUyxkUpL1tYUiZO62ZLMg&pid=News&w=480&h=360&c=14",
   "siteUrl": "https://www.imdb.com",
-  "productUrl": "",
-  "productRetailer": "",
-  "productName": "",
-  "productPrice": "",
-  "productAvailability": "",
-  "productLinks": [],
-  "productSearchLinks": [],
-  "productSearchUrl": "",
-  "productSearchRetailer": "",
   "productLookupStatus": "not-found",
   "productLookupAt": "2026-11-27T22:14:23.298Z",
-  "productLookupVersion": 7,
-  "productPageChecks": 0,
-  "productVerifiedAt": ""
+  "productLookupVersion": 7
  },
  {
   "date": "2026-11-26T16:00:00.000Z",
@@ -2054,7 +2147,7 @@
   "summary": "Another chance to find those rare Pokémon for less.",
   "source": "Mashable on MSN",
   "publisherUrl": "https://www.msn.com",
-  "sourceUrl": "https://www.msn.com/en-us/gaming/general/black-friday-pok%C3%A9mon-deal-save-6-50-on-the-pok%C3%A9mon-30th-anniversary-celebration-umbreon-ex-battle-deck/ar-AA2ijUQO",
+  "sourceUrl": "https://www.msn.com/en-us/news/other/black-friday-pok%C3%A9mon-deal-save-650-on-the-pok%C3%A9mon-30th-anniversary-celebration-umbreon-ex-battle-deck/ar-AA2ijUQO",
   "imageUrls": [
    {
     "url": "https://www.bing.com/th?id=ONUT.rSCnxJd_tnZyu78C0r_d5w&pid=News&w=480&h=360&c=14",
@@ -2066,7 +2159,7 @@
   "imageLookupAt": "2026-11-27T03:54:51.584Z",
   "imageLookupStatus": "not-found",
   "imageLookupVersion": 7,
-  "url": "https://www.msn.com/en-us/gaming/general/black-friday-pok%C3%A9mon-deal-save-6-50-on-the-pok%C3%A9mon-30th-anniversary-celebration-umbreon-ex-battle-deck/ar-AA2ijUQO",
+  "url": "https://www.msn.com/en-us/news/other/black-friday-pok%C3%A9mon-deal-save-650-on-the-pok%C3%A9mon-30th-anniversary-celebration-umbreon-ex-battle-deck/ar-AA2ijUQO",
   "thumbUrl": "https://www.bing.com/th?id=ONUT.rSCnxJd_tnZyu78C0r_d5w&pid=News&w=480&h=360&c=14",
   "productLookupStatus": "not-found",
   "productLookupAt": "2026-11-27T03:54:51.584Z",
@@ -2366,6 +2459,73 @@
   "productPageChecks": 0,
   "productVerifiedAt": "",
   "thumbUrl": "https://www.bing.com/th?id=ONUT.QTugu-AFql9ckeQvHgMsVA&pid=News&w=480&h=360&c=14"
+ },
+ {
+  "date": "2026-11-26T03:23:00.000Z",
+  "cat": "Restock",
+  "title": "Casetify is celebrating 30 years of Pokémon with pixel-art phone cases and charms - how to buy",
+  "summary": "If you buy something through links on our site, Mashable may earn an affiliate commission. Credit: Casetify / The Pokémon Company TL;DR: Casetify is celebrating 30 years of Pokémon with a new ...",
+  "source": "Mashable",
+  "publisherUrl": "https://mashable.com",
+  "sourceUrl": "https://mashable.com/tech/casetify-pokemon-30th-anniversary-collection-how-to-buy",
+  "imageUrls": [
+   {
+    "url": "https://helios-i.mashable.com/imagery/defaults/fallback-thumbnail.fill.size_1600x900.1.png",
+    "label": "ITEM IMAGE",
+    "kind": "product",
+    "alt": "Mashable Image"
+   },
+   {
+    "url": "https://helios-i.mashable.com/imagery/articles/06yZfOh8uPQqVoQIBsZqjxE/hero-image.fill.size_1248x702.v1795606195.png",
+    "label": "ITEM IMAGE",
+    "kind": "product",
+    "alt": "Casetify Pokémon 30th anniversary collection"
+   },
+   {
+    "url": "https://helios-i.mashable.com/imagery/articles/06yZfOh8uPQqVoQIBsZqjxE/images-4.fill.size_202x256.v1795676202.png",
+    "label": "ITEM IMAGE",
+    "kind": "product",
+    "alt": "Casetify x Pok&eacute;mon 30th anniversary collection"
+   },
+   {
+    "url": "https://helios-i.mashable.com/imagery/articles/06yZfOh8uPQqVoQIBsZqjxE/images-5.fill.size_2000x1281.v1795677647.png",
+    "label": "ITEM IMAGE",
+    "kind": "product",
+    "alt": "Casetify x Pok&eacute;mon 30th anniversary collection"
+   },
+   {
+    "url": "https://helios-i.mashable.com/imagery/articles/06yZfOh8uPQqVoQIBsZqjxE/images-6.fill.size_2000x1331.v1795677647.png",
+    "label": "ITEM IMAGE",
+    "kind": "product",
+    "alt": "Casetify x Pok&eacute;mon 30th anniversary collection"
+   },
+   {
+    "url": "https://helios-i.mashable.com/imagery/defaults/fallback-thumbnail.fill.size_100x100.1.png",
+    "label": "ITEM IMAGE",
+    "kind": "product",
+    "alt": "Mashable Image"
+   }
+  ],
+  "imageLookupAt": "2026-11-28T04:04:15.234Z",
+  "imageLookupStatus": "found",
+  "imageLookupVersion": 7,
+  "url": "https://mashable.com/tech/casetify-pokemon-30th-anniversary-collection-how-to-buy",
+  "thumbUrl": "https://www.bing.com/th?id=ONUT.cUcHCOzD1ZLDhRQ0F-oDsQ&pid=News&w=480&h=360&c=14",
+  "siteUrl": "https://mashable.com",
+  "productUrl": "",
+  "productRetailer": "",
+  "productName": "",
+  "productPrice": "",
+  "productAvailability": "",
+  "productLinks": [],
+  "productSearchLinks": [],
+  "productSearchUrl": "",
+  "productSearchRetailer": "",
+  "productLookupStatus": "not-found",
+  "productLookupAt": "2026-11-28T04:04:15.234Z",
+  "productLookupVersion": 7,
+  "productPageChecks": 0,
+  "productVerifiedAt": ""
  },
  {
   "date": "2026-11-26T02:44:00.000Z",
@@ -3513,6 +3673,7 @@
   "imageLookupStatus": "not-found",
   "imageLookupVersion": 7,
   "url": "https://www.msn.com/en-us/news/other/the-pok%C3%A9mon-tcg-30th-celebration-ultra-premium-collection-at-market-price-in-walmarts-black-friday-sale-save-up-to-130/ar-AA2iegq1",
+  "thumbUrl": "https://www.bing.com/th?id=ONUT.44Bo5KYjeusV6v5CoDk2Qg&pid=News&w=480&h=360&c=14",
   "productSearchLinks": [
    {
     "retailer": "Walmart",
@@ -3531,8 +3692,7 @@
   "productSearchRetailer": "Walmart",
   "productLookupStatus": "search-fallback",
   "productLookupAt": "2026-11-26T02:58:26.090Z",
-  "productLookupVersion": 7,
-  "thumbUrl": "https://www.bing.com/th?id=ONUT.44Bo5KYjeusV6v5CoDk2Qg&pid=News&w=480&h=360&c=14"
+  "productLookupVersion": 7
  },
  {
   "date": "2026-11-25T03:16:10.000Z",
@@ -4331,44 +4491,6 @@
   "productLookupAt": "2026-11-25T10:06:33.113Z",
   "productLookupVersion": 7,
   "thumbUrl": "https://www.bing.com/th?id=ONUT.E-38rTzP-a3ouXm-U2ubdA&pid=News&w=480&h=360&c=14"
- },
- {
-  "date": "2026-11-24T11:02:46.000Z",
-  "cat": "Restock",
-  "title": "New Official $360 Eeveelution Pokémon Release Available Now",
-  "summary": "A pricey Pokémon release is now available, featuring beloved Eeveelutions.",
-  "source": "Game Rant on MSN",
-  "publisherUrl": "https://www.msn.com",
-  "sourceUrl": "https://www.msn.com/en-us/entertainment/general/new-official-360-eeveelution-pokemon-release-available-now/ar-AA2iawXu",
-  "imageUrls": [
-   {
-    "url": "https://static0.gamerantimages.com/wordpress/wp-content/uploads/2026/03/pokemon-heartgold-soulsilver-version-exclusive-differences.jpg?q=49&fit=crop&w=220&h=124&dpr=2",
-    "label": "ITEM IMAGE",
-    "kind": "product",
-    "alt": "pokemon heartgold soulsilver version exclusive  differences"
-   },
-   {
-    "url": "https://static0.gamerantimages.com/wordpress/wp-content/uploads/wm/2025/08/best-pokemon-rom-hacks-that-have-all-pokemon.jpg?q=49&fit=crop&w=100&h=67&dpr=2",
-    "label": "ITEM IMAGE",
-    "kind": "product",
-    "alt": "best-pokemon-rom-hacks-that-have-all-pokemon"
-   },
-   {
-    "url": "https://static0.gamerantimages.com/wordpress/wp-content/uploads/2026/11/new-ace-combat-8-content-officially-confirmed.jpg?q=49&fit=crop&w=292&h=384&dpr=2",
-    "label": "ITEM IMAGE",
-    "kind": "product",
-    "alt": "Ace Combat 8 Official Game Screenshot"
-   }
-  ],
-  "imageLookupAt": "2026-11-25T01:14:27.492Z",
-  "imageLookupStatus": "found",
-  "imageLookupVersion": 7,
-  "url": "https://www.msn.com/en-us/entertainment/general/new-official-360-eeveelution-pokemon-release-available-now/ar-AA2iawXu",
-  "siteUrl": "https://gamerant.com",
-  "productLookupStatus": "not-found",
-  "productLookupAt": "2026-11-25T01:14:27.492Z",
-  "productLookupVersion": 7,
-  "thumbUrl": "https://www.bing.com/th?id=ONUT.5ddmKJjzz1Rk_5CZNZY3vg&pid=News&w=480&h=360&c=14"
  },
  {
   "date": "2026-11-24T10:00:19.000Z",
@@ -5898,172 +6020,5 @@
   "productLookupAt": "2026-11-23T21:37:36.487Z",
   "productLookupVersion": 7,
   "thumbUrl": "https://www.bing.com/th?id=ONUT.pXvUUJXfBWReliZ2d_wZEA&pid=News&w=480&h=360&c=14"
- },
- {
-  "date": "2026-11-23T06:35:14.000Z",
-  "cat": "Restock",
-  "title": "The best playable cards from Pokémon 30th celebration",
-  "summary": "The anniversary set also comes with prints of some competitive TCG deck staples.",
-  "source": "Sports Illustrated on MSN",
-  "publisherUrl": "https://www.msn.com",
-  "sourceUrl": "https://www.msn.com/en-us/gaming/general/the-best-playable-cards-from-pok%C3%A9mon-30th-celebration/ar-AA2i3aZI",
-  "imageUrls": [
-   {
-    "url": "https://www.bing.com/th?id=ONUT.1QhwZYV8E14h9EiXKO-8Rw&pid=News&w=480&h=360&c=14",
-    "label": "ARTICLE IMAGE",
-    "kind": "article",
-    "alt": "The best playable cards from Pokémon 30th celebration"
-   }
-  ],
-  "imageLookupAt": "2026-11-23T21:37:34.798Z",
-  "imageLookupStatus": "not-found",
-  "imageLookupVersion": 7,
-  "url": "https://www.msn.com/en-us/gaming/general/the-best-playable-cards-from-pok%C3%A9mon-30th-celebration/ar-AA2i3aZI",
-  "productSearchLinks": [
-   {
-    "retailer": "TCGplayer",
-    "url": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20playable%2030th%20celebration%20anniversary%20also%20comes%20prints"
-   },
-   {
-    "retailer": "Amazon",
-    "url": "https://www.amazon.com/s?k=Pokemon%20TCG%20playable%2030th%20celebration%20anniversary%20also%20comes%20prints"
-   },
-   {
-    "retailer": "Target",
-    "url": "https://www.target.com/s?searchTerm=Pokemon%20TCG%20playable%2030th%20celebration%20anniversary%20also%20comes%20prints"
-   }
-  ],
-  "productSearchUrl": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20playable%2030th%20celebration%20anniversary%20also%20comes%20prints",
-  "productSearchRetailer": "TCGplayer",
-  "productLookupStatus": "search-fallback",
-  "productLookupAt": "2026-11-23T21:37:34.798Z",
-  "productLookupVersion": 7,
-  "thumbUrl": "https://www.bing.com/th?id=ONUT.1QhwZYV8E14h9EiXKO-8Rw&pid=News&w=480&h=360&c=14"
- },
- {
-  "date": "2026-11-23T06:19:39.000Z",
-  "cat": "Release",
-  "title": "Pokémon Scarlet & Violet pack battle: Connor opens packs",
-  "summary": "Connor opens Pokémon Scarlet & Violet card packs as part of a pack battle. The video shows the cards pulled from each pack during the challenge.",
-  "source": "ConnorTV on MSN",
-  "publisherUrl": "https://www.msn.com",
-  "sourceUrl": "https://www.msn.com/en-us/news/other/pok%C3%A9mon-scarlet-violet-pack-battle-connor-opens-packs/vi-AA1M6HoC",
-  "imageUrls": [
-   {
-    "url": "https://www.bing.com/th?id=ONUT.fVLCgu7dA0xlOOmzZ29KyA&pid=News&w=480&h=360&c=14",
-    "label": "ARTICLE IMAGE",
-    "kind": "article",
-    "alt": "Pokémon Scarlet & Violet pack battle: Connor opens packs"
-   }
-  ],
-  "imageLookupAt": "2026-11-23T21:37:35.114Z",
-  "imageLookupStatus": "not-found",
-  "imageLookupVersion": 7,
-  "url": "https://www.msn.com/en-us/news/other/pok%C3%A9mon-scarlet-violet-pack-battle-connor-opens-packs/vi-AA1M6HoC",
-  "siteUrl": "",
-  "productUrl": "",
-  "productRetailer": "",
-  "productName": "",
-  "productPrice": "",
-  "productAvailability": "",
-  "productLinks": [],
-  "productSearchLinks": [],
-  "productSearchUrl": "",
-  "productSearchRetailer": "",
-  "productLookupStatus": "not-found",
-  "productLookupAt": "2026-11-23T21:37:35.114Z",
-  "productLookupVersion": 7,
-  "productPageChecks": 0,
-  "productVerifiedAt": "",
-  "thumbUrl": "https://www.bing.com/th?id=ONUT.fVLCgu7dA0xlOOmzZ29KyA&pid=News&w=480&h=360&c=14"
- },
- {
-  "date": "2026-11-23T06:15:14.000Z",
-  "cat": "Rare Drop",
-  "title": "Pokémon TCG confirms three new sets will all release May 2027",
-  "summary": "The Pokémon Trading Card Game will officially launch three new sets in May 2027, offering up one of the biggest releases for the TCG ever.",
-  "source": "Screen Rant on MSN",
-  "publisherUrl": "https://www.msn.com",
-  "sourceUrl": "https://www.msn.com/en-us/gaming/general/pok%C3%A9mon-tcg-confirms-three-new-sets-will-all-release-may-2027/ar-AA2i5nMJ",
-  "imageUrls": [
-   {
-    "url": "https://www.bing.com/th?id=ONUT.4B6p6Na158A3bb6z983kqQ&pid=News&w=480&h=360&c=14",
-    "label": "ARTICLE IMAGE",
-    "kind": "article",
-    "alt": "Pokémon TCG confirms three new sets will all release May 2027"
-   }
-  ],
-  "imageLookupAt": "2026-11-24T05:44:06.400Z",
-  "imageLookupStatus": "not-found",
-  "imageLookupVersion": 7,
-  "url": "https://www.msn.com/en-us/gaming/general/pok%C3%A9mon-tcg-confirms-three-new-sets-will-all-release-may-2027/ar-AA2i5nMJ",
-  "productSearchLinks": [
-   {
-    "retailer": "TCGplayer",
-    "url": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20confirms%20three%20sets%20will%20game%20officially%20launch"
-   },
-   {
-    "retailer": "Amazon",
-    "url": "https://www.amazon.com/s?k=Pokemon%20TCG%20confirms%20three%20sets%20will%20game%20officially%20launch"
-   },
-   {
-    "retailer": "Target",
-    "url": "https://www.target.com/s?searchTerm=Pokemon%20TCG%20confirms%20three%20sets%20will%20game%20officially%20launch"
-   }
-  ],
-  "productSearchUrl": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20confirms%20three%20sets%20will%20game%20officially%20launch",
-  "productSearchRetailer": "TCGplayer",
-  "productLookupStatus": "search-fallback",
-  "productLookupAt": "2026-11-24T05:44:06.400Z",
-  "productLookupVersion": 7,
-  "thumbUrl": "https://www.bing.com/th?id=ONUT.4B6p6Na158A3bb6z983kqQ&pid=News&w=480&h=360&c=14"
- },
- {
-  "date": "2026-11-23T06:05:00.000Z",
-  "cat": "Release",
-  "title": "Rare Pokémon cards found in family's attic could sell for up to 10,000 at auction",
-  "summary": "A family who found an uncut sheet of 110 Pokémon cards, originally released in 1999 in their attic could be set to make 10,000 at auction. The holographic English-language cards - from the 'Fossil' ...",
-  "source": "Yahoo",
-  "publisherUrl": "https://www.yahoo.com",
-  "sourceUrl": "https://www.yahoo.com/news/videos/rare-pok-mon-cards-found-140528234.html",
-  "imageUrls": [
-   {
-    "url": "https://s.yimg.com/lo/mysterio/api/21854655b992c2d946ddeff01cd2d5f2e184e4beb9e13189082e2d05f6c1f0b8/lightyear_networkapi/resizefill_h100%3Bquality_100%3Bformat_webp/https%3A%2F%2Fs.yimg.com%2Fos%2Fcreatr-uploaded-images%2F2021-09%2Fa8e7f6c0-1ba9-11ec-baef-bc42ce44329e",
-    "label": "ITEM IMAGE",
-    "kind": "product",
-    "alt": "SWNS"
-   },
-   {
-    "url": "https://s.yimg.com/lo/mysterio/api/6e0738038784f58f60a99346f240536b28332bb11766f764c94362cec3e6dee8/lightyear_networkapi/resizefill_w640%3Bquality_80%3Bformat_webp/https%3A%2F%2Fmedia.zenfs.com%2Fen%2Fswns_us_536%2F6e1a3245a517813dcb35b53cbe602f2c.jpg",
-    "label": "ITEM IMAGE",
-    "kind": "product",
-    "alt": "0 1 0 12H7.688c-.877.657-1.989 1.483-2.688 2v-2.342A6.002 6.002 0 0 1 7 1zM7 2.6a4.4 4.4 0 0 0 0 8.8h2a4.4 4.4 0 0 0 0-8.8z\"> A family who f"
-   }
-  ],
-  "imageLookupAt": "2026-11-23T21:37:35.304Z",
-  "imageLookupStatus": "found",
-  "imageLookupVersion": 7,
-  "url": "https://www.yahoo.com/news/videos/rare-pok-mon-cards-found-140528234.html",
-  "siteUrl": "https://www.yahoo.com",
-  "productSearchLinks": [
-   {
-    "retailer": "TCGplayer",
-    "url": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20found%20family%20attic%20could%20sell%20auction%20uncut"
-   },
-   {
-    "retailer": "Amazon",
-    "url": "https://www.amazon.com/s?k=Pokemon%20TCG%20found%20family%20attic%20could%20sell%20auction%20uncut"
-   },
-   {
-    "retailer": "Target",
-    "url": "https://www.target.com/s?searchTerm=Pokemon%20TCG%20found%20family%20attic%20could%20sell%20auction%20uncut"
-   }
-  ],
-  "productSearchUrl": "https://www.tcgplayer.com/search/pokemon/product?q=Pokemon%20TCG%20found%20family%20attic%20could%20sell%20auction%20uncut",
-  "productSearchRetailer": "TCGplayer",
-  "productLookupStatus": "search-fallback",
-  "productLookupAt": "2026-11-23T21:37:35.304Z",
-  "productLookupVersion": 7,
-  "thumbUrl": "https://www.bing.com/th?id=ONUT.0nWbro48PRIgnSSdbEbRYg&pid=News&w=480&h=360&c=14"
  }
 ]

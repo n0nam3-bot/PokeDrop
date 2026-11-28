@@ -34,20 +34,20 @@
     ],
     "itemImageDiscovery": {
       "version": 7,
-      "pagesChecked": 17,
+      "pagesChecked": 4,
       "itemsWithImages": 109,
       "verifiedProductPages": 1,
-      "retailerSearchFallbacks": 69,
-      "productSearchLinksAvailable": 69,
-      "productPagesMissing": 50,
+      "retailerSearchFallbacks": 68,
+      "productSearchLinksAvailable": 68,
+      "productPagesMissing": 51,
       "productDetailPagesChecked": 14,
       "imageErrors": 0,
       "search": {
-        "requests": 54,
-        "successfulQueries": 54,
-        "resultLinks": 508,
+        "requests": 12,
+        "successfulQueries": 12,
+        "resultLinks": 108,
         "errors": 0,
-        "bingRequests": 54,
+        "bingRequests": 12,
         "duckDuckGoRequests": 0
       }
     }
@@ -55,12 +55,12 @@
   "raffles": {
     "sourceCount": 17,
     "sourcesResponded": 17,
-    "searchResults": 173,
-    "uniqueLeads": 116,
+    "searchResults": 179,
+    "uniqueLeads": 114,
     "savedLeads": 10,
     "directEntryLinksFound": 10,
     "directEntryLinksMissing": 0,
-    "entryLookupsThisRun": 20,
+    "entryLookupsThisRun": 18,
     "entryLookupErrors": 0,
     "historyDays": 365,
     "sources": [
@@ -72,7 +72,7 @@
       {
         "name": "TCG raffles",
         "ok": true,
-        "results": 12
+        "results": 11
       },
       {
         "name": "Pokémon card giveaways",
@@ -87,7 +87,7 @@
       {
         "name": "Booster box prizes",
         "ok": true,
-        "results": 0
+        "results": 5
       },
       {
         "name": "Elite Trainer Box prizes",
@@ -112,7 +112,7 @@
       {
         "name": "Target giveaways",
         "ok": true,
-        "results": 10
+        "results": 11
       },
       {
         "name": "Walmart giveaways",
@@ -127,7 +127,7 @@
       {
         "name": "Best Buy giveaways",
         "ok": true,
-        "results": 11
+        "results": 12
       },
       {
         "name": "Costco giveaways",
@@ -155,12 +155,12 @@
         "results": 14
       }
     ],
-    "entrySearchFallbacks": 20,
-    "qualifiedLeads": 20,
+    "entrySearchFallbacks": 18,
+    "qualifiedLeads": 18,
     "rejectedLeads": 96,
     "discoveryEngine": {
       "version": 7,
-      "publisherPagesChecked": 20,
+      "publisherPagesChecked": 18,
       "prizeDetailsFound": 7,
       "startDatesFound": 2,
       "endDatesFound": 1,
@@ -168,18 +168,18 @@
       "rejectedFalsePositives": 96,
       "entryLinksValidated": 0,
       "search": {
-        "requests": 74,
-        "successfulQueries": 74,
-        "resultLinks": 688,
+        "requests": 24,
+        "successfulQueries": 24,
+        "resultLinks": 220,
         "errors": 0,
-        "bingRequests": 74,
+        "bingRequests": 24,
         "duckDuckGoRequests": 0
       }
     }
   },
   "failures": [],
   "dropFeeds": {
-    "checkedAt": "2026-11-27T22:14:32.559Z",
+    "checkedAt": "2026-11-28T04:04:22.995Z",
     "sources": [
       "TCG Drop Radar"
     ],
