@@ -9,24 +9,24 @@
     "stockState": "IN_STOCK",
     "availabilitySource": "page-text",
     "firstSeenAt": "2026-11-24T23:01:57.686Z",
-    "lastCheckedAt": "2026-11-27T19:32:09.129Z",
-    "lastCheckStatus": "BLOCKED",
-    "lastError": "HTTP 503",
+    "lastCheckedAt": "2026-11-28T02:08:22.717Z",
+    "lastCheckStatus": "OK",
+    "lastError": "",
     "history": []
   },
   {
-    "id": "https://www.amazon.com/pokemon-tcg-authentic-expansion-holofoils/dp/b001dij48c",
-    "name": "Amazon.com: Pokémon TCG 3 Booster Packs, 30 Cards Total, 100% Authentic, Random Rares & Holofoils, 3 Blister Packs : Toys & Games",
+    "id": "https://www.amazon.com/pok%c3%a9mon-tcg-evolution-delta-booster-bundle/dp/b0hg3rvzlw",
+    "name": "Amazon.com: Pokémon TCG: Mega Evolution—Delta Reign Booster Bundle : Toys & Games",
     "retailer": "Amazon",
-    "productUrl": "https://www.amazon.com/Pokemon-TCG-Authentic-Expansion-Holofoils/dp/B001DIJ48C",
+    "productUrl": "https://www.amazon.com/Pok%C3%A9mon-TCG-Evolution-Delta-Booster-Bundle/dp/B0HG3RVZLW",
     "imageUrl": "",
     "price": "",
     "stockState": "IN_STOCK",
     "availabilitySource": "page-text",
-    "firstSeenAt": "2026-11-25T05:24:03.624Z",
-    "lastCheckedAt": "2026-11-27T19:32:09.129Z",
-    "lastCheckStatus": "BLOCKED",
-    "lastError": "HTTP 503",
+    "firstSeenAt": "2026-11-24T13:09:36.468Z",
+    "lastCheckedAt": "2026-11-28T02:08:22.717Z",
+    "lastCheckStatus": "OK",
+    "lastError": "",
     "history": []
   },
   {
@@ -39,24 +39,9 @@
     "stockState": "IN_STOCK",
     "availabilitySource": "page-text",
     "firstSeenAt": "2026-11-25T05:24:03.624Z",
-    "lastCheckedAt": "2026-11-27T19:32:09.129Z",
-    "lastCheckStatus": "BLOCKED",
-    "lastError": "HTTP 503",
-    "history": []
-  },
-  {
-    "id": "https://www.amazon.com/pokemon-tcg-evolutions-perfect-chikorita/dp/b0ggcclcjm",
-    "name": "Amazon.com: Pokemon TCG: Mega Evolutions - Perfect Order 3 Pack Blister (Chikorita) : Toys & Games",
-    "retailer": "Amazon",
-    "productUrl": "https://www.amazon.com/Pokemon-TCG-Evolutions-Perfect-Chikorita/dp/B0GGCCLCJM",
-    "imageUrl": "",
-    "price": "",
-    "stockState": "IN_STOCK",
-    "availabilitySource": "page-text",
-    "firstSeenAt": "2026-11-22T18:30:15.412Z",
-    "lastCheckedAt": "2026-11-27T19:32:09.129Z",
-    "lastCheckStatus": "BLOCKED",
-    "lastError": "HTTP 503",
+    "lastCheckedAt": "2026-11-28T02:08:22.717Z",
+    "lastCheckStatus": "OK",
+    "lastError": "",
     "history": []
   },
   {
@@ -69,9 +54,39 @@
     "stockState": "IN_STOCK",
     "availabilitySource": "page-text",
     "firstSeenAt": "2026-11-22T18:30:15.412Z",
-    "lastCheckedAt": "2026-11-27T19:32:09.129Z",
-    "lastCheckStatus": "BLOCKED",
-    "lastError": "HTTP 503",
+    "lastCheckedAt": "2026-11-28T02:08:22.717Z",
+    "lastCheckStatus": "OK",
+    "lastError": "",
+    "history": []
+  },
+  {
+    "id": "https://www.amazon.com/pokemon-tcg-authentic-expansion-holofoils/dp/b001dij48c",
+    "name": "Amazon.com: Pokémon TCG 3 Booster Packs, 30 Cards Total, 100% Authentic, Random Rares & Holofoils, 3 Blister Packs : Toys & Games",
+    "retailer": "Amazon",
+    "productUrl": "https://www.amazon.com/Pokemon-TCG-Authentic-Expansion-Holofoils/dp/B001DIJ48C",
+    "imageUrl": "",
+    "price": "",
+    "stockState": "IN_STOCK",
+    "availabilitySource": "page-text",
+    "firstSeenAt": "2026-11-25T05:24:03.624Z",
+    "lastCheckedAt": "2026-11-28T02:08:22.717Z",
+    "lastCheckStatus": "OK",
+    "lastError": "",
+    "history": []
+  },
+  {
+    "id": "https://www.amazon.com/pokemon-tcg-evolutions-perfect-chikorita/dp/b0ggcclcjm",
+    "name": "Amazon.com: Pokemon TCG: Mega Evolutions - Perfect Order 3 Pack Blister (Chikorita) : Toys & Games",
+    "retailer": "Amazon",
+    "productUrl": "https://www.amazon.com/Pokemon-TCG-Evolutions-Perfect-Chikorita/dp/B0GGCCLCJM",
+    "imageUrl": "",
+    "price": "",
+    "stockState": "IN_STOCK",
+    "availabilitySource": "page-text",
+    "firstSeenAt": "2026-11-22T18:30:15.412Z",
+    "lastCheckedAt": "2026-11-28T02:08:22.717Z",
+    "lastCheckStatus": "OK",
+    "lastError": "",
     "history": []
   },
   {
@@ -84,7 +99,7 @@
     "stockState": "IN_STOCK",
     "availabilitySource": "page-text",
     "firstSeenAt": "2026-11-22T23:52:54.890Z",
-    "lastCheckedAt": "2026-11-27T19:32:09.129Z",
+    "lastCheckedAt": "2026-11-28T02:08:22.717Z",
     "lastCheckStatus": "ERROR",
     "lastError": "Final destination is not a retailer product-detail page",
     "history": [
@@ -96,21 +111,6 @@
     ]
   },
   {
-    "id": "https://www.amazon.com/pok%c3%a9mon-tcg-evolution-delta-booster-bundle/dp/b0hg3rvzlw",
-    "name": "Amazon.com: Pokémon TCG: Mega Evolution—Delta Reign Booster Bundle : Toys & Games",
-    "retailer": "Amazon",
-    "productUrl": "https://www.amazon.com/Pok%C3%A9mon-TCG-Evolution-Delta-Booster-Bundle/dp/B0HG3RVZLW",
-    "imageUrl": "",
-    "price": "",
-    "stockState": "IN_STOCK",
-    "availabilitySource": "page-text",
-    "firstSeenAt": "2026-11-24T13:09:36.468Z",
-    "lastCheckedAt": "2026-11-27T19:32:09.129Z",
-    "lastCheckStatus": "OK",
-    "lastError": "",
-    "history": []
-  },
-  {
     "id": "https://www.target.com/p/2025-pok-me-2-5-elite-trainer-box/-/a-95082118",
     "name": "Pokémon Trading Card Game: Mega Evolution— Ascended Heroes Elite Trainer Box",
     "retailer": "Target",
@@ -120,7 +120,7 @@
     "stockState": "IN_STOCK",
     "availabilitySource": "page-text",
     "firstSeenAt": "2026-11-21T23:28:33.174Z",
-    "lastCheckedAt": "2026-11-27T19:32:09.129Z",
+    "lastCheckedAt": "2026-11-28T02:08:22.717Z",
     "lastCheckStatus": "OK",
     "lastError": "",
     "history": []
@@ -135,22 +135,7 @@
     "stockState": "IN_STOCK",
     "availabilitySource": "page-text",
     "firstSeenAt": "2026-11-21T23:28:33.174Z",
-    "lastCheckedAt": "2026-11-27T19:32:09.129Z",
-    "lastCheckStatus": "OK",
-    "lastError": "",
-    "history": []
-  },
-  {
-    "id": "https://www.amazon.com/pok%c3%a9mon-tcg-evolution-delta-reign-trainer/dp/b0hg3mqdwp",
-    "name": "Amazon.com: Pokémon TCG: Mega Evolution—Delta Reign Elite Trainer Box : Toys & Games",
-    "retailer": "Amazon",
-    "productUrl": "https://www.amazon.com/Pok%C3%A9mon-TCG-Evolution-Delta-Reign-Trainer/dp/B0HG3MQDWP",
-    "imageUrl": "",
-    "price": "",
-    "stockState": "IN_STOCK",
-    "availabilitySource": "page-text",
-    "firstSeenAt": "2026-11-21T19:58:52.458Z",
-    "lastCheckedAt": "2026-11-27T19:32:09.129Z",
+    "lastCheckedAt": "2026-11-28T02:08:22.717Z",
     "lastCheckStatus": "OK",
     "lastError": "",
     "history": []
@@ -165,10 +150,51 @@
     "stockState": "IN_STOCK",
     "availabilitySource": "page-text",
     "firstSeenAt": "2026-11-21T23:28:33.174Z",
-    "lastCheckedAt": "2026-11-27T19:32:09.129Z",
+    "lastCheckedAt": "2026-11-28T02:08:22.717Z",
     "lastCheckStatus": "OK",
     "lastError": "",
     "history": []
+  },
+  {
+    "id": "https://www.amazon.com/pok%c3%a9mon-tcg-evolution-delta-reign-trainer/dp/b0hg3mqdwp",
+    "name": "Amazon.com: Pokémon TCG: Mega Evolution—Delta Reign Elite Trainer Box : Toys & Games",
+    "retailer": "Amazon",
+    "productUrl": "https://www.amazon.com/Pok%C3%A9mon-TCG-Evolution-Delta-Reign-Trainer/dp/B0HG3MQDWP",
+    "imageUrl": "",
+    "price": "",
+    "stockState": "IN_STOCK",
+    "availabilitySource": "page-text",
+    "firstSeenAt": "2026-11-21T19:58:52.458Z",
+    "lastCheckedAt": "2026-11-28T02:08:22.717Z",
+    "lastCheckStatus": "OK",
+    "lastError": "",
+    "history": []
+  },
+  {
+    "id": "https://www.amazon.com/pok%c3%a9mon-tcg-scarlet-surging-trainer/dp/b0ddyxqcz4",
+    "name": "Amazon.com: Pokémon TCG: Scarlet & Violet - Surging Sparks Elite Trainer Box : Toys & Games",
+    "retailer": "Amazon",
+    "productUrl": "https://www.amazon.com/Pok%C3%A9mon-TCG-Scarlet-Surging-Trainer/dp/B0DDYXQCZ4",
+    "imageUrl": "",
+    "price": "",
+    "stockState": "IN_STOCK",
+    "availabilitySource": "page-text",
+    "firstSeenAt": "2026-11-21T23:28:33.174Z",
+    "lastCheckedAt": "2026-11-28T02:08:22.717Z",
+    "lastCheckStatus": "OK",
+    "lastError": "",
+    "history": [
+      {
+        "from": "IN_STOCK",
+        "to": "OUT_OF_STOCK",
+        "at": "2026-11-23T16:02:09.180Z"
+      },
+      {
+        "from": "OUT_OF_STOCK",
+        "to": "IN_STOCK",
+        "at": "2026-11-28T02:08:22.717Z"
+      }
+    ]
   },
   {
     "id": "https://www.costco.com/p/-/pokmon-evolving-skies-elite-trainer-box-vaporeon-window-tin/100983804",
@@ -180,9 +206,9 @@
     "stockState": "OUT_OF_STOCK",
     "availabilitySource": "structured-data",
     "firstSeenAt": "2026-11-21T23:28:33.174Z",
-    "lastCheckedAt": "2026-11-27T19:32:09.129Z",
-    "lastCheckStatus": "BLOCKED",
-    "lastError": "HTTP 429",
+    "lastCheckedAt": "2026-11-28T02:08:22.717Z",
+    "lastCheckStatus": "OK",
+    "lastError": "",
     "history": []
   },
   {
@@ -195,31 +221,10 @@
     "stockState": "OUT_OF_STOCK",
     "availabilitySource": "structured-data",
     "firstSeenAt": "2026-11-22T23:52:54.890Z",
-    "lastCheckedAt": "2026-11-27T19:32:09.129Z",
+    "lastCheckedAt": "2026-11-28T02:08:22.717Z",
     "lastCheckStatus": "BLOCKED",
     "lastError": "HTTP 429",
     "history": []
-  },
-  {
-    "id": "https://www.amazon.com/pok%c3%a9mon-tcg-scarlet-surging-trainer/dp/b0ddyxqcz4",
-    "name": "Amazon.com: Pokémon TCG: Scarlet & Violet - Surging Sparks Elite Trainer Box : Toys & Games",
-    "retailer": "Amazon",
-    "productUrl": "https://www.amazon.com/Pok%C3%A9mon-TCG-Scarlet-Surging-Trainer/dp/B0DDYXQCZ4",
-    "imageUrl": "",
-    "price": "",
-    "stockState": "OUT_OF_STOCK",
-    "availabilitySource": "page-text",
-    "firstSeenAt": "2026-11-21T23:28:33.174Z",
-    "lastCheckedAt": "2026-11-27T19:32:09.129Z",
-    "lastCheckStatus": "BLOCKED",
-    "lastError": "HTTP 503",
-    "history": [
-      {
-        "from": "IN_STOCK",
-        "to": "OUT_OF_STOCK",
-        "at": "2026-11-23T16:02:09.180Z"
-      }
-    ]
   },
   {
     "id": "https://www.amazon.com/pok%c3%a9mon-tcg-celebration-booster-bundle/dp/b0h783fy5z",
@@ -231,9 +236,9 @@
     "stockState": "OUT_OF_STOCK",
     "availabilitySource": "page-text",
     "firstSeenAt": "2026-11-24T23:01:57.686Z",
-    "lastCheckedAt": "2026-11-27T19:32:09.129Z",
-    "lastCheckStatus": "BLOCKED",
-    "lastError": "HTTP 503",
+    "lastCheckedAt": "2026-11-28T02:08:22.717Z",
+    "lastCheckStatus": "OK",
+    "lastError": "",
     "history": [
       {
         "from": "IN_STOCK",
@@ -252,7 +257,7 @@
     "stockState": "UNKNOWN",
     "availabilitySource": "none",
     "firstSeenAt": "2026-11-21T23:28:33.174Z",
-    "lastCheckedAt": "2026-11-27T19:32:09.129Z",
+    "lastCheckedAt": "2026-11-28T02:08:22.717Z",
     "lastCheckStatus": "OK",
     "lastError": "",
     "history": []
@@ -267,22 +272,7 @@
     "stockState": "UNKNOWN",
     "availabilitySource": "none",
     "firstSeenAt": "2026-11-22T23:52:54.890Z",
-    "lastCheckedAt": "2026-11-27T19:32:09.129Z",
-    "lastCheckStatus": "OK",
-    "lastError": "",
-    "history": []
-  },
-  {
-    "id": "https://www.tcgplayer.com/product/593355/pokemon-sv-prismatic-evolutions-prismatic-evolutions-elite-trainer-box",
-    "name": "Your Trusted Marketplace for Collectible Trading Card Games - TCGplayer",
-    "retailer": "TCGplayer",
-    "productUrl": "https://www.tcgplayer.com/product/593355/pokemon-sv-prismatic-evolutions-prismatic-evolutions-elite-trainer-box",
-    "imageUrl": "",
-    "price": "",
-    "stockState": "UNKNOWN",
-    "availabilitySource": "none",
-    "firstSeenAt": "2026-11-22T23:52:54.890Z",
-    "lastCheckedAt": "2026-11-27T19:32:09.129Z",
+    "lastCheckedAt": "2026-11-28T02:08:22.717Z",
     "lastCheckStatus": "OK",
     "lastError": "",
     "history": []
@@ -297,7 +287,22 @@
     "stockState": "UNKNOWN",
     "availabilitySource": "none",
     "firstSeenAt": "2026-11-21T23:28:33.174Z",
-    "lastCheckedAt": "2026-11-27T19:32:09.129Z",
+    "lastCheckedAt": "2026-11-28T02:08:22.717Z",
+    "lastCheckStatus": "OK",
+    "lastError": "",
+    "history": []
+  },
+  {
+    "id": "https://www.tcgplayer.com/product/593355/pokemon-sv-prismatic-evolutions-prismatic-evolutions-elite-trainer-box",
+    "name": "Your Trusted Marketplace for Collectible Trading Card Games - TCGplayer",
+    "retailer": "TCGplayer",
+    "productUrl": "https://www.tcgplayer.com/product/593355/pokemon-sv-prismatic-evolutions-prismatic-evolutions-elite-trainer-box",
+    "imageUrl": "",
+    "price": "",
+    "stockState": "UNKNOWN",
+    "availabilitySource": "none",
+    "firstSeenAt": "2026-11-22T23:52:54.890Z",
+    "lastCheckedAt": "2026-11-28T02:08:22.717Z",
     "lastCheckStatus": "OK",
     "lastError": "",
     "history": []

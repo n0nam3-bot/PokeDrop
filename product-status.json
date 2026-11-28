@@ -1,12 +1,12 @@
 {
   "state": "ok",
-  "lastScanAt": "2026-11-27T19:31:59.437Z",
+  "lastScanAt": "2026-11-28T02:08:13.068Z",
   "retailersChecked": 10,
   "retailersReached": 10,
-  "retailersWithProducts": 0,
+  "retailersWithProducts": 1,
   "productsFound": 19,
-  "productsChecked": 19,
-  "productsVerified": 5,
+  "productsChecked": 22,
+  "productsVerified": 14,
   "alertsSent": 0,
   "sources": [
     {
@@ -58,10 +58,10 @@
       "retailer": "Amazon",
       "ok": true,
       "responded": true,
-      "productsFound": 0,
-      "pagesChecked": 9,
-      "method": "none",
-      "error": "HTTP 503"
+      "productsFound": 12,
+      "pagesChecked": 12,
+      "method": "retailer-search",
+      "error": "Product detail page did not confirm a Pokémon TCG item"
     },
     {
       "retailer": "Costco",
@@ -101,20 +101,21 @@
     }
   ],
   "errors": [
-    "Amazon: HTTP 503",
+    "Amazon: Final destination is not a retailer product-detail page",
+    "Amazon: Product detail page did not confirm a Pokémon TCG item",
     "Walmart: Final destination is not a retailer product-detail page",
     "Costco: HTTP 429"
   ],
   "search": {
-    "requests": 40,
+    "requests": 37,
     "retailerSearchPages": 10,
-    "bingRssRequests": 10,
-    "bingHtmlRequests": 10,
-    "duckduckgoRequests": 10,
-    "successfulSearches": 0,
-    "resultLinks": 0,
-    "blockedResponses": 3,
-    "errors": 5
+    "bingRssRequests": 9,
+    "bingHtmlRequests": 9,
+    "duckduckgoRequests": 9,
+    "successfulSearches": 1,
+    "resultLinks": 12,
+    "blockedResponses": 2,
+    "errors": 4
   },
   "note": "Stock states come from validated product pages. A page that cannot be reached retains its last verified stock state and is marked with a failed check.",
   "discord": {
